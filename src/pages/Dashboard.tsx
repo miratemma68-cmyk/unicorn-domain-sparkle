@@ -98,9 +98,18 @@ export default function Dashboard() {
     <div className="min-h-screen bg-gradient-to-br from-midnight via-forest to-midnight">
       <header className="border-b border-gold/20 bg-card/50 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-2xl md:text-3xl font-serif text-gold medieval-glow">
-            Espace Client
-          </h1>
+          <div className="flex items-center gap-4">
+            <a 
+              href="/" 
+              className="text-xl md:text-2xl font-serif text-gold/70 hover:text-gold transition-colors"
+            >
+              Domaine des Licornes
+            </a>
+            <span className="text-gold/30">|</span>
+            <h1 className="text-xl md:text-2xl font-serif text-gold medieval-glow">
+              Espace Client
+            </h1>
+          </div>
           <div className="flex items-center gap-4">
             {isAdmin && (
               <Button
