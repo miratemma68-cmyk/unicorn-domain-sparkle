@@ -14,7 +14,7 @@ export const CatsSection = () => {
     {
       name: "Utah",
       image: utahAdult,
-      description: "Un prince parmi les Ragdolls, noble et majestueux"
+      description: "Une princesse parmi les Ragdolls, noble et majestueuse"
     },
     {
       name: "Nos Chatons",
