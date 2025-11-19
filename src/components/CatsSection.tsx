@@ -3,23 +3,27 @@ import utahAdult from "@/assets/utah-adult.jpg";
 import kittens from "@/assets/kittens.jpg";
 import tapestryTaste from "@/assets/tapestry-taste.jpg";
 import { Card, CardContent } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 
 export const CatsSection = () => {
   const cats = [
     {
       name: "Aloha",
       image: alohaAdult,
-      description: "Notre magnifique Ragdoll, douce et élégante comme une licorne"
+      description: "Notre magnifique Ragdoll, douce et élégante comme une licorne",
+      slug: "aloha"
     },
     {
       name: "Utah",
       image: utahAdult,
-      description: "Une princesse parmi les Ragdolls, noble et majestueuse"
+      description: "Une princesse parmi les Ragdolls, noble et majestueuse",
+      slug: "utah"
     },
     {
       name: "Nos Chatons",
       image: kittens,
-      description: "De futures licornes prêtes à enchanter votre foyer"
+      description: "De futures licornes prêtes à enchanter votre foyer",
+      slug: null
     }
   ];
 
@@ -45,24 +49,39 @@ export const CatsSection = () => {
         </p>
         
         <div className="grid md:grid-cols-3 gap-8">
-          {cats.map((cat) => (
-            <Card key={cat.name} className="bg-card/80 backdrop-blur-sm border-2 border-gold/30 hover:border-gold transition-all duration-300 overflow-hidden group">
-              <CardContent className="p-0">
-                <div className="relative overflow-hidden">
-                  <img 
-                    src={cat.image} 
-                    alt={cat.name}
-                    className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/50 to-transparent opacity-60" />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-2xl font-serif text-gold mb-2">{cat.name}</h3>
-                  <p className="text-ivory/80">{cat.description}</p>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+          {cats.map((cat) => {
+            const content = (
+              <Card className="bg-card/80 backdrop-blur-sm border-2 border-gold/30 hover:border-gold transition-all duration-300 overflow-hidden group">
+                <CardContent className="p-0">
+                  <div className="relative overflow-hidden">
+                    <img 
+                      src={cat.image} 
+                      alt={cat.name}
+                      className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/50 to-transparent opacity-60" />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-2xl font-serif text-gold mb-2">{cat.name}</h3>
+                    <p className="text-ivory/80">{cat.description}</p>
+                    {cat.slug && (
+                      <p className="text-gold/70 text-sm mt-3 italic">Voir le profil →</p>
+                    )}
+                  </div>
+                </CardContent>
+              </Card>
+            );
+
+            return cat.slug ? (
+              <Link key={cat.name} to={`/cat/${cat.slug}`} className="block">
+                {content}
+              </Link>
+            ) : (
+              <div key={cat.name}>
+                {content}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
