@@ -4,9 +4,10 @@ import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { ArrowLeft, Upload, Image } from 'lucide-react';
+import { ArrowLeft, Upload, Image, Cat } from 'lucide-react';
 import { MediaUpload } from '@/components/admin/MediaUpload';
 import { MediaGallery } from '@/components/admin/MediaGallery';
+import { BreedingCatMediaManager } from '@/components/admin/BreedingCatMediaManager';
 
 export default function Admin() {
   const navigate = useNavigate();
@@ -45,17 +46,25 @@ export default function Admin() {
       </header>
 
       <main className="container mx-auto px-4 py-8">
-        <Tabs defaultValue="media" className="w-full">
+        <Tabs defaultValue="reproducteurs" className="w-full">
           <TabsList className="mb-6">
+            <TabsTrigger value="reproducteurs">
+              <Cat className="mr-2 h-4 w-4" />
+              Reproducteurs
+            </TabsTrigger>
             <TabsTrigger value="media">
               <Upload className="mr-2 h-4 w-4" />
-              Médias
+              Chatons
             </TabsTrigger>
             <TabsTrigger value="management">
               <Image className="mr-2 h-4 w-4" />
               Gestion
             </TabsTrigger>
           </TabsList>
+
+          <TabsContent value="reproducteurs" className="space-y-6">
+            <BreedingCatMediaManager />
+          </TabsContent>
 
           <TabsContent value="media" className="space-y-6">
             <MediaUpload />
