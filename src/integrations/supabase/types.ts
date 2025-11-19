@@ -14,6 +14,38 @@ export type Database = {
   }
   public: {
     Tables: {
+      client_kittens: {
+        Row: {
+          adoption_date: string | null
+          client_id: string
+          created_at: string
+          id: string
+          kitten_id: string
+        }
+        Insert: {
+          adoption_date?: string | null
+          client_id: string
+          created_at?: string
+          id?: string
+          kitten_id: string
+        }
+        Update: {
+          adoption_date?: string | null
+          client_id?: string
+          created_at?: string
+          id?: string
+          kitten_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "client_kittens_kitten_id_fkey"
+            columns: ["kitten_id"]
+            isOneToOne: false
+            referencedRelation: "kittens"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       contact_inquiries: {
         Row: {
           created_at: string
@@ -41,15 +73,273 @@ export type Database = {
         }
         Relationships: []
       }
+      kitten_media: {
+        Row: {
+          caption: string | null
+          created_at: string
+          file_path: string
+          file_url: string
+          id: string
+          kitten_id: string
+          media_type: string
+          update_id: string | null
+          uploaded_by: string
+        }
+        Insert: {
+          caption?: string | null
+          created_at?: string
+          file_path: string
+          file_url: string
+          id?: string
+          kitten_id: string
+          media_type: string
+          update_id?: string | null
+          uploaded_by: string
+        }
+        Update: {
+          caption?: string | null
+          created_at?: string
+          file_path?: string
+          file_url?: string
+          id?: string
+          kitten_id?: string
+          media_type?: string
+          update_id?: string | null
+          uploaded_by?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "kitten_media_kitten_id_fkey"
+            columns: ["kitten_id"]
+            isOneToOne: false
+            referencedRelation: "kittens"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "kitten_media_update_id_fkey"
+            columns: ["update_id"]
+            isOneToOne: false
+            referencedRelation: "kitten_updates"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      kitten_milestones: {
+        Row: {
+          created_at: string
+          description: string | null
+          id: string
+          kitten_id: string
+          milestone_date: string
+          milestone_type: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          kitten_id: string
+          milestone_date: string
+          milestone_type: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          kitten_id?: string
+          milestone_date?: string
+          milestone_type?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "kitten_milestones_kitten_id_fkey"
+            columns: ["kitten_id"]
+            isOneToOne: false
+            referencedRelation: "kittens"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      kitten_updates: {
+        Row: {
+          created_at: string
+          created_by: string
+          id: string
+          kitten_id: string
+          notes: string | null
+          update_date: string
+          weight: number | null
+        }
+        Insert: {
+          created_at?: string
+          created_by: string
+          id?: string
+          kitten_id: string
+          notes?: string | null
+          update_date?: string
+          weight?: number | null
+        }
+        Update: {
+          created_at?: string
+          created_by?: string
+          id?: string
+          kitten_id?: string
+          notes?: string | null
+          update_date?: string
+          weight?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "kitten_updates_kitten_id_fkey"
+            columns: ["kitten_id"]
+            isOneToOne: false
+            referencedRelation: "kittens"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      kitten_vet_visits: {
+        Row: {
+          created_at: string
+          id: string
+          kitten_id: string
+          next_visit_date: string | null
+          notes: string | null
+          vet_name: string | null
+          visit_date: string
+          visit_type: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          kitten_id: string
+          next_visit_date?: string | null
+          notes?: string | null
+          vet_name?: string | null
+          visit_date: string
+          visit_type?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          kitten_id?: string
+          next_visit_date?: string | null
+          notes?: string | null
+          vet_name?: string | null
+          visit_date?: string
+          visit_type?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "kitten_vet_visits_kitten_id_fkey"
+            columns: ["kitten_id"]
+            isOneToOne: false
+            referencedRelation: "kittens"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      kittens: {
+        Row: {
+          birth_date: string
+          breed_info: string | null
+          color: string | null
+          created_at: string
+          current_weight: number | null
+          gender: string | null
+          id: string
+          microchip_number: string | null
+          name: string
+          registration_number: string | null
+          updated_at: string
+        }
+        Insert: {
+          birth_date: string
+          breed_info?: string | null
+          color?: string | null
+          created_at?: string
+          current_weight?: number | null
+          gender?: string | null
+          id?: string
+          microchip_number?: string | null
+          name: string
+          registration_number?: string | null
+          updated_at?: string
+        }
+        Update: {
+          birth_date?: string
+          breed_info?: string | null
+          color?: string | null
+          created_at?: string
+          current_weight?: number | null
+          gender?: string | null
+          id?: string
+          microchip_number?: string | null
+          name?: string
+          registration_number?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          email: string
+          full_name: string | null
+          id: string
+          phone: string | null
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          full_name?: string | null
+          id: string
+          phone?: string | null
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          full_name?: string | null
+          id?: string
+          phone?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "client"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -176,6 +466,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "client"],
+    },
   },
 } as const
