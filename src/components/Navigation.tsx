@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { User } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,7 +36,7 @@ export const Navigation = () => {
             Domaine des Licornes
           </a>
           
-          <div className="hidden md:flex gap-8">
+          <div className="hidden md:flex gap-8 items-center">
             {navItems.map((item) => (
               <a
                 key={item.href}
@@ -42,6 +46,13 @@ export const Navigation = () => {
                 {item.label}
               </a>
             ))}
+            <Button
+              onClick={() => navigate('/auth')}
+              className="bg-crimson hover:bg-crimson-dark text-ivory border border-gold ml-4"
+            >
+              <User className="mr-2 h-4 w-4" />
+              Espace Client
+            </Button>
           </div>
         </div>
       </div>
