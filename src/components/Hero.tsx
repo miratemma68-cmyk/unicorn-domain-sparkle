@@ -9,8 +9,8 @@ export const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           
           {/* Left side - Image */}
-          <div className="relative order-2 lg:order-1">
-            <div className="relative aspect-[3/4] max-w-lg mx-auto">
+          <div className="relative order-2 lg:order-1 py-8">
+            <div className="relative aspect-[3/4] max-w-md mx-auto">
               {/* Ornamental border */}
               <div className="absolute inset-0 border-4 border-gold/30 -translate-x-4 -translate-y-4" />
               <div className="absolute inset-0 border-4 border-gold/30 translate-x-4 translate-y-4" />
