@@ -100,7 +100,12 @@ export default function CatDetail() {
     <div className="min-h-screen bg-gradient-to-br from-midnight via-forest to-midnight">
       <div className="container mx-auto px-4 py-8">
         <Button
-          onClick={() => navigate('/#licornes')}
+          onClick={() => {
+            navigate('/');
+            setTimeout(() => {
+              document.getElementById('licornes')?.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+          }}
           variant="outline"
           className="mb-8 border-gold text-gold hover:bg-gold/10"
         >
