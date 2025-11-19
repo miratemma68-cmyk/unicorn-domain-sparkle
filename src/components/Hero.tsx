@@ -7,17 +7,27 @@ export const Hero = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Tapestry Background */}
       <div 
-        className="absolute inset-0 opacity-20"
+        className="absolute inset-0 opacity-30"
         style={{
           backgroundImage: `url(${tapestryDesire})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          filter: 'sepia(0.3) brightness(0.7)'
+          filter: 'sepia(0.4) brightness(0.6) contrast(1.1)'
         }}
       />
       
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-midnight/80 via-crimson-dark/60 to-midnight/90" />
+      {/* Dark overlay with vignette effect */}
+      <div className="absolute inset-0 bg-gradient-to-b from-midnight/70 via-crimson-dark/50 to-midnight/80" />
+      <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-midnight/60" />
+      
+      {/* Decorative tapestry image on the side */}
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-2/3 hidden lg:block opacity-40">
+        <img 
+          src={tapestryDesire} 
+          alt="La Dame à la Licorne - Mon seul désir" 
+          className="w-full h-full object-contain filter sepia-[0.3] brightness-90"
+        />
+      </div>
       
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
