@@ -105,12 +105,7 @@ export default function KittenDetail() {
     <div className="min-h-screen bg-gradient-to-br from-midnight via-forest to-midnight">
       <div className="container mx-auto px-4 py-8">
         <Button
-          onClick={() => {
-            navigate('/');
-            setTimeout(() => {
-              document.getElementById('chatons')?.scrollIntoView({ behavior: 'smooth' });
-            }, 100);
-          }}
+          onClick={() => navigate('/#chatons')}
           variant="outline"
           className="mb-8 border-gold text-gold hover:bg-gold/10"
         >
