@@ -1,5 +1,5 @@
 import alohaProfil from "@/assets/aloha-profil.jpg";
-import utahAdult from "@/assets/utah-adult.jpg";
+import utahProfil from "@/assets/utah-profil.jpg";
 import kittens from "@/assets/kittens.jpg";
 import tapestryTaste from "@/assets/tapestry-taste.jpg";
 import { Card, CardContent } from "@/components/ui/card";
@@ -15,7 +15,7 @@ export const CatsSection = () => {
     },
     {
       name: "Utah",
-      image: utahAdult,
+      image: utahProfil,
       description: "Une princesse parmi les Ragdolls, noble et majestueuse",
       slug: "utah"
     },
