@@ -4,62 +4,61 @@ import { ChevronDown } from "lucide-react";
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Tapestry Background */}
-      <div 
-        className="absolute inset-0 opacity-30"
-        style={{
-          backgroundImage: `url(${tapestryDesire})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          filter: 'sepia(0.4) brightness(0.6) contrast(1.1)'
-        }}
-      />
-      
-      {/* Dark overlay with vignette effect */}
-      <div className="absolute inset-0 bg-gradient-to-b from-midnight/70 via-crimson-dark/50 to-midnight/80" />
-      <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-midnight/60" />
-      
-      {/* Decorative tapestry image on the side */}
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-2/3 hidden lg:block opacity-40">
-        <img 
-          src={tapestryDesire} 
-          alt="La Dame à la Licorne - Mon seul désir" 
-          className="w-full h-full object-contain filter sepia-[0.3] brightness-90"
-        />
-      </div>
-      
-      {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-gold medieval-glow mb-6 tracking-wide">
-          Le Domaine des Licornes
-        </h1>
-        
-        <p className="text-xl md:text-2xl text-ivory/90 mb-4 font-light">
-          Élevage Premium de Ragdolls
-        </p>
-        
-        <p className="text-base md:text-lg text-foreground/80 mb-12 max-w-2xl mx-auto italic">
-          "Où l'élégance médiévale rencontre la grâce féline"
-        </p>
-        
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button 
-            size="lg" 
-            className="bg-crimson hover:bg-crimson-dark text-ivory border-2 border-gold transition-all duration-300 hover:shadow-[0_0_30px_rgba(218,165,32,0.5)]"
-            onClick={() => document.getElementById('licornes')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            Découvrez Nos Licornes
-          </Button>
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-midnight">
+      <div className="container mx-auto px-4 py-20">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           
-          <Button 
-            size="lg" 
-            variant="outline"
-            className="border-2 border-gold text-gold hover:bg-gold/10 hover:text-gold-light transition-all duration-300"
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            Contactez-nous
-          </Button>
+          {/* Left side - Image */}
+          <div className="relative order-2 lg:order-1">
+            <div className="relative aspect-[3/4] max-w-lg mx-auto">
+              {/* Ornamental border */}
+              <div className="absolute inset-0 border-4 border-gold/30 -translate-x-4 -translate-y-4" />
+              <div className="absolute inset-0 border-4 border-gold/30 translate-x-4 translate-y-4" />
+              
+              {/* Main image */}
+              <div className="relative h-full border-2 border-gold shadow-[0_0_50px_rgba(218,165,32,0.3)]">
+                <img 
+                  src={tapestryDesire} 
+                  alt="La Dame à la Licorne - Mon seul désir" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Right side - Content */}
+          <div className="relative z-10 text-center lg:text-left order-1 lg:order-2 space-y-8">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif text-gold medieval-glow tracking-wide">
+              Le Domaine des Licornes
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-ivory/90 font-light">
+              Élevage Premium de Ragdolls
+            </p>
+            
+            <p className="text-base md:text-lg text-ivory/70 max-w-xl lg:mx-0 mx-auto italic">
+              "Où l'élégance médiévale rencontre la grâce féline"
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+              <Button 
+                size="lg" 
+                className="bg-crimson hover:bg-crimson-dark text-ivory border-2 border-gold transition-all duration-300 hover:shadow-[0_0_30px_rgba(218,165,32,0.5)]"
+                onClick={() => document.getElementById('licornes')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Découvrez Nos Licornes
+              </Button>
+              
+              <Button 
+                size="lg" 
+                variant="outline"
+                className="border-2 border-gold text-gold hover:bg-gold/10 hover:text-gold-light transition-all duration-300"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Contactez-nous
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
       
