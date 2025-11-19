@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { User } from "lucide-react";
+import { User, Shield } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "@/hooks/useAuth";
 
 export const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
+  const { user, isAdmin } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,13 +46,37 @@ export const Navigation = () => {
                 {item.label}
               </a>
             ))}
-            <Button
-              onClick={() => navigate('/auth')}
-              className="bg-crimson hover:bg-crimson-dark text-ivory border border-gold ml-4"
-            >
-              <User className="mr-2 h-4 w-4" />
-              Espace Client
-            </Button>
+            <div className="flex gap-2 ml-4">
+              {user ? (
+                <>
+                  <Button
+                    onClick={() => navigate('/dashboard')}
+                    variant="outline"
+                    className="border-gold text-gold hover:bg-gold/10"
+                  >
+                    <User className="mr-2 h-4 w-4" />
+                    Dashboard
+                  </Button>
+                  {isAdmin && (
+                    <Button
+                      onClick={() => navigate('/admin')}
+                      className="bg-crimson hover:bg-crimson-dark text-ivory border border-gold"
+                    >
+                      <Shield className="mr-2 h-4 w-4" />
+                      Administration
+                    </Button>
+                  )}
+                </>
+              ) : (
+                <Button
+                  onClick={() => navigate('/auth')}
+                  className="bg-crimson hover:bg-crimson-dark text-ivory border border-gold"
+                >
+                  <User className="mr-2 h-4 w-4" />
+                  Espace Client
+                </Button>
+              )}
+            </div>
           </div>
         </div>
       </div>
