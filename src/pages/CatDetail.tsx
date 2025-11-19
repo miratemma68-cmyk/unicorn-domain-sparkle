@@ -24,6 +24,7 @@ interface GalleryImage {
   image_url: string;
   caption: string;
   display_order: number;
+  media_type: string;
 }
 
 export default function CatDetail() {
@@ -203,21 +204,32 @@ export default function CatDetail() {
         {/* Gallery */}
         {gallery.length > 0 && (
           <div className="mb-12">
-            <h2 className="text-3xl font-serif text-gold mb-6 text-center">Galerie Photos</h2>
+            <h2 className="text-3xl font-serif text-gold mb-6 text-center">Galerie</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {gallery.map((image) => (
+              {gallery.map((item) => (
                 <div
-                  key={image.id}
+                  key={item.id}
                   className="relative overflow-hidden rounded-lg border-2 border-gold/30 shadow-lg hover:shadow-[0_0_30px_rgba(218,165,32,0.4)] transition-all duration-300"
                 >
-                  <img
-                    src={image.image_url}
-                    alt={image.caption || cat.name}
-                    className="w-full aspect-square object-cover"
-                  />
-                  {image.caption && (
+                  {item.media_type === 'video' ? (
+                    <video
+                      src={item.image_url}
+                      controls
+                      className="w-full aspect-square object-cover bg-midnight"
+                      preload="metadata"
+                    >
+                      Votre navigateur ne supporte pas la lecture de vidéos.
+                    </video>
+                  ) : (
+                    <img
+                      src={item.image_url}
+                      alt={item.caption || cat.name}
+                      className="w-full aspect-square object-cover"
+                    />
+                  )}
+                  {item.caption && (
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-midnight/90 to-transparent p-4">
-                      <p className="text-ivory/90 text-sm">{image.caption}</p>
+                      <p className="text-ivory/90 text-sm">{item.caption}</p>
                     </div>
                   )}
                 </div>
