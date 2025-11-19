@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -26,7 +26,6 @@ interface KittenMedia {
 
 export default function KittenDetail() {
   const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate();
   const [kitten, setKitten] = useState<Kitten | null>(null);
   const [media, setMedia] = useState<KittenMedia[]>([]);
   const [loading, setLoading] = useState(true);
@@ -91,9 +90,11 @@ export default function KittenDetail() {
       <div className="min-h-screen flex items-center justify-center bg-midnight">
         <div className="text-center">
           <p className="text-gold text-xl font-serif mb-4">Chaton non trouvé</p>
-          <Button onClick={() => navigate('/')} className="bg-crimson hover:bg-crimson-dark text-ivory border border-gold">
-            Retour à l'accueil
-          </Button>
+          <Link to="/#chatons">
+            <Button className="bg-crimson hover:bg-crimson-dark text-ivory border border-gold">
+              Retour à Nos Chatons
+            </Button>
+          </Link>
         </div>
       </div>
     );
@@ -104,14 +105,15 @@ export default function KittenDetail() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-midnight via-forest to-midnight">
       <div className="container mx-auto px-4 py-8">
-        <Button
-          onClick={() => navigate('/#chatons')}
-          variant="outline"
-          className="mb-8 border-gold text-gold hover:bg-gold/10"
-        >
-          <ArrowLeft className="mr-2 h-4 w-4" />
-          Retour à Nos Chatons
-        </Button>
+        <Link to="/#chatons">
+          <Button
+            variant="outline"
+            className="mb-8 border-gold text-gold hover:bg-gold/10"
+          >
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Retour à Nos Chatons
+          </Button>
+        </Link>
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {/* Profile Image */}
