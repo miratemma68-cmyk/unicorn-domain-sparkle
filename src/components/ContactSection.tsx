@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 export const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -12,15 +13,25 @@ export const ContactSection = () => {
     message: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Create mailto link
-    const mailtoLink = `mailto:contact@domaineunlicornes.com?subject=Demande de contact - ${formData.name}&body=Nom: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0ATéléphone: ${formData.phone}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
+    const { error } = await supabase
+      .from('contact_inquiries')
+      .insert([{
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message
+      }]);
     
-    window.location.href = mailtoLink;
+    if (error) {
+      toast.error("Erreur lors de l'envoi du message. Veuillez réessayer.");
+      console.error('Error submitting inquiry:', error);
+      return;
+    }
     
-    toast.success("Votre demande est en cours d'envoi...");
+    toast.success("Votre message a été envoyé avec succès !");
     
     // Reset form
     setFormData({ name: "", email: "", phone: "", message: "" });
