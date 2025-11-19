@@ -108,14 +108,14 @@ export default function KittenDetail() {
           onClick={() => {
             navigate('/');
             setTimeout(() => {
-              document.getElementById('licornes')?.scrollIntoView({ behavior: 'smooth' });
+              document.getElementById('chatons')?.scrollIntoView({ behavior: 'smooth' });
             }, 100);
           }}
           variant="outline"
           className="mb-8 border-gold text-gold hover:bg-gold/10"
         >
           <ArrowLeft className="mr-2 h-4 w-4" />
-          Retour à Nos Licornes
+          Retour à Nos Chatons
         </Button>
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">

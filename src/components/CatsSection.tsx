@@ -125,9 +125,10 @@ export const CatsSection = () => {
         </div>
 
         {/* Kittens Section */}
-        <h3 className="text-3xl font-serif text-gold medieval-glow text-center mb-8">
-          Nos Chatons
-        </h3>
+        <div id="chatons">
+          <h3 className="text-3xl font-serif text-gold medieval-glow text-center mb-8">
+            Nos Chatons
+          </h3>
         <p className="text-center text-ivory/80 mb-8 italic">
           De futures licornes prêtes à enchanter votre foyer
         </p>
@@ -162,6 +163,7 @@ export const CatsSection = () => {
             </CardContent>
           </Card>
         )}
+        </div>
         
       </div>
     </section>
