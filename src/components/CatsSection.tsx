@@ -1,4 +1,4 @@
-import alohaAdult from "@/assets/aloha-adult.jpg";
+import alohaProfil from "@/assets/aloha-profil.jpg";
 import utahAdult from "@/assets/utah-adult.jpg";
 import kittens from "@/assets/kittens.jpg";
 import tapestryTaste from "@/assets/tapestry-taste.jpg";
@@ -9,7 +9,7 @@ export const CatsSection = () => {
   const cats = [
     {
       name: "Aloha",
-      image: alohaAdult,
+      image: alohaProfil,
       description: "Notre magnifique Ragdoll, douce et élégante comme une licorne",
       slug: "aloha"
     },
