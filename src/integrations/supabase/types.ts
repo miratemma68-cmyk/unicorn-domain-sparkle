@@ -323,7 +323,7 @@ export type Database = {
       }
       kittens: {
         Row: {
-          birth_date: string
+          birth_date: string | null
           breed_info: string | null
           color: string | null
           created_at: string
@@ -336,7 +336,7 @@ export type Database = {
           updated_at: string
         }
         Insert: {
-          birth_date: string
+          birth_date?: string | null
           breed_info?: string | null
           color?: string | null
           created_at?: string
@@ -349,7 +349,7 @@ export type Database = {
           updated_at?: string
         }
         Update: {
-          birth_date?: string
+          birth_date?: string | null
           breed_info?: string | null
           color?: string | null
           created_at?: string
