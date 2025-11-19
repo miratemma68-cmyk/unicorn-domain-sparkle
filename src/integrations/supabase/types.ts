@@ -14,6 +14,86 @@ export type Database = {
   }
   public: {
     Tables: {
+      breeding_cat_gallery: {
+        Row: {
+          caption: string | null
+          cat_id: string
+          created_at: string
+          display_order: number | null
+          id: string
+          image_url: string
+        }
+        Insert: {
+          caption?: string | null
+          cat_id: string
+          created_at?: string
+          display_order?: number | null
+          id?: string
+          image_url: string
+        }
+        Update: {
+          caption?: string | null
+          cat_id?: string
+          created_at?: string
+          display_order?: number | null
+          id?: string
+          image_url?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "breeding_cat_gallery_cat_id_fkey"
+            columns: ["cat_id"]
+            isOneToOne: false
+            referencedRelation: "breeding_cats"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      breeding_cats: {
+        Row: {
+          birth_date: string
+          color: string | null
+          created_at: string
+          gender: string
+          id: string
+          microchip_number: string | null
+          name: string
+          pedigree: string | null
+          personality: string | null
+          profile_image_url: string | null
+          registration_number: string | null
+          updated_at: string
+        }
+        Insert: {
+          birth_date: string
+          color?: string | null
+          created_at?: string
+          gender: string
+          id?: string
+          microchip_number?: string | null
+          name: string
+          pedigree?: string | null
+          personality?: string | null
+          profile_image_url?: string | null
+          registration_number?: string | null
+          updated_at?: string
+        }
+        Update: {
+          birth_date?: string
+          color?: string | null
+          created_at?: string
+          gender?: string
+          id?: string
+          microchip_number?: string | null
+          name?: string
+          pedigree?: string | null
+          personality?: string | null
+          profile_image_url?: string | null
+          registration_number?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       client_kittens: {
         Row: {
           adoption_date: string | null
