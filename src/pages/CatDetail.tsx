@@ -42,7 +42,7 @@ export default function CatDetail() {
       const { data: catData, error: catError } = await supabase
         .from('breeding_cats')
         .select('*')
-        .eq('id', id)
+        .ilike('name', id || '')
         .single();
 
       if (catError) throw catError;
@@ -51,7 +51,7 @@ export default function CatDetail() {
       const { data: galleryData, error: galleryError } = await supabase
         .from('breeding_cat_gallery')
         .select('*')
-        .eq('cat_id', id)
+        .eq('cat_id', catData.id)
         .order('display_order');
 
       if (galleryError) throw galleryError;
