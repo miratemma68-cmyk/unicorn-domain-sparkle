@@ -100,12 +100,12 @@ export default function CatDetail() {
     <div className="min-h-screen bg-gradient-to-br from-midnight via-forest to-midnight">
       <div className="container mx-auto px-4 py-8">
         <Button
-          onClick={() => navigate('/')}
+          onClick={() => navigate('/#licornes')}
           variant="outline"
           className="mb-8 border-gold text-gold hover:bg-gold/10"
         >
           <ArrowLeft className="mr-2 h-4 w-4" />
-          Retour à l'accueil
+          Retour à Nos Licornes
         </Button>
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
