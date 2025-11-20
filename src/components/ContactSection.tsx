@@ -7,6 +7,15 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { z } from "zod";
+
+const contactSchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
+  email: z.string().trim().email("Invalid email address").max(255, "Email must be less than 255 characters"),
+  phone: z.string().trim().max(20, "Phone must be less than 20 characters").optional().or(z.literal("")),
+  country: z.string().trim().max(100, "Country must be less than 100 characters").optional().or(z.literal("")),
+  message: z.string().trim().min(1, "Message is required").max(2000, "Message must be less than 2000 characters")
+});
 
 export const ContactSection = () => {
   const { t, language } = useLanguage();
@@ -22,15 +31,29 @@ export const ContactSection = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
+    // Validate form data
+    const validationResult = contactSchema.safeParse(formData);
+    
+    if (!validationResult.success) {
+      const errors = validationResult.error.errors;
+      errors.forEach(error => {
+        toast.error(`${error.path[0]}: ${error.message}`);
+      });
+      return;
+    }
+    
+    // Use validated and sanitized data
+    const validatedData = validationResult.data;
+    
     // Insert into database
     const { error } = await supabase
       .from('contact_inquiries')
       .insert([{
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone || null,
-        country: formData.country || null,
-        message: formData.message
+        name: validatedData.name,
+        email: validatedData.email,
+        phone: validatedData.phone || null,
+        country: validatedData.country || null,
+        message: validatedData.message
       }]);
     
     if (error) {
@@ -43,11 +66,11 @@ export const ContactSection = () => {
     try {
       const { error: emailError } = await supabase.functions.invoke('send-contact-email', {
         body: {
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          country: formData.country,
-          message: formData.message,
+          name: validatedData.name,
+          email: validatedData.email,
+          phone: validatedData.phone,
+          country: validatedData.country,
+          message: validatedData.message,
           language: language
         }
       });
