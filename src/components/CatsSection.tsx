@@ -28,57 +28,30 @@ export const CatsSection = () => {
 
   const loadKittens = async () => {
     try {
-      console.log('Loading kittens from public_kittens_view...');
+      console.log('Loading kittens from public-kittens function...');
       setLoading(true);
-      
-      // Get all kittens from the public view (excludes sensitive fields)
-      const { data: kittensData, error: kittensError } = await supabase
-        .from('public_kittens_view')
-        .select('id, name')
-        .order('name');
 
-      if (kittensError) {
-        console.error('Error loading kittens:', kittensError);
-        throw kittensError;
+      const { data, error } = await supabase.functions.invoke('public-kittens');
+
+      if (error) {
+        console.error('Error loading kittens from edge function:', error);
+        throw error;
       }
 
-      console.log('Loaded kittens:', kittensData);
+      const kittensData = (data as any)?.kittens ?? [];
 
-      if (!kittensData || kittensData.length === 0) {
-        console.log('No kittens found');
-        setAvailableKittens([]);
-        setLoading(false);
-        return;
-      }
+      console.log('Loaded kittens from function:', kittensData);
 
-      // For each kitten, get their first photo
-      const kittensWithPhotos = await Promise.all(
-        kittensData.map(async (kitten: Kitten) => {
-          const { data: mediaData, error: mediaError } = await supabase
-            .from('kitten_media')
-            .select('file_url')
-            .eq('kitten_id', kitten.id)
-            .eq('media_type', 'photo')
-            .order('created_at', { ascending: true })
-            .limit(1);
-
-          if (mediaError) {
-            console.error('Error loading media for kitten:', kitten.id, mediaError);
-          }
-
-          const imageUrl = mediaData?.[0]?.file_url || kittens;
-          console.log(`Kitten ${kitten.name} (${kitten.id}): ${mediaData?.length || 0} photos, using: ${imageUrl}`);
-
-          return {
-            id: kitten.id,
-            name: kitten.name,
-            image: imageUrl,
-          };
+      const normalizedKittens = (kittensData as Array<{ id: string; name: string; image: string | null }>).map(
+        (kitten) => ({
+          id: kitten.id,
+          name: kitten.name,
+          image: kitten.image || kittens,
         })
       );
 
-      console.log('Final kittens with photos:', kittensWithPhotos);
-      setAvailableKittens(kittensWithPhotos);
+      console.log('Final kittens with photos:', normalizedKittens);
+      setAvailableKittens(normalizedKittens);
     } catch (error) {
       console.error('Error in loadKittens:', error);
       setAvailableKittens([]);
