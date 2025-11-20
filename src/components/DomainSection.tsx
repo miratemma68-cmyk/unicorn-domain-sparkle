@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import tapestryTouch from "@/assets/tapestry-touch.jpg";
 import laurenceProfile from "@/assets/laurence-profile.jpg";
 import { supabase } from "@/integrations/supabase/client";
-import { User, Image as ImageIcon, ArrowLeft } from "lucide-react";
-import { Link } from "react-router-dom";
+import { User, Image as ImageIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -59,16 +58,6 @@ export const DomainSection = () => {
       </div>
       
       <div className="container mx-auto max-w-6xl relative z-10">
-        <Link to="/">
-          <Button
-            variant="outline"
-            className="mb-8 border-gold text-gold hover:bg-gold/10 rounded-full"
-          >
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            {t('nav.domain')}
-          </Button>
-        </Link>
-        
         <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-12">
           {t('domain.title')}
         </h2>

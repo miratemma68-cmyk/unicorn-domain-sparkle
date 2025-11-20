@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import tapestrySmell from "@/assets/tapestry-smell.jpg";
 import { supabase } from "@/integrations/supabase/client";
-import { GraduationCap, ArrowLeft } from "lucide-react";
-import { Link } from "react-router-dom";
+import { GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -46,16 +45,6 @@ export const EducationSection = () => {
   return (
     <section id="education" className="py-20 px-4 relative">
       <div className="container mx-auto max-w-6xl relative z-10">
-        <Link to="/">
-          <Button
-            variant="outline"
-            className="mb-8 border-gold text-gold hover:bg-gold/10 rounded-full"
-          >
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            {t('nav.domain')}
-          </Button>
-        </Link>
-        
         <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-12">
           {t('education.title')}
         </h2>

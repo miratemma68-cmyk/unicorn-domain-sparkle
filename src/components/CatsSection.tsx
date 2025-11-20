@@ -4,8 +4,6 @@ import utahAdult from "@/assets/utah-adult.jpg";
 import kittens from "@/assets/kittens.jpg";
 import tapestryTaste from "@/assets/tapestry-taste.jpg";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -96,16 +94,6 @@ export const CatsSection = () => {
       </div>
       
       <div className="container mx-auto max-w-7xl relative z-10">
-        <Link to="/">
-          <Button
-            variant="outline"
-            className="mb-8 border-gold text-gold hover:bg-gold/10 rounded-full"
-          >
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            {t('nav.domain')}
-          </Button>
-        </Link>
-        
         <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-4">
           {t('cats.title')}
         </h2>
