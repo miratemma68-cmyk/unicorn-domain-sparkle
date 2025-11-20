@@ -50,7 +50,7 @@ export const DomainSection = () => {
         </h2>
 
         {/* Introduction Section */}
-        <div className="tapestry-border bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12 mb-12">
+        <div className="tapestry-border bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-6 text-ivory/90">
               <p className="text-lg leading-relaxed">
@@ -85,6 +85,30 @@ export const DomainSection = () => {
                   </li>
                 </ul>
               </div>
+
+              {/* Navigation Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 mt-8">
+                <a 
+                  href="#laurence"
+                  className="flex-1 bg-gold/10 hover:bg-gold/20 border-2 border-gold text-gold px-6 py-3 rounded-full text-center transition-all duration-300 hover:scale-105 font-display"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('laurence')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  Découvrir Laurence
+                </a>
+                <a 
+                  href="#galerie-domaine"
+                  className="flex-1 bg-gold/10 hover:bg-gold/20 border-2 border-gold text-gold px-6 py-3 rounded-full text-center transition-all duration-300 hover:scale-105 font-display"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('galerie-domaine')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  Voir la Galerie
+                </a>
+              </div>
             </div>
             
             <div className="relative">
@@ -98,7 +122,7 @@ export const DomainSection = () => {
         </div>
 
         {/* Laurence notre éleveuse */}
-        <div className="tapestry-border bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12 mb-12">
+        <div id="laurence" className="tapestry-border bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12 mt-12">
           <h3 className="text-3xl font-display text-gold medieval-glow text-center mb-8">
             Laurence, notre éleveuse
           </h3>
@@ -131,6 +155,56 @@ export const DomainSection = () => {
             </div>
           </div>
         </div>
+
+        {/* Galerie */}
+        <div id="galerie-domaine" className="tapestry-border bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12 mt-12">
+          <h3 className="text-3xl font-display text-gold medieval-glow text-center mb-8">
+            Galerie
+          </h3>
+          
+          {galleryMedia.length > 0 ? (
+            <div className="grid md:grid-cols-3 gap-6">
+              {galleryMedia.map((item) => (
+                <div 
+                  key={item.id}
+                  className="aspect-square rounded-[2rem] overflow-hidden tapestry-border bg-midnight/30 group hover:scale-105 transition-transform duration-300"
+                >
+                  {item.media_type === 'video' ? (
+                    <video
+                      src={item.file_url}
+                      className="w-full h-full object-cover"
+                      controls
+                    />
+                  ) : (
+                    <img 
+                      src={item.file_url}
+                      alt={item.caption || "Photo du domaine"}
+                      className="w-full h-full object-cover"
+                    />
+                  )}
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="grid md:grid-cols-3 gap-6">
+              {[1, 2, 3, 4, 5, 6].map((item) => (
+                <div 
+                  key={item}
+                  className="aspect-square rounded-[2rem] overflow-hidden tapestry-border bg-midnight/30 flex items-center justify-center group hover:scale-105 transition-transform duration-300"
+                >
+                  <span className="text-gold/30 text-4xl group-hover:text-gold/50 transition-colors">✦</span>
+                </div>
+              ))}
+            </div>
+          )}
+          
+          {galleryMedia.length === 0 && (
+            <p className="text-center text-ivory/60 mt-8 italic">
+              Photos et vidéos à venir...
+            </p>
+          )}
+        </div>
+      </div>
 
         {/* Galerie */}
         <div className="tapestry-border bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12">
