@@ -43,6 +43,16 @@ export const LanguageSwitcher = () => {
         >
           🇬🇧 English
         </DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() => setLanguage('es')}
+          className={`cursor-pointer ${
+            language === 'es' 
+              ? 'bg-gold/20 text-gold' 
+              : 'text-ivory/80 hover:bg-gold/10 hover:text-gold'
+          }`}
+        >
+          🇪🇸 Español
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );
