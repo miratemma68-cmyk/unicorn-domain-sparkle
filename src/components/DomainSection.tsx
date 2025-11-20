@@ -3,6 +3,7 @@ import tapestryTouch from "@/assets/tapestry-touch.jpg";
 import laurenceProfile from "@/assets/laurence-profile.jpg";
 import { supabase } from "@/integrations/supabase/client";
 import { User, Image as ImageIcon } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface DomainMedia {
   id: string;
@@ -90,28 +91,38 @@ export const DomainSection = () => {
 
               {/* Navigation Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                <a 
-                  href="#laurence"
-                  className="inline-flex items-center justify-center gap-2 bg-crimson hover:bg-crimson-dark text-ivory border-2 border-gold transition-all duration-300 hover:shadow-[0_0_30px_rgba(218,165,32,0.5)] rounded-full hover:scale-105 font-display text-lg px-8 py-4"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById('laurence')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }}
+                <Button 
+                  asChild
+                  className="bg-crimson hover:bg-crimson-dark text-ivory border-2 border-gold"
                 >
-                  <User className="w-5 h-5" />
-                  Découvrir Laurence
-                </a>
-                <a 
-                  href="#galerie-domaine"
-                  className="inline-flex items-center justify-center gap-2 border-2 border-gold text-gold hover:bg-gold/10 hover:text-gold-light transition-all duration-300 rounded-full hover:scale-105 font-display px-8 py-4"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById('galerie-domaine')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }}
+                  <a
+                    href="#laurence"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.getElementById('laurence')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
+                  >
+                    <User className="w-4 h-4" />
+                    Découvrir Laurence
+                  </a>
+                </Button>
+                
+                <Button 
+                  asChild
+                  variant="outline"
+                  className="border-2 border-gold text-gold hover:bg-gold/10"
                 >
-                  <ImageIcon className="w-5 h-5" />
-                  Voir la Galerie
-                </a>
+                  <a
+                    href="#galerie-domaine"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.getElementById('galerie-domaine')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
+                  >
+                    <ImageIcon className="w-4 h-4" />
+                    Voir la Galerie
+                  </a>
+                </Button>
               </div>
             </div>
             
