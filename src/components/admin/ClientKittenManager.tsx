@@ -83,12 +83,13 @@ export const ClientKittenManager = () => {
           kitten_id,
           adoption_date,
           created_at,
-          profiles:client_id (id, email, full_name),
-          kittens:kitten_id (id, name)
+          profiles!client_kittens_client_id_fkey (id, email, full_name),
+          kittens!client_kittens_kitten_id_fkey (id, name)
         `)
         .order("created_at", { ascending: false });
 
       if (assignmentsError) throw assignmentsError;
+      console.log("Assignments loaded:", assignmentsData);
       setAssignments(assignmentsData as unknown as ClientKitten[] || []);
     } catch (error) {
       console.error("Error loading data:", error);
