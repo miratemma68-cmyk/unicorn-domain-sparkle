@@ -4,10 +4,11 @@ import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { ArrowLeft, Upload, Image, Cat } from 'lucide-react';
+import { ArrowLeft, Upload, Image, Cat, Languages } from 'lucide-react';
 import { MediaUpload } from '@/components/admin/MediaUpload';
 import { MediaGallery } from '@/components/admin/MediaGallery';
 import { BreedingCatMediaManager } from '@/components/admin/BreedingCatMediaManager';
+import { BreedingCatTranslationManager } from '@/components/admin/BreedingCatTranslationManager';
 import { DomainGalleryManager } from '@/components/admin/DomainGalleryManager';
 import { EducationMediaManager } from '@/components/admin/EducationMediaManager';
 import { TestimonialsMediaManager } from '@/components/admin/TestimonialsMediaManager';
@@ -51,10 +52,14 @@ export default function Admin() {
 
       <main className="container mx-auto px-4 py-8">
         <Tabs defaultValue="reproducteurs" className="w-full">
-          <TabsList className="mb-6">
+          <TabsList className="mb-6 flex-wrap">
             <TabsTrigger value="reproducteurs">
               <Cat className="mr-2 h-4 w-4" />
               Reproducteurs
+            </TabsTrigger>
+            <TabsTrigger value="translations">
+              <Languages className="mr-2 h-4 w-4" />
+              Traductions
             </TabsTrigger>
             <TabsTrigger value="media">
               <Upload className="mr-2 h-4 w-4" />
@@ -80,6 +85,10 @@ export default function Admin() {
 
           <TabsContent value="reproducteurs" className="space-y-6">
             <BreedingCatMediaManager />
+          </TabsContent>
+
+          <TabsContent value="translations" className="space-y-6">
+            <BreedingCatTranslationManager />
           </TabsContent>
 
           <TabsContent value="media" className="space-y-6">
