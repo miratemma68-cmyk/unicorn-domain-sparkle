@@ -212,7 +212,7 @@ export default function Dashboard() {
                         </div>
                       )}
                       <Button className="w-full mt-4 bg-crimson hover:bg-crimson-dark text-ivory border border-gold">
-                        {t('kittenDetail.viewDetails')}
+                        View Details
                       </Button>
                     </CardContent>
                   </Card>
