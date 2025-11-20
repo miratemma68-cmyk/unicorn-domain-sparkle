@@ -138,25 +138,21 @@ export const DomainSection = () => {
         {/* Laurence notre éleveuse */}
         <div id="laurence" className="tapestry-border bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12 mt-12">
           <h3 className="text-3xl font-display text-gold medieval-glow text-center mb-8">
-            Laurence, notre éleveuse
+            {t('domain.laurenceTitle')}
           </h3>
           
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-6 text-ivory/90">
               <p className="text-lg leading-relaxed">
-                Passionnée par les Ragdolls depuis plus de 10 ans, Laurence a fondé Le Domaine des Licornes 
-                avec la vision de créer un élevage familial où chaque chat est traité comme un membre de la famille.
+                {t('domain.laurenceP1')}
               </p>
               
               <p className="text-lg leading-relaxed">
-                Son expertise et son dévouement garantissent que chaque chaton bénéficie d'une socialisation 
-                optimale et d'un environnement stimulant dès ses premiers jours. Elle accompagne personnellement 
-                chaque famille adoptante pour assurer une transition harmonieuse.
+                {t('domain.laurenceP2')}
               </p>
               
               <p className="text-lg leading-relaxed italic text-gold/80">
-                "Chaque Ragdoll est unique et mérite une attention particulière. Mon objectif est de faire 
-                correspondre chaque chaton avec la famille parfaite pour lui."
+                "{t('domain.laurenceQuote')}"
               </p>
             </div>
             
@@ -173,7 +169,7 @@ export const DomainSection = () => {
         {/* Galerie */}
         <div id="galerie-domaine" className="tapestry-border bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12 mt-12">
           <h3 className="text-3xl font-display text-gold medieval-glow text-center mb-8">
-            Galerie
+            {t('domain.galleryTitle')}
           </h3>
           
           {galleryMedia.length > 0 ? (
@@ -214,7 +210,7 @@ export const DomainSection = () => {
           
           {galleryMedia.length === 0 && (
             <p className="text-center text-ivory/60 mt-8 italic">
-              Photos et vidéos à venir...
+              {t('domain.galleryEmpty')}
             </p>
           )}
         </div>
