@@ -92,7 +92,7 @@ export const DomainSection = () => {
               <div className="flex flex-col sm:flex-row gap-4 mt-8">
                 <a 
                   href="#laurence"
-                  className="flex-1 inline-flex items-center justify-center gap-2 bg-gold/10 hover:bg-gold/20 border-2 border-gold text-gold px-6 py-3 rounded-full text-center transition-all duration-300 hover:scale-105 font-display"
+                  className="inline-flex items-center justify-center gap-2 bg-crimson hover:bg-crimson-dark text-ivory border-2 border-gold transition-all duration-300 hover:shadow-[0_0_30px_rgba(218,165,32,0.5)] rounded-full hover:scale-105 font-display text-lg px-8 py-4"
                   onClick={(e) => {
                     e.preventDefault();
                     document.getElementById('laurence')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -103,7 +103,7 @@ export const DomainSection = () => {
                 </a>
                 <a 
                   href="#galerie-domaine"
-                  className="flex-1 inline-flex items-center justify-center gap-2 bg-gold/10 hover:bg-gold/20 border-2 border-gold text-gold px-6 py-3 rounded-full text-center transition-all duration-300 hover:scale-105 font-display"
+                  className="inline-flex items-center justify-center gap-2 border-2 border-gold text-gold hover:bg-gold/10 hover:text-gold-light transition-all duration-300 rounded-full hover:scale-105 font-display px-8 py-4"
                   onClick={(e) => {
                     e.preventDefault();
                     document.getElementById('galerie-domaine')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
