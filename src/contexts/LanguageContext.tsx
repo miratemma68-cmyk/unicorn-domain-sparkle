@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
-type Language = 'fr' | 'en';
+type Language = 'fr' | 'en' | 'es';
 
 interface LanguageContextType {
   language: Language;
@@ -13,7 +13,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguageState] = useState<Language>(() => {
     const saved = localStorage.getItem('language');
-    return (saved === 'en' || saved === 'fr') ? saved : 'fr';
+    return (saved === 'en' || saved === 'fr' || saved === 'es') ? saved : 'fr';
   });
 
   useEffect(() => {
@@ -215,6 +215,89 @@ const translations = {
       sending: "Sending...",
       success: "Message sent successfully!",
       error: "Error sending message"
+    }
+  },
+  es: {
+    nav: {
+      domain: "El Dominio",
+      cats: "Nuestros Unicornios",
+      education: "Educación",
+      adoption: "Adopción",
+      faq: "FAQ",
+      contact: "Contacto",
+      dashboard: "Panel",
+      administration: "Administración",
+      clientSpace: "Área Cliente"
+    },
+    hero: {
+      title: "Le Domaine des Licornes",
+      subtitle: "Criador Premium de Ragdolls",
+      tagline: "Donde la elegancia medieval se encuentra con la gracia felina",
+      discoverCats: "Descubre Nuestros Unicornios",
+      contactUs: "Contáctenos"
+    },
+    domain: {
+      title: "El Dominio",
+      intro1: "Bienvenido a nuestro criadero familiar, donde cada Ragdoll se cría con amor, respeto y según los más altos estándares éticos.",
+      intro2: "Inspirados por la nobleza de los unicornios de los tapices medievales, hemos creado un refugio de paz donde nuestros gatos prosperan en un entorno privilegiado, rodeados de atención y cuidados constantes.",
+      values: "Nuestros Valores",
+      value1: "Ética y bienestar animal en el corazón de nuestras prácticas",
+      value2: "Crianza familiar en un entorno excepcional",
+      value3: "Pre-educación cuidadosa de cada gatito",
+      value4: "Acompañamiento personalizado para los adoptantes",
+      discoverLaurence: "Descubrir a Laurence",
+      viewGallery: "Ver Galería"
+    },
+    cats: {
+      title: "Nuestros Unicornios",
+      breeding: "Nuestros Reproductores",
+      kittens: "Nuestros Gatitos",
+      available: "Disponible",
+      noKittens: "No hay gatitos disponibles en este momento",
+      viewProfile: "Ver perfil"
+    },
+    education: {
+      title: "Educación",
+      intro: "Nuestros gatitos se benefician de una pre-educación exclusiva que garantiza su desarrollo y sociabilidad excepcional.",
+      method: "Nuestro Método",
+      method1: "Socialización temprana con humanos y otros animales",
+      method2: "Estimulación cognitiva adaptada a cada etapa",
+      method3: "Aprendizaje de limpieza y buenos hábitos",
+      method4: "Seguimiento veterinario riguroso y vacunaciones completas",
+      method5: "Documentación detallada de su evolución",
+      conclusion: "Cada gatito es tratado como un pequeño unicornio precioso, recibiendo toda la atención necesaria para convertirse en un compañero equilibrado.",
+      viewMethod: "Nuestro método en imágenes"
+    },
+    adoption: {
+      title: "Adopción",
+      intro: "Adoptar un Ragdoll de Le Domaine des Licornes significa dar la bienvenida a un compañero excepcional en tu vida. Te acompañamos en cada paso de este maravilloso viaje.",
+      step1Title: "Primer Contacto",
+      step1Desc: "Completa nuestro formulario para expresar tu interés",
+      step2Title: "Reunión",
+      step2Desc: "Visita nuestro criadero y conoce a nuestros unicornios",
+      step3Title: "Adopción",
+      step3Desc: "Da la bienvenida a tu compañero con seguimiento personalizado",
+      whatYouGet: "Lo que recibes",
+      benefit1: "Certificado de salud completo",
+      benefit2: "Registro de vacunación actualizado",
+      benefit3: "Pedigrí LOOF certificado",
+      benefit4: "Kit de inicio personalizado",
+      benefit5: "Guía de educación detallada",
+      benefit6: "Seguimiento post-adopción de por vida",
+      startAdoption: "Comienza tu adopción",
+      clientTestimonials: "Nuestros clientes cuentan"
+    },
+    contact: {
+      title: "Contacto",
+      intro: "¿Tienes preguntas o te gustaría conocer a nuestros unicornios? Estamos aquí para apoyarte en tu proyecto de adopción.",
+      name: "Nombre",
+      email: "Email",
+      phone: "Teléfono",
+      message: "Mensaje",
+      send: "Enviar",
+      sending: "Enviando...",
+      success: "¡Mensaje enviado con éxito!",
+      error: "Error al enviar el mensaje"
     }
   }
 };
