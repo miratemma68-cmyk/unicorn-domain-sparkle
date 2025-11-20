@@ -41,7 +41,7 @@ export const Navigation = () => {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-ivory/80 hover:text-gold transition-colors duration-300 font-serif"
+                className="text-ivory/80 hover:text-gold transition-colors duration-300 font-sans text-sm"
               >
                 {item.label}
               </a>
@@ -52,7 +52,7 @@ export const Navigation = () => {
                   <Button
                     onClick={() => navigate('/dashboard')}
                     variant="outline"
-                    className="border-gold text-gold hover:bg-gold/10"
+                    className="border-gold text-gold hover:bg-gold/10 rounded-full"
                   >
                     <User className="mr-2 h-4 w-4" />
                     Dashboard
@@ -60,7 +60,7 @@ export const Navigation = () => {
                   {isAdmin && (
                     <Button
                       onClick={() => navigate('/admin')}
-                      className="bg-crimson hover:bg-crimson-dark text-ivory border border-gold"
+                      className="bg-crimson hover:bg-crimson-dark text-ivory border border-gold rounded-full"
                     >
                       <Shield className="mr-2 h-4 w-4" />
                       Administration
@@ -70,7 +70,7 @@ export const Navigation = () => {
               ) : (
                 <Button
                   onClick={() => navigate('/auth')}
-                  className="bg-crimson hover:bg-crimson-dark text-ivory border border-gold"
+                  className="bg-crimson hover:bg-crimson-dark text-ivory border border-gold rounded-full"
                 >
                   <User className="mr-2 h-4 w-4" />
                   Espace Client

@@ -16,8 +16,8 @@ export const DomainSection = () => {
       </div>
       
       <div className="container mx-auto max-w-6xl relative z-10">
-        <div className="tapestry-border bg-card/80 backdrop-blur-sm rounded-lg p-8 md:p-12">
-          <h2 className="text-4xl md:text-5xl font-serif text-gold medieval-glow text-center mb-8">
+        <div className="tapestry-border bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12">
+          <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-8">
             Le Domaine
           </h2>
           
@@ -35,7 +35,7 @@ export const DomainSection = () => {
               </p>
               
               <div className="space-y-4 mt-8">
-                <h3 className="text-2xl font-serif text-gold">Nos Valeurs</h3>
+                <h3 className="text-2xl font-display text-gold">Nos Valeurs</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <span className="text-gold text-2xl">✦</span>
@@ -61,7 +61,7 @@ export const DomainSection = () => {
               <img 
                 src={tapestryTouch} 
                 alt="La Dame à la Licorne - Le Toucher" 
-                className="w-full rounded-lg tapestry-border shadow-2xl"
+                className="w-full rounded-[3rem] tapestry-border shadow-2xl"
               />
             </div>
           </div>
