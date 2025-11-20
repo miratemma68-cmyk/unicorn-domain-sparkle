@@ -1,7 +1,35 @@
+import { useEffect, useState } from "react";
 import tapestryTouch from "@/assets/tapestry-touch.jpg";
 import laurenceProfile from "@/assets/laurence-profile.jpg";
+import { supabase } from "@/integrations/supabase/client";
+
+interface DomainMedia {
+  id: string;
+  media_type: string;
+  file_url: string;
+  caption: string | null;
+}
 
 export const DomainSection = () => {
+  const [galleryMedia, setGalleryMedia] = useState<DomainMedia[]>([]);
+
+  useEffect(() => {
+    loadGalleryMedia();
+  }, []);
+
+  const loadGalleryMedia = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('domain_gallery')
+        .select('id, media_type, file_url, caption')
+        .order('display_order', { ascending: true });
+
+      if (error) throw error;
+      setGalleryMedia(data || []);
+    } catch (error) {
+      console.error('Error loading gallery media:', error);
+    }
+  };
   return (
     <section id="domaine" className="py-20 px-4 relative">
       <div className="absolute inset-0 opacity-5">
@@ -110,21 +138,47 @@ export const DomainSection = () => {
             Galerie
           </h3>
           
-          <div className="grid md:grid-cols-3 gap-6">
-            {/* Placeholder pour photos/vidéos */}
-            {[1, 2, 3, 4, 5, 6].map((item) => (
-              <div 
-                key={item}
-                className="aspect-square rounded-[2rem] overflow-hidden tapestry-border bg-midnight/30 flex items-center justify-center group hover:scale-105 transition-transform duration-300"
-              >
-                <span className="text-gold/30 text-4xl group-hover:text-gold/50 transition-colors">✦</span>
-              </div>
-            ))}
-          </div>
+          {galleryMedia.length > 0 ? (
+            <div className="grid md:grid-cols-3 gap-6">
+              {galleryMedia.map((item) => (
+                <div 
+                  key={item.id}
+                  className="aspect-square rounded-[2rem] overflow-hidden tapestry-border bg-midnight/30 group hover:scale-105 transition-transform duration-300"
+                >
+                  {item.media_type === 'video' ? (
+                    <video
+                      src={item.file_url}
+                      className="w-full h-full object-cover"
+                      controls
+                    />
+                  ) : (
+                    <img 
+                      src={item.file_url}
+                      alt={item.caption || "Photo du domaine"}
+                      className="w-full h-full object-cover"
+                    />
+                  )}
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="grid md:grid-cols-3 gap-6">
+              {[1, 2, 3, 4, 5, 6].map((item) => (
+                <div 
+                  key={item}
+                  className="aspect-square rounded-[2rem] overflow-hidden tapestry-border bg-midnight/30 flex items-center justify-center group hover:scale-105 transition-transform duration-300"
+                >
+                  <span className="text-gold/30 text-4xl group-hover:text-gold/50 transition-colors">✦</span>
+                </div>
+              ))}
+            </div>
+          )}
           
-          <p className="text-center text-ivory/60 mt-8 italic">
-            Photos et vidéos à venir...
-          </p>
+          {galleryMedia.length === 0 && (
+            <p className="text-center text-ivory/60 mt-8 italic">
+              Photos et vidéos à venir...
+            </p>
+          )}
         </div>
       </div>
     </section>

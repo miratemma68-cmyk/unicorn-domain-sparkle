@@ -8,6 +8,7 @@ import { ArrowLeft, Upload, Image, Cat } from 'lucide-react';
 import { MediaUpload } from '@/components/admin/MediaUpload';
 import { MediaGallery } from '@/components/admin/MediaGallery';
 import { BreedingCatMediaManager } from '@/components/admin/BreedingCatMediaManager';
+import { DomainGalleryManager } from '@/components/admin/DomainGalleryManager';
 
 export default function Admin() {
   const navigate = useNavigate();
@@ -56,6 +57,10 @@ export default function Admin() {
               <Upload className="mr-2 h-4 w-4" />
               Chatons
             </TabsTrigger>
+            <TabsTrigger value="domain">
+              <Image className="mr-2 h-4 w-4" />
+              Galerie Domaine
+            </TabsTrigger>
             <TabsTrigger value="management">
               <Image className="mr-2 h-4 w-4" />
               Gestion
@@ -69,6 +74,10 @@ export default function Admin() {
           <TabsContent value="media" className="space-y-6">
             <MediaUpload />
             <MediaGallery />
+          </TabsContent>
+
+          <TabsContent value="domain" className="space-y-6">
+            <DomainGalleryManager />
           </TabsContent>
 
           <TabsContent value="management">
