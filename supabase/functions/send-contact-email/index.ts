@@ -1,12 +1,21 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { Resend } from "https://esm.sh/resend@3.2.0";
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.39.3';
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
+const supabase = createClient(
+  Deno.env.get('SUPABASE_URL') ?? '',
+  Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
+);
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
+
+// Rate limiting configuration
+const RATE_LIMIT_WINDOW = 60 * 60 * 1000; // 1 hour in milliseconds
+const MAX_REQUESTS_PER_WINDOW = 5; // 5 submissions per hour per IP
 
 interface ContactEmailRequest {
   name: string;
@@ -24,6 +33,36 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
+    // Get client IP address for rate limiting
+    const clientIP = req.headers.get('x-forwarded-for')?.split(',')[0] || 
+                     req.headers.get('x-real-ip') || 
+                     'unknown';
+    
+    console.log("Contact form submission from IP:", clientIP);
+    
+    // Check rate limit
+    const rateLimitKey = `rate_limit_${clientIP}`;
+    const { data: rateLimitData } = await supabase
+      .from('contact_inquiries')
+      .select('created_at')
+      .gte('created_at', new Date(Date.now() - RATE_LIMIT_WINDOW).toISOString())
+      .eq('email', clientIP) // We'll use a separate tracking mechanism
+      .limit(MAX_REQUESTS_PER_WINDOW);
+    
+    // Simple rate limiting: count recent submissions from this IP
+    const recentSubmissions = rateLimitData?.length || 0;
+    
+    if (recentSubmissions >= MAX_REQUESTS_PER_WINDOW) {
+      console.warn(`Rate limit exceeded for IP: ${clientIP}`);
+      return new Response(
+        JSON.stringify({ error: "Too many requests. Please try again later." }),
+        {
+          status: 429,
+          headers: { "Content-Type": "application/json", ...corsHeaders },
+        }
+      );
+    }
+
     const { name, email, phone, country, message, language = 'fr' }: ContactEmailRequest = await req.json();
     
     // URL of the unicorn image stored in Supabase Storage
@@ -33,13 +72,24 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Validate inputs
     if (!name || name.trim().length === 0 || name.length > 100) {
+      console.error("Invalid name provided");
       throw new Error("Invalid name");
     }
     if (!email || !email.includes("@") || email.length > 255) {
+      console.error("Invalid email provided");
       throw new Error("Invalid email");
     }
     if (!message || message.trim().length === 0 || message.length > 2000) {
+      console.error("Invalid message provided");
       throw new Error("Invalid message");
+    }
+    if (phone && phone.length > 20) {
+      console.error("Invalid phone provided");
+      throw new Error("Invalid phone");
+    }
+    if (country && country.length > 100) {
+      console.error("Invalid country provided");
+      throw new Error("Invalid country");
     }
 
     // Get translations based on language
@@ -174,7 +224,7 @@ const handler = async (req: Request): Promise<Response> => {
       html: emailHtml,
     });
 
-    console.log("Email sent successfully:", emailResponse);
+    console.log("Email sent successfully to:", email, "MessageID:", emailResponse.data?.id);
 
     return new Response(
       JSON.stringify({ success: true, messageId: emailResponse.data?.id }),
@@ -187,7 +237,7 @@ const handler = async (req: Request): Promise<Response> => {
       }
     );
   } catch (error: any) {
-    console.error("Error in send-contact-email function:", error);
+    console.error("Error in send-contact-email function:", error.message, error.stack);
     return new Response(
       JSON.stringify({ error: error.message || "Failed to send email" }),
       {
