@@ -413,7 +413,6 @@ export function KittenDataManager() {
                       <SelectValue placeholder="Sélectionner" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="">Non spécifié</SelectItem>
                       <SelectItem value="Mâle">Mâle</SelectItem>
                       <SelectItem value="Femelle">Femelle</SelectItem>
                     </SelectContent>
