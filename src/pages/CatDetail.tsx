@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Calendar, Award, Heart } from 'lucide-react';
 import { Footer } from '@/components/Footer';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface BreedingCat {
   id: string;
@@ -29,6 +30,7 @@ interface GalleryImage {
 
 export default function CatDetail() {
   const { id } = useParams<{ id: string }>();
+  const { t } = useLanguage();
   const [cat, setCat] = useState<BreedingCat | null>(null);
   const [gallery, setGallery] = useState<GalleryImage[]>([]);
   const [loading, setLoading] = useState(true);
@@ -70,15 +72,15 @@ export default function CatDetail() {
     const months = now.getMonth() - birth.getMonth();
     
     if (months < 0 || (months === 0 && now.getDate() < birth.getDate())) {
-      return years - 1 + ' ans';
+      return years - 1 + ' ' + t('catDetail.years');
     }
-    return years + ' ans';
+    return years + ' ' + t('catDetail.years');
   };
 
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-midnight">
-        <p className="text-gold text-xl font-serif">Chargement...</p>
+        <p className="text-gold text-xl font-serif">{t('catDetail.loading')}</p>
       </div>
     );
   }
@@ -87,10 +89,10 @@ export default function CatDetail() {
     return (
       <div className="min-h-screen flex items-center justify-center bg-midnight">
         <div className="text-center">
-          <p className="text-gold text-xl font-serif mb-4">Chat non trouvé</p>
+          <p className="text-gold text-xl font-serif mb-4">{t('catDetail.notFound')}</p>
           <Link to="/#licornes">
             <Button className="bg-crimson hover:bg-crimson-dark text-ivory border border-gold">
-              Retour à Nos Licornes
+              {t('catDetail.backToOurUnicorns')}
             </Button>
           </Link>
         </div>
@@ -107,7 +109,7 @@ export default function CatDetail() {
             className="mb-8 border-gold text-gold hover:bg-gold/10"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Retour à Nos Licornes
+            {t('catDetail.backToOurUnicorns')}
           </Button>
         </Link>
 
@@ -130,7 +132,7 @@ export default function CatDetail() {
                 {cat.name}
               </h1>
               <p className="text-2xl text-ivory/80 font-light">
-                {cat.gender === 'male' ? 'Reproducteur' : 'Reproductrice'} Ragdoll
+                {cat.gender === 'male' ? t('catDetail.breederMale') : t('catDetail.breederFemale')} Ragdoll
               </p>
             </div>
 
@@ -138,31 +140,31 @@ export default function CatDetail() {
               <CardHeader>
                 <CardTitle className="text-gold flex items-center gap-2">
                   <Calendar className="h-5 w-5" />
-                  Informations
+                  {t('catDetail.information')}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3 text-ivory/90">
                 <div>
-                  <span className="font-semibold text-gold">Date de naissance:</span>{' '}
+                  <span className="font-semibold text-gold">{t('catDetail.birthDate')}:</span>{' '}
                   {new Date(cat.birth_date).toLocaleDateString('fr-FR')} ({calculateAge(cat.birth_date)})
                 </div>
                 {cat.color && (
                   <div>
-                    <span className="font-semibold text-gold">Couleur:</span> {cat.color}
+                    <span className="font-semibold text-gold">{t('catDetail.color')}:</span> {cat.color}
                   </div>
                 )}
                 {cat.registration_number && (
                   <div className="flex items-start gap-2">
                     <Award className="h-5 w-5 text-gold mt-0.5 flex-shrink-0" />
                     <div>
-                      <span className="font-semibold text-gold">N° LOOF:</span>{' '}
+                      <span className="font-semibold text-gold">{t('catDetail.loofNumber')}:</span>{' '}
                       {cat.registration_number}
                     </div>
                   </div>
                 )}
                 {cat.microchip_number && (
                   <div>
-                    <span className="font-semibold text-gold">N° Puce:</span> {cat.microchip_number}
+                    <span className="font-semibold text-gold">{t('catDetail.chipNumber')}:</span> {cat.microchip_number}
                   </div>
                 )}
               </CardContent>
@@ -173,7 +175,7 @@ export default function CatDetail() {
                 <CardHeader>
                   <CardTitle className="text-gold flex items-center gap-2">
                     <Heart className="h-5 w-5" />
-                    Caractère
+                    {t('catDetail.personality')}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="text-ivory/90">
@@ -187,7 +189,7 @@ export default function CatDetail() {
                 <CardHeader>
                   <CardTitle className="text-gold flex items-center gap-2">
                     <Award className="h-5 w-5" />
-                    Pedigree
+                    {t('catDetail.pedigree')}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="text-ivory/90">
@@ -201,7 +203,7 @@ export default function CatDetail() {
         {/* Gallery */}
         {gallery.length > 0 && (
           <div className="mb-12">
-            <h2 className="text-3xl font-serif text-gold mb-6 text-center">Galerie</h2>
+            <h2 className="text-3xl font-serif text-gold mb-6 text-center">{t('catDetail.gallery')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {gallery.map((item) => (
                 <div
@@ -215,7 +217,7 @@ export default function CatDetail() {
                       className="w-full aspect-square object-cover bg-midnight"
                       preload="metadata"
                     >
-                      Votre navigateur ne supporte pas la lecture de vidéos.
+                      {t('catDetail.videoNotSupported')}
                     </video>
                   ) : (
                     <img

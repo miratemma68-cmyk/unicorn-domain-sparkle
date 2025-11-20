@@ -106,7 +106,9 @@ const translations = {
       method4: "Suivi vétérinaire rigoureux et vaccinations complètes",
       method5: "Documentation détaillée de leur évolution",
       conclusion: "Chaque chaton est traité comme une petite licorne précieuse, recevant toute l'attention nécessaire pour devenir un compagnon équilibré.",
-      viewMethod: "Notre méthode en images"
+      viewMethod: "Notre méthode en images",
+      methodImagesTitle: "Notre méthode en images",
+      methodEmpty: "Photos et vidéos à venir..."
     },
     adoption: {
       title: "Adoption",
@@ -210,7 +212,26 @@ const translations = {
       method4: "Rigorous veterinary monitoring and complete vaccinations",
       method5: "Detailed documentation of their evolution",
       conclusion: "Each kitten is treated like a precious little unicorn, receiving all the attention necessary to become a balanced companion.",
-      viewMethod: "Our method in images"
+      viewMethod: "Our method in images",
+      methodImagesTitle: "Our method in images",
+      methodEmpty: "Photos and videos coming soon..."
+    },
+    catDetail: {
+      loading: "Loading...",
+      notFound: "Cat not found",
+      backToOurUnicorns: "Back to Our Unicorns",
+      breederMale: "Stud",
+      breederFemale: "Queen",
+      information: "Information",
+      birthDate: "Birth Date",
+      color: "Color",
+      loofNumber: "LOOF No.",
+      chipNumber: "Chip No.",
+      personality: "Personality",
+      pedigree: "Pedigree",
+      gallery: "Gallery",
+      videoNotSupported: "Your browser does not support video playback.",
+      years: "years"
     },
     adoption: {
       title: "Adoption",
@@ -314,7 +335,26 @@ const translations = {
       method4: "Seguimiento veterinario riguroso y vacunaciones completas",
       method5: "Documentación detallada de su evolución",
       conclusion: "Cada gatito es tratado como un pequeño unicornio precioso, recibiendo toda la atención necesaria para convertirse en un compañero equilibrado.",
-      viewMethod: "Nuestro método en imágenes"
+      viewMethod: "Nuestro método en imágenes",
+      methodImagesTitle: "Nuestro método en imágenes",
+      methodEmpty: "Fotos y videos próximamente..."
+    },
+    catDetail: {
+      loading: "Cargando...",
+      notFound: "Gato no encontrado",
+      backToOurUnicorns: "Volver a Nuestros Unicornios",
+      breederMale: "Reproductor",
+      breederFemale: "Reproductora",
+      information: "Información",
+      birthDate: "Fecha de nacimiento",
+      color: "Color",
+      loofNumber: "N° LOOF",
+      chipNumber: "N° Chip",
+      personality: "Personalidad",
+      pedigree: "Pedigrí",
+      gallery: "Galería",
+      videoNotSupported: "Su navegador no admite la reproducción de videos.",
+      years: "años"
     },
     adoption: {
       title: "Adopción",
