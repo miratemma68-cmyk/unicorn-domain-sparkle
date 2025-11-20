@@ -91,7 +91,9 @@ export function MediaUpload() {
       // Create file path: {kitten_id}/{timestamp}_{filename}
       const timestamp = Date.now();
       const fileExt = file.name.split('.').pop();
-      const filePath = `${selectedKitten}/${timestamp}_${file.name}`;
+      // Sanitize filename: remove spaces and special characters
+      const sanitizedName = file.name.replace(/[^a-zA-Z0-9.-]/g, '_');
+      const filePath = `${selectedKitten}/${timestamp}_${sanitizedName}`;
 
       // Upload to storage
       const { error: uploadError } = await supabase.storage

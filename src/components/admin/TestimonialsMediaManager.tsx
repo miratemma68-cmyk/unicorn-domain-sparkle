@@ -61,7 +61,9 @@ export const TestimonialsMediaManager = () => {
 
       for (const file of Array.from(files)) {
         const fileExt = file.name.split('.').pop();
-        const fileName = `${Date.now()}_${file.name}`;
+        // Sanitize filename: remove spaces and special characters
+        const sanitizedName = file.name.replace(/[^a-zA-Z0-9.-]/g, '_');
+        const fileName = `${Date.now()}_${sanitizedName}`;
         const filePath = fileName;
 
         const { error: uploadError } = await supabase.storage
