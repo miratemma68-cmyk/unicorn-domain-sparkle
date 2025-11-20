@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import tapestryHearing from "@/assets/tapestry-hearing.jpg";
 import { supabase } from "@/integrations/supabase/client";
-import { Heart, MessageCircle } from "lucide-react";
+import { Heart, MessageCircle, ArrowLeft } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -56,6 +57,16 @@ export const AdoptionSection = () => {
       </div>
       
       <div className="container mx-auto max-w-6xl relative z-10">
+        <Link to="/">
+          <Button
+            variant="outline"
+            className="mb-8 border-gold text-gold hover:bg-gold/10 rounded-full"
+          >
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            {t('nav.domain')}
+          </Button>
+        </Link>
+        
         <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-12">
           {t('adoption.title')}
         </h2>
