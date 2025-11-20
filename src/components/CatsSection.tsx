@@ -40,18 +40,24 @@ export const CatsSection = () => {
       // For each kitten, get their first photo
       const kittensWithPhotos = await Promise.all(
         (kittensData || []).map(async (kitten: Kitten) => {
-          const { data: mediaData } = await supabase
+          const { data: mediaData, error: mediaError } = await supabase
             .from('kitten_media')
             .select('file_url')
             .eq('kitten_id', kitten.id)
             .eq('media_type', 'photo')
-            .limit(1)
-            .maybeSingle();
+            .order('created_at', { ascending: true })
+            .limit(1);
+
+          if (mediaError) {
+            console.error('Error loading media for kitten:', kitten.id, mediaError);
+          }
+
+          console.log(`Media for ${kitten.name}:`, mediaData);
 
           return {
             id: kitten.id,
             name: kitten.name,
-            image: (mediaData as KittenMedia)?.file_url || kittens,
+            image: mediaData?.[0]?.file_url || kittens,
           };
         })
       );
