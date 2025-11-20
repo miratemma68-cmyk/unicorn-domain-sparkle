@@ -3,11 +3,14 @@ import { Button } from "@/components/ui/button";
 import { User, Shield } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
 export const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
   const { user, isAdmin } = useAuth();
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,12 +21,12 @@ export const Navigation = () => {
   }, []);
 
   const navItems = [
-    { label: "Le Domaine", href: "#domaine" },
-    { label: "Nos Licornes", href: "#licornes" },
-    { label: "Éducation", href: "#education" },
-    { label: "Adoption", href: "#adoption" },
-    { label: "FAQ", href: "#faq" },
-    { label: "Contact", href: "#contact" },
+    { label: t('nav.domain'), href: "#domaine" },
+    { label: t('nav.cats'), href: "#licornes" },
+    { label: t('nav.education'), href: "#education" },
+    { label: t('nav.adoption'), href: "#adoption" },
+    { label: t('nav.faq'), href: "#faq" },
+    { label: t('nav.contact'), href: "#contact" },
   ];
 
   return (
@@ -46,7 +49,8 @@ export const Navigation = () => {
                 {item.label}
               </a>
             ))}
-            <div className="flex gap-2 ml-4">
+            <div className="flex gap-2 ml-4 items-center">
+              <LanguageSwitcher />
               {user ? (
                 <>
                   <Button
@@ -55,7 +59,7 @@ export const Navigation = () => {
                     className="border-gold text-gold hover:bg-gold/10 rounded-full"
                   >
                     <User className="mr-2 h-4 w-4" />
-                    Dashboard
+                    {t('nav.dashboard')}
                   </Button>
                   {isAdmin && (
                     <Button
@@ -63,7 +67,7 @@ export const Navigation = () => {
                       className="bg-crimson hover:bg-crimson-dark text-ivory border border-gold rounded-full"
                     >
                       <Shield className="mr-2 h-4 w-4" />
-                      Administration
+                      {t('nav.administration')}
                     </Button>
                   )}
                 </>
@@ -73,7 +77,7 @@ export const Navigation = () => {
                   className="bg-crimson hover:bg-crimson-dark text-ivory border border-gold rounded-full"
                 >
                   <User className="mr-2 h-4 w-4" />
-                  Espace Client
+                  {t('nav.clientSpace')}
                 </Button>
               )}
             </div>
