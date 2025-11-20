@@ -213,6 +213,23 @@ const translations = {
       testimonials: "Témoignages",
       management: "Gestion"
     },
+    catDetail: {
+      loading: "Chargement...",
+      notFound: "Chat non trouvé",
+      backToOurUnicorns: "Retour à Nos Licornes",
+      breederMale: "Reproducteur",
+      breederFemale: "Reproductrice",
+      information: "Informations",
+      birthDate: "Date de naissance",
+      color: "Couleur",
+      loofNumber: "N° LOOF",
+      chipNumber: "N° Puce",
+      personality: "Caractère",
+      pedigree: "Pedigree",
+      gallery: "Galerie",
+      years: "ans",
+      videoNotSupported: "Votre navigateur ne supporte pas la lecture de vidéos."
+    },
     footer: {
       title: "Le Domaine des Licornes",
       subtitle: "Élevage familial premium de Ragdolls",
