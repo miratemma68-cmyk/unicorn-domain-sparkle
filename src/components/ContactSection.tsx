@@ -18,6 +18,7 @@ export const ContactSection = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
+    // Insert into database
     const { error } = await supabase
       .from('contact_inquiries')
       .insert([{
@@ -31,6 +32,26 @@ export const ContactSection = () => {
       toast.error(t('contact.error'));
       console.error('Error submitting inquiry:', error);
       return;
+    }
+    
+    // Send confirmation email
+    try {
+      const { error: emailError } = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message
+        }
+      });
+      
+      if (emailError) {
+        console.error('Error sending confirmation email:', emailError);
+        // Don't show error to user, form was still submitted successfully
+      }
+    } catch (emailError) {
+      console.error('Failed to send confirmation email:', emailError);
+      // Don't show error to user, form was still submitted successfully
     }
     
     toast.success(t('contact.success'));
