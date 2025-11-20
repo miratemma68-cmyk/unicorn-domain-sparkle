@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import tapestryTouch from "@/assets/tapestry-touch.jpg";
 import laurenceProfile from "@/assets/laurence-profile.jpg";
 import { supabase } from "@/integrations/supabase/client";
+import { User, Image as ImageIcon } from "lucide-react";
 
 interface DomainMedia {
   id: string;
@@ -91,22 +92,24 @@ export const DomainSection = () => {
               <div className="flex flex-col sm:flex-row gap-4 mt-8">
                 <a 
                   href="#laurence"
-                  className="flex-1 bg-gold/10 hover:bg-gold/20 border-2 border-gold text-gold px-6 py-3 rounded-full text-center transition-all duration-300 hover:scale-105 font-display"
+                  className="flex-1 inline-flex items-center justify-center gap-2 bg-gold/10 hover:bg-gold/20 border-2 border-gold text-gold px-6 py-3 rounded-full text-center transition-all duration-300 hover:scale-105 font-display"
                   onClick={(e) => {
                     e.preventDefault();
                     document.getElementById('laurence')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }}
                 >
+                  <User className="w-5 h-5" />
                   Découvrir Laurence
                 </a>
                 <a 
                   href="#galerie-domaine"
-                  className="flex-1 bg-gold/10 hover:bg-gold/20 border-2 border-gold text-gold px-6 py-3 rounded-full text-center transition-all duration-300 hover:scale-105 font-display"
+                  className="flex-1 inline-flex items-center justify-center gap-2 bg-gold/10 hover:bg-gold/20 border-2 border-gold text-gold px-6 py-3 rounded-full text-center transition-all duration-300 hover:scale-105 font-display"
                   onClick={(e) => {
                     e.preventDefault();
                     document.getElementById('galerie-domaine')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }}
                 >
+                  <ImageIcon className="w-5 h-5" />
                   Voir la Galerie
                 </a>
               </div>

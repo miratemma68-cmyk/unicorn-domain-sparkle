@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import tapestrySmell from "@/assets/tapestry-smell.jpg";
 import { supabase } from "@/integrations/supabase/client";
+import { GraduationCap } from "lucide-react";
 
 interface EducationMedia {
   id: string;
@@ -89,12 +90,13 @@ export const EducationSection = () => {
               <div className="mt-8">
                 <a 
                   href="#methode-images"
-                  className="inline-block bg-gold/10 hover:bg-gold/20 border-2 border-gold text-gold px-6 py-3 rounded-full text-center transition-all duration-300 hover:scale-105 font-display"
+                  className="inline-flex items-center gap-2 bg-gold/10 hover:bg-gold/20 border-2 border-gold text-gold px-6 py-3 rounded-full text-center transition-all duration-300 hover:scale-105 font-display"
                   onClick={(e) => {
                     e.preventDefault();
                     document.getElementById('methode-images')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }}
                 >
+                  <GraduationCap className="w-5 h-5" />
                   Notre méthode en images
                 </a>
               </div>
