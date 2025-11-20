@@ -13,10 +13,12 @@ import { DomainGalleryManager } from '@/components/admin/DomainGalleryManager';
 import { EducationMediaManager } from '@/components/admin/EducationMediaManager';
 import { TestimonialsMediaManager } from '@/components/admin/TestimonialsMediaManager';
 import { ClientKittenManager } from '@/components/admin/ClientKittenManager';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Admin() {
   const navigate = useNavigate();
   const { user, isLoading, isAdmin } = useAuth();
+  const { t } = useLanguage();
 
   useEffect(() => {
     if (!isLoading && (!user || !isAdmin)) {
@@ -27,7 +29,7 @@ export default function Admin() {
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-midnight via-forest to-midnight">
-        <p className="text-gold text-xl font-serif">Chargement...</p>
+        <p className="text-gold text-xl font-serif">{t('dashboard.loading')}</p>
       </div>
     );
   }
@@ -37,7 +39,7 @@ export default function Admin() {
       <header className="border-b border-gold/20 bg-card/50 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <h1 className="text-2xl md:text-3xl font-serif text-gold medieval-glow">
-            Administration
+            {t('admin.title')}
           </h1>
           <Button
             onClick={() => navigate('/dashboard')}
@@ -45,7 +47,7 @@ export default function Admin() {
             className="border-gold text-gold hover:bg-gold/10"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Retour
+            {t('admin.back')}
           </Button>
         </div>
       </header>
@@ -55,31 +57,31 @@ export default function Admin() {
           <TabsList className="mb-6 flex-wrap">
             <TabsTrigger value="reproducteurs">
               <Cat className="mr-2 h-4 w-4" />
-              Reproducteurs
+              {t('admin.breedingCats')}
             </TabsTrigger>
             <TabsTrigger value="translations">
               <Languages className="mr-2 h-4 w-4" />
-              Traductions
+              {t('admin.translations')}
             </TabsTrigger>
             <TabsTrigger value="media">
               <Upload className="mr-2 h-4 w-4" />
-              Chatons
+              {t('admin.kittens')}
             </TabsTrigger>
             <TabsTrigger value="domain">
               <Image className="mr-2 h-4 w-4" />
-              Galerie Domaine
+              {t('admin.domainGallery')}
             </TabsTrigger>
             <TabsTrigger value="education">
               <Image className="mr-2 h-4 w-4" />
-              Éducation
+              {t('admin.education')}
             </TabsTrigger>
             <TabsTrigger value="testimonials">
               <Image className="mr-2 h-4 w-4" />
-              Témoignages
+              {t('admin.testimonials')}
             </TabsTrigger>
             <TabsTrigger value="management">
               <Image className="mr-2 h-4 w-4" />
-              Gestion
+              {t('admin.management')}
             </TabsTrigger>
           </TabsList>
 

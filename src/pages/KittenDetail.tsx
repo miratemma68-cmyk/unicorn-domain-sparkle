@@ -29,7 +29,7 @@ interface KittenMedia {
 
 export default function KittenDetail() {
   const { id } = useParams<{ id: string }>();
-  const { language } = useLanguage();
+  const { language, t } = useLanguage();
   const [kitten, setKitten] = useState<Kitten | null>(null);
   const [media, setMedia] = useState<KittenMedia[]>([]);
   const [loading, setLoading] = useState(true);
@@ -77,20 +77,22 @@ export default function KittenDetail() {
     
     if (ageInMonths < 1) {
       const days = Math.floor((now.getTime() - birth.getTime()) / (1000 * 60 * 60 * 24));
-      return `${days} jour${days > 1 ? 's' : ''}`;
+      return `${days} ${t(days > 1 ? 'kittenDetail.days' : 'kittenDetail.day')}`;
     } else if (ageInMonths < 12) {
-      return `${ageInMonths} mois`;
+      return `${ageInMonths} ${t(ageInMonths > 1 ? 'kittenDetail.months' : 'kittenDetail.month')}`;
     } else {
       const years = Math.floor(ageInMonths / 12);
       const months = ageInMonths % 12;
-      return months > 0 ? `${years} an${years > 1 ? 's' : ''} et ${months} mois` : `${years} an${years > 1 ? 's' : ''}`;
+      const yearLabel = t(years > 1 ? 'kittenDetail.years' : 'kittenDetail.year');
+      const monthLabel = t(months > 1 ? 'kittenDetail.months' : 'kittenDetail.month');
+      return months > 0 ? `${years} ${yearLabel} ${t('kittenDetail.and')} ${months} ${monthLabel}` : `${years} ${yearLabel}`;
     }
   };
 
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-midnight">
-        <p className="text-gold text-xl font-serif">Chargement...</p>
+        <p className="text-gold text-xl font-serif">{t('kittenDetail.loading')}</p>
       </div>
     );
   }
@@ -99,10 +101,10 @@ export default function KittenDetail() {
     return (
       <div className="min-h-screen flex items-center justify-center bg-midnight">
         <div className="text-center">
-          <p className="text-gold text-xl font-serif mb-4">Chaton non trouvé</p>
+          <p className="text-gold text-xl font-serif mb-4">{t('kittenDetail.notFound')}</p>
           <Link to="/#chatons">
             <Button className="bg-crimson hover:bg-crimson-dark text-ivory border border-gold">
-              Retour à Nos Chatons
+              {t('kittenDetail.backToKittens')}
             </Button>
           </Link>
         </div>
@@ -121,7 +123,7 @@ export default function KittenDetail() {
             className="mb-8 border-gold text-gold hover:bg-gold/10"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Retour à Nos Chatons
+            {t('kittenDetail.backToKittens')}
           </Button>
         </Link>
 
@@ -137,7 +139,7 @@ export default function KittenDetail() {
                 />
               ) : (
                 <div className="w-full h-full flex items-center justify-center bg-midnight/50">
-                  <p className="text-gold/50 font-serif">Aucune photo</p>
+                  <p className="text-gold/50 font-serif">{t('kittenDetail.noPhoto')}</p>
                 </div>
               )}
             </div>
@@ -156,7 +158,7 @@ export default function KittenDetail() {
                   <div className="flex items-center gap-3">
                     <Calendar className="h-5 w-5 text-gold" />
                     <div>
-                      <p className="text-sm text-ivory/60">Âge</p>
+                      <p className="text-sm text-ivory/60">{t('kittenDetail.age')}</p>
                       <p className="text-ivory">{calculateAge(kitten.birth_date)}</p>
                     </div>
                   </div>
@@ -166,8 +168,8 @@ export default function KittenDetail() {
                   <div className="flex items-center gap-3">
                     <div className="h-5 w-5 text-gold">♂♀</div>
                     <div>
-                      <p className="text-sm text-ivory/60">Sexe</p>
-                      <p className="text-ivory">{kitten.gender === 'male' ? 'Mâle' : 'Femelle'}</p>
+                      <p className="text-sm text-ivory/60">{t('kittenDetail.gender')}</p>
+                      <p className="text-ivory">{kitten.gender === 'male' ? t('kittenDetail.male') : t('kittenDetail.female')}</p>
                     </div>
                   </div>
                 )}
@@ -176,7 +178,7 @@ export default function KittenDetail() {
                   <div className="flex items-center gap-3">
                     <Palette className="h-5 w-5 text-gold" />
                     <div>
-                      <p className="text-sm text-ivory/60">Couleur</p>
+                      <p className="text-sm text-ivory/60">{t('kittenDetail.color')}</p>
                       <p className="text-ivory">{kitten.color}</p>
                     </div>
                   </div>
@@ -186,7 +188,7 @@ export default function KittenDetail() {
                   <div className="flex items-center gap-3">
                     <Weight className="h-5 w-5 text-gold" />
                     <div>
-                      <p className="text-sm text-ivory/60">Poids</p>
+                      <p className="text-sm text-ivory/60">{t('kittenDetail.weight')}</p>
                       <p className="text-ivory">{kitten.current_weight} g</p>
                     </div>
                   </div>
@@ -197,7 +199,7 @@ export default function KittenDetail() {
             {kitten.breed_info && (
               <Card className="bg-card/80 backdrop-blur-sm border-2 border-gold/30">
                 <CardHeader>
-                  <CardTitle className="text-xl font-serif text-gold">À propos</CardTitle>
+                  <CardTitle className="text-xl font-serif text-gold">{t('kittenDetail.about')}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-ivory/80 leading-relaxed">{kitten.breed_info}</p>
@@ -211,7 +213,7 @@ export default function KittenDetail() {
         {media.length > 0 && (
           <Card className="bg-card/80 backdrop-blur-sm border-2 border-gold/30 mb-12">
             <CardHeader>
-              <CardTitle className="text-2xl font-serif text-gold">Galerie</CardTitle>
+              <CardTitle className="text-2xl font-serif text-gold">{t('kittenDetail.gallery')}</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
