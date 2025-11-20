@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { LogOut, User, Cat } from 'lucide-react';
 import { toast } from 'sonner';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface Kitten {
   id: string;
@@ -20,6 +21,7 @@ interface Kitten {
 export default function Dashboard() {
   const navigate = useNavigate();
   const { user, isLoading, isAdmin, signOut } = useAuth();
+  const { t } = useLanguage();
   const [kittens, setKittens] = useState<Kitten[]>([]);
   const [loadingKittens, setLoadingKittens] = useState(true);
 
@@ -65,7 +67,7 @@ export default function Dashboard() {
       const clientKittens = data?.map(item => item.kittens).filter(Boolean) || [];
       setKittens(clientKittens as Kitten[]);
     } catch (error: any) {
-      toast.error('Erreur lors du chargement des chatons');
+      toast.error(t('dashboard.errorLoadingKittens'));
       console.error('Error loading kittens:', error);
     } finally {
       setLoadingKittens(false);
@@ -74,7 +76,7 @@ export default function Dashboard() {
 
   const handleSignOut = async () => {
     await signOut();
-    toast.success('Déconnexion réussie');
+    toast.success(t('dashboard.signOutSuccess'));
     navigate('/');
   };
 
@@ -85,24 +87,26 @@ export default function Dashboard() {
     
     if (months < 1) {
       const days = Math.floor((now.getTime() - birth.getTime()) / (1000 * 60 * 60 * 24));
-      return `${days} jour${days > 1 ? 's' : ''}`;
+      return `${days} ${t(days > 1 ? 'kittenDetail.days' : 'kittenDetail.day')}`;
     }
     
     if (months < 12) {
-      return `${months} mois`;
+      return `${months} ${t(months > 1 ? 'kittenDetail.months' : 'kittenDetail.month')}`;
     }
     
     const years = Math.floor(months / 12);
     const remainingMonths = months % 12;
+    const yearLabel = t(years > 1 ? 'kittenDetail.years' : 'kittenDetail.year');
+    const monthLabel = t(remainingMonths > 1 ? 'kittenDetail.months' : 'kittenDetail.month');
     return remainingMonths > 0
-      ? `${years} an${years > 1 ? 's' : ''} et ${remainingMonths} mois`
-      : `${years} an${years > 1 ? 's' : ''}`;
+      ? `${years} ${yearLabel} ${t('kittenDetail.and')} ${remainingMonths} ${monthLabel}`
+      : `${years} ${yearLabel}`;
   };
 
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-midnight via-forest to-midnight">
-        <p className="text-gold text-xl font-serif">Chargement...</p>
+        <p className="text-gold text-xl font-serif">{t('dashboard.loading')}</p>
       </div>
     );
   }
@@ -120,7 +124,7 @@ export default function Dashboard() {
             </a>
             <span className="text-gold/30">|</span>
             <h1 className="text-xl md:text-2xl font-serif text-gold medieval-glow">
-              Espace Client
+              {t('dashboard.title')}
             </h1>
           </div>
           <div className="flex items-center gap-4">
@@ -130,7 +134,7 @@ export default function Dashboard() {
                 variant="outline"
                 className="border-gold text-gold hover:bg-gold/10"
               >
-                Admin
+                {t('nav.administration')}
               </Button>
             )}
             <Button
@@ -139,7 +143,7 @@ export default function Dashboard() {
               className="border-gold text-gold hover:bg-gold/10"
             >
               <LogOut className="mr-2 h-4 w-4" />
-              Déconnexion
+              {t('dashboard.signOut')}
             </Button>
           </div>
         </div>
@@ -150,11 +154,11 @@ export default function Dashboard() {
           <TabsList className="mb-6">
             <TabsTrigger value="kittens">
               <Cat className="mr-2 h-4 w-4" />
-              Mes Licornes
+              {t('dashboard.myUnicorns')}
             </TabsTrigger>
             <TabsTrigger value="profile">
               <User className="mr-2 h-4 w-4" />
-              Mon Profil
+              {t('dashboard.myProfile')}
             </TabsTrigger>
           </TabsList>
 
@@ -162,17 +166,17 @@ export default function Dashboard() {
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {loadingKittens ? (
                 <p className="text-ivory/80 col-span-full text-center py-12">
-                  Chargement des chatons...
+                  {t('dashboard.loadingKittens')}
                 </p>
               ) : kittens.length === 0 ? (
                 <Card className="col-span-full tapestry-border bg-card/80">
                   <CardContent className="py-12 text-center">
                     <Cat className="mx-auto h-16 w-16 text-gold/50 mb-4" />
                     <p className="text-ivory/80 text-lg">
-                      Aucun chaton assigné pour le moment
+                      {t('dashboard.noKittens')}
                     </p>
                     <p className="text-ivory/60 text-sm mt-2">
-                      Contactez-nous pour plus d'informations
+                      {t('dashboard.contactInfo')}
                     </p>
                   </CardContent>
                 </Card>
@@ -194,21 +198,21 @@ export default function Dashboard() {
                     </CardHeader>
                     <CardContent className="space-y-2">
                       <div className="flex justify-between text-sm">
-                        <span className="text-ivory/60">Sexe:</span>
-                        <span className="text-ivory">{kitten.gender || 'Non spécifié'}</span>
+                        <span className="text-ivory/60">{t('dashboard.gender')}:</span>
+                        <span className="text-ivory">{kitten.gender ? t(`dashboard.${kitten.gender}`) : t('dashboard.notSpecified')}</span>
                       </div>
                       <div className="flex justify-between text-sm">
-                        <span className="text-ivory/60">Couleur:</span>
-                        <span className="text-ivory">{kitten.color || 'Non spécifié'}</span>
+                        <span className="text-ivory/60">{t('dashboard.color')}:</span>
+                        <span className="text-ivory">{kitten.color || t('dashboard.notSpecified')}</span>
                       </div>
                       {kitten.current_weight && (
                         <div className="flex justify-between text-sm">
-                          <span className="text-ivory/60">Poids:</span>
+                          <span className="text-ivory/60">{t('dashboard.weight')}:</span>
                           <span className="text-ivory">{kitten.current_weight} kg</span>
                         </div>
                       )}
                       <Button className="w-full mt-4 bg-crimson hover:bg-crimson-dark text-ivory border border-gold">
-                        Voir les détails
+                        {t('catDetail.viewDetails')}
                       </Button>
                     </CardContent>
                   </Card>
@@ -220,19 +224,19 @@ export default function Dashboard() {
           <TabsContent value="profile">
             <Card className="max-w-2xl mx-auto tapestry-border bg-card/80 backdrop-blur-sm">
               <CardHeader>
-                <CardTitle className="text-gold font-serif">Mon Profil</CardTitle>
+                <CardTitle className="text-gold font-serif">{t('dashboard.myProfile')}</CardTitle>
                 <CardDescription className="text-ivory/80">
-                  Informations de votre compte
+                  {t('dashboard.profileTitle')}
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <label className="text-ivory/60 text-sm">Email</label>
+                  <label className="text-ivory/60 text-sm">{t('dashboard.email')}</label>
                   <p className="text-ivory">{user?.email}</p>
                 </div>
                 <div className="pt-4 border-t border-gold/20">
                   <p className="text-ivory/60 text-sm">
-                    Pour modifier vos informations, veuillez nous contacter.
+                    {t('dashboard.contactInfo')}
                   </p>
                 </div>
               </CardContent>
