@@ -7,6 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ArrowLeft, Upload, Image, Cat, Languages, HelpCircle } from 'lucide-react';
 import { MediaUpload } from '@/components/admin/MediaUpload';
 import { MediaGallery } from '@/components/admin/MediaGallery';
+import { KittenManager } from '@/components/admin/KittenManager';
 import { BreedingCatMediaManager } from '@/components/admin/BreedingCatMediaManager';
 import { BreedingCatTranslationManager } from '@/components/admin/BreedingCatTranslationManager';
 import { DomainGalleryManager } from '@/components/admin/DomainGalleryManager';
@@ -104,6 +105,7 @@ export default function Admin() {
           </TabsContent>
 
           <TabsContent value="media" className="space-y-6">
+            <KittenManager />
             <MediaUpload />
             <MediaGallery />
           </TabsContent>
