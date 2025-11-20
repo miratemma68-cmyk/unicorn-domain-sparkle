@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -9,37 +10,50 @@ import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import tapestrySight from "@/assets/tapestry-sight.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { supabase } from "@/integrations/supabase/client";
+
+interface FAQ {
+  id: string;
+  question: string;
+  question_en: string | null;
+  question_es: string | null;
+  answer: string;
+  answer_en: string | null;
+  answer_es: string | null;
+  display_order: number;
+}
 
 export const FAQSection = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const navigate = useNavigate();
-  
-  const faqs = [
-    {
-      question: t('faq.q1'),
-      answer: t('faq.a1')
-    },
-    {
-      question: t('faq.q2'),
-      answer: t('faq.a2')
-    },
-    {
-      question: t('faq.q3'),
-      answer: t('faq.a3')
-    },
-    {
-      question: t('faq.q4'),
-      answer: t('faq.a4')
-    },
-    {
-      question: t('faq.q5'),
-      answer: t('faq.a5')
-    },
-    {
-      question: t('faq.q6'),
-      answer: t('faq.a6')
+  const [faqs, setFaqs] = useState<FAQ[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    loadFAQs();
+  }, []);
+
+  const loadFAQs = async () => {
+    try {
+      const { data, error } = await supabase
+        .from("faqs")
+        .select("*")
+        .order("display_order", { ascending: true });
+
+      if (error) throw error;
+      setFaqs(data || []);
+    } catch (error) {
+      console.error("Error loading FAQs:", error);
+    } finally {
+      setLoading(false);
     }
-  ];
+  };
+
+  const getTranslatedText = (textFr: string, textEn: string | null, textEs: string | null) => {
+    if (language === 'en' && textEn) return textEn;
+    if (language === 'es' && textEs) return textEs;
+    return textFr;
+  };
 
   return (
     <section id="faq" className="py-20 px-4 relative">
@@ -69,22 +83,28 @@ export const FAQSection = () => {
             {t('faq.title')}
           </h2>
           
-          <Accordion type="single" collapsible className="space-y-4">
-            {faqs.map((faq, index) => (
-              <AccordionItem 
-                key={index} 
-                value={`item-${index}`}
-                className="border border-gold/30 rounded-[2rem] px-6 bg-card/40 backdrop-blur-sm"
-              >
-                <AccordionTrigger className="text-left text-gold hover:text-gold-light font-display text-lg">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-ivory/80 leading-relaxed">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+          {loading ? (
+            <div className="text-center py-8 text-gold">Chargement...</div>
+          ) : faqs.length === 0 ? (
+            <div className="text-center py-8 text-gold">Aucune question disponible</div>
+          ) : (
+            <Accordion type="single" collapsible className="space-y-4">
+              {faqs.map((faq) => (
+                <AccordionItem 
+                  key={faq.id} 
+                  value={faq.id}
+                  className="border border-gold/30 rounded-[2rem] px-6 bg-card/40 backdrop-blur-sm"
+                >
+                  <AccordionTrigger className="text-left text-gold hover:text-gold-light font-display text-lg">
+                    {getTranslatedText(faq.question, faq.question_en, faq.question_es)}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-ivory/80 leading-relaxed">
+                    {getTranslatedText(faq.answer, faq.answer_en, faq.answer_es)}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          )}
         </div>
       </div>
     </section>

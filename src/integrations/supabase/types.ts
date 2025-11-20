@@ -249,6 +249,45 @@ export type Database = {
         }
         Relationships: []
       }
+      faqs: {
+        Row: {
+          answer: string
+          answer_en: string | null
+          answer_es: string | null
+          created_at: string
+          display_order: number | null
+          id: string
+          question: string
+          question_en: string | null
+          question_es: string | null
+          updated_at: string
+        }
+        Insert: {
+          answer: string
+          answer_en?: string | null
+          answer_es?: string | null
+          created_at?: string
+          display_order?: number | null
+          id?: string
+          question: string
+          question_en?: string | null
+          question_es?: string | null
+          updated_at?: string
+        }
+        Update: {
+          answer?: string
+          answer_en?: string | null
+          answer_es?: string | null
+          created_at?: string
+          display_order?: number | null
+          id?: string
+          question?: string
+          question_en?: string | null
+          question_es?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       kitten_media: {
         Row: {
           caption: string | null
