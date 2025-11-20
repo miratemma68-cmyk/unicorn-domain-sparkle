@@ -48,8 +48,8 @@ export const FAQSection = () => {
       </div>
       
       <div className="container mx-auto max-w-4xl relative z-10">
-        <div className="tapestry-border bg-card/80 backdrop-blur-sm rounded-lg p-8 md:p-12">
-          <h2 className="text-4xl md:text-5xl font-serif text-gold medieval-glow text-center mb-8">
+        <div className="tapestry-border bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12">
+          <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-8">
             Questions Fréquentes
           </h2>
           
@@ -58,9 +58,9 @@ export const FAQSection = () => {
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className="border border-gold/30 rounded-lg px-6 bg-card/40 backdrop-blur-sm"
+                className="border border-gold/30 rounded-[2rem] px-6 bg-card/40 backdrop-blur-sm"
               >
-                <AccordionTrigger className="text-left text-gold hover:text-gold-light font-serif text-lg">
+                <AccordionTrigger className="text-left text-gold hover:text-gold-light font-display text-lg">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-ivory/80 leading-relaxed">

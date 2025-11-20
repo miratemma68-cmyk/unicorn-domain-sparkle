@@ -92,10 +92,10 @@ export const CatsSection = () => {
       </div>
       
       <div className="container mx-auto max-w-7xl relative z-10">
-        <h2 className="text-4xl md:text-5xl font-serif text-gold medieval-glow text-center mb-4">
+        <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-4">
           Nos Licornes
         </h2>
-        <p className="text-center text-ivory/80 text-lg mb-12 italic">
+        <p className="text-center text-ivory/80 text-lg mb-12 italic font-light">
           "Comme les licornes dans leur jardin enchanté"
         </p>
         
@@ -103,7 +103,7 @@ export const CatsSection = () => {
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           {cats.map((cat) => (
             <Link key={cat.name} to={`/cat/${cat.slug}`} className="block">
-              <Card className="bg-card/80 backdrop-blur-sm border-2 border-gold/30 hover:border-gold transition-all duration-300 overflow-hidden group">
+              <Card className="bg-card/80 backdrop-blur-sm border-2 border-gold/30 hover:border-gold transition-all duration-300 overflow-hidden group rounded-[3rem] hover:shadow-[0_0_40px_rgba(218,165,32,0.4)] hover:scale-105">
                 <CardContent className="p-0">
                   <div className="relative overflow-hidden">
                     <img 
@@ -114,7 +114,7 @@ export const CatsSection = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/50 to-transparent opacity-60" />
                   </div>
                   <div className="p-6">
-                    <h3 className="text-2xl font-serif text-gold mb-2">{cat.name}</h3>
+                    <h3 className="text-2xl font-display text-gold mb-2">{cat.name}</h3>
                     <p className="text-ivory/80">{cat.description}</p>
                     <p className="text-gold/70 text-sm mt-3 italic">Voir le profil →</p>
                   </div>
@@ -126,17 +126,17 @@ export const CatsSection = () => {
 
         {/* Kittens Section */}
         <div id="chatons">
-          <h3 className="text-3xl font-serif text-gold medieval-glow text-center mb-8">
+          <h3 className="text-3xl font-display text-gold medieval-glow text-center mb-8">
             Nos Chatons
           </h3>
-        <p className="text-center text-ivory/80 mb-8 italic">
+        <p className="text-center text-ivory/80 mb-8 italic font-light">
           De futures licornes prêtes à enchanter votre foyer
         </p>
         {availableKittens.length > 0 ? (
           <div className="grid md:grid-cols-3 gap-8">
             {availableKittens.map((kitten) => (
               <Link key={kitten.id} to={`/kitten/${kitten.id}`} className="block">
-                <Card className="bg-card/80 backdrop-blur-sm border-2 border-gold/30 hover:border-gold transition-all duration-300 overflow-hidden group">
+                <Card className="bg-card/80 backdrop-blur-sm border-2 border-gold/30 hover:border-gold transition-all duration-300 overflow-hidden group rounded-[3rem] hover:shadow-[0_0_40px_rgba(218,165,32,0.4)] hover:scale-105">
                   <CardContent className="p-0">
                     <div className="relative overflow-hidden">
                       <img 
@@ -147,7 +147,7 @@ export const CatsSection = () => {
                       <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/50 to-transparent opacity-60" />
                     </div>
                     <div className="p-6">
-                      <h3 className="text-2xl font-serif text-gold mb-2">{kitten.name}</h3>
+                      <h3 className="text-2xl font-display text-gold mb-2">{kitten.name}</h3>
                       <p className="text-gold/70 text-sm mt-3 italic">Voir le profil →</p>
                     </div>
                   </CardContent>
@@ -156,7 +156,7 @@ export const CatsSection = () => {
             ))}
           </div>
         ) : (
-          <Card className="bg-card/80 backdrop-blur-sm border-2 border-gold/30">
+          <Card className="bg-card/80 backdrop-blur-sm border-2 border-gold/30 rounded-[3rem]">
             <CardContent className="p-8 text-center">
               <p className="text-ivory/80">Aucun chaton disponible pour le moment.</p>
               <p className="text-ivory/60 text-sm mt-2">Consultez nos reproducteurs ci-dessus et revenez bientôt !</p>
