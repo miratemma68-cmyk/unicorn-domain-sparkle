@@ -3,6 +3,8 @@ import { supabase } from '@/integrations/supabase/client';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 import { Image as ImageIcon, Video, Trash2, Loader2 } from 'lucide-react';
 import { toast } from 'sonner';
 import {
@@ -27,6 +29,8 @@ interface Media {
   file_url: string;
   file_path: string;
   caption: string | null;
+  caption_en: string | null;
+  caption_es: string | null;
   created_at: string;
 }
 
@@ -76,7 +80,7 @@ export function MediaGallery() {
     try {
       const { data, error } = await supabase
         .from('kitten_media')
-        .select('id, media_type, file_url, file_path, caption, created_at')
+        .select('id, media_type, file_url, file_path, caption, caption_en, caption_es, created_at')
         .eq('kitten_id', selectedKitten)
         .order('created_at', { ascending: false });
 
@@ -124,6 +128,57 @@ export function MediaGallery() {
       setIsDeleting(false);
       setDeleteDialogOpen(false);
       setMediaToDelete(null);
+    }
+  };
+
+  const handleCaptionUpdate = async (mediaId: string, caption: string) => {
+    try {
+      const { error } = await supabase
+        .from('kitten_media')
+        .update({ caption })
+        .eq('id', mediaId);
+
+      if (error) throw error;
+
+      toast.success('Légende mise à jour');
+      loadMedia();
+    } catch (error: any) {
+      toast.error('Erreur lors de la mise à jour de la légende');
+      console.error('Error updating caption:', error);
+    }
+  };
+
+  const handleCaptionEnUpdate = async (mediaId: string, caption: string) => {
+    try {
+      const { error } = await supabase
+        .from('kitten_media')
+        .update({ caption_en: caption })
+        .eq('id', mediaId);
+
+      if (error) throw error;
+
+      toast.success('Légende EN mise à jour');
+      loadMedia();
+    } catch (error: any) {
+      toast.error('Erreur lors de la mise à jour de la légende EN');
+      console.error('Error updating caption EN:', error);
+    }
+  };
+
+  const handleCaptionEsUpdate = async (mediaId: string, caption: string) => {
+    try {
+      const { error } = await supabase
+        .from('kitten_media')
+        .update({ caption_es: caption })
+        .eq('id', mediaId);
+
+      if (error) throw error;
+
+      toast.success('Légende ES mise à jour');
+      loadMedia();
+    } catch (error: any) {
+      toast.error('Erreur lors de la mise à jour de la légende ES');
+      console.error('Error updating caption ES:', error);
     }
   };
 
@@ -209,12 +264,38 @@ export function MediaGallery() {
                   )}
                   
                   <div className="p-3 space-y-2">
-                    {item.caption && (
-                      <p className="text-sm text-ivory/80">{item.caption}</p>
-                    )}
                     <p className="text-xs text-ivory/60">
                       {formatDate(item.created_at)}
                     </p>
+                    <div className="space-y-2">
+                      <div>
+                        <Label className="text-xs text-ivory/60">Légende FR</Label>
+                        <Input
+                          placeholder="Légende en français"
+                          defaultValue={item.caption || ''}
+                          onBlur={(e) => handleCaptionUpdate(item.id, e.target.value)}
+                          className="bg-midnight/50 border-gold/30 text-ivory text-sm"
+                        />
+                      </div>
+                      <div>
+                        <Label className="text-xs text-ivory/60">Légende EN</Label>
+                        <Input
+                          placeholder="Caption in English"
+                          defaultValue={item.caption_en || ''}
+                          onBlur={(e) => handleCaptionEnUpdate(item.id, e.target.value)}
+                          className="bg-midnight/50 border-gold/30 text-ivory text-sm"
+                        />
+                      </div>
+                      <div>
+                        <Label className="text-xs text-ivory/60">Légende ES</Label>
+                        <Input
+                          placeholder="Leyenda en español"
+                          defaultValue={item.caption_es || ''}
+                          onBlur={(e) => handleCaptionEsUpdate(item.id, e.target.value)}
+                          className="bg-midnight/50 border-gold/30 text-ivory text-sm"
+                        />
+                      </div>
+                    </div>
                     <Button
                       onClick={() => handleDeleteClick(item)}
                       variant="destructive"

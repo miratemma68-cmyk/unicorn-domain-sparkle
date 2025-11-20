@@ -14,6 +14,8 @@ interface Media {
   file_url: string;
   file_path: string;
   caption: string | null;
+  caption_en: string | null;
+  caption_es: string | null;
   created_at: string;
 }
 
@@ -149,6 +151,81 @@ export const TestimonialsMediaManager = () => {
     }
   };
 
+  const handleCaptionUpdate = async (mediaId: string, caption: string) => {
+    try {
+      const { error } = await supabase
+        .from('testimonials_media')
+        .update({ caption })
+        .eq('id', mediaId);
+
+      if (error) throw error;
+
+      toast({
+        title: "Succès",
+        description: "Légende mise à jour",
+      });
+
+      loadMedia();
+    } catch (error) {
+      console.error('Error updating caption:', error);
+      toast({
+        title: "Erreur",
+        description: "Erreur lors de la mise à jour de la légende",
+        variant: "destructive",
+      });
+    }
+  };
+
+  const handleCaptionEnUpdate = async (mediaId: string, caption: string) => {
+    try {
+      const { error } = await supabase
+        .from('testimonials_media')
+        .update({ caption_en: caption })
+        .eq('id', mediaId);
+
+      if (error) throw error;
+
+      toast({
+        title: "Succès",
+        description: "Légende EN mise à jour",
+      });
+
+      loadMedia();
+    } catch (error) {
+      console.error('Error updating caption EN:', error);
+      toast({
+        title: "Erreur",
+        description: "Erreur lors de la mise à jour de la légende EN",
+        variant: "destructive",
+      });
+    }
+  };
+
+  const handleCaptionEsUpdate = async (mediaId: string, caption: string) => {
+    try {
+      const { error } = await supabase
+        .from('testimonials_media')
+        .update({ caption_es: caption })
+        .eq('id', mediaId);
+
+      if (error) throw error;
+
+      toast({
+        title: "Succès",
+        description: "Légende ES mise à jour",
+      });
+
+      loadMedia();
+    } catch (error) {
+      console.error('Error updating caption ES:', error);
+      toast({
+        title: "Erreur",
+        description: "Erreur lors de la mise à jour de la légende ES",
+        variant: "destructive",
+      });
+    }
+  };
+
   return (
     <>
       <Card>
@@ -176,28 +253,59 @@ export const TestimonialsMediaManager = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {media.map((item) => (
-              <div key={item.id} className="relative group">
-                {item.media_type === 'video' ? (
-                  <video
-                    src={item.file_url}
-                    className="w-full h-40 object-cover rounded-lg"
-                    controls
-                  />
-                ) : (
-                  <img
-                    src={item.file_url}
-                    alt={item.caption || "Media"}
-                    className="w-full h-40 object-cover rounded-lg"
-                  />
-                )}
-                <Button
-                  variant="destructive"
-                  size="icon"
-                  className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity"
-                  onClick={() => handleDeleteClick(item)}
-                >
-                  <Trash2 className="w-4 h-4" />
-                </Button>
+              <div key={item.id} className="space-y-2">
+                <div className="relative group">
+                  {item.media_type === 'video' ? (
+                    <video
+                      src={item.file_url}
+                      className="w-full h-40 object-cover rounded-lg"
+                      controls
+                    />
+                  ) : (
+                    <img
+                      src={item.file_url}
+                      alt={item.caption || "Media"}
+                      className="w-full h-40 object-cover rounded-lg"
+                    />
+                  )}
+                  <Button
+                    variant="destructive"
+                    size="icon"
+                    className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity"
+                    onClick={() => handleDeleteClick(item)}
+                  >
+                    <Trash2 className="w-4 h-4" />
+                  </Button>
+                </div>
+                <div className="space-y-2">
+                  <div>
+                    <Label className="text-xs text-muted-foreground">Légende FR</Label>
+                    <Input
+                      placeholder="Légende en français"
+                      defaultValue={item.caption || ''}
+                      onBlur={(e) => handleCaptionUpdate(item.id, e.target.value)}
+                      className="text-sm"
+                    />
+                  </div>
+                  <div>
+                    <Label className="text-xs text-muted-foreground">Légende EN</Label>
+                    <Input
+                      placeholder="Caption in English"
+                      defaultValue={item.caption_en || ''}
+                      onBlur={(e) => handleCaptionEnUpdate(item.id, e.target.value)}
+                      className="text-sm"
+                    />
+                  </div>
+                  <div>
+                    <Label className="text-xs text-muted-foreground">Légende ES</Label>
+                    <Input
+                      placeholder="Leyenda en español"
+                      defaultValue={item.caption_es || ''}
+                      onBlur={(e) => handleCaptionEsUpdate(item.id, e.target.value)}
+                      className="text-sm"
+                    />
+                  </div>
+                </div>
               </div>
             ))}
           </div>
