@@ -116,7 +116,7 @@ export const AdoptionSection = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
               <a 
                 href="#contact"
-                className="inline-block bg-gold hover:bg-gold/80 text-midnight px-8 py-4 rounded-full text-center transition-all duration-300 hover:scale-105 font-display text-lg shadow-lg"
+                className="inline-block bg-crimson hover:bg-crimson/80 border-2 border-gold text-ivory px-8 py-4 rounded-full text-center transition-all duration-300 hover:scale-105 font-display text-lg shadow-lg"
                 onClick={(e) => {
                   e.preventDefault();
                   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -126,7 +126,7 @@ export const AdoptionSection = () => {
               </a>
               <a 
                 href="#clients-racontent"
-                className="inline-block bg-gold/10 hover:bg-gold/20 border-2 border-gold text-gold px-6 py-3 rounded-full text-center transition-all duration-300 hover:scale-105 font-display"
+                className="inline-block bg-gold hover:bg-gold/80 border-2 border-crimson text-midnight px-6 py-3 rounded-full text-center transition-all duration-300 hover:scale-105 font-display"
                 onClick={(e) => {
                   e.preventDefault();
                   document.getElementById('clients-racontent')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
