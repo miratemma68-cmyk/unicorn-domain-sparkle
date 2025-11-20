@@ -17,6 +17,8 @@ interface GalleryItem {
   id: string;
   image_url: string;
   caption: string;
+  caption_en: string | null;
+  caption_es: string | null;
   display_order: number;
   media_type: string;
 }
@@ -200,6 +202,46 @@ export const BreedingCatMediaManager = () => {
     }
   };
 
+  const handleCaptionEnUpdate = async (itemId: string, newCaption: string) => {
+    const { error } = await supabase
+      .from('breeding_cat_gallery')
+      .update({ caption_en: newCaption })
+      .eq('id', itemId);
+
+    if (error) {
+      toast({
+        title: "Erreur",
+        description: "Impossible de mettre à jour la légende EN",
+        variant: "destructive"
+      });
+    } else {
+      toast({
+        title: "Succès",
+        description: "Légende EN mise à jour"
+      });
+    }
+  };
+
+  const handleCaptionEsUpdate = async (itemId: string, newCaption: string) => {
+    const { error } = await supabase
+      .from('breeding_cat_gallery')
+      .update({ caption_es: newCaption })
+      .eq('id', itemId);
+
+    if (error) {
+      toast({
+        title: "Erreur",
+        description: "Impossible de mettre à jour la légende ES",
+        variant: "destructive"
+      });
+    } else {
+      toast({
+        title: "Succès",
+        description: "Légende ES mise à jour"
+      });
+    }
+  };
+
   const selectedCat = breedingCats.find(cat => cat.id === selectedCatId);
 
   return (
@@ -299,12 +341,33 @@ export const BreedingCatMediaManager = () => {
                       </div>
                     </div>
                     <div className="p-3 space-y-2">
-                      <Input
-                        placeholder="Ajouter une légende..."
-                        defaultValue={item.caption}
-                        onBlur={(e) => handleCaptionUpdate(item.id, e.target.value)}
-                        className="bg-midnight/50 border-gold/30 text-ivory text-sm"
-                      />
+                      <div className="space-y-2">
+                        <Label className="text-xs text-ivory/60">Légende FR</Label>
+                        <Input
+                          placeholder="Ajouter une légende..."
+                          defaultValue={item.caption}
+                          onBlur={(e) => handleCaptionUpdate(item.id, e.target.value)}
+                          className="bg-midnight/50 border-gold/30 text-ivory text-sm"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label className="text-xs text-ivory/60">Légende EN</Label>
+                        <Input
+                          placeholder="Add a caption..."
+                          defaultValue={item.caption_en || ''}
+                          onBlur={(e) => handleCaptionEnUpdate(item.id, e.target.value)}
+                          className="bg-midnight/50 border-gold/30 text-ivory text-sm"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label className="text-xs text-ivory/60">Légende ES</Label>
+                        <Input
+                          placeholder="Añadir una leyenda..."
+                          defaultValue={item.caption_es || ''}
+                          onBlur={(e) => handleCaptionEsUpdate(item.id, e.target.value)}
+                          className="bg-midnight/50 border-gold/30 text-ivory text-sm"
+                        />
+                      </div>
                       <Button
                         variant="destructive"
                         size="sm"
