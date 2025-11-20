@@ -3,6 +3,7 @@ import tapestryHearing from "@/assets/tapestry-hearing.jpg";
 import { supabase } from "@/integrations/supabase/client";
 import { Heart, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface TestimonialMedia {
   id: string;
@@ -13,6 +14,7 @@ interface TestimonialMedia {
 
 export const AdoptionSection = () => {
   const [testimonialsMedia, setTestimonialsMedia] = useState<TestimonialMedia[]>([]);
+  const { t } = useLanguage();
 
   useEffect(() => {
     loadTestimonialsMedia();
@@ -47,15 +49,14 @@ export const AdoptionSection = () => {
       
       <div className="container mx-auto max-w-6xl relative z-10">
         <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-12">
-          Adoption
+          {t('adoption.title')}
         </h2>
 
         {/* Main Section */}
         <div className="tapestry-border bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12">
           <div className="space-y-8 text-ivory/90">
             <p className="text-lg leading-relaxed text-center max-w-3xl mx-auto">
-              Adopter un Ragdoll du Domaine des Licornes, c'est accueillir un compagnon 
-              d'exception dans votre vie. Nous vous accompagnons à chaque étape de ce merveilleux voyage.
+              {t('adoption.intro')}
             </p>
             
             <div className="grid md:grid-cols-3 gap-6 mt-12">
@@ -63,53 +64,53 @@ export const AdoptionSection = () => {
                 <div className="w-20 h-20 mx-auto bg-crimson rounded-full flex items-center justify-center border-2 border-gold shadow-lg hover:scale-110 transition-transform">
                   <span className="text-3xl text-gold font-display">1</span>
                 </div>
-                <h3 className="text-xl font-display text-gold">Premier Contact</h3>
-                <p>Remplissez notre formulaire pour exprimer votre intérêt</p>
+                <h3 className="text-xl font-display text-gold">{t('adoption.step1Title')}</h3>
+                <p>{t('adoption.step1Desc')}</p>
               </div>
               
               <div className="text-center space-y-3">
                 <div className="w-20 h-20 mx-auto bg-crimson rounded-full flex items-center justify-center border-2 border-gold shadow-lg hover:scale-110 transition-transform">
                   <span className="text-3xl text-gold font-display">2</span>
                 </div>
-                <h3 className="text-xl font-display text-gold">Rencontre</h3>
-                <p>Visitez notre élevage et faites connaissance avec nos licornes</p>
+                <h3 className="text-xl font-display text-gold">{t('adoption.step2Title')}</h3>
+                <p>{t('adoption.step2Desc')}</p>
               </div>
               
               <div className="text-center space-y-3">
                 <div className="w-20 h-20 mx-auto bg-crimson rounded-full flex items-center justify-center border-2 border-gold shadow-lg hover:scale-110 transition-transform">
                   <span className="text-3xl text-gold font-display">3</span>
                 </div>
-                <h3 className="text-xl font-display text-gold">Adoption</h3>
-                <p>Accueillez votre compagnon avec un suivi personnalisé</p>
+                <h3 className="text-xl font-display text-gold">{t('adoption.step3Title')}</h3>
+                <p>{t('adoption.step3Desc')}</p>
               </div>
             </div>
             
             <div className="bg-crimson/20 border border-gold/30 rounded-[2rem] p-6 mt-12">
-              <h3 className="text-2xl font-display text-gold mb-4">Ce que vous recevez</h3>
+              <h3 className="text-2xl font-display text-gold mb-4">{t('adoption.whatYouGet')}</h3>
               <ul className="grid md:grid-cols-2 gap-3">
                 <li className="flex items-start gap-2">
                   <span className="text-gold">✦</span>
-                  <span>Certificat de santé complet</span>
+                  <span>{t('adoption.benefit1')}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-gold">✦</span>
-                  <span>Carnet de vaccination à jour</span>
+                  <span>{t('adoption.benefit2')}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-gold">✦</span>
-                  <span>Pedigree LOOF officiel</span>
+                  <span>{t('adoption.benefit3')}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-gold">✦</span>
-                  <span>Kit de démarrage personnalisé</span>
+                  <span>{t('adoption.benefit4')}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-gold">✦</span>
-                  <span>Guide d'accueil détaillé</span>
+                  <span>{t('adoption.benefit5')}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-gold">✦</span>
-                  <span>Suivi post-adoption à vie</span>
+                  <span>{t('adoption.benefit6')}</span>
                 </li>
               </ul>
             </div>
@@ -128,7 +129,7 @@ export const AdoptionSection = () => {
                   }}
                 >
                   <Heart className="w-4 h-4" />
-                  Commencez votre adoption
+                  {t('adoption.startAdoption')}
                 </a>
               </Button>
               
@@ -145,7 +146,7 @@ export const AdoptionSection = () => {
                   }}
                 >
                   <MessageCircle className="w-4 h-4" />
-                  Nos clients racontent
+                  {t('adoption.clientTestimonials')}
                 </a>
               </Button>
             </div>
@@ -155,7 +156,7 @@ export const AdoptionSection = () => {
         {/* Nos clients racontent */}
         <div id="clients-racontent" className="tapestry-border bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12 mt-12">
           <h3 className="text-3xl font-display text-gold medieval-glow text-center mb-8">
-            Nos clients racontent
+            {t('adoption.clientTestimonials')}
           </h3>
           
           {testimonialsMedia.length > 0 ? (

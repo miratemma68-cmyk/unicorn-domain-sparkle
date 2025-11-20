@@ -4,8 +4,10 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export const ContactSection = () => {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -26,12 +28,12 @@ export const ContactSection = () => {
       }]);
     
     if (error) {
-      toast.error("Erreur lors de l'envoi du message. Veuillez réessayer.");
+      toast.error(t('contact.error'));
       console.error('Error submitting inquiry:', error);
       return;
     }
     
-    toast.success("Votre message a été envoyé avec succès !");
+    toast.success(t('contact.success'));
     
     // Reset form
     setFormData({ name: "", email: "", phone: "", message: "" });
@@ -42,16 +44,16 @@ export const ContactSection = () => {
       <div className="container mx-auto max-w-2xl relative z-10">
         <div className="tapestry-border bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12">
           <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-4">
-            Contactez-nous
+            {t('contact.title')}
           </h2>
           <p className="text-center text-ivory/80 mb-8">
-            Prêt à rencontrer votre future licorne ?
+            {t('contact.intro')}
           </p>
           
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label htmlFor="name" className="block text-gold mb-2 font-display">
-                Nom *
+                {t('contact.name')} *
               </label>
               <Input
                 id="name"
@@ -64,7 +66,7 @@ export const ContactSection = () => {
             
             <div>
               <label htmlFor="email" className="block text-gold mb-2 font-display">
-                Email *
+                {t('contact.email')} *
               </label>
               <Input
                 id="email"
@@ -78,7 +80,7 @@ export const ContactSection = () => {
             
             <div>
               <label htmlFor="phone" className="block text-gold mb-2 font-display">
-                Téléphone
+                {t('contact.phone')}
               </label>
               <Input
                 id="phone"
@@ -91,7 +93,7 @@ export const ContactSection = () => {
             
             <div>
               <label htmlFor="message" className="block text-gold mb-2 font-display">
-                Message *
+                {t('contact.message')} *
               </label>
               <Textarea
                 id="message"
@@ -100,7 +102,6 @@ export const ContactSection = () => {
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 className="bg-input border-gold/30 text-foreground focus:border-gold resize-none rounded-[2rem]"
-                placeholder="Parlez-nous de votre projet d'adoption..."
               />
             </div>
             
@@ -109,7 +110,7 @@ export const ContactSection = () => {
               size="lg"
               className="w-full bg-crimson hover:bg-crimson-dark text-ivory border-2 border-gold transition-all duration-300 hover:shadow-[0_0_30px_rgba(218,165,32,0.5)] rounded-full hover:scale-105"
             >
-              Envoyer votre message
+              {t('contact.send')}
             </Button>
           </form>
         </div>

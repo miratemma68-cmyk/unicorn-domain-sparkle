@@ -6,6 +6,7 @@ import tapestryTaste from "@/assets/tapestry-taste.jpg";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface Kitten {
   id: string;
@@ -18,6 +19,7 @@ interface KittenMedia {
 
 export const CatsSection = () => {
   const [availableKittens, setAvailableKittens] = useState<Array<{ id: string; name: string; image: string }>>([]);
+  const { t } = useLanguage();
 
   useEffect(() => {
     loadKittens();
@@ -93,10 +95,10 @@ export const CatsSection = () => {
       
       <div className="container mx-auto max-w-7xl relative z-10">
         <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-4">
-          Nos Licornes
+          {t('cats.title')}
         </h2>
         <p className="text-center text-ivory/80 text-lg mb-12 italic font-light">
-          "Comme les licornes dans leur jardin enchanté"
+          {t('cats.breeding')}
         </p>
         
         {/* Breeding Cats */}
@@ -116,7 +118,7 @@ export const CatsSection = () => {
                   <div className="p-6">
                     <h3 className="text-2xl font-display text-gold mb-2">{cat.name}</h3>
                     <p className="text-ivory/80">{cat.description}</p>
-                    <p className="text-gold/70 text-sm mt-3 italic">Voir le profil →</p>
+                    <p className="text-gold/70 text-sm mt-3 italic">{t('cats.viewProfile')} →</p>
                   </div>
                 </CardContent>
               </Card>
@@ -127,10 +129,10 @@ export const CatsSection = () => {
         {/* Kittens Section */}
         <div id="chatons">
           <h3 className="text-3xl font-display text-gold medieval-glow text-center mb-8">
-            Nos Chatons
+            {t('cats.kittens')}
           </h3>
         <p className="text-center text-ivory/80 mb-8 italic font-light">
-          De futures licornes prêtes à enchanter votre foyer
+          {t('cats.available')}
         </p>
         {availableKittens.length > 0 ? (
           <div className="grid md:grid-cols-3 gap-8">
@@ -158,8 +160,7 @@ export const CatsSection = () => {
         ) : (
           <Card className="bg-card/80 backdrop-blur-sm border-2 border-gold/30 rounded-[3rem]">
             <CardContent className="p-8 text-center">
-              <p className="text-ivory/80">Aucun chaton disponible pour le moment.</p>
-              <p className="text-ivory/60 text-sm mt-2">Consultez nos reproducteurs ci-dessus et revenez bientôt !</p>
+              <p className="text-ivory/80">{t('cats.noKittens')}</p>
             </CardContent>
           </Card>
         )}

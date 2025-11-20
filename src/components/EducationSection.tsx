@@ -3,6 +3,7 @@ import tapestrySmell from "@/assets/tapestry-smell.jpg";
 import { supabase } from "@/integrations/supabase/client";
 import { GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface EducationMedia {
   id: string;
@@ -13,6 +14,7 @@ interface EducationMedia {
 
 export const EducationSection = () => {
   const [educationMedia, setEducationMedia] = useState<EducationMedia[]>([]);
+  const { t } = useLanguage();
 
   useEffect(() => {
     loadEducationMedia();
@@ -36,7 +38,7 @@ export const EducationSection = () => {
     <section id="education" className="py-20 px-4 relative">
       <div className="container mx-auto max-w-6xl relative z-10">
         <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-12">
-          Éducation
+          {t('education.title')}
         </h2>
 
         {/* Introduction Section */}
@@ -52,39 +54,37 @@ export const EducationSection = () => {
             
             <div className="space-y-6 text-ivory/90 order-1 md:order-2">
               <p className="text-lg leading-relaxed">
-                Nos chatons bénéficient d'une pré-éducation exclusive qui garantit 
-                leur épanouissement et leur sociabilité exceptionnelle.
+                {t('education.intro')}
               </p>
               
               <div className="space-y-4">
-                <h3 className="text-2xl font-display text-gold">Notre Méthode</h3>
+                <h3 className="text-2xl font-display text-gold">{t('education.method')}</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <span className="text-gold text-2xl">✦</span>
-                    <span>Socialisation précoce avec humains et autres animaux</span>
+                    <span>{t('education.method1')}</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-gold text-2xl">✦</span>
-                    <span>Stimulation cognitive adaptée à chaque étape</span>
+                    <span>{t('education.method2')}</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-gold text-2xl">✦</span>
-                    <span>Apprentissage de la propreté et des bonnes habitudes</span>
+                    <span>{t('education.method3')}</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-gold text-2xl">✦</span>
-                    <span>Suivi vétérinaire rigoureux et vaccinations complètes</span>
+                    <span>{t('education.method4')}</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-gold text-2xl">✦</span>
-                    <span>Documentation détaillée de leur évolution</span>
+                    <span>{t('education.method5')}</span>
                   </li>
                 </ul>
               </div>
               
               <p className="text-lg leading-relaxed italic">
-                Chaque chaton est traité comme une petite licorne précieuse, 
-                recevant toute l'attention nécessaire pour devenir un compagnon équilibré.
+                {t('education.conclusion')}
               </p>
 
               {/* Navigation Button */}
@@ -101,7 +101,7 @@ export const EducationSection = () => {
                     }}
                   >
                     <GraduationCap className="w-4 h-4" />
-                    Notre méthode en images
+                    {t('education.viewMethod')}
                   </a>
                 </Button>
               </div>

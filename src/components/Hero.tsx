@@ -1,8 +1,11 @@
 import tapestryDesire from "@/assets/tapestry-desire.png";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export const Hero = () => {
+  const { t } = useLanguage();
+  
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-midnight">
       <div className="container mx-auto px-4 py-20">
@@ -29,15 +32,15 @@ export const Hero = () => {
           {/* Right side - Content */}
           <div className="relative z-10 text-center lg:text-left order-1 lg:order-2 space-y-8">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-display text-gold medieval-glow tracking-wide">
-              Le Domaine des Licornes
+              {t('hero.title')}
             </h1>
             
             <p className="text-xl md:text-2xl text-ivory/90 font-light">
-              Élevage Premium de Ragdolls
+              {t('hero.subtitle')}
             </p>
             
             <p className="text-base md:text-lg text-ivory/70 max-w-xl lg:mx-0 mx-auto italic font-light">
-              "Où l'élégance médiévale rencontre la grâce féline"
+              "{t('hero.tagline')}"
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
@@ -46,7 +49,7 @@ export const Hero = () => {
                 className="bg-crimson hover:bg-crimson-dark text-ivory border-2 border-gold transition-all duration-300 hover:shadow-[0_0_30px_rgba(218,165,32,0.5)] rounded-full hover:scale-105"
                 onClick={() => document.getElementById('licornes')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Découvrez Nos Licornes
+                {t('hero.discoverCats')}
               </Button>
               
               <Button 
@@ -55,7 +58,7 @@ export const Hero = () => {
                 className="border-2 border-gold text-gold hover:bg-gold/10 hover:text-gold-light transition-all duration-300 rounded-full hover:scale-105"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Contactez-nous
+                {t('hero.contactUs')}
               </Button>
             </div>
           </div>
