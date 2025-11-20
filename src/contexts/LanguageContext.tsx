@@ -94,7 +94,9 @@ const translations = {
       kittens: "Nos Chatons",
       available: "Disponible",
       noKittens: "Aucun chaton disponible pour le moment",
-      viewProfile: "Voir le profil"
+      viewProfile: "Voir le profil",
+      alohaDesc: "Notre magnifique Ragdoll, douce et élégante comme une licorne",
+      utahDesc: "Une princesse parmi les Ragdolls, noble et majestueuse"
     },
     education: {
       title: "Éducation",
@@ -200,7 +202,9 @@ const translations = {
       kittens: "Our Kittens",
       available: "Available",
       noKittens: "No kittens available at the moment",
-      viewProfile: "View profile"
+      viewProfile: "View profile",
+      alohaDesc: "Our magnificent Ragdoll, gentle and elegant like a unicorn",
+      utahDesc: "A princess among Ragdolls, noble and majestic"
     },
     education: {
       title: "Education",
@@ -323,7 +327,9 @@ const translations = {
       kittens: "Nuestros Gatitos",
       available: "Disponible",
       noKittens: "No hay gatitos disponibles en este momento",
-      viewProfile: "Ver perfil"
+      viewProfile: "Ver perfil",
+      alohaDesc: "Nuestro magnífico Ragdoll, dulce y elegante como un unicornio",
+      utahDesc: "Una princesa entre los Ragdolls, noble y majestuosa"
     },
     education: {
       title: "Educación",

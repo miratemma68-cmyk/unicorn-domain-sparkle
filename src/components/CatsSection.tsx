@@ -67,14 +67,14 @@ export const CatsSection = () => {
     {
       name: "Aloha",
       image: alohaAdult,
-      description: "Notre magnifique Ragdoll, douce et élégante comme une licorne",
+      description: t('cats.alohaDesc'),
       slug: "aloha",
       type: "breeding"
     },
     {
       name: "Utah",
       image: utahAdult,
-      description: "Une princesse parmi les Ragdolls, noble et majestueuse",
+      description: t('cats.utahDesc'),
       slug: "utah",
       type: "breeding"
     }
