@@ -12,7 +12,9 @@ interface ContactEmailRequest {
   name: string;
   email: string;
   phone?: string;
+  country?: string;
   message: string;
+  language: 'fr' | 'en' | 'es';
 }
 
 const handler = async (req: Request): Promise<Response> => {
@@ -22,9 +24,9 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const { name, email, phone, message }: ContactEmailRequest = await req.json();
+    const { name, email, phone, country, message, language = 'fr' }: ContactEmailRequest = await req.json();
 
-    console.log("Sending confirmation email to:", email);
+    console.log("Sending confirmation email to:", email, "in language:", language);
 
     // Validate inputs
     if (!name || name.trim().length === 0 || name.length > 100) {
@@ -36,6 +38,48 @@ const handler = async (req: Request): Promise<Response> => {
     if (!message || message.trim().length === 0 || message.length > 2000) {
       throw new Error("Invalid message");
     }
+
+    // Get translations based on language
+    const translations = {
+      fr: {
+        subject: "Confirmation de votre message - Le Domaine des Licornes 🦄",
+        greeting: "Bonjour",
+        received: "Nous avons bien reçu votre message et nous vous en remercions.",
+        reply: "Notre équipe prendra connaissance de votre demande et vous répondra dans les plus brefs délais.",
+        yourMessage: "Votre message :",
+        contact: "Nous vous contacterons",
+        at: "à l'adresse",
+        soonFrom: "À très bientôt,",
+        team: "L'équipe du Domaine des Licornes",
+        footer: "Élevage de Ragdolls • Le Domaine des Licornes"
+      },
+      en: {
+        subject: "Message confirmation - Le Domaine des Licornes 🦄",
+        greeting: "Hello",
+        received: "We have received your message and thank you for it.",
+        reply: "Our team will review your request and respond to you as soon as possible.",
+        yourMessage: "Your message:",
+        contact: "We will contact you",
+        at: "at",
+        soonFrom: "See you soon,",
+        team: "The Team at Le Domaine des Licornes",
+        footer: "Ragdoll Breeding • Le Domaine des Licornes"
+      },
+      es: {
+        subject: "Confirmación de tu mensaje - Le Domaine des Licornes 🦄",
+        greeting: "Hola",
+        received: "Hemos recibido tu mensaje y te lo agradecemos.",
+        reply: "Nuestro equipo revisará tu solicitud y te responderá lo antes posible.",
+        yourMessage: "Tu mensaje:",
+        contact: "Te contactaremos",
+        at: "en",
+        soonFrom: "Hasta pronto,",
+        team: "El equipo de Le Domaine des Licornes",
+        footer: "Criador de Ragdolls • Le Domaine des Licornes"
+      }
+    };
+
+    const t = translations[language] || translations.fr;
 
     const emailHtml = `
       <!DOCTYPE html>
@@ -95,22 +139,22 @@ const handler = async (req: Request): Promise<Response> => {
               <h1>🦄 Le Domaine des Licornes</h1>
             </div>
             <div class="content">
-              <p>Bonjour <span class="highlight">${name}</span>,</p>
+              <p>${t.greeting} <span class="highlight">${name}</span>,</p>
               
-              <p>Nous avons bien reçu votre message et nous vous en remercions.</p>
+              <p>${t.received}</p>
               
-              <p>Notre équipe prendra connaissance de votre demande et vous répondra dans les plus brefs délais.</p>
+              <p>${t.reply}</p>
               
-              <p>Votre message :<br>
+              <p>${t.yourMessage}<br>
               <em>"${message.substring(0, 200)}${message.length > 200 ? "..." : ""}"</em></p>
               
-              ${phone ? `<p>Nous vous contacterons ${phone ? `au ${phone} ou ` : ""}à l'adresse ${email}.</p>` : ""}
+              ${phone || country ? `<p>${t.contact}${phone ? ` ${phone} ${language === 'es' ? 'o' : language === 'en' ? 'or' : 'ou'}` : ""} ${t.at} ${email}${country ? ` (${country})` : ''}.</p>` : ""}
               
-              <p>À très bientôt,<br>
-              <strong>L'équipe du Domaine des Licornes</strong></p>
+              <p>${t.soonFrom}<br>
+              <strong>${t.team}</strong></p>
             </div>
             <div class="footer">
-              <p>Élevage de Ragdolls • Le Domaine des Licornes</p>
+              <p>${t.footer}</p>
             </div>
           </div>
         </body>
@@ -120,7 +164,7 @@ const handler = async (req: Request): Promise<Response> => {
     const emailResponse = await resend.emails.send({
       from: "Le Domaine des Licornes <onboarding@resend.dev>",
       to: [email],
-      subject: "Confirmation de votre message - Le Domaine des Licornes 🦄",
+      subject: t.subject,
       html: emailHtml,
     });
 

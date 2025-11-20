@@ -7,11 +7,12 @@ import { supabase } from "@/integrations/supabase/client";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export const ContactSection = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
+    country: "",
     message: ""
   });
 
@@ -24,7 +25,8 @@ export const ContactSection = () => {
       .insert([{
         name: formData.name,
         email: formData.email,
-        phone: formData.phone,
+        phone: formData.phone || null,
+        country: formData.country || null,
         message: formData.message
       }]);
     
@@ -41,7 +43,9 @@ export const ContactSection = () => {
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
-          message: formData.message
+          country: formData.country,
+          message: formData.message,
+          language: language
         }
       });
       
@@ -57,7 +61,7 @@ export const ContactSection = () => {
     toast.success(t('contact.success'));
     
     // Reset form
-    setFormData({ name: "", email: "", phone: "", message: "" });
+    setFormData({ name: "", email: "", phone: "", country: "", message: "" });
   };
 
   return (
@@ -108,6 +112,18 @@ export const ContactSection = () => {
                 type="tel"
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                className="bg-input border-gold/30 text-foreground focus:border-gold rounded-full"
+              />
+            </div>
+            
+            <div>
+              <label htmlFor="country" className="block text-gold mb-2 font-display">
+                {t('contact.country')}
+              </label>
+              <Input
+                id="country"
+                value={formData.country}
+                onChange={(e) => setFormData({ ...formData, country: e.target.value })}
                 className="bg-input border-gold/30 text-foreground focus:border-gold rounded-full"
               />
             </div>
