@@ -1,4 +1,5 @@
 import tapestryTouch from "@/assets/tapestry-touch.jpg";
+import laurenceProfile from "@/assets/laurence-profile.jpg";
 
 export const DomainSection = () => {
   return (
@@ -94,9 +95,11 @@ export const DomainSection = () => {
             </div>
             
             <div className="relative rounded-[3rem] overflow-hidden tapestry-border">
-              <div className="aspect-square bg-midnight/30 flex items-center justify-center">
-                <span className="text-gold/50 text-6xl">✦</span>
-              </div>
+              <img 
+                src={laurenceProfile} 
+                alt="Laurence, éleveuse du Domaine des Licornes" 
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
