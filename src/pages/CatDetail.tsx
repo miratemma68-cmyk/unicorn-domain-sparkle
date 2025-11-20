@@ -15,6 +15,10 @@ interface BreedingCat {
   color: string;
   pedigree: string;
   personality: string;
+  pedigree_en: string;
+  pedigree_es: string;
+  personality_en: string;
+  personality_es: string;
   registration_number: string;
   microchip_number: string;
   profile_image_url: string;
@@ -30,7 +34,7 @@ interface GalleryImage {
 
 export default function CatDetail() {
   const { id } = useParams<{ id: string }>();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [cat, setCat] = useState<BreedingCat | null>(null);
   const [gallery, setGallery] = useState<GalleryImage[]>([]);
   const [loading, setLoading] = useState(true);
@@ -170,7 +174,7 @@ export default function CatDetail() {
               </CardContent>
             </Card>
 
-            {cat.personality && (
+            {(cat.personality || cat.personality_en || cat.personality_es) && (
               <Card className="bg-card/50 backdrop-blur-sm border-gold/30">
                 <CardHeader>
                   <CardTitle className="text-gold flex items-center gap-2">
@@ -179,12 +183,18 @@ export default function CatDetail() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="text-ivory/90">
-                  <p className="leading-relaxed">{cat.personality}</p>
+                  <p className="leading-relaxed">
+                    {language === 'en' && cat.personality_en 
+                      ? cat.personality_en 
+                      : language === 'es' && cat.personality_es
+                      ? cat.personality_es
+                      : cat.personality}
+                  </p>
                 </CardContent>
               </Card>
             )}
 
-            {cat.pedigree && (
+            {(cat.pedigree || cat.pedigree_en || cat.pedigree_es) && (
               <Card className="bg-card/50 backdrop-blur-sm border-gold/30">
                 <CardHeader>
                   <CardTitle className="text-gold flex items-center gap-2">
@@ -193,7 +203,13 @@ export default function CatDetail() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="text-ivory/90">
-                  <p className="leading-relaxed whitespace-pre-line">{cat.pedigree}</p>
+                  <p className="leading-relaxed whitespace-pre-line">
+                    {language === 'en' && cat.pedigree_en 
+                      ? cat.pedigree_en 
+                      : language === 'es' && cat.pedigree_es
+                      ? cat.pedigree_es
+                      : cat.pedigree}
+                  </p>
                 </CardContent>
               </Card>
             )}
