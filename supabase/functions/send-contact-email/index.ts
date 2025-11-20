@@ -27,7 +27,7 @@ const handler = async (req: Request): Promise<Response> => {
     const { name, email, phone, country, message, language = 'fr' }: ContactEmailRequest = await req.json();
     
     // URL of the unicorn image stored in Supabase Storage
-    const unicornImageUrl = `${Deno.env.get('SUPABASE_URL')}/storage/v1/object/public/domain-gallery/unicorn-email.png`;
+    const unicornImageUrl = `${Deno.env.get('SUPABASE_URL')}/storage/v1/object/public/domain-gallery/1763650988576_Dame_Licorne-Mon_seul_d_sir-Zoom.jpg`;
 
     console.log("Sending confirmation email to:", email, "in language:", language);
 
