@@ -157,6 +157,17 @@ const translations = {
       a5: "Nos chatons grandissent dans un environnement familial privilégié, entourés d'amour et d'attention constante. Ils bénéficient d'une pré-éducation exclusive, d'une socialisation précoce et d'un suivi vétérinaire rigoureux.",
       q6: "Quels sont les frais d'adoption ?",
       a6: "Les tarifs varient selon le chaton et sa destination (compagnie ou reproduction). Contactez-nous pour obtenir des informations détaillées et personnalisées selon votre projet."
+    },
+    footer: {
+      title: "Le Domaine des Licornes",
+      subtitle: "Élevage familial premium de Ragdolls",
+      loof: "LOOF - Le domaine des licornes seal",
+      navigation: "Navigation",
+      contact: "Contact",
+      email: "Email: contact@domainedeslicornes.com",
+      social: "Suivez-nous sur les réseaux sociaux",
+      copyright: "Tous droits réservés.",
+      tagline: "Où l'élégance médiévale rencontre la grâce féline"
     }
   },
   en: {
@@ -282,6 +293,17 @@ const translations = {
       a5: "Our kittens grow up in a privileged family environment, surrounded by love and constant attention. They benefit from exclusive pre-education, early socialization, and rigorous veterinary monitoring.",
       q6: "What are the adoption fees?",
       a6: "Prices vary depending on the kitten and its destination (companion or breeding). Contact us to obtain detailed and personalized information according to your project."
+    },
+    footer: {
+      title: "Le Domaine des Licornes",
+      subtitle: "Premium Ragdoll Cattery",
+      loof: "LOOF - Le domaine des licornes seal",
+      navigation: "Navigation",
+      contact: "Contact",
+      email: "Email: contact@domainedeslicornes.com",
+      social: "Follow us on social media",
+      copyright: "All rights reserved.",
+      tagline: "Where medieval elegance meets feline grace"
     }
   },
   es: {
@@ -407,6 +429,17 @@ const translations = {
       a5: "Nuestros gatitos crecen en un entorno familiar privilegiado, rodeados de amor y atención constante. Se benefician de una pre-educación exclusiva, socialización temprana y seguimiento veterinario riguroso.",
       q6: "¿Cuáles son los costos de adopción?",
       a6: "Los precios varían según el gatito y su destino (compañía o reproducción). Contáctenos para obtener información detallada y personalizada según su proyecto."
+    },
+    footer: {
+      title: "Le Domaine des Licornes",
+      subtitle: "Criadero Premium de Ragdolls",
+      loof: "LOOF - Le domaine des licornes seal",
+      navigation: "Navegación",
+      contact: "Contacto",
+      email: "Email: contact@domainedeslicornes.com",
+      social: "Síguenos en las redes sociales",
+      copyright: "Todos los derechos reservados.",
+      tagline: "Donde la elegancia medieval se encuentra con la gracia felina"
     }
   }
 };
