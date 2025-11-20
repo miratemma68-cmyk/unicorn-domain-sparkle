@@ -19,6 +19,7 @@ interface KittenMedia {
 
 export const CatsSection = () => {
   const [availableKittens, setAvailableKittens] = useState<Array<{ id: string; name: string; image: string }>>([]);
+  const [loading, setLoading] = useState(true);
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -27,19 +28,32 @@ export const CatsSection = () => {
 
   const loadKittens = async () => {
     try {
+      console.log('Loading kittens from public_kittens_view...');
+      setLoading(true);
+      
       // Get all kittens from the public view (excludes sensitive fields)
       const { data: kittensData, error: kittensError } = await supabase
         .from('public_kittens_view')
         .select('id, name')
         .order('name');
 
-      if (kittensError) throw kittensError;
+      if (kittensError) {
+        console.error('Error loading kittens:', kittensError);
+        throw kittensError;
+      }
 
       console.log('Loaded kittens:', kittensData);
 
+      if (!kittensData || kittensData.length === 0) {
+        console.log('No kittens found');
+        setAvailableKittens([]);
+        setLoading(false);
+        return;
+      }
+
       // For each kitten, get their first photo
       const kittensWithPhotos = await Promise.all(
-        (kittensData || []).map(async (kitten: Kitten) => {
+        kittensData.map(async (kitten: Kitten) => {
           const { data: mediaData, error: mediaError } = await supabase
             .from('kitten_media')
             .select('file_url')
@@ -52,20 +66,24 @@ export const CatsSection = () => {
             console.error('Error loading media for kitten:', kitten.id, mediaError);
           }
 
-          console.log(`Media for ${kitten.name}:`, mediaData);
+          const imageUrl = mediaData?.[0]?.file_url || kittens;
+          console.log(`Kitten ${kitten.name} (${kitten.id}): ${mediaData?.length || 0} photos, using: ${imageUrl}`);
 
           return {
             id: kitten.id,
             name: kitten.name,
-            image: mediaData?.[0]?.file_url || kittens,
+            image: imageUrl,
           };
         })
       );
 
-      console.log('Kittens with photos:', kittensWithPhotos);
+      console.log('Final kittens with photos:', kittensWithPhotos);
       setAvailableKittens(kittensWithPhotos);
     } catch (error) {
-      console.error('Error loading kittens:', error);
+      console.error('Error in loadKittens:', error);
+      setAvailableKittens([]);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -140,7 +158,13 @@ export const CatsSection = () => {
         <p className="text-center text-ivory/80 mb-8 italic font-light">
           {t('cats.available')}
         </p>
-        {availableKittens.length > 0 ? (
+        {loading ? (
+          <Card className="bg-card/80 backdrop-blur-sm border-2 border-gold/30 rounded-[3rem]">
+            <CardContent className="p-8 text-center">
+              <p className="text-ivory/80">{t('common.loading')}...</p>
+            </CardContent>
+          </Card>
+        ) : availableKittens.length > 0 ? (
           <div className="grid md:grid-cols-3 gap-8">
             {availableKittens.map((kitten) => (
               <Link key={kitten.id} to={`/kitten/${kitten.id}`} className="block">
