@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import tapestrySmell from "@/assets/tapestry-smell.jpg";
 import { supabase } from "@/integrations/supabase/client";
 import { GraduationCap } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface EducationMedia {
   id: string;
@@ -88,17 +89,21 @@ export const EducationSection = () => {
 
               {/* Navigation Button */}
               <div className="mt-8">
-                <a 
-                  href="#methode-images"
-                  className="inline-flex items-center justify-center gap-2 bg-crimson hover:bg-crimson-dark text-ivory border-2 border-gold transition-all duration-300 hover:shadow-[0_0_30px_rgba(218,165,32,0.5)] rounded-full hover:scale-105 font-display text-lg px-8 py-4"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById('methode-images')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }}
+                <Button 
+                  asChild
+                  className="bg-crimson hover:bg-crimson-dark text-ivory border-2 border-gold"
                 >
-                  <GraduationCap className="w-5 h-5" />
-                  Notre méthode en images
-                </a>
+                  <a
+                    href="#methode-images"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.getElementById('methode-images')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
+                  >
+                    <GraduationCap className="w-4 h-4" />
+                    Notre méthode en images
+                  </a>
+                </Button>
               </div>
             </div>
           </div>
