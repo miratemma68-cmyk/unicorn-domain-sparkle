@@ -186,6 +186,36 @@ export type Database = {
         }
         Relationships: []
       }
+      education_media: {
+        Row: {
+          caption: string | null
+          created_at: string
+          display_order: number | null
+          file_path: string
+          file_url: string
+          id: string
+          media_type: string
+        }
+        Insert: {
+          caption?: string | null
+          created_at?: string
+          display_order?: number | null
+          file_path: string
+          file_url: string
+          id?: string
+          media_type: string
+        }
+        Update: {
+          caption?: string | null
+          created_at?: string
+          display_order?: number | null
+          file_path?: string
+          file_url?: string
+          id?: string
+          media_type?: string
+        }
+        Relationships: []
+      }
       kitten_media: {
         Row: {
           caption: string | null
