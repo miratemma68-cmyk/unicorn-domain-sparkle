@@ -132,6 +132,21 @@ const translations = {
       sending: "Envoi...",
       success: "Message envoyé avec succès !",
       error: "Erreur lors de l'envoi"
+    },
+    faq: {
+      title: "Questions Fréquentes",
+      q1: "Qu'est-ce qui rend le Ragdoll unique ?",
+      a1: "Le Ragdoll est réputé pour son tempérament exceptionnel : calme, affectueux et docile. Il se détend complètement lorsqu'on le prend dans les bras, d'où son nom 'poupée de chiffon'. C'est le compagnon idéal pour les familles.",
+      q2: "À quel âge puis-je adopter un chaton ?",
+      a2: "Nos chatons quittent l'élevage à partir de 12-14 semaines, jamais avant. Cette période permet une socialisation optimale avec leur mère et leurs frères et sœurs, garantissant un caractère équilibré.",
+      q3: "Les Ragdolls s'entendent-ils avec les autres animaux ?",
+      a3: "Oui, excellemment ! Les Ragdolls sont connus pour leur sociabilité. Nos chatons sont habitués dès leur plus jeune âge à côtoyer d'autres chats et animaux, facilitant leur intégration dans tout type de foyer.",
+      q4: "Quel suivi proposez-vous après l'adoption ?",
+      a4: "Nous restons disponibles à vie pour accompagner nos adoptants. Vous recevrez des conseils personnalisés, pourrez nous contacter à tout moment, et rejoindrez notre communauté d'adoptants.",
+      q5: "Comment sont élevés vos chatons ?",
+      a5: "Nos chatons grandissent dans un environnement familial privilégié, entourés d'amour et d'attention constante. Ils bénéficient d'une pré-éducation exclusive, d'une socialisation précoce et d'un suivi vétérinaire rigoureux.",
+      q6: "Quels sont les frais d'adoption ?",
+      a6: "Les tarifs varient selon le chaton et sa destination (compagnie ou reproduction). Contactez-nous pour obtenir des informations détaillées et personnalisées selon votre projet."
     }
   },
   en: {
@@ -215,6 +230,21 @@ const translations = {
       sending: "Sending...",
       success: "Message sent successfully!",
       error: "Error sending message"
+    },
+    faq: {
+      title: "Frequently Asked Questions",
+      q1: "What makes the Ragdoll unique?",
+      a1: "The Ragdoll is renowned for its exceptional temperament: calm, affectionate, and docile. It relaxes completely when held in your arms, hence its name 'rag doll'. It's the ideal companion for families.",
+      q2: "At what age can I adopt a kitten?",
+      a2: "Our kittens leave the cattery from 12-14 weeks onwards, never before. This period allows optimal socialization with their mother and siblings, ensuring a balanced character.",
+      q3: "Do Ragdolls get along with other animals?",
+      a3: "Yes, excellently! Ragdolls are known for their sociability. Our kittens are accustomed from a young age to being around other cats and animals, facilitating their integration into any type of household.",
+      q4: "What follow-up do you offer after adoption?",
+      a4: "We remain available for life to support our adopters. You will receive personalized advice, can contact us at any time, and join our community of adopters.",
+      q5: "How are your kittens raised?",
+      a5: "Our kittens grow up in a privileged family environment, surrounded by love and constant attention. They benefit from exclusive pre-education, early socialization, and rigorous veterinary monitoring.",
+      q6: "What are the adoption fees?",
+      a6: "Prices vary depending on the kitten and its destination (companion or breeding). Contact us to obtain detailed and personalized information according to your project."
     }
   },
   es: {
@@ -298,6 +328,21 @@ const translations = {
       sending: "Enviando...",
       success: "¡Mensaje enviado con éxito!",
       error: "Error al enviar el mensaje"
+    },
+    faq: {
+      title: "Preguntas Frecuentes",
+      q1: "¿Qué hace único al Ragdoll?",
+      a1: "El Ragdoll es conocido por su temperamento excepcional: tranquilo, cariñoso y dócil. Se relaja completamente cuando se le sostiene en brazos, de ahí su nombre 'muñeca de trapo'. Es el compañero ideal para las familias.",
+      q2: "¿A qué edad puedo adoptar un gatito?",
+      a2: "Nuestros gatitos dejan el criadero a partir de las 12-14 semanas, nunca antes. Este período permite una socialización óptima con su madre y hermanos, garantizando un carácter equilibrado.",
+      q3: "¿Los Ragdolls se llevan bien con otros animales?",
+      a3: "¡Sí, excelentemente! Los Ragdolls son conocidos por su sociabilidad. Nuestros gatitos están acostumbrados desde muy jóvenes a convivir con otros gatos y animales, facilitando su integración en cualquier tipo de hogar.",
+      q4: "¿Qué seguimiento ofrecen después de la adopción?",
+      a4: "Permanecemos disponibles de por vida para acompañar a nuestros adoptantes. Recibirá consejos personalizados, podrá contactarnos en cualquier momento y se unirá a nuestra comunidad de adoptantes.",
+      q5: "¿Cómo se crían sus gatitos?",
+      a5: "Nuestros gatitos crecen en un entorno familiar privilegiado, rodeados de amor y atención constante. Se benefician de una pre-educación exclusiva, socialización temprana y seguimiento veterinario riguroso.",
+      q6: "¿Cuáles son los costos de adopción?",
+      a6: "Los precios varían según el gatito y su destino (compañía o reproducción). Contáctenos para obtener información detallada y personalizada según su proyecto."
     }
   }
 };

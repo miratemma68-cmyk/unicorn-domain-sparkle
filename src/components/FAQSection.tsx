@@ -5,32 +5,35 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import tapestrySight from "@/assets/tapestry-sight.jpg";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export const FAQSection = () => {
+  const { t } = useLanguage();
+  
   const faqs = [
     {
-      question: "Qu'est-ce qui rend le Ragdoll unique ?",
-      answer: "Le Ragdoll est réputé pour son tempérament exceptionnel : calme, affectueux et docile. Il se détend complètement lorsqu'on le prend dans les bras, d'où son nom 'poupée de chiffon'. C'est le compagnon idéal pour les familles."
+      question: t('faq.q1'),
+      answer: t('faq.a1')
     },
     {
-      question: "À quel âge puis-je adopter un chaton ?",
-      answer: "Nos chatons quittent l'élevage à partir de 12-14 semaines, jamais avant. Cette période permet une socialisation optimale avec leur mère et leurs frères et sœurs, garantissant un caractère équilibré."
+      question: t('faq.q2'),
+      answer: t('faq.a2')
     },
     {
-      question: "Les Ragdolls s'entendent-ils avec les autres animaux ?",
-      answer: "Oui, excellemment ! Les Ragdolls sont connus pour leur sociabilité. Nos chatons sont habitués dès leur plus jeune âge à côtoyer d'autres chats et animaux, facilitant leur intégration dans tout type de foyer."
+      question: t('faq.q3'),
+      answer: t('faq.a3')
     },
     {
-      question: "Quel suivi proposez-vous après l'adoption ?",
-      answer: "Nous restons disponibles à vie pour accompagner nos adoptants. Vous recevrez des conseils personnalisés, pourrez nous contacter à tout moment, et rejoindrez notre communauté d'adoptants."
+      question: t('faq.q4'),
+      answer: t('faq.a4')
     },
     {
-      question: "Comment sont élevés vos chatons ?",
-      answer: "Nos chatons grandissent dans un environnement familial privilégié, entourés d'amour et d'attention constante. Ils bénéficient d'une pré-éducation exclusive, d'une socialisation précoce et d'un suivi vétérinaire rigoureux."
+      question: t('faq.q5'),
+      answer: t('faq.a5')
     },
     {
-      question: "Quels sont les frais d'adoption ?",
-      answer: "Les tarifs varient selon le chaton et sa destination (compagnie ou reproduction). Contactez-nous pour obtenir des informations détaillées et personnalisées selon votre projet."
+      question: t('faq.q6'),
+      answer: t('faq.a6')
     }
   ];
 
@@ -50,7 +53,7 @@ export const FAQSection = () => {
       <div className="container mx-auto max-w-4xl relative z-10">
         <div className="tapestry-border bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12">
           <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-8">
-            Questions Fréquentes
+            {t('faq.title')}
           </h2>
           
           <Accordion type="single" collapsible className="space-y-4">
