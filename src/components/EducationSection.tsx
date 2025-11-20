@@ -112,7 +112,7 @@ export const EducationSection = () => {
         {/* Notre méthode en images */}
         <div id="methode-images" className="tapestry-border bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12 mt-12">
           <h3 className="text-3xl font-display text-gold medieval-glow text-center mb-8">
-            Notre méthode en images
+            {t('education.methodImagesTitle')}
           </h3>
           
           {educationMedia.length > 0 ? (
@@ -153,7 +153,7 @@ export const EducationSection = () => {
           
           {educationMedia.length === 0 && (
             <p className="text-center text-ivory/60 mt-8 italic">
-              Photos et vidéos à venir...
+              {t('education.methodEmpty')}
             </p>
           )}
         </div>
