@@ -13,6 +13,7 @@ import { DomainGalleryManager } from '@/components/admin/DomainGalleryManager';
 import { EducationMediaManager } from '@/components/admin/EducationMediaManager';
 import { TestimonialsMediaManager } from '@/components/admin/TestimonialsMediaManager';
 import { ClientKittenManager } from '@/components/admin/ClientKittenManager';
+import { KittenDataManager } from '@/components/admin/KittenDataManager';
 import { FAQManager } from '@/components/admin/FAQManager';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -84,6 +85,10 @@ export default function Admin() {
               <Image className="mr-2 h-4 w-4" />
               {t('admin.management')}
             </TabsTrigger>
+            <TabsTrigger value="kitten-data">
+              <Cat className="mr-2 h-4 w-4" />
+              Données Chatons
+            </TabsTrigger>
             <TabsTrigger value="faq">
               <HelpCircle className="mr-2 h-4 w-4" />
               FAQ
@@ -117,6 +122,10 @@ export default function Admin() {
 
           <TabsContent value="management" className="space-y-6">
             <ClientKittenManager />
+          </TabsContent>
+
+          <TabsContent value="kitten-data" className="space-y-6">
+            <KittenDataManager />
           </TabsContent>
 
           <TabsContent value="faq" className="space-y-6">
