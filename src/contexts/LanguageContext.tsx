@@ -52,6 +52,9 @@ export function useLanguage() {
 
 const translations = {
   fr: {
+    common: {
+      back: "Retour",
+    },
     nav: {
       domain: "Le Domaine",
       cats: "Nos Licornes",
@@ -243,6 +246,9 @@ const translations = {
     }
   },
   en: {
+    common: {
+      back: "Back",
+    },
     nav: {
       domain: "The Domain",
       cats: "Our Unicorns",
@@ -434,6 +440,9 @@ const translations = {
     }
   },
   es: {
+    common: {
+      back: "Volver",
+    },
     nav: {
       domain: "El Dominio",
       cats: "Nuestros Unicornios",
