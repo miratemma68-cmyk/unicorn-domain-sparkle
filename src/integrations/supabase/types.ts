@@ -17,6 +17,8 @@ export type Database = {
       breeding_cat_gallery: {
         Row: {
           caption: string | null
+          caption_en: string | null
+          caption_es: string | null
           cat_id: string
           created_at: string
           display_order: number | null
@@ -26,6 +28,8 @@ export type Database = {
         }
         Insert: {
           caption?: string | null
+          caption_en?: string | null
+          caption_es?: string | null
           cat_id: string
           created_at?: string
           display_order?: number | null
@@ -35,6 +39,8 @@ export type Database = {
         }
         Update: {
           caption?: string | null
+          caption_en?: string | null
+          caption_es?: string | null
           cat_id?: string
           created_at?: string
           display_order?: number | null
@@ -171,6 +177,8 @@ export type Database = {
       domain_gallery: {
         Row: {
           caption: string | null
+          caption_en: string | null
+          caption_es: string | null
           created_at: string
           display_order: number | null
           file_path: string
@@ -180,6 +188,8 @@ export type Database = {
         }
         Insert: {
           caption?: string | null
+          caption_en?: string | null
+          caption_es?: string | null
           created_at?: string
           display_order?: number | null
           file_path: string
@@ -189,6 +199,8 @@ export type Database = {
         }
         Update: {
           caption?: string | null
+          caption_en?: string | null
+          caption_es?: string | null
           created_at?: string
           display_order?: number | null
           file_path?: string
@@ -201,6 +213,8 @@ export type Database = {
       education_media: {
         Row: {
           caption: string | null
+          caption_en: string | null
+          caption_es: string | null
           created_at: string
           display_order: number | null
           file_path: string
@@ -210,6 +224,8 @@ export type Database = {
         }
         Insert: {
           caption?: string | null
+          caption_en?: string | null
+          caption_es?: string | null
           created_at?: string
           display_order?: number | null
           file_path: string
@@ -219,6 +235,8 @@ export type Database = {
         }
         Update: {
           caption?: string | null
+          caption_en?: string | null
+          caption_es?: string | null
           created_at?: string
           display_order?: number | null
           file_path?: string
@@ -231,6 +249,8 @@ export type Database = {
       kitten_media: {
         Row: {
           caption: string | null
+          caption_en: string | null
+          caption_es: string | null
           created_at: string
           file_path: string
           file_url: string
@@ -242,6 +262,8 @@ export type Database = {
         }
         Insert: {
           caption?: string | null
+          caption_en?: string | null
+          caption_es?: string | null
           created_at?: string
           file_path: string
           file_url: string
@@ -253,6 +275,8 @@ export type Database = {
         }
         Update: {
           caption?: string | null
+          caption_en?: string | null
+          caption_es?: string | null
           created_at?: string
           file_path?: string
           file_url?: string
@@ -465,6 +489,8 @@ export type Database = {
       testimonials_media: {
         Row: {
           caption: string | null
+          caption_en: string | null
+          caption_es: string | null
           created_at: string
           display_order: number | null
           file_path: string
@@ -474,6 +500,8 @@ export type Database = {
         }
         Insert: {
           caption?: string | null
+          caption_en?: string | null
+          caption_es?: string | null
           created_at?: string
           display_order?: number | null
           file_path: string
@@ -483,6 +511,8 @@ export type Database = {
         }
         Update: {
           caption?: string | null
+          caption_en?: string | null
+          caption_es?: string | null
           created_at?: string
           display_order?: number | null
           file_path?: string
