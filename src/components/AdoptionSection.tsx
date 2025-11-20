@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import tapestryHearing from "@/assets/tapestry-hearing.jpg";
 import { supabase } from "@/integrations/supabase/client";
 import { Heart, MessageCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface TestimonialMedia {
   id: string;
@@ -115,28 +116,38 @@ export const AdoptionSection = () => {
 
             {/* Navigation Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-              <a 
-                href="#contact"
-                className="inline-flex items-center justify-center gap-2 bg-crimson hover:bg-crimson-dark text-ivory border-2 border-gold transition-all duration-300 hover:shadow-[0_0_30px_rgba(218,165,32,0.5)] rounded-full hover:scale-105 font-display text-lg px-8 py-4"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }}
+              <Button 
+                asChild
+                className="bg-crimson hover:bg-crimson-dark text-ivory border-2 border-gold"
               >
-                <Heart className="w-5 h-5" />
-                Commencez votre adoption
-              </a>
-              <a 
-                href="#clients-racontent"
-                className="inline-flex items-center justify-center gap-2 border-2 border-gold text-gold hover:bg-gold/10 hover:text-gold-light transition-all duration-300 rounded-full hover:scale-105 font-display px-8 py-4"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById('clients-racontent')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }}
+                <a
+                  href="#contact"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  <Heart className="w-4 h-4" />
+                  Commencez votre adoption
+                </a>
+              </Button>
+              
+              <Button 
+                asChild
+                variant="outline"
+                className="border-2 border-gold text-gold hover:bg-gold/10"
               >
-                <MessageCircle className="w-5 h-5" />
-                Nos clients racontent
-              </a>
+                <a
+                  href="#clients-racontent"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('clients-racontent')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  Nos clients racontent
+                </a>
+              </Button>
             </div>
           </div>
         </div>
