@@ -10,11 +10,13 @@ interface EducationMedia {
   media_type: string;
   file_url: string;
   caption: string | null;
+  caption_en: string | null;
+  caption_es: string | null;
 }
 
 export const EducationSection = () => {
   const [educationMedia, setEducationMedia] = useState<EducationMedia[]>([]);
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   useEffect(() => {
     loadEducationMedia();
@@ -24,7 +26,7 @@ export const EducationSection = () => {
     try {
       const { data, error } = await supabase
         .from('education_media')
-        .select('id, media_type, file_url, caption')
+        .select('id, media_type, file_url, caption, caption_en, caption_es')
         .order('display_order', { ascending: true });
 
       if (error) throw error;
@@ -32,6 +34,12 @@ export const EducationSection = () => {
     } catch (error) {
       console.error('Error loading education media:', error);
     }
+  };
+
+  const getTranslatedCaption = (item: EducationMedia) => {
+    if (language === 'en' && item.caption_en) return item.caption_en;
+    if (language === 'es' && item.caption_es) return item.caption_es;
+    return item.caption || '';
   };
 
   return (
@@ -131,7 +139,7 @@ export const EducationSection = () => {
                   ) : (
                     <img 
                       src={item.file_url}
-                      alt={item.caption || "Photo méthode éducative"}
+                      alt={getTranslatedCaption(item) || "Photo méthode éducative"}
                       className="w-full h-full object-cover"
                     />
                   )}

@@ -28,6 +28,8 @@ interface GalleryImage {
   id: string;
   image_url: string;
   caption: string;
+  caption_en: string | null;
+  caption_es: string | null;
   display_order: number;
   media_type: string;
 }
@@ -67,6 +69,12 @@ export default function CatDetail() {
     } finally {
       setLoading(false);
     }
+  };
+
+  const getTranslatedCaption = (item: GalleryImage) => {
+    if (language === 'en' && item.caption_en) return item.caption_en;
+    if (language === 'es' && item.caption_es) return item.caption_es;
+    return item.caption || '';
   };
 
   const calculateAge = (birthDate: string) => {
@@ -244,7 +252,7 @@ export default function CatDetail() {
                   )}
                   {item.caption && (
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-midnight/90 to-transparent p-4">
-                      <p className="text-ivory/90 text-sm">{item.caption}</p>
+                      <p className="text-ivory/90 text-sm">{getTranslatedCaption(item)}</p>
                     </div>
                   )}
                 </div>

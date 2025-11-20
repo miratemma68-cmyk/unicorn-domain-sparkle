@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Calendar, Palette, Weight } from 'lucide-react';
 import { Footer } from '@/components/Footer';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface Kitten {
   id: string;
@@ -20,12 +21,15 @@ interface KittenMedia {
   id: string;
   file_url: string;
   caption: string | null;
+  caption_en: string | null;
+  caption_es: string | null;
   media_type: string;
   created_at: string;
 }
 
 export default function KittenDetail() {
   const { id } = useParams<{ id: string }>();
+  const { language } = useLanguage();
   const [kitten, setKitten] = useState<Kitten | null>(null);
   const [media, setMedia] = useState<KittenMedia[]>([]);
   const [loading, setLoading] = useState(true);
@@ -58,6 +62,12 @@ export default function KittenDetail() {
     } finally {
       setLoading(false);
     }
+  };
+
+  const getTranslatedCaption = (item: KittenMedia) => {
+    if (language === 'en' && item.caption_en) return item.caption_en;
+    if (language === 'es' && item.caption_es) return item.caption_es;
+    return item.caption || '';
   };
 
   const calculateAge = (birthDate: string) => {
@@ -210,7 +220,7 @@ export default function KittenDetail() {
                     {item.media_type === 'photo' ? (
                       <img
                         src={item.file_url}
-                        alt={item.caption || kitten.name}
+                        alt={getTranslatedCaption(item) || kitten.name}
                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                       />
                     ) : (
@@ -220,9 +230,9 @@ export default function KittenDetail() {
                         className="w-full h-full object-cover"
                       />
                     )}
-                    {item.caption && (
+                    {(item.caption || item.caption_en || item.caption_es) && (
                       <div className="absolute bottom-0 left-0 right-0 bg-midnight/80 p-2 text-xs text-ivory/80">
-                        {item.caption}
+                        {getTranslatedCaption(item)}
                       </div>
                     )}
                   </div>
