@@ -10,6 +10,7 @@ import { MediaGallery } from '@/components/admin/MediaGallery';
 import { BreedingCatMediaManager } from '@/components/admin/BreedingCatMediaManager';
 import { DomainGalleryManager } from '@/components/admin/DomainGalleryManager';
 import { EducationMediaManager } from '@/components/admin/EducationMediaManager';
+import { TestimonialsMediaManager } from '@/components/admin/TestimonialsMediaManager';
 
 export default function Admin() {
   const navigate = useNavigate();
@@ -66,6 +67,10 @@ export default function Admin() {
               <Image className="mr-2 h-4 w-4" />
               Éducation
             </TabsTrigger>
+            <TabsTrigger value="testimonials">
+              <Image className="mr-2 h-4 w-4" />
+              Témoignages
+            </TabsTrigger>
             <TabsTrigger value="management">
               <Image className="mr-2 h-4 w-4" />
               Gestion
@@ -87,6 +92,10 @@ export default function Admin() {
 
           <TabsContent value="education" className="space-y-6">
             <EducationMediaManager />
+          </TabsContent>
+
+          <TabsContent value="testimonials" className="space-y-6">
+            <TestimonialsMediaManager />
           </TabsContent>
 
           <TabsContent value="management">
