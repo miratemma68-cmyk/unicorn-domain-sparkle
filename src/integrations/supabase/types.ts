@@ -149,6 +149,7 @@ export type Database = {
       }
       contact_inquiries: {
         Row: {
+          country: string | null
           created_at: string
           email: string
           id: string
@@ -157,6 +158,7 @@ export type Database = {
           phone: string | null
         }
         Insert: {
+          country?: string | null
           created_at?: string
           email: string
           id?: string
@@ -165,6 +167,7 @@ export type Database = {
           phone?: string | null
         }
         Update: {
+          country?: string | null
           created_at?: string
           email?: string
           id?: string
