@@ -33,24 +33,37 @@ export default function Dashboard() {
     if (user) {
       loadKittens();
     }
-  }, [user]);
+  }, [user, isAdmin]);
 
   const loadKittens = async () => {
     try {
+      // Admins should not see kittens in client dashboard
+      if (isAdmin) {
+        setKittens([]);
+        setLoadingKittens(false);
+        return;
+      }
+
+      // Load only kittens assigned to this client
       const { data, error } = await supabase
-        .from('kittens')
+        .from('client_kittens')
         .select(`
-          id,
-          name,
-          birth_date,
-          gender,
-          color,
-          current_weight
+          kittens (
+            id,
+            name,
+            birth_date,
+            gender,
+            color,
+            current_weight
+          )
         `)
-        .order('birth_date', { ascending: false });
+        .eq('client_id', user?.id);
 
       if (error) throw error;
-      setKittens(data || []);
+      
+      // Extract kittens from the nested structure
+      const clientKittens = data?.map(item => item.kittens).filter(Boolean) || [];
+      setKittens(clientKittens as Kitten[]);
     } catch (error: any) {
       toast.error('Erreur lors du chargement des chatons');
       console.error('Error loading kittens:', error);
