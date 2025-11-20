@@ -136,7 +136,10 @@ const handler = async (req: Request): Promise<Response> => {
         <body>
           <div class="container">
             <div class="header">
-              <h1>🦄 Le Domaine des Licornes</h1>
+              <h1>
+                <img src="https://sayvcchuqjrdpjluhhvn.supabase.co/storage/v1/object/public/domain-media/Dame_Licorne-Mon_seul_désir-Zoom.png" alt="Licorne" style="width: 60px; height: 60px; border: 3px solid #DAA520; border-radius: 12px; vertical-align: middle; margin-right: 10px; background: white; padding: 4px;" />
+                Le Domaine des Licornes
+              </h1>
             </div>
             <div class="content">
               <p>${t.greeting} <span class="highlight">${name}</span>,</p>
