@@ -4,6 +4,7 @@ import laurenceProfile from "@/assets/laurence-profile.jpg";
 import { supabase } from "@/integrations/supabase/client";
 import { User, Image as ImageIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface DomainMedia {
   id: string;
@@ -14,6 +15,7 @@ interface DomainMedia {
 
 export const DomainSection = () => {
   const [galleryMedia, setGalleryMedia] = useState<DomainMedia[]>([]);
+  const { t } = useLanguage();
 
   useEffect(() => {
     loadGalleryMedia();
@@ -49,7 +51,7 @@ export const DomainSection = () => {
       
       <div className="container mx-auto max-w-6xl relative z-10">
         <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-12">
-          Le Domaine
+          {t('domain.title')}
         </h2>
 
         {/* Introduction Section */}
@@ -57,34 +59,31 @@ export const DomainSection = () => {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-6 text-ivory/90">
               <p className="text-lg leading-relaxed">
-                Bienvenue dans notre élevage familial, où chaque Ragdoll est élevé avec amour, 
-                respect et selon les plus hauts standards éthiques.
+                {t('domain.intro1')}
               </p>
               
               <p className="text-lg leading-relaxed">
-                Inspirés par la noblesse des licornes des tapisseries médiévales, 
-                nous avons créé un havre de paix où nos chats s'épanouissent dans un environnement 
-                privilégié, entourés d'attention et de soins constants.
+                {t('domain.intro2')}
               </p>
               
               <div className="space-y-4 mt-8">
-                <h3 className="text-2xl font-display text-gold">Nos Valeurs</h3>
+                <h3 className="text-2xl font-display text-gold">{t('domain.values')}</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <span className="text-gold text-2xl">✦</span>
-                    <span>Éthique et bien-être animal au cœur de nos pratiques</span>
+                    <span>{t('domain.value1')}</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-gold text-2xl">✦</span>
-                    <span>Élevage familial dans un cadre exceptionnel</span>
+                    <span>{t('domain.value2')}</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-gold text-2xl">✦</span>
-                    <span>Pré-éducation soignée de chaque chaton</span>
+                    <span>{t('domain.value3')}</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-gold text-2xl">✦</span>
-                    <span>Accompagnement personnalisé des adoptants</span>
+                    <span>{t('domain.value4')}</span>
                   </li>
                 </ul>
               </div>
@@ -103,7 +102,7 @@ export const DomainSection = () => {
                     }}
                   >
                     <User className="w-4 h-4" />
-                    Découvrir Laurence
+                    {t('domain.discoverLaurence')}
                   </a>
                 </Button>
                 
@@ -120,7 +119,7 @@ export const DomainSection = () => {
                     }}
                   >
                     <ImageIcon className="w-4 h-4" />
-                    Voir la Galerie
+                    {t('domain.viewGallery')}
                   </a>
                 </Button>
               </div>
