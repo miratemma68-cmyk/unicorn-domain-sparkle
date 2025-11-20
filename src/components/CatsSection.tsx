@@ -27,9 +27,9 @@ export const CatsSection = () => {
 
   const loadKittens = async () => {
     try {
-      // Get all kittens
+      // Get all kittens from the public view (excludes sensitive fields)
       const { data: kittensData, error: kittensError } = await supabase
-        .from('kittens')
+        .from('public_kittens_view')
         .select('id, name')
         .order('name');
 
