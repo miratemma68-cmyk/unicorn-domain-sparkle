@@ -1,6 +1,5 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { Resend } from "https://esm.sh/resend@3.2.0";
-import { encode as base64Encode } from "https://deno.land/std@0.190.0/encoding/base64.ts";
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
@@ -25,12 +24,10 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    // Read and encode the unicorn image
-    const imagePath = new URL('./unicorn-image.png', import.meta.url).pathname;
-    const imageData = await Deno.readFile(imagePath);
-    const base64Image = base64Encode(imageData.buffer);
-    
     const { name, email, phone, country, message, language = 'fr' }: ContactEmailRequest = await req.json();
+    
+    // URL of the unicorn image stored in Supabase Storage
+    const unicornImageUrl = `${Deno.env.get('SUPABASE_URL')}/storage/v1/object/public/domain-gallery/unicorn-email.png`;
 
     console.log("Sending confirmation email to:", email, "in language:", language);
 
@@ -143,7 +140,7 @@ const handler = async (req: Request): Promise<Response> => {
           <div class="container">
             <div class="header">
               <h1>
-                <img src="data:image/png;base64,${base64Image}" alt="Licorne" style="width: 60px; height: 60px; border: 3px solid #DAA520; border-radius: 12px; vertical-align: middle; margin-right: 10px; background: white; padding: 4px;" />
+                <img src="${unicornImageUrl}" alt="Licorne" style="width: 60px; height: 60px; border: 3px solid #DAA520; border-radius: 12px; vertical-align: middle; margin-right: 10px; background: white; padding: 4px;" />
                 Le Domaine des Licornes
               </h1>
             </div>
