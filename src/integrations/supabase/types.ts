@@ -62,7 +62,11 @@ export type Database = {
           microchip_number: string | null
           name: string
           pedigree: string | null
+          pedigree_en: string | null
+          pedigree_es: string | null
           personality: string | null
+          personality_en: string | null
+          personality_es: string | null
           profile_image_url: string | null
           registration_number: string | null
           updated_at: string
@@ -76,7 +80,11 @@ export type Database = {
           microchip_number?: string | null
           name: string
           pedigree?: string | null
+          pedigree_en?: string | null
+          pedigree_es?: string | null
           personality?: string | null
+          personality_en?: string | null
+          personality_es?: string | null
           profile_image_url?: string | null
           registration_number?: string | null
           updated_at?: string
@@ -90,7 +98,11 @@ export type Database = {
           microchip_number?: string | null
           name?: string
           pedigree?: string | null
+          pedigree_en?: string | null
+          pedigree_es?: string | null
           personality?: string | null
+          personality_en?: string | null
+          personality_es?: string | null
           profile_image_url?: string | null
           registration_number?: string | null
           updated_at?: string
