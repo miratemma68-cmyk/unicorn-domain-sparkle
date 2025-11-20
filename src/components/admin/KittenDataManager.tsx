@@ -8,12 +8,33 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { DatePicker } from '@/components/ui/date-picker';
 import { toast } from 'sonner';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Trash2, Plus } from 'lucide-react';
+import { Trash2, Plus, Edit, X } from 'lucide-react';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { z } from 'zod';
+
+const kittenSchema = z.object({
+  name: z.string().trim().min(1, { message: "Le nom est obligatoire" }).max(100, { message: "Le nom doit faire moins de 100 caractères" }),
+  birth_date: z.string().optional().nullable(),
+  gender: z.string().optional().nullable(),
+  color: z.string().trim().max(100, { message: "La couleur doit faire moins de 100 caractères" }).optional().nullable(),
+  breed_info: z.string().trim().max(500, { message: "Les informations de race doivent faire moins de 500 caractères" }).optional().nullable(),
+  registration_number: z.string().trim().max(50, { message: "Le numéro d'enregistrement doit faire moins de 50 caractères" }).optional().nullable(),
+  microchip_number: z.string().trim().max(50, { message: "Le numéro de puce doit faire moins de 50 caractères" }).optional().nullable(),
+  current_weight: z.number().positive({ message: "Le poids doit être positif" }).optional().nullable()
+});
 
 interface Kitten {
   id: string;
   name: string;
+  birth_date: string | null;
+  gender: string | null;
+  color: string | null;
+  breed_info: string | null;
+  registration_number: string | null;
+  microchip_number: string | null;
+  current_weight: number | null;
+  created_at: string;
+  updated_at: string;
 }
 
 interface Milestone {
@@ -49,6 +70,17 @@ export function KittenDataManager() {
   const [updates, setUpdates] = useState<Update[]>([]);
   const [vetVisits, setVetVisits] = useState<VetVisit[]>([]);
   const [loading, setLoading] = useState(true);
+  const [editingId, setEditingId] = useState<string | null>(null);
+
+  // Kitten info form state
+  const [name, setName] = useState('');
+  const [birthDate, setBirthDate] = useState<Date>();
+  const [gender, setGender] = useState('');
+  const [color, setColor] = useState('');
+  const [breedInfo, setBreedInfo] = useState('');
+  const [registrationNumber, setRegistrationNumber] = useState('');
+  const [microchipNumber, setMicrochipNumber] = useState('');
+  const [currentWeight, setCurrentWeight] = useState('');
 
   // Milestone form state
   const [milestoneType, setMilestoneType] = useState('');
@@ -80,8 +112,8 @@ export function KittenDataManager() {
   const loadKittens = async () => {
     const { data, error } = await supabase
       .from('kittens')
-      .select('id, name')
-      .order('name');
+      .select('*')
+      .order('created_at', { ascending: false });
 
     if (error) {
       toast.error('Erreur lors du chargement des chatons');
@@ -90,6 +122,102 @@ export function KittenDataManager() {
 
     setKittens(data || []);
     setLoading(false);
+  };
+
+  const resetKittenForm = () => {
+    setName('');
+    setBirthDate(undefined);
+    setGender('');
+    setColor('');
+    setBreedInfo('');
+    setRegistrationNumber('');
+    setMicrochipNumber('');
+    setCurrentWeight('');
+    setEditingId(null);
+  };
+
+  const handleKittenSubmit = async () => {
+    const formData = {
+      name,
+      birth_date: birthDate ? birthDate.toISOString().split('T')[0] : null,
+      gender: gender || null,
+      color: color || null,
+      breed_info: breedInfo || null,
+      registration_number: registrationNumber || null,
+      microchip_number: microchipNumber || null,
+      current_weight: currentWeight ? parseFloat(currentWeight) : null
+    };
+
+    try {
+      kittenSchema.parse(formData);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        toast.error(error.errors[0].message);
+        return;
+      }
+    }
+
+    if (editingId) {
+      const { error } = await supabase
+        .from('kittens')
+        .update(formData)
+        .eq('id', editingId);
+
+      if (error) {
+        toast.error('Erreur lors de la modification du chaton');
+        return;
+      }
+
+      toast.success('Chaton modifié avec succès');
+    } else {
+      const { error } = await supabase
+        .from('kittens')
+        .insert(formData);
+
+      if (error) {
+        toast.error('Erreur lors de l\'ajout du chaton');
+        return;
+      }
+
+      toast.success('Chaton ajouté avec succès');
+    }
+
+    resetKittenForm();
+    loadKittens();
+  };
+
+  const handleKittenEdit = (kitten: Kitten) => {
+    setName(kitten.name);
+    setBirthDate(kitten.birth_date ? new Date(kitten.birth_date) : undefined);
+    setGender(kitten.gender || '');
+    setColor(kitten.color || '');
+    setBreedInfo(kitten.breed_info || '');
+    setRegistrationNumber(kitten.registration_number || '');
+    setMicrochipNumber(kitten.microchip_number || '');
+    setCurrentWeight(kitten.current_weight?.toString() || '');
+    setEditingId(kitten.id);
+  };
+
+  const handleKittenDelete = async (id: string) => {
+    if (!confirm('Êtes-vous sûr de vouloir supprimer ce chaton ?')) {
+      return;
+    }
+
+    const { error } = await supabase
+      .from('kittens')
+      .delete()
+      .eq('id', id);
+
+    if (error) {
+      toast.error('Erreur lors de la suppression du chaton');
+      return;
+    }
+
+    toast.success('Chaton supprimé avec succès');
+    if (selectedKittenId === id) {
+      setSelectedKittenId('');
+    }
+    loadKittens();
   };
 
   const loadKittenData = async () => {
@@ -241,36 +369,220 @@ export function KittenDataManager() {
 
   return (
     <div className="space-y-6">
-      <Card>
-        <CardHeader>
-          <CardTitle>Sélectionner un chaton</CardTitle>
-          <CardDescription>Choisissez le chaton pour gérer ses données</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <Select value={selectedKittenId} onValueChange={setSelectedKittenId}>
-            <SelectTrigger>
-              <SelectValue placeholder="Sélectionner un chaton" />
-            </SelectTrigger>
-            <SelectContent>
-              {kittens.map((kitten) => (
-                <SelectItem key={kitten.id} value={kitten.id}>
-                  {kitten.name}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </CardContent>
-      </Card>
+      <Tabs defaultValue="info" className="w-full">
+        <TabsList className="grid w-full grid-cols-4">
+          <TabsTrigger value="info">Infos Chatons</TabsTrigger>
+          <TabsTrigger value="milestones">Milestones</TabsTrigger>
+          <TabsTrigger value="updates">Updates</TabsTrigger>
+          <TabsTrigger value="vet-visits">Visites Vétérinaires</TabsTrigger>
+        </TabsList>
 
-      {selectedKittenId && (
-        <Tabs defaultValue="milestones" className="w-full">
-          <TabsList className="grid w-full grid-cols-3">
-            <TabsTrigger value="milestones">Milestones</TabsTrigger>
-            <TabsTrigger value="updates">Updates</TabsTrigger>
-            <TabsTrigger value="vet-visits">Visites Vétérinaires</TabsTrigger>
-          </TabsList>
+        <TabsContent value="info" className="space-y-6 mt-6">
+          <Card>
+            <CardHeader>
+              <CardTitle>{editingId ? 'Modifier un chaton' : 'Ajouter un nouveau chaton'}</CardTitle>
+              <CardDescription>
+                {editingId ? 'Modifiez les informations du chaton' : 'Remplissez les informations du chaton (seul le nom est obligatoire)'}
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label className="text-sm font-medium">Nom *</label>
+                  <Input
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="Nom du chaton"
+                    maxLength={100}
+                  />
+                </div>
 
-          <TabsContent value="milestones" className="space-y-6">
+                <div>
+                  <label className="text-sm font-medium">Date de naissance</label>
+                  <DatePicker 
+                    date={birthDate} 
+                    onDateChange={setBirthDate}
+                    placeholder="Choisir une date"
+                  />
+                </div>
+
+                <div>
+                  <label className="text-sm font-medium">Sexe</label>
+                  <Select value={gender} onValueChange={setGender}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Sélectionner" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="">Non spécifié</SelectItem>
+                      <SelectItem value="Mâle">Mâle</SelectItem>
+                      <SelectItem value="Femelle">Femelle</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div>
+                  <label className="text-sm font-medium">Couleur</label>
+                  <Input
+                    value={color}
+                    onChange={(e) => setColor(e.target.value)}
+                    placeholder="Couleur du pelage"
+                    maxLength={100}
+                  />
+                </div>
+
+                <div>
+                  <label className="text-sm font-medium">Numéro d'enregistrement</label>
+                  <Input
+                    value={registrationNumber}
+                    onChange={(e) => setRegistrationNumber(e.target.value)}
+                    placeholder="Numéro d'enregistrement"
+                    maxLength={50}
+                  />
+                </div>
+
+                <div>
+                  <label className="text-sm font-medium">Numéro de puce</label>
+                  <Input
+                    value={microchipNumber}
+                    onChange={(e) => setMicrochipNumber(e.target.value)}
+                    placeholder="Numéro de micropuce"
+                    maxLength={50}
+                  />
+                </div>
+
+                <div>
+                  <label className="text-sm font-medium">Poids actuel (g)</label>
+                  <Input
+                    type="number"
+                    value={currentWeight}
+                    onChange={(e) => setCurrentWeight(e.target.value)}
+                    placeholder="Poids en grammes"
+                    min="0"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="text-sm font-medium">Informations de race</label>
+                <Textarea
+                  value={breedInfo}
+                  onChange={(e) => setBreedInfo(e.target.value)}
+                  placeholder="Informations supplémentaires sur la race"
+                  maxLength={500}
+                />
+              </div>
+
+              <div className="flex gap-2">
+                <Button onClick={handleKittenSubmit} className="flex-1">
+                  {editingId ? (
+                    <>
+                      <Edit className="mr-2 h-4 w-4" />
+                      Modifier
+                    </>
+                  ) : (
+                    <>
+                      <Plus className="mr-2 h-4 w-4" />
+                      Ajouter
+                    </>
+                  )}
+                </Button>
+                {editingId && (
+                  <Button onClick={resetKittenForm} variant="outline">
+                    <X className="mr-2 h-4 w-4" />
+                    Annuler
+                  </Button>
+                )}
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Chatons enregistrés ({kittens.length})</CardTitle>
+              <CardDescription>Liste de tous les chatons dans la base de données</CardDescription>
+            </CardHeader>
+            <CardContent>
+              {loading ? (
+                <p>Chargement...</p>
+              ) : kittens.length === 0 ? (
+                <p className="text-muted-foreground text-center py-8">Aucun chaton enregistré</p>
+              ) : (
+                <div className="overflow-x-auto">
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead>Nom</TableHead>
+                        <TableHead>Date de naissance</TableHead>
+                        <TableHead>Sexe</TableHead>
+                        <TableHead>Couleur</TableHead>
+                        <TableHead>Poids (g)</TableHead>
+                        <TableHead>Actions</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {kittens.map((kitten) => (
+                        <TableRow key={kitten.id}>
+                          <TableCell className="font-medium">{kitten.name}</TableCell>
+                          <TableCell>
+                            {kitten.birth_date
+                              ? new Date(kitten.birth_date).toLocaleDateString('fr-FR')
+                              : '-'}
+                          </TableCell>
+                          <TableCell>{kitten.gender || '-'}</TableCell>
+                          <TableCell>{kitten.color || '-'}</TableCell>
+                          <TableCell>{kitten.current_weight || '-'}</TableCell>
+                          <TableCell>
+                            <div className="flex gap-2">
+                              <Button
+                                variant="outline"
+                                size="sm"
+                                onClick={() => handleKittenEdit(kitten)}
+                              >
+                                <Edit className="h-4 w-4" />
+                              </Button>
+                              <Button
+                                variant="destructive"
+                                size="sm"
+                                onClick={() => handleKittenDelete(kitten.id)}
+                              >
+                                <Trash2 className="h-4 w-4" />
+                              </Button>
+                            </div>
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </div>
+              )}
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="milestones" className="space-y-6 mt-6">
+          <Card>
+            <CardHeader>
+              <CardTitle>Sélectionner un chaton</CardTitle>
+              <CardDescription>Choisissez le chaton pour gérer ses milestones</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Select value={selectedKittenId} onValueChange={setSelectedKittenId}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Sélectionner un chaton" />
+                </SelectTrigger>
+                <SelectContent>
+                  {kittens.map((kitten) => (
+                    <SelectItem key={kitten.id} value={kitten.id}>
+                      {kitten.name}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </CardContent>
+          </Card>
+
+          {selectedKittenId && (
+            <div className="space-y-6">
             <Card>
               <CardHeader>
                 <CardTitle>Ajouter un Milestone</CardTitle>
@@ -338,9 +650,34 @@ export function KittenDataManager() {
                 </Table>
               </CardContent>
             </Card>
-          </TabsContent>
+            </div>
+          )}
+        </TabsContent>
 
-          <TabsContent value="updates" className="space-y-6">
+        <TabsContent value="updates" className="space-y-6 mt-6">
+          <Card>
+            <CardHeader>
+              <CardTitle>Sélectionner un chaton</CardTitle>
+              <CardDescription>Choisissez le chaton pour gérer ses updates</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Select value={selectedKittenId} onValueChange={setSelectedKittenId}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Sélectionner un chaton" />
+                </SelectTrigger>
+                <SelectContent>
+                  {kittens.map((kitten) => (
+                    <SelectItem key={kitten.id} value={kitten.id}>
+                      {kitten.name}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </CardContent>
+          </Card>
+
+          {selectedKittenId && (
+            <div className="space-y-6">
             <Card>
               <CardHeader>
                 <CardTitle>Ajouter un Update</CardTitle>
@@ -409,9 +746,34 @@ export function KittenDataManager() {
                 </Table>
               </CardContent>
             </Card>
-          </TabsContent>
+            </div>
+          )}
+        </TabsContent>
 
-          <TabsContent value="vet-visits" className="space-y-6">
+        <TabsContent value="vet-visits" className="space-y-6 mt-6">
+          <Card>
+            <CardHeader>
+              <CardTitle>Sélectionner un chaton</CardTitle>
+              <CardDescription>Choisissez le chaton pour gérer ses visites vétérinaires</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Select value={selectedKittenId} onValueChange={setSelectedKittenId}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Sélectionner un chaton" />
+                </SelectTrigger>
+                <SelectContent>
+                  {kittens.map((kitten) => (
+                    <SelectItem key={kitten.id} value={kitten.id}>
+                      {kitten.name}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </CardContent>
+          </Card>
+
+          {selectedKittenId && (
+            <div className="space-y-6">
             <Card>
               <CardHeader>
                 <CardTitle>Ajouter une Visite Vétérinaire</CardTitle>
@@ -497,9 +859,10 @@ export function KittenDataManager() {
                 </Table>
               </CardContent>
             </Card>
-          </TabsContent>
-        </Tabs>
-      )}
+            </div>
+          )}
+        </TabsContent>
+      </Tabs>
     </div>
   );
 }
