@@ -93,7 +93,7 @@ export const EducationSection = () => {
                   className="inline-flex items-center justify-center gap-2 bg-crimson hover:bg-crimson-dark text-ivory border-2 border-gold transition-all duration-300 hover:shadow-[0_0_30px_rgba(218,165,32,0.5)] rounded-full hover:scale-105 font-display text-lg px-8 py-4"
                   onClick={(e) => {
                     e.preventDefault();
-                    document.getElementById('galerie-education')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    document.getElementById('methode-images')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }}
                 >
                   <GraduationCap className="w-5 h-5" />
