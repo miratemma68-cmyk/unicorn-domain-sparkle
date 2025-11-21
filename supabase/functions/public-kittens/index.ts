@@ -8,6 +8,7 @@ const corsHeaders = {
 
 const supabaseUrl = Deno.env.get('SUPABASE_URL') ?? '';
 const serviceRoleKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? '';
+const anonKey = Deno.env.get('SUPABASE_ANON_KEY') ?? '';
 
 if (!supabaseUrl || !serviceRoleKey) {
   console.error('Missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY for public-kittens function');
@@ -27,6 +28,22 @@ serve(async (req: Request): Promise<Response> => {
   }
 
   try {
+    // Extract auth token from request headers
+    const authHeader = req.headers.get('authorization');
+    let currentUserId: string | null = null;
+
+    // If there's an auth token, create an authenticated client to get the user
+    if (authHeader) {
+      const userClient = createClient(supabaseUrl, anonKey, {
+        global: { headers: { authorization: authHeader } },
+      });
+      const { data: { user }, error: userError } = await userClient.auth.getUser();
+      if (!userError && user) {
+        currentUserId = user.id;
+        console.log('public-kittens: authenticated user detected', currentUserId);
+      }
+    }
+
     // Try to read JSON body (used for detail view); ignore errors if no body
     let body: any = null;
     if (req.method === 'POST' || req.method === 'PUT' || req.method === 'PATCH') {
@@ -39,7 +56,7 @@ serve(async (req: Request): Promise<Response> => {
 
     const kittenId = body?.id as string | undefined;
 
-    // If an id is provided, return a single public kitten detail
+    // If an id is provided, return a single kitten detail
     if (kittenId) {
       console.log('public-kittens: loading kitten detail for id', kittenId);
 
@@ -68,10 +85,10 @@ serve(async (req: Request): Promise<Response> => {
         );
       }
 
-      // Check if the kitten is assigned to a client; if so, it should not be public
+      // Check if the kitten is assigned to a client
       const { data: assignment, error: assignmentError } = await supabase
         .from('client_kittens')
-        .select('id')
+        .select('id, client_id')
         .eq('kitten_id', kittenId)
         .maybeSingle();
 
@@ -80,20 +97,38 @@ serve(async (req: Request): Promise<Response> => {
         throw assignmentError;
       }
 
+      // If kitten is assigned, check if the current user is the owner
       if (assignment) {
-        console.log('public-kittens: kitten is assigned to a client, not exposing publicly', kittenId);
-        return new Response(
-          JSON.stringify({ kitten: null }),
-          {
-            status: 404,
-            headers: {
-              ...corsHeaders,
-              'Content-Type': 'application/json',
+        if (currentUserId && assignment.client_id === currentUserId) {
+          // User is authenticated and owns this kitten - allow access
+          console.log('public-kittens: authenticated user is owner, allowing access', kittenId);
+          return new Response(
+            JSON.stringify({ kitten }),
+            {
+              status: 200,
+              headers: {
+                ...corsHeaders,
+                'Content-Type': 'application/json',
+              },
             },
-          },
-        );
+          );
+        } else {
+          // Kitten is assigned but user is not the owner (or not authenticated) - deny access
+          console.log('public-kittens: kitten is assigned to another client, not exposing publicly', kittenId);
+          return new Response(
+            JSON.stringify({ kitten: null }),
+            {
+              status: 404,
+              headers: {
+                ...corsHeaders,
+                'Content-Type': 'application/json',
+              },
+            },
+          );
+        }
       }
 
+      // Kitten is not assigned - public access allowed
       return new Response(
         JSON.stringify({ kitten }),
         {
