@@ -118,12 +118,12 @@ export default function Dashboard() {
           <div className="flex items-center gap-4">
             <a 
               href="/" 
-              className="text-xl md:text-2xl font-serif text-gold/70 hover:text-gold transition-colors"
+              className="text-xl md:text-2xl font-display text-gold/70 hover:text-gold transition-colors"
             >
               Domaine des Licornes
             </a>
             <span className="text-gold/30">|</span>
-            <h1 className="text-xl md:text-2xl font-serif text-gold medieval-glow">
+            <h1 className="text-xl md:text-2xl font-display text-gold medieval-glow">
               {t('dashboard.title')}
             </h1>
           </div>
@@ -199,7 +199,9 @@ export default function Dashboard() {
                     <CardContent className="space-y-2">
                       <div className="flex justify-between text-sm">
                         <span className="text-ivory/60">{t('dashboard.gender')}:</span>
-                        <span className="text-ivory">{kitten.gender ? t(`dashboard.${kitten.gender}`) : t('dashboard.notSpecified')}</span>
+                        <span className="text-ivory">
+                          {kitten.gender === 'male' ? t('kittenDetail.male') : kitten.gender === 'female' ? t('kittenDetail.female') : t('dashboard.notSpecified')}
+                        </span>
                       </div>
                       <div className="flex justify-between text-sm">
                         <span className="text-ivory/60">{t('dashboard.color')}:</span>
@@ -208,7 +210,7 @@ export default function Dashboard() {
                       {kitten.current_weight && (
                         <div className="flex justify-between text-sm">
                           <span className="text-ivory/60">{t('dashboard.weight')}:</span>
-                          <span className="text-ivory">{kitten.current_weight} kg</span>
+                          <span className="text-ivory">{kitten.current_weight} g</span>
                         </div>
                       )}
                       <Button className="w-full mt-4 bg-crimson hover:bg-crimson-dark text-ivory border border-gold">
