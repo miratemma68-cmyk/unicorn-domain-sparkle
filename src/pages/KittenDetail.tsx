@@ -67,8 +67,9 @@ export default function KittenDetail() {
 
   const loadKittenDetails = async () => {
     try {
+      // Use public_kittens_view for public access (excludes sensitive fields)
       const { data: kittenData, error: kittenError } = await supabase
-        .from('kittens')
+        .from('public_kittens_view')
         .select('*')
         .eq('id', id || '')
         .single();
