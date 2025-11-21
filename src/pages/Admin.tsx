@@ -66,6 +66,10 @@ export default function Admin() {
               <Languages className="mr-2 h-4 w-4" />
               {t('admin.translations')}
             </TabsTrigger>
+            <TabsTrigger value="kitten-data">
+              <Cat className="mr-2 h-4 w-4" />
+              {t('admin.kittenData')}
+            </TabsTrigger>
             <TabsTrigger value="media">
               <Upload className="mr-2 h-4 w-4" />
               {t('admin.kittens')}
@@ -85,10 +89,6 @@ export default function Admin() {
             <TabsTrigger value="management">
               <Image className="mr-2 h-4 w-4" />
               {t('admin.management')}
-            </TabsTrigger>
-            <TabsTrigger value="kitten-data">
-              <Cat className="mr-2 h-4 w-4" />
-              Données Chatons
             </TabsTrigger>
             <TabsTrigger value="faq">
               <HelpCircle className="mr-2 h-4 w-4" />
