@@ -7,6 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ArrowLeft, Calendar, Palette, Weight, Activity, TrendingUp, Stethoscope } from 'lucide-react';
 import { Footer } from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useAuth } from '@/hooks/useAuth';
 
 interface Kitten {
   id: string;
@@ -54,6 +55,7 @@ interface KittenVetVisit {
 export default function KittenDetail() {
   const { id } = useParams<{ id: string }>();
   const { language, t } = useLanguage();
+  const { user } = useAuth();
   const [kitten, setKitten] = useState<Kitten | null>(null);
   const [media, setMedia] = useState<KittenMedia[]>([]);
   const [milestones, setMilestones] = useState<KittenMilestone[]>([]);
@@ -67,29 +69,60 @@ export default function KittenDetail() {
 
   const loadKittenDetails = async () => {
     try {
-      console.log('Loading public kitten detail via edge function...', id);
+      let kittenData: Kitten | null = null;
 
-      const { data, error } = await supabase.functions.invoke('public-kittens', {
-        body: { id },
-      });
+      if (user) {
+        console.log('Loading kitten detail for authenticated user...', id, user.id);
 
-      // Handle edge function errors or 404 responses
-      if (error) {
-        console.error('Error loading kitten detail from edge function:', error);
-        setKitten(null);
-        setLoading(false);
-        return;
+        const { data, error } = await supabase
+          .from('kittens')
+          .select('*')
+          .eq('id', id || '')
+          .maybeSingle();
+
+        if (error) {
+          console.error('Error loading kitten from protected table:', error);
+          setKitten(null);
+          setLoading(false);
+          return;
+        }
+
+        if (!data) {
+          console.warn('No kitten found for authenticated user with id', id);
+          setKitten(null);
+          setLoading(false);
+          return;
+        }
+
+        kittenData = data as Kitten;
+      } else {
+        console.log('Loading public kitten detail via edge function...', id);
+
+        const { data, error } = await supabase.functions.invoke('public-kittens', {
+          body: { id },
+        });
+
+        // Handle edge function errors or 404 responses
+        if (error) {
+          console.error('Error loading kitten detail from edge function:', error);
+          setKitten(null);
+          setLoading(false);
+          return;
+        }
+
+        const publicKitten = (data as any)?.kitten as Kitten | null;
+
+        if (!publicKitten) {
+          console.warn('No public kitten found for id (may be assigned to client)', id);
+          setKitten(null);
+          setLoading(false);
+          return;
+        }
+
+        kittenData = publicKitten;
       }
 
-      const kittenData = (data as any)?.kitten as Kitten | null;
-
-      if (!kittenData) {
-        console.warn('No public kitten found for id (may be assigned to client)', id);
-        setKitten(null);
-        setLoading(false);
-        return;
-      }
-
+      // At this point we have a kitten (either client-owned or public)
       setKitten(kittenData);
 
       const { data: mediaData, error: mediaError } = await supabase
