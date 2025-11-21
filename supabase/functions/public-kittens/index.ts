@@ -27,6 +27,86 @@ serve(async (req: Request): Promise<Response> => {
   }
 
   try {
+    // Try to read JSON body (used for detail view); ignore errors if no body
+    let body: any = null;
+    if (req.method === 'POST' || req.method === 'PUT' || req.method === 'PATCH') {
+      try {
+        body = await req.json();
+      } catch {
+        body = null;
+      }
+    }
+
+    const kittenId = body?.id as string | undefined;
+
+    // If an id is provided, return a single public kitten detail
+    if (kittenId) {
+      console.log('public-kittens: loading kitten detail for id', kittenId);
+
+      const { data: kitten, error: kittenError } = await supabase
+        .from('kittens')
+        .select('id, name, birth_date, gender, color, current_weight, breed_info, created_at, updated_at')
+        .eq('id', kittenId)
+        .maybeSingle();
+
+      if (kittenError) {
+        console.error('public-kittens: error loading kitten detail', kittenError);
+        throw kittenError;
+      }
+
+      if (!kitten) {
+        console.warn('public-kittens: kitten not found for id', kittenId);
+        return new Response(
+          JSON.stringify({ kitten: null }),
+          {
+            status: 404,
+            headers: {
+              ...corsHeaders,
+              'Content-Type': 'application/json',
+            },
+          },
+        );
+      }
+
+      // Check if the kitten is assigned to a client; if so, it should not be public
+      const { data: assignment, error: assignmentError } = await supabase
+        .from('client_kittens')
+        .select('id')
+        .eq('kitten_id', kittenId)
+        .maybeSingle();
+
+      if (assignmentError) {
+        console.error('public-kittens: error checking kitten assignment', assignmentError);
+        throw assignmentError;
+      }
+
+      if (assignment) {
+        console.log('public-kittens: kitten is assigned to a client, not exposing publicly', kittenId);
+        return new Response(
+          JSON.stringify({ kitten: null }),
+          {
+            status: 404,
+            headers: {
+              ...corsHeaders,
+              'Content-Type': 'application/json',
+            },
+          },
+        );
+      }
+
+      return new Response(
+        JSON.stringify({ kitten }),
+        {
+          status: 200,
+          headers: {
+            ...corsHeaders,
+            'Content-Type': 'application/json',
+          },
+        },
+      );
+    }
+
+    // No id provided: return list of available kittens (existing behaviour)
     console.log('public-kittens: loading available kittens');
 
     // Load all kittens (service role bypasses RLS, so we must filter carefully)
@@ -77,7 +157,7 @@ serve(async (req: Request): Promise<Response> => {
           name: kitten.name,
           image: media?.[0]?.file_url || null,
         };
-      })
+      }),
     );
 
     return new Response(
@@ -88,7 +168,7 @@ serve(async (req: Request): Promise<Response> => {
           ...corsHeaders,
           'Content-Type': 'application/json',
         },
-      }
+      },
     );
   } catch (error: any) {
     console.error('public-kittens: unexpected error', error);
@@ -100,7 +180,7 @@ serve(async (req: Request): Promise<Response> => {
           ...corsHeaders,
           'Content-Type': 'application/json',
         },
-      }
+      },
     );
   }
 });
