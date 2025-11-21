@@ -67,14 +67,26 @@ export default function KittenDetail() {
 
   const loadKittenDetails = async () => {
     try {
-      // Use public_kittens_view for public access (excludes sensitive fields)
-      const { data: kittenData, error: kittenError } = await supabase
-        .from('public_kittens_view')
-        .select('*')
-        .eq('id', id || '')
-        .single();
+      console.log('Loading public kitten detail via edge function...', id);
 
-      if (kittenError) throw kittenError;
+      const { data, error } = await supabase.functions.invoke('public-kittens', {
+        body: { id },
+      });
+
+      if (error) {
+        console.error('Error loading kitten detail from edge function:', error);
+        setKitten(null);
+        return;
+      }
+
+      const kittenData = (data as any)?.kitten as Kitten | null;
+
+      if (!kittenData) {
+        console.warn('No public kitten found for id', id);
+        setKitten(null);
+        return;
+      }
+
       setKitten(kittenData);
 
       const { data: mediaData, error: mediaError } = await supabase
@@ -117,6 +129,7 @@ export default function KittenDetail() {
       setVetVisits(vetVisitsData || []);
     } catch (error) {
       console.error('Error loading kitten details:', error);
+      setKitten(null);
     } finally {
       setLoading(false);
     }
