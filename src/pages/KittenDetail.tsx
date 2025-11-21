@@ -73,17 +73,20 @@ export default function KittenDetail() {
         body: { id },
       });
 
+      // Handle edge function errors or 404 responses
       if (error) {
         console.error('Error loading kitten detail from edge function:', error);
         setKitten(null);
+        setLoading(false);
         return;
       }
 
       const kittenData = (data as any)?.kitten as Kitten | null;
 
       if (!kittenData) {
-        console.warn('No public kitten found for id', id);
+        console.warn('No public kitten found for id (may be assigned to client)', id);
         setKitten(null);
+        setLoading(false);
         return;
       }
 
