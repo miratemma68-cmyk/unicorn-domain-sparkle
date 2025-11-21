@@ -200,7 +200,15 @@ export default function Dashboard() {
                       <div className="flex justify-between text-sm">
                         <span className="text-ivory/60">{t('dashboard.gender')}:</span>
                         <span className="text-ivory">
-                          {kitten.gender === 'male' ? t('kittenDetail.male') : kitten.gender === 'female' ? t('kittenDetail.female') : t('dashboard.notSpecified')}
+                          {kitten.gender ? 
+                            (kitten.gender.toLowerCase() === 'male' || kitten.gender.toLowerCase() === 'mâle' ? 
+                              t('dashboard.male') : 
+                              kitten.gender.toLowerCase() === 'female' || kitten.gender.toLowerCase() === 'femelle' ? 
+                              t('dashboard.female') : 
+                              t('dashboard.notSpecified')
+                            ) : 
+                            t('dashboard.notSpecified')
+                          }
                         </span>
                       </div>
                       <div className="flex justify-between text-sm">
