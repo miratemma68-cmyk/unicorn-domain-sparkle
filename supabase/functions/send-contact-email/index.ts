@@ -226,6 +226,32 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Email sent successfully to:", email, "MessageID:", emailResponse.data?.id);
 
+    // Send notification to admin
+    try {
+      const adminHtml = `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+          <h2>Nouveau message de contact</h2>
+          <p><strong>Nom :</strong> ${name}</p>
+          <p><strong>Email :</strong> ${email}</p>
+          ${phone ? `<p><strong>Téléphone :</strong> ${phone}</p>` : ""}
+          ${country ? `<p><strong>Pays :</strong> ${country}</p>` : ""}
+          <p><strong>Langue :</strong> ${language}</p>
+          <p><strong>Message :</strong></p>
+          <p style="white-space: pre-line; background:#f5f5f5; padding:12px; border-radius:8px;">${message}</p>
+        </div>
+      `;
+      const adminResponse = await resend.emails.send({
+        from: "Le Domaine des Licornes <onboarding@resend.dev>",
+        to: ["Laurence.Pouyaud@orange.fr"],
+        reply_to: email,
+        subject: `Nouveau contact : ${name}`,
+        html: adminHtml,
+      });
+      console.log("Admin notification sent, MessageID:", adminResponse.data?.id);
+    } catch (adminErr: any) {
+      console.error("Failed to send admin notification:", adminErr.message);
+    }
+
     return new Response(
       JSON.stringify({ success: true, messageId: emailResponse.data?.id }),
       {
