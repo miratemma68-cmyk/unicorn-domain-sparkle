@@ -6,6 +6,26 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft, Calendar, Award, Heart } from 'lucide-react';
 import { Footer } from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
+import sirAugusteAsset from '@/assets/sir-auguste.jpg.asset.json';
+
+const EXTERNAL_BREEDERS: Record<string, any> = {
+  'sir-auguste': {
+    id: 'sir-auguste',
+    name: 'Sir Auguste de la Fleur de Vigne',
+    birth_date: '',
+    gender: 'male',
+    color: 'Seal Point',
+    pedigree: '',
+    personality: "Reproducteur externe au caractère noble et majestueux, Sir Auguste apporte une lignée prestigieuse à notre élevage.",
+    personality_en: "An external breeder with a noble and majestic character, Sir Auguste brings a prestigious lineage to our cattery.",
+    personality_es: "Reproductor externo de carácter noble y majestuoso, Sir Auguste aporta un linaje prestigioso a nuestro criadero.",
+    pedigree_en: '',
+    pedigree_es: '',
+    registration_number: '',
+    microchip_number: '',
+    profile_image_url: sirAugusteAsset.url,
+  },
+};
 
 interface BreedingCat {
   id: string;
@@ -47,6 +67,12 @@ export default function CatDetail() {
 
   const loadCatDetails = async () => {
     try {
+      if (id && EXTERNAL_BREEDERS[id.toLowerCase()]) {
+        setCat(EXTERNAL_BREEDERS[id.toLowerCase()]);
+        setGallery([]);
+        return;
+      }
+
       const { data: catData, error: catError } = await supabase
         .from('breeding_cats')
         .select('*')
@@ -156,10 +182,12 @@ export default function CatDetail() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3 text-ivory/90">
-                <div>
-                  <span className="font-semibold text-gold">{t('catDetail.birthDate')}:</span>{' '}
-                  {new Date(cat.birth_date).toLocaleDateString('fr-FR')} ({calculateAge(cat.birth_date)})
-                </div>
+                {cat.birth_date && (
+                  <div>
+                    <span className="font-semibold text-gold">{t('catDetail.birthDate')}:</span>{' '}
+                    {new Date(cat.birth_date).toLocaleDateString('fr-FR')} ({calculateAge(cat.birth_date)})
+                  </div>
+                )}
                 {cat.color && (
                   <div>
                     <span className="font-semibold text-gold">{t('catDetail.color')}:</span> {cat.color}
