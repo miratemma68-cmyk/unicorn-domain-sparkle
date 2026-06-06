@@ -27,7 +27,7 @@ export const PreviousLittersSection = () => {
         .order('display_order', { ascending: true });
 
       if (error) throw error;
-      setGalleryMedia(data || []);
+      setGalleryMedia((data || []).filter((item) => !/Dame_Licorne|Logo Email/i.test(item.file_url + ' ' + (item.caption || ''))));
     } catch (error) {
       console.error('Error loading gallery media:', error);
     }
