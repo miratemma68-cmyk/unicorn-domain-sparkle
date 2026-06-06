@@ -62,14 +62,14 @@ export const CatsSection = () => {
 
   const cats = [
     {
-      name: "Aloha",
+      name: "Aloha de la Rôsée de Perle d'O",
       image: alohaAdult,
       description: t('cats.alohaDesc'),
       slug: "aloha",
       type: "breeding"
     },
     {
-      name: "Utah",
+      name: "Utah du Domaine de Louvigny",
       image: utahAdult,
       description: t('cats.utahDesc'),
       slug: "utah",

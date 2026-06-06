@@ -93,7 +93,7 @@ const translations = {
     },
     cats: {
       title: "Nos Licornes",
-      breeding: "Nos Reproducteurs",
+      breeding: "Nos Reproductrices",
       externalBreeders: "Nos Reproducteurs Externes",
       kittens: "Nos Chatons",
       available: "Disponible",
@@ -485,7 +485,7 @@ const translations = {
     },
     cats: {
       title: "Nuestros Unicornios",
-      breeding: "Nuestros Reproductores",
+      breeding: "Nuestros Reproductoras",
       externalBreeders: "Nuestros Reproductores Externos",
       kittens: "Nuestros Gatitos",
       available: "Disponible",
