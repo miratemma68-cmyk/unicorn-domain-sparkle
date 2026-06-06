@@ -290,6 +290,7 @@ const translations = {
     cats: {
       title: "Our Unicorns",
       breeding: "Our Breeding Cats",
+      externalBreeders: "Our External Breeders",
       kittens: "Our Kittens",
       available: "Available",
       noKittens: "No kittens available at the moment",
