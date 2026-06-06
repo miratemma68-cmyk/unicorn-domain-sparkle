@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft, Calendar, Award, Heart } from 'lucide-react';
 import { Footer } from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
-import sirAugusteAsset from '@/assets/sir-auguste.jpg.asset.json';
+import sirAugusteAsset from '@/assets/sir-auguste-detail.jpg.asset.json';
 
 const EXTERNAL_BREEDERS: Record<string, any> = {
   'sir-auguste': {
