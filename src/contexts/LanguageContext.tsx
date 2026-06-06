@@ -196,7 +196,7 @@ const translations = {
       male: "Mâle",
       female: "Femelle",
       color: "Couleur",
-      weight: "Poids",
+      weight: "Peso (kg)",
       about: "À propos",
       gallery: "Galerie",
       day: "jour",

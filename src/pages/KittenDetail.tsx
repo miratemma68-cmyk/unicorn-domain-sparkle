@@ -296,7 +296,7 @@ export default function KittenDetail() {
                     <Weight className="h-5 w-5 text-gold" />
                     <div>
                       <p className="text-sm text-ivory/60">{t('kittenDetail.weight')}</p>
-                      <p className="text-ivory">{kitten.current_weight} g</p>
+                      <p className="text-ivory">{kitten.current_weight ? (kitten.current_weight / 1000).toFixed(1) : '0'} kg</p>
                     </div>
                   </div>
                 )}
