@@ -282,7 +282,7 @@ const translations = {
       discoverLaurence: "Discover Laurence",
       viewGallery: "View Gallery",
       laurenceTitle: "Laurence, our breeder",
-      laurenceP1: "Passionate about Ragdolls for over 10 years, Laurence founded Le Domaine des Licornes with the vision of creating a family cattery where each cat is treated as a family member.",
+      laurenceP1: "Passionate about Ragdolls for over 10 years, Laurence founded Le Domaine des Licornes Seal with the vision of creating a family cattery where each cat is treated as a family member.",
       laurenceP2: "Her expertise and dedication ensure that each kitten benefits from optimal socialization and a stimulating environment from its first days. She personally accompanies each adopting family to ensure a harmonious transition.",
       laurenceQuote: "Each Ragdoll is unique and deserves special attention. My goal is to match each kitten with the perfect family for them.",
       galleryTitle: "Gallery",
@@ -434,7 +434,7 @@ const translations = {
       a6: "Prices vary depending on the kitten and its destination (companion or breeding). Contact us to obtain detailed and personalized information according to your project."
     },
     footer: {
-      title: "Le Domaine des Licornes",
+      title: "Le Domaine des Licornes Seal",
       subtitle: "Premium Ragdoll Cattery",
       loof: "LOOF - Le domaine des licornes seal",
       navigation: "Navigation",
@@ -461,7 +461,7 @@ const translations = {
       clientSpace: "Área Cliente"
     },
     hero: {
-      title: "Le Domaine des Licornes",
+      title: "Le Domaine des Licornes Seal",
       subtitle: "Criador Premium de Ragdolls",
       tagline: "Donde la elegancia medieval se encuentra con la gracia felina",
       discoverCats: "Descubre Nuestros Unicornios",
@@ -479,7 +479,7 @@ const translations = {
       discoverLaurence: "Descubrir a Laurence",
       viewGallery: "Ver Galería",
       laurenceTitle: "Laurence, nuestra criadora",
-      laurenceP1: "Apasionada por los Ragdolls durante más de 10 años, Laurence fundó Le Domaine des Licornes con la visión de crear un criadero familiar donde cada gato es tratado como un miembro de la familia.",
+      laurenceP1: "Apasionada por los Ragdolls durante más de 10 años, Laurence fundó Le Domaine des Licornes Seal con la visión de crear un criadero familiar donde cada gato es tratado como un miembro de la familia.",
       laurenceP2: "Su experiencia y dedicación garantizan que cada gatito se beneficie de una socialización óptima y un entorno estimulante desde sus primeros días. Acompaña personalmente a cada familia adoptiva para garantizar una transición armoniosa.",
       laurenceQuote: "Cada Ragdoll es único y merece una atención especial. Mi objetivo es hacer coincidir cada gatito con la familia perfecta para él.",
       galleryTitle: "Galería",
@@ -632,7 +632,7 @@ const translations = {
       a6: "Los precios varían según el gatito y su destino (compañía o reproducción). Contáctenos para obtener información detallada y personalizada según su proyecto."
     },
     footer: {
-      title: "Le Domaine des Licornes",
+      title: "Le Domaine des Licornes Seal",
       subtitle: "Criadero Premium de Ragdolls",
       loof: "LOOF - Le domaine des licornes seal",
       navigation: "Navegación",
