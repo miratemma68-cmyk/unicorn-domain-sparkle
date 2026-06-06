@@ -63,10 +63,11 @@ export const CatsSection = () => {
 
   const cats = [
     {
-      name: "Aloha de la Rôsée de Perle d'O",
+      name: "Aloha de la Rosée\nde Perle d'O",
       image: alohaAdult,
       description: t('cats.alohaDesc'),
       slug: "aloha",
+      color: "Blue Point",
       type: "breeding"
     },
     {
@@ -74,6 +75,7 @@ export const CatsSection = () => {
       image: utahAdult,
       description: t('cats.utahDesc'),
       slug: "utah",
+      color: "",
       type: "breeding"
     }
   ];
@@ -114,7 +116,10 @@ export const CatsSection = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/50 to-transparent opacity-60" />
                   </div>
                   <div className="p-6">
-                    <h3 className="text-2xl font-display text-gold mb-2">{cat.name}</h3>
+                    <h3 className="text-2xl font-display text-gold mb-2 whitespace-pre-line">{cat.name}</h3>
+                    {cat.color && (
+                      <p className="text-gold/80 text-sm mb-2">Color: {cat.color}</p>
+                    )}
                     <p className="text-ivory/80">{cat.description}</p>
                     <p className="text-gold/70 text-sm mt-3 italic">{t('cats.viewProfile')} →</p>
                   </div>
