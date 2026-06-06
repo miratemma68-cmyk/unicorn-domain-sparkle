@@ -50,7 +50,7 @@ export const Navigation = () => {
               </a>
             ))}
             <a
-              href="#licornes"
+              href="#chatons"
               className="bg-gold text-midnight hover:bg-gold/90 transition-colors duration-300 font-sans text-xs font-semibold px-4 py-2 rounded-full whitespace-pre-line leading-tight text-center shadow-[0_0_15px_rgba(212,175,55,0.4)]"
             >
               {t('nav.availableCats')}
