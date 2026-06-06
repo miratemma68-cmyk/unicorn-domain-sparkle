@@ -106,14 +106,29 @@ export default function CatDetail() {
   const calculateAge = (birthDate: string) => {
     const birth = new Date(birthDate);
     const now = new Date();
-    const years = now.getFullYear() - birth.getFullYear();
-    const months = now.getMonth() - birth.getMonth();
-    
-    if (months < 0 || (months === 0 && now.getDate() < birth.getDate())) {
-      return years - 1 + ' ' + t('catDetail.years');
+    let years = now.getFullYear() - birth.getFullYear();
+    let months = now.getMonth() - birth.getMonth();
+    if (now.getDate() < birth.getDate()) months -= 1;
+    if (months < 0) {
+      years -= 1;
+      months += 12;
     }
-    return years + ' ' + t('catDetail.years');
+    const yearLabels: Record<string, [string, string]> = {
+      fr: ['an', 'ans'],
+      en: ['year', 'years'],
+      es: ['año', 'años'],
+    };
+    const monthLabels: Record<string, string> = { fr: 'mois', en: 'months', es: 'meses' };
+    const andLabel: Record<string, string> = { fr: 'et', en: 'and', es: 'y' };
+    const [ySingular, yPlural] = yearLabels[language] || yearLabels.fr;
+    if (years <= 0) {
+      return `${months} ${monthLabels[language] || monthLabels.fr}`;
+    }
+    const yLabel = years > 1 ? yPlural : ySingular;
+    if (months === 0) return `${years} ${yLabel}`;
+    return `${years} ${yLabel} ${andLabel[language] || andLabel.fr} ${months} ${monthLabels[language] || monthLabels.fr}`;
   };
+
 
   if (loading) {
     return (
