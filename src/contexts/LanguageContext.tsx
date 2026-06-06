@@ -633,7 +633,7 @@ const translations = {
     },
     footer: {
       title: "Le Domaine des Licornes Seal",
-      subtitle: "Criadero Premium de Ragdolls",
+      subtitle: "Criador Premium de gatos Ragdolls",
       loof: "LOOF - Le domaine des licornes seal",
       navigation: "Navegación",
       contact: "Contacto",
