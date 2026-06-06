@@ -123,8 +123,34 @@ export const CatsSection = () => {
           ))}
         </div>
 
+        {/* External Breeders */}
+        <div className="mb-16">
+          <h3 className="text-3xl font-display text-gold medieval-glow text-center mb-8">
+            {t('cats.externalBreeders')}
+          </h3>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <Card className="bg-card/80 backdrop-blur-sm border-2 border-gold/30 hover:border-gold transition-all duration-300 overflow-hidden group rounded-[3rem] hover:shadow-[0_0_40px_rgba(218,165,32,0.4)] hover:scale-105">
+              <CardContent className="p-0">
+                <div className="relative overflow-hidden">
+                  <img
+                    src={tapestryTaste}
+                    alt="Sir Auguste de la Fleur de Vigne"
+                    className="w-full h-80 object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/50 to-transparent opacity-60" />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-2xl font-display text-gold mb-2">Sir Auguste de la Fleur de Vigne</h3>
+                  <p className="text-ivory/80 italic">Reproducteur externe</p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
         {/* Kittens Section */}
         <div id="chatons">
+
           <h3 className="text-3xl font-display text-gold medieval-glow text-center mb-8">
             {t('cats.kittens')}
           </h3>

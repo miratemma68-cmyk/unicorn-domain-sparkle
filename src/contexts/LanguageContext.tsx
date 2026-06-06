@@ -94,6 +94,7 @@ const translations = {
     cats: {
       title: "Nos Licornes",
       breeding: "Nos Reproducteurs",
+      externalBreeders: "Nos Reproducteurs Externes",
       kittens: "Nos Chatons",
       available: "Disponible",
       noKittens: "Aucun chaton disponible pour le moment",
@@ -289,6 +290,7 @@ const translations = {
     cats: {
       title: "Our Unicorns",
       breeding: "Our Breeding Cats",
+      externalBreeders: "Our External Breeders",
       kittens: "Our Kittens",
       available: "Available",
       noKittens: "No kittens available at the moment",
@@ -484,6 +486,7 @@ const translations = {
     cats: {
       title: "Nuestros Unicornios",
       breeding: "Nuestros Reproductores",
+      externalBreeders: "Nuestros Reproductores Externos",
       kittens: "Nuestros Gatitos",
       available: "Disponible",
       noKittens: "No hay gatitos disponibles en este momento",
