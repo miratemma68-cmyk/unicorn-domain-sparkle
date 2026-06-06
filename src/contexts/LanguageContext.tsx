@@ -94,6 +94,7 @@ const translations = {
     cats: {
       title: "Nos Licornes",
       breeding: "Nos Reproducteurs",
+      externalBreeders: "Nos Reproducteurs Externes",
       kittens: "Nos Chatons",
       available: "Disponible",
       noKittens: "Aucun chaton disponible pour le moment",
