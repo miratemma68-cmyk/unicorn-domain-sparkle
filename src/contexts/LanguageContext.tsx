@@ -346,7 +346,7 @@ const translations = {
       male: "Male",
       female: "Female",
       color: "Color",
-      weight: "Weight",
+      weight: "Weight (kg)",
       about: "About",
       gallery: "Gallery",
       day: "day",
