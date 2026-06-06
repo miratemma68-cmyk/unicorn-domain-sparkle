@@ -486,6 +486,7 @@ const translations = {
     cats: {
       title: "Nuestros Unicornios",
       breeding: "Nuestros Reproductores",
+      externalBreeders: "Nuestros Reproductores Externos",
       kittens: "Nuestros Gatitos",
       available: "Disponible",
       noKittens: "No hay gatitos disponibles en este momento",
