@@ -49,6 +49,12 @@ export const Navigation = () => {
                 {item.label}
               </a>
             ))}
+            <a
+              href="#licornes"
+              className="bg-gold text-midnight hover:bg-gold/90 transition-colors duration-300 font-sans text-xs font-semibold px-4 py-2 rounded-full whitespace-pre-line leading-tight text-center shadow-[0_0_15px_rgba(212,175,55,0.4)]"
+            >
+              {t('nav.availableCats')}
+            </a>
             <div className="flex gap-2 ml-4 items-center">
               <LanguageSwitcher />
               {user ? (
