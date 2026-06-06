@@ -68,7 +68,7 @@ const translations = {
     },
     hero: {
       title: "Le Domaine des Licornes Seal",
-      subtitle: "Élevage Premium de Ragdolls",
+      subtitle: "Élevage Premium de chats Ragdolls",
       tagline: "Où l'élégance médiévale rencontre la grâce féline",
       discoverCats: "Découvrez Nos Licornes",
       contactUs: "Contactez-nous"
