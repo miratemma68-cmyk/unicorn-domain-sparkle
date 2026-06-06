@@ -164,9 +164,7 @@ export const CatsSection = () => {
           <h3 className="text-3xl font-display text-gold medieval-glow text-center mb-8">
             {t('cats.kittens')}
           </h3>
-        <p className="text-center text-ivory/80 mb-8 italic font-light">
-          {t('cats.available')}
-        </p>
+
         {loading ? (
           <Card className="bg-card/80 backdrop-blur-sm border-2 border-gold/30 rounded-[3rem]">
             <CardContent className="p-8 text-center">
