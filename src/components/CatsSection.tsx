@@ -102,10 +102,11 @@ export const CatsSection = () => {
         </p>
         
         {/* Breeding Cats */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 gap-8 mb-16 items-stretch">
           {cats.map((cat) => (
-            <Link key={cat.name} to={`/cat/${cat.slug}`} className="block">
-              <Card className="bg-card/80 backdrop-blur-sm border-2 border-gold/30 hover:border-gold transition-all duration-300 overflow-hidden group rounded-[3rem] hover:shadow-[0_0_40px_rgba(218,165,32,0.4)] hover:scale-105">
+            <Link key={cat.name} to={`/cat/${cat.slug}`} className="block h-full">
+              <Card className="h-full bg-card/80 backdrop-blur-sm border-2 border-gold/30 hover:border-gold transition-all duration-300 overflow-hidden group rounded-[3rem] hover:shadow-[0_0_40px_rgba(218,165,32,0.4)] hover:scale-105">
+
                 <CardContent className="p-0">
                   <div className="relative overflow-hidden">
                     <img 
