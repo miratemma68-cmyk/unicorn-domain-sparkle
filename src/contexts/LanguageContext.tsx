@@ -71,8 +71,9 @@ const translations = {
       title: "Le Domaine des Licornes Seal",
       subtitle: "Élevage Premium de chats Ragdolls",
       tagline: "Où l'élégance médiévale rencontre la grâce féline",
-      discoverCats: "Découvrez Nos Licornes",
-      contactUs: "Contactez-nous"
+     discoverCats: "Découvrez Nos Licornes",
+     contactUs: "Contactez-nous",
+     followUs: "Suivez-nous sur"
     },
     domain: {
       title: "Le Domaine",
@@ -270,8 +271,9 @@ const translations = {
       title: "Le Domaine des Licornes Seal",
       subtitle: "Premium Ragdoll Breeding",
       tagline: "Where medieval elegance meets feline grace",
-      discoverCats: "Discover Our Unicorns",
-      contactUs: "Contact Us"
+     discoverCats: "Discover Our Unicorns",
+     contactUs: "Contact Us",
+     followUs: "Follow us on"
     },
     domain: {
       title: "The Domain",
@@ -469,8 +471,9 @@ const translations = {
       title: "Le Domaine des Licornes Seal",
       subtitle: "Criador Premium de gatos Ragdolls",
       tagline: "Donde la elegancia medieval se encuentra con la gracia felina",
-      discoverCats: "Descubre Nuestros Unicornios",
-      contactUs: "Contáctenos"
+     discoverCats: "Descubre Nuestros Unicornios",
+     contactUs: "Contáctenos",
+     followUs: "Síguenos en"
     },
     domain: {
       title: "El Dominio",
