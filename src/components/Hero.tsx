@@ -1,6 +1,6 @@
 import tapestryDesire from "@/assets/tapestry-desire.png";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, Instagram } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export const Hero = () => {
@@ -68,9 +68,26 @@ export const Hero = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="inline-flex items-center justify-center w-12 h-12 rounded-full border-2 border-gold text-gold hover:bg-gold/10 hover:text-gold-light transition-all duration-300 hover:scale-110 hover:shadow-[0_0_20px_rgba(218,165,32,0.5)]"
+                className="inline-flex items-center justify-center w-14 h-14 rounded-2xl transition-all duration-300 hover:scale-110 hover:shadow-[0_0_25px_rgba(225,48,108,0.6)]"
+                style={{
+                  background:
+                    "radial-gradient(circle at 30% 110%, #ffdd55 0%, #ff543e 25%, #c837ab 50%, #285AEB 100%)",
+                }}
               >
-                <Instagram className="w-6 h-6" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="w-7 h-7"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
               </a>
             </div>
           </div>
