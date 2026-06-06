@@ -1,6 +1,6 @@
 import tapestryDesire from "@/assets/tapestry-desire.png";
 import { Button } from "@/components/ui/button";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Instagram } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export const Hero = () => {
@@ -60,6 +60,18 @@ export const Hero = () => {
               >
                 {t('hero.contactUs')}
               </Button>
+            </div>
+
+            <div className="flex justify-center lg:justify-start pt-2">
+              <a
+                href="https://www.instagram.com/chatterie.licornes?igsh=MWJtM2l4cDhicTU2aA=="
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="inline-flex items-center justify-center w-12 h-12 rounded-full border-2 border-gold text-gold hover:bg-gold/10 hover:text-gold-light transition-all duration-300 hover:scale-110 hover:shadow-[0_0_20px_rgba(218,165,32,0.5)]"
+              >
+                <Instagram className="w-6 h-6" />
+              </a>
             </div>
           </div>
         </div>
