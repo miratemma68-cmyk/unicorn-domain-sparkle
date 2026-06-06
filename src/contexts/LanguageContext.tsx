@@ -476,7 +476,7 @@ const translations = {
       value2: "Crianza familiar en un entorno excepcional",
       value3: "Pre-educación cuidadosa de cada gatito",
       value4: "Acompañamiento personalizado para los adoptantes",
-      discoverLaurence: "Descubrir a Laurence",
+      discoverLaurence: "Descubrir Laurence",
       viewGallery: "Ver Galería",
       laurenceTitle: "Laurence, nuestra criadora",
       laurenceP1: "Apasionada por los Ragdolls durante más de 10 años, Laurence fundó Le Domaine des Licornes Seal con la visión de crear un criadero familiar donde cada gato es tratado como un miembro de la familia.",
