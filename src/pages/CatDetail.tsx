@@ -154,6 +154,10 @@ export default function CatDetail() {
     );
   }
 
+  const isAloha = cat.name.toLowerCase().includes('aloha');
+  const displayName = isAloha ? "Aloha de la Rosée\nde Perle d'O" : cat.name;
+  const displayColor = isAloha ? (cat.color?.trim() || 'Blue Point') : cat.color?.trim();
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-midnight via-forest to-midnight">
       <div className="container mx-auto px-4 py-8">
@@ -183,7 +187,7 @@ export default function CatDetail() {
           <div className="space-y-6">
             <div>
               <h1 className="text-5xl font-serif text-gold medieval-glow mb-2 whitespace-pre-line">
-                {cat.name.replace("Aloha de la Rosée de Perle d'O", "Aloha de la Rosée\nde Perle d'O")}
+                {displayName}
               </h1>
               <p className="text-2xl text-ivory/80 font-light">
                 {cat.gender === 'male' ? t('catDetail.breederMale') : t('catDetail.breederFemale')} Ragdoll
@@ -205,9 +209,9 @@ export default function CatDetail() {
                   </div>
                 )}
 
-                {cat.color && (
+                {displayColor && (
                   <div>
-                    <span className="font-semibold text-gold">{t('catDetail.color')}:</span> {cat.color}
+                    <span className="font-semibold text-gold">{t('catDetail.color')}:</span> {displayColor}
                   </div>
                 )}
                 {cat.registration_number && (
