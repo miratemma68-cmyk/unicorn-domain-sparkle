@@ -76,8 +76,9 @@ export default function CatDetail() {
       const { data: catData, error: catError } = await supabase
         .from('breeding_cats')
         .select('*')
-        .ilike('name', id || '')
-        .single();
+        .ilike('name', `${id || ''}%`)
+        .maybeSingle();
+
 
       if (catError) throw catError;
       setCat(catData);
