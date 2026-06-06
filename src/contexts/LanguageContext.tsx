@@ -89,7 +89,8 @@ const translations = {
       laurenceP2: "Son expertise et son dévouement garantissent que chaque chaton bénéficie d'une socialisation optimale et d'un environnement stimulant dès ses premiers jours. Elle accompagne personnellement chaque famille adoptante pour assurer une transition harmonieuse.",
       laurenceQuote: "Chaque Ragdoll est unique et mérite une attention particulière. Mon objectif est de faire correspondre chaque chaton avec la famille parfaite pour lui.",
       galleryTitle: "Galerie",
-      galleryEmpty: "Photos et vidéos à venir..."
+      galleryEmpty: "Photos et vidéos à venir...",
+      previousLittersTitle: "Nos portées précédentes"
     },
     cats: {
       title: "Nos Licornes",
@@ -286,7 +287,8 @@ const translations = {
       laurenceP2: "Her expertise and dedication ensure that each kitten benefits from optimal socialization and a stimulating environment from its first days. She personally accompanies each adopting family to ensure a harmonious transition.",
       laurenceQuote: "Each Ragdoll is unique and deserves special attention. My goal is to match each kitten with the perfect family for them.",
       galleryTitle: "Gallery",
-      galleryEmpty: "Photos and videos coming soon..."
+      galleryEmpty: "Photos and videos coming soon...",
+      previousLittersTitle: "Our previous litters"
     },
     cats: {
       title: "Our Unicorns",
@@ -483,7 +485,8 @@ const translations = {
       laurenceP2: "Su experiencia y dedicación garantizan que cada gatito se beneficie de una socialización óptima y un entorno estimulante desde sus primeros días. Acompaña personalmente a cada familia adoptiva para garantizar una transición armoniosa.",
       laurenceQuote: "Cada Ragdoll es único y merece una atención especial. Mi objetivo es hacer coincidir cada gatito con la familia perfecta para él.",
       galleryTitle: "Galería",
-      galleryEmpty: "Fotos y videos próximamente..."
+      galleryEmpty: "Fotos y videos próximamente...",
+      previousLittersTitle: "Nuestras camadas anteriores"
     },
     cats: {
       title: "Nuestros Unicornios",
