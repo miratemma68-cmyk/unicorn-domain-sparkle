@@ -200,9 +200,10 @@ export default function CatDetail() {
                 {cat.birth_date && (
                   <div>
                     <span className="font-semibold text-gold">{t('catDetail.birthDate')}:</span>{' '}
-                    {new Date(cat.birth_date).toLocaleDateString('fr-FR')} ({calculateAge(cat.birth_date)})
+                    {new Date(cat.birth_date).toLocaleDateString(language === 'en' ? 'en-GB' : language === 'es' ? 'es-ES' : 'fr-FR')} ({calculateAge(cat.birth_date)})
                   </div>
                 )}
+
                 {cat.color && (
                   <div>
                     <span className="font-semibold text-gold">{t('catDetail.color')}:</span> {cat.color}
