@@ -1,6 +1,6 @@
 import tapestryDesire from "@/assets/tapestry-desire.png";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, Instagram } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export const Hero = () => {
