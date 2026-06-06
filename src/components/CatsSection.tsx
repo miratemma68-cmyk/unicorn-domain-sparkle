@@ -3,6 +3,7 @@ import alohaAdult from "@/assets/aloha-adult.jpg";
 import utahAdult from "@/assets/utah-adult.jpg";
 import kittens from "@/assets/kittens.jpg";
 import tapestryTaste from "@/assets/tapestry-taste.jpg";
+import sirAuguste from "@/assets/sir-auguste.jpg.asset.json";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
@@ -129,22 +130,25 @@ export const CatsSection = () => {
             {t('cats.externalBreeders')}
           </h3>
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Card className="bg-card/80 backdrop-blur-sm border-2 border-gold/30 hover:border-gold transition-all duration-300 overflow-hidden group rounded-[3rem] hover:shadow-[0_0_40px_rgba(218,165,32,0.4)] hover:scale-105">
-              <CardContent className="p-0">
-                <div className="relative overflow-hidden">
-                  <img
-                    src={tapestryTaste}
-                    alt="Sir Auguste de la Fleur de Vigne"
-                    className="w-full h-80 object-cover object-center transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/50 to-transparent opacity-60" />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-2xl font-display text-gold mb-2">Sir Auguste de la Fleur de Vigne</h3>
-                  <p className="text-ivory/80 italic">Reproducteur externe</p>
-                </div>
-              </CardContent>
-            </Card>
+            <Link to="/cat/sir-auguste" className="block">
+              <Card className="bg-card/80 backdrop-blur-sm border-2 border-gold/30 hover:border-gold transition-all duration-300 overflow-hidden group rounded-[3rem] hover:shadow-[0_0_40px_rgba(218,165,32,0.4)] hover:scale-105">
+                <CardContent className="p-0">
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={sirAuguste.url}
+                      alt="Sir Auguste de la Fleur de Vigne"
+                      className="w-full h-80 object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/50 to-transparent opacity-60" />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-2xl font-display text-gold mb-2">Sir Auguste de la Fleur de Vigne</h3>
+                    <p className="text-ivory/80 italic">Reproducteur externe</p>
+                    <p className="text-gold/70 text-sm mt-3 italic">{t('cats.viewProfile')} →</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
           </div>
         </div>
 
