@@ -316,6 +316,19 @@ export default function KittenDetail() {
           </div>
         </div>
 
+        <div className="flex justify-center mb-12">
+          <Link to="/#adoption">
+            <Button
+              size="lg"
+              className="bg-crimson hover:bg-crimson-dark text-ivory border-2 border-gold transition-all duration-300 hover:shadow-[0_0_30px_rgba(218,165,32,0.5)] rounded-full hover:scale-105"
+            >
+              {t('adoption.startAdoption')}
+            </Button>
+          </Link>
+        </div>
+
+
+
 
         {/* Tabs for Gallery, Milestones, Updates, and Vet Visits */}
         <Tabs defaultValue="gallery" className="mb-12">
