@@ -58,7 +58,7 @@ const translations = {
     nav: {
       domain: "Le Domaine",
       cats: "Nos Licornes",
-      availableCats: "Nos chats\ndisponibles",
+      availableCats: "Nos chatons\ndisponibles",
       education: "Éducation",
       adoption: "Adoption",
       faq: "FAQ",
@@ -257,7 +257,7 @@ const translations = {
     nav: {
       domain: "The Domain",
       cats: "Our Unicorns",
-      availableCats: "Our available\ncats",
+      availableCats: "Our available\nkittens",
       education: "Education",
       adoption: "Adoption",
       faq: "FAQ",
@@ -456,7 +456,7 @@ const translations = {
     nav: {
       domain: "El Dominio",
       cats: "Nuestros Unicornios",
-      availableCats: "Nuestros gatos\ndisponibles",
+      availableCats: "Nuestros gatitos\ndisponibles",
       education: "Educación",
       adoption: "Adopción",
       faq: "FAQ",
