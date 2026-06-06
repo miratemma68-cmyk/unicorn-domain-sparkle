@@ -67,7 +67,7 @@ const translations = {
       clientSpace: "Espace Client"
     },
     hero: {
-      title: "Le Domaine des Licornes",
+      title: "Le Domaine des Licornes Seal",
       subtitle: "Élevage Premium de Ragdolls",
       tagline: "Où l'élégance médiévale rencontre la grâce féline",
       discoverCats: "Découvrez Nos Licornes",
@@ -237,7 +237,7 @@ const translations = {
       videoNotSupported: "Votre navigateur ne supporte pas la lecture de vidéos."
     },
     footer: {
-      title: "Le Domaine des Licornes",
+      title: "Le Domaine des Licornes Seal",
       subtitle: "Élevage familial premium de Ragdolls",
       loof: "LOOF - Le domaine des licornes seal",
       navigation: "Navigation",
@@ -264,7 +264,7 @@ const translations = {
       clientSpace: "Client Area"
     },
     hero: {
-      title: "Le Domaine des Licornes",
+      title: "Le Domaine des Licornes Seal",
       subtitle: "Premium Ragdoll Breeding",
       tagline: "Where medieval elegance meets feline grace",
       discoverCats: "Discover Our Unicorns",
