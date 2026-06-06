@@ -462,7 +462,7 @@ const translations = {
     },
     hero: {
       title: "Le Domaine des Licornes Seal",
-      subtitle: "Criador Premium de Ragdolls",
+      subtitle: "Criador Premium de gatos Ragdolls",
       tagline: "Donde la elegancia medieval se encuentra con la gracia felina",
       discoverCats: "Descubre Nuestros Unicornios",
       contactUs: "Contáctenos"
@@ -633,7 +633,7 @@ const translations = {
     },
     footer: {
       title: "Le Domaine des Licornes Seal",
-      subtitle: "Criadero Premium de Ragdolls",
+      subtitle: "Criador Premium de gatos Ragdolls",
       loof: "LOOF - Le domaine des licornes seal",
       navigation: "Navegación",
       contact: "Contacto",
