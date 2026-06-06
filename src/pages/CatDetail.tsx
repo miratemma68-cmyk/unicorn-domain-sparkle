@@ -12,7 +12,7 @@ const EXTERNAL_BREEDERS: Record<string, any> = {
   'sir-auguste': {
     id: 'sir-auguste',
     name: 'Sir Auguste de la Fleur de Vigne',
-    birth_date: '',
+    birth_date: '2021-04-25',
     gender: 'male',
     color: 'Seal Point',
     pedigree: '',
