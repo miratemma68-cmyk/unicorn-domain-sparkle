@@ -85,7 +85,7 @@ const translations = {
       discoverLaurence: "Découvrir Laurence",
       viewGallery: "Voir la Galerie",
       laurenceTitle: "Laurence, notre éleveuse",
-      laurenceP1: "Passionnée par les Ragdolls depuis plus de 10 ans, Laurence a fondé Le Domaine des Licornes avec la vision de créer un élevage familial où chaque chat est traité comme un membre de la famille.",
+      laurenceP1: "Passionnée par les Ragdolls depuis plus de 10 ans, Laurence a fondé Le Domaine des Licornes Seal avec la vision de créer un élevage familial où chaque chat est traité comme un membre de la famille.",
       laurenceP2: "Son expertise et son dévouement garantissent que chaque chaton bénéficie d'une socialisation optimale et d'un environnement stimulant dès ses premiers jours. Elle accompagne personnellement chaque famille adoptante pour assurer une transition harmonieuse.",
       laurenceQuote: "Chaque Ragdoll est unique et mérite une attention particulière. Mon objectif est de faire correspondre chaque chaton avec la famille parfaite pour lui.",
       galleryTitle: "Galerie",
