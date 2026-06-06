@@ -182,10 +182,12 @@ export default function CatDetail() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3 text-ivory/90">
-                <div>
-                  <span className="font-semibold text-gold">{t('catDetail.birthDate')}:</span>{' '}
-                  {new Date(cat.birth_date).toLocaleDateString('fr-FR')} ({calculateAge(cat.birth_date)})
-                </div>
+                {cat.birth_date && (
+                  <div>
+                    <span className="font-semibold text-gold">{t('catDetail.birthDate')}:</span>{' '}
+                    {new Date(cat.birth_date).toLocaleDateString('fr-FR')} ({calculateAge(cat.birth_date)})
+                  </div>
+                )}
                 {cat.color && (
                   <div>
                     <span className="font-semibold text-gold">{t('catDetail.color')}:</span> {cat.color}
