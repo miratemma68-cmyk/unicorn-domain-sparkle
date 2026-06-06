@@ -265,8 +265,8 @@ export default function KittenDetail() {
                   <div className="flex items-center gap-3">
                     <Calendar className="h-5 w-5 text-gold" />
                     <div>
-                      <p className="text-sm text-ivory/60">{t('kittenDetail.age')}</p>
-                      <p className="text-ivory">{calculateAge(kitten.birth_date)}</p>
+                      <p className="text-sm text-ivory/60">{t('kittenDetail.birthDate')}</p>
+                      <p className="text-ivory">{new Date(kitten.birth_date).toLocaleDateString(language === 'en' ? 'en-GB' : language === 'es' ? 'es-ES' : 'fr-FR')}</p>
                     </div>
                   </div>
                 )}
