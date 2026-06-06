@@ -63,11 +63,11 @@ export const CatsSection = () => {
 
   const cats = [
     {
-      name: "Aloha de la Rosée\nde Perle d'O",
+      name: "Aloha de la Rosée de Perle d'O",
       image: alohaAdult,
       description: t('cats.alohaDesc'),
       slug: "aloha",
-      color: "Blue Point",
+      color: "",
       type: "breeding"
     },
     {
