@@ -114,22 +114,6 @@ export const DomainSection = () => {
                   </a>
                 </Button>
                 
-                <Button 
-                  asChild
-                  variant="outline"
-                  className="border-2 border-gold text-gold hover:bg-gold/10"
-                >
-                  <a
-                    href="#galerie-domaine"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      document.getElementById('galerie-domaine')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }}
-                  >
-                    <ImageIcon className="w-4 h-4" />
-                    {t('domain.viewGallery')}
-                  </a>
-                </Button>
               </div>
             </div>
             
