@@ -493,7 +493,7 @@ const translations = {
       available: "Disponibles",
       noKittens: "No hay gatitos disponibles en este momento",
       viewProfile: "Ver perfil",
-      alohaDesc: "Nuestro magnífico Ragdoll, dulce y elegante como un unicornio",
+      alohaDesc: "Nuestra magnífica Ragdoll, dulce y elegante como un unicornio",
       utahDesc: "Una princesa entre los Ragdolls, noble y majestuosa"
     },
     education: {
