@@ -182,8 +182,8 @@ export default function CatDetail() {
           {/* Information */}
           <div className="space-y-6">
             <div>
-              <h1 className="text-5xl font-serif text-gold medieval-glow mb-2">
-                {cat.name}
+              <h1 className="text-5xl font-serif text-gold medieval-glow mb-2 whitespace-pre-line">
+                {cat.name.replace("Aloha de la Rosée de Perle d'O", "Aloha de la Rosée\nde Perle d'O")}
               </h1>
               <p className="text-2xl text-ivory/80 font-light">
                 {cat.gender === 'male' ? t('catDetail.breederMale') : t('catDetail.breederFemale')} Ragdoll
