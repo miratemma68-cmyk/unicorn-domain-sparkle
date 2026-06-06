@@ -62,7 +62,8 @@ export const Hero = () => {
               </Button>
             </div>
 
-            <div className="flex justify-center gap-4 pt-2">
+            <div className="flex items-center justify-center gap-4 pt-2">
+              <span className="text-ivory/80 font-light italic">{t('hero.followUs')}</span>
               <a
                 href="https://www.instagram.com/chatterie.licornes?igsh=MWJtM2l4cDhicTU2aA=="
                 target="_blank"
