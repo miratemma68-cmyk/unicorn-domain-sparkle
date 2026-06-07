@@ -5,9 +5,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
-import { useNavigate } from "react-router-dom";
 import tapestrySight from "@/assets/tapestry-sight.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { supabase } from "@/integrations/supabase/client";
@@ -25,7 +22,6 @@ interface FAQ {
 
 export const FAQSection = () => {
   const { t, language } = useLanguage();
-  const navigate = useNavigate();
   const [faqs, setFaqs] = useState<FAQ[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -69,14 +65,7 @@ export const FAQSection = () => {
       </div>
       
       <div className="container mx-auto max-w-4xl relative z-10">
-        <Button
-          variant="outline"
-          onClick={() => navigate(-1)}
-          className="mb-8 border-gold text-gold hover:bg-gold/10 rounded-full"
-        >
-          <ArrowLeft className="mr-2 h-4 w-4" />
-          {t('common.back')}
-        </Button>
+        
         
         <div className="tapestry-border bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12">
           <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-8">
