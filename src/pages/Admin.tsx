@@ -133,9 +133,6 @@ export default function Admin() {
             <FAQManager />
           </TabsContent>
 
-          <TabsContent value="newsletter" className="space-y-6">
-            <NewsletterManager />
-          </TabsContent>
         </Tabs>
       </main>
     </div>
