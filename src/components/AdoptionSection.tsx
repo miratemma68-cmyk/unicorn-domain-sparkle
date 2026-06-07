@@ -93,7 +93,26 @@ export const AdoptionSection = () => {
               </div>
             </div>
             
-            <div className="bg-crimson/20 border border-gold/30 rounded-[2rem] p-6 mt-12">
+            {/* Navigation Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
+              <Button 
+                asChild
+                className="bg-crimson hover:bg-crimson-dark text-ivory border-2 border-gold"
+              >
+                <a
+                  href="#contact"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  <Heart className="w-4 h-4" />
+                  {t('adoption.startAdoption')}
+                </a>
+              </Button>
+            </div>
+
+            <div className="bg-crimson/20 border border-gold/30 rounded-[2rem] p-6 mt-8">
               <h3 className="text-2xl font-display text-gold mb-4">{t('adoption.whatYouGet')}</h3>
               <ul className="grid md:grid-cols-2 gap-3">
                 <li className="flex items-start gap-2">
@@ -121,25 +140,6 @@ export const AdoptionSection = () => {
                   <span>{t('adoption.benefit6')}</span>
                 </li>
               </ul>
-            </div>
-
-            {/* Navigation Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-              <Button 
-                asChild
-                className="bg-crimson hover:bg-crimson-dark text-ivory border-2 border-gold"
-              >
-                <a
-                  href="#contact"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }}
-                >
-                  <Heart className="w-4 h-4" />
-                  {t('adoption.startAdoption')}
-                </a>
-              </Button>
             </div>
           </div>
         </div>
