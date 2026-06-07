@@ -74,7 +74,7 @@ export const DomainSection = () => {
                 {t('domain.intro2')}
               </p>
               
-              <p className="text-lg leading-relaxed font-semibold text-gold/90">
+              <p className="text-lg leading-relaxed">
                 {t('domain.healthTesting')}
               </p>
               
