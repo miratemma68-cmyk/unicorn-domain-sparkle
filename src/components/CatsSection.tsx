@@ -159,7 +159,7 @@ export const CatsSection = () => {
         </div>
 
         {/* Kittens Section */}
-        <div id="chatons">
+        <div id="chatons" className="scroll-mt-32 pt-8">
 
           <h3 className="text-3xl font-display text-gold medieval-glow text-center mb-8">
             {t('cats.kittens')}
