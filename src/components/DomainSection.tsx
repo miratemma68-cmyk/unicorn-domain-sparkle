@@ -96,25 +96,6 @@ export const DomainSection = () => {
                 </ul>
               </div>
 
-              {/* Navigation Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                <Button 
-                  asChild
-                  className="bg-crimson hover:bg-crimson-dark text-ivory border-2 border-gold"
-                >
-                  <a
-                    href="#laurence"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      document.getElementById('laurence')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }}
-                  >
-                    <User className="w-4 h-4" />
-                    {t('domain.discoverLaurence')}
-                  </a>
-                </Button>
-                
-              </div>
             </div>
             
             <div className="relative">
