@@ -79,6 +79,7 @@ const translations = {
       title: "Le Domaine",
       intro1: "Bienvenue dans notre élevage familial, où chaque Ragdoll est élevé avec amour, respect et selon les plus hauts standards éthiques.",
       intro2: "Inspirés par la noblesse des licornes des tapisseries médiévales, nous avons créé un havre de paix où nos chats s'épanouissent dans un environnement privilégié, entourés d'attention et de soins constants.",
+      healthTesting: "Toutes nos chattes et les reproducteurs en saillies externes sont testés PKD, FELV, FIV, HCM.",
       values: "Nos Valeurs",
       value1: "Éthique et bien-être animal au cœur de nos pratiques",
       value2: "Élevage familial dans un cadre exceptionnel",
