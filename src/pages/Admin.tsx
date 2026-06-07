@@ -15,7 +15,7 @@ import { TestimonialsMediaManager } from '@/components/admin/TestimonialsMediaMa
 import { ClientKittenManager } from '@/components/admin/ClientKittenManager';
 import { KittenDataManager } from '@/components/admin/KittenDataManager';
 import { FAQManager } from '@/components/admin/FAQManager';
-import { NewsletterManager } from '@/components/admin/NewsletterManager';
+
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Admin() {
@@ -94,10 +94,6 @@ export default function Admin() {
               <HelpCircle className="mr-2 h-4 w-4" />
               FAQ
             </TabsTrigger>
-            <TabsTrigger value="newsletter">
-              <Upload className="mr-2 h-4 w-4" />
-              Newsletter
-            </TabsTrigger>
           </TabsList>
 
           <TabsContent value="reproducteurs" className="space-y-6">
@@ -137,9 +133,6 @@ export default function Admin() {
             <FAQManager />
           </TabsContent>
 
-          <TabsContent value="newsletter" className="space-y-6">
-            <NewsletterManager />
-          </TabsContent>
         </Tabs>
       </main>
     </div>
