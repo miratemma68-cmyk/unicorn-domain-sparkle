@@ -145,13 +145,6 @@ export type Database = {
             referencedRelation: "kittens"
             referencedColumns: ["id"]
           },
-          {
-            foreignKeyName: "client_kittens_kitten_id_fkey"
-            columns: ["kitten_id"]
-            isOneToOne: false
-            referencedRelation: "public_kittens_view"
-            referencedColumns: ["id"]
-          },
         ]
       }
       contact_inquiries: {
@@ -344,13 +337,6 @@ export type Database = {
             referencedColumns: ["id"]
           },
           {
-            foreignKeyName: "kitten_media_kitten_id_fkey"
-            columns: ["kitten_id"]
-            isOneToOne: false
-            referencedRelation: "public_kittens_view"
-            referencedColumns: ["id"]
-          },
-          {
             foreignKeyName: "kitten_media_update_id_fkey"
             columns: ["update_id"]
             isOneToOne: false
@@ -392,13 +378,6 @@ export type Database = {
             referencedRelation: "kittens"
             referencedColumns: ["id"]
           },
-          {
-            foreignKeyName: "kitten_milestones_kitten_id_fkey"
-            columns: ["kitten_id"]
-            isOneToOne: false
-            referencedRelation: "public_kittens_view"
-            referencedColumns: ["id"]
-          },
         ]
       }
       kitten_updates: {
@@ -435,13 +414,6 @@ export type Database = {
             columns: ["kitten_id"]
             isOneToOne: false
             referencedRelation: "kittens"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "kitten_updates_kitten_id_fkey"
-            columns: ["kitten_id"]
-            isOneToOne: false
-            referencedRelation: "public_kittens_view"
             referencedColumns: ["id"]
           },
         ]
@@ -483,13 +455,6 @@ export type Database = {
             columns: ["kitten_id"]
             isOneToOne: false
             referencedRelation: "kittens"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "kitten_vet_visits_kitten_id_fkey"
-            columns: ["kitten_id"]
-            isOneToOne: false
-            referencedRelation: "public_kittens_view"
             referencedColumns: ["id"]
           },
         ]
@@ -619,42 +584,7 @@ export type Database = {
       }
     }
     Views: {
-      public_kittens_view: {
-        Row: {
-          birth_date: string | null
-          breed_info: string | null
-          color: string | null
-          created_at: string | null
-          current_weight: number | null
-          gender: string | null
-          id: string | null
-          name: string | null
-          updated_at: string | null
-        }
-        Insert: {
-          birth_date?: string | null
-          breed_info?: string | null
-          color?: string | null
-          created_at?: string | null
-          current_weight?: number | null
-          gender?: string | null
-          id?: string | null
-          name?: string | null
-          updated_at?: string | null
-        }
-        Update: {
-          birth_date?: string | null
-          breed_info?: string | null
-          color?: string | null
-          created_at?: string | null
-          current_weight?: number | null
-          gender?: string | null
-          id?: string | null
-          name?: string | null
-          updated_at?: string | null
-        }
-        Relationships: []
-      }
+      [_ in never]: never
     }
     Functions: {
       has_role: {
