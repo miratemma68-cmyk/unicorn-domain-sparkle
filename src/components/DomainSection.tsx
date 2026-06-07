@@ -128,6 +128,26 @@ export const DomainSection = () => {
               <p className="text-lg leading-relaxed">
                 {t('domain.laurenceP2')}
               </p>
+
+              <ul className="space-y-2 text-lg leading-relaxed">
+                <li className="flex items-start gap-3">
+                  <span className="text-gold text-2xl leading-none">✦</span>
+                  <span>{t('domain.laurenceCred1')}</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-gold text-2xl leading-none">✦</span>
+                  <span>{t('domain.laurenceCred2')}</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-gold text-2xl leading-none">✦</span>
+                  <span>{t('domain.laurenceCred3')}</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-gold text-2xl leading-none">✦</span>
+                  <span>{t('domain.laurenceCred4')}</span>
+                </li>
+              </ul>
+              
               
               <p className="text-lg leading-relaxed italic text-gold/80">
                 "{t('domain.laurenceQuote')}"
