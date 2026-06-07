@@ -94,10 +94,6 @@ export default function Admin() {
               <HelpCircle className="mr-2 h-4 w-4" />
               FAQ
             </TabsTrigger>
-            <TabsTrigger value="newsletter">
-              <Upload className="mr-2 h-4 w-4" />
-              Newsletter
-            </TabsTrigger>
           </TabsList>
 
           <TabsContent value="reproducteurs" className="space-y-6">
