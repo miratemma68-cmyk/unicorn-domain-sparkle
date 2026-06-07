@@ -209,7 +209,7 @@ export default function KittenDetail() {
       <div className="min-h-screen flex items-center justify-center bg-midnight">
         <div className="text-center">
           <p className="text-gold text-xl font-serif mb-4">{t('kittenDetail.notFound')}</p>
-          <Link to="/#licornes">
+          <Link to="/#chatons">
             <Button className="bg-crimson hover:bg-crimson-dark text-ivory border border-gold rounded-full">
               {t('kittenDetail.backToKittens')}
             </Button>
@@ -224,7 +224,7 @@ export default function KittenDetail() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-midnight via-forest to-midnight">
       <div className="container mx-auto px-4 py-8">
-        <Link to="/#licornes">
+        <Link to="/#chatons">
           <Button
             variant="outline"
             className="mb-8 border-gold text-gold hover:bg-gold/10 rounded-full"
