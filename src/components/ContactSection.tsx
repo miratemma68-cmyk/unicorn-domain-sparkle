@@ -17,7 +17,7 @@ const contactSchema = z.object({
 
 export const ContactSection = () => {
   const { t, language } = useLanguage();
-  const navigate = useNavigate();
+  const { t, language } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
