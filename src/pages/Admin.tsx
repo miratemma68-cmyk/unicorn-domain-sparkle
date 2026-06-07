@@ -15,7 +15,7 @@ import { TestimonialsMediaManager } from '@/components/admin/TestimonialsMediaMa
 import { ClientKittenManager } from '@/components/admin/ClientKittenManager';
 import { KittenDataManager } from '@/components/admin/KittenDataManager';
 import { FAQManager } from '@/components/admin/FAQManager';
-import { NewsletterManager } from '@/components/admin/NewsletterManager';
+
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Admin() {
