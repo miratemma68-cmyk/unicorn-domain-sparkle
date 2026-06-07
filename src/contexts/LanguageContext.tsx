@@ -481,6 +481,7 @@ const translations = {
       title: "El Dominio",
       intro1: "Bienvenido a nuestro criadero familiar, donde cada Ragdoll se cría con amor, respeto y según los más altos estándares éticos.",
       intro2: "Inspirados por la nobleza de los unicornios de los tapices medievales, hemos creado un refugio de paz donde nuestros gatos prosperan en un entorno privilegiado, rodeados de atención y cuidados constantes.",
+      healthTesting: "Todas nuestras gatas y los reproductores en montas externas están testados de PKD, FELV, FIV, HCM.",
       values: "Nuestros Valores",
       value1: "Ética y bienestar animal en el corazón de nuestras prácticas",
       value2: "Crianza familiar en un entorno excepcional",
