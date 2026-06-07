@@ -280,6 +280,7 @@ const translations = {
       title: "The Domain",
       intro1: "Welcome to our family breeding, where each Ragdoll is raised with love, respect and according to the highest ethical standards.",
       intro2: "Inspired by the nobility of unicorns from medieval tapestries, we have created a haven of peace where our cats thrive in a privileged environment, surrounded by constant attention and care.",
+      healthTesting: "All our queens and external studs used for breeding are tested for PKD, FELV, FIV, HCM.",
       values: "Our Values",
       value1: "Ethics and animal welfare at the heart of our practices",
       value2: "Family breeding in an exceptional setting",
