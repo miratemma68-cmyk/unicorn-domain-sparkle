@@ -23,7 +23,6 @@ interface FAQ {
 export const FAQSection = () => {
   const { t, language } = useLanguage();
   const [faqs, setFaqs] = useState<FAQ[]>([]);
-  const [faqs, setFaqs] = useState<FAQ[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
