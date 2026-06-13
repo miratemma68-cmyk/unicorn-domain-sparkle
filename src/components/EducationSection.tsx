@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import tapestrySmell from "@/assets/tapestry-smell.jpg";
+import tapestrySmell from "@/assets/education-kittens-sunset.jpg.asset.json";
 import { supabase } from "@/integrations/supabase/client";
 import { GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -54,7 +54,7 @@ export const EducationSection = () => {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="relative order-2 md:order-1">
               <img 
-                src={tapestrySmell} 
+                src={tapestrySmell.url} 
                 alt="La Dame à la Licorne - L'Odorat" 
                 className="w-full rounded-[3rem] tapestry-border shadow-2xl"
               />
