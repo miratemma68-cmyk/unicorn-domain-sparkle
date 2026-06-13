@@ -190,6 +190,7 @@ export const DomainSection = () => {
               />
             </div>
           </div>
+          </div>
         </div>
 
 
