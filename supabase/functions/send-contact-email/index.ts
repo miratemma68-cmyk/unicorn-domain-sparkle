@@ -69,15 +69,6 @@ const handler = async (req: Request): Promise<Response> => {
         }
       );
     }
-      console.warn(`Rate limit exceeded for IP: ${clientIP}`);
-      return new Response(
-        JSON.stringify({ error: "Too many requests. Please try again later." }),
-        {
-          status: 429,
-          headers: { "Content-Type": "application/json", ...corsHeaders },
-        }
-      );
-    }
 
     const { name, email, phone, country, message, language = 'fr' }: ContactEmailRequest = await req.json();
     
