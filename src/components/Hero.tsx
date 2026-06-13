@@ -21,7 +21,7 @@ export const Hero = () => {
               {/* Main image */}
               <div className="relative h-full border-2 border-gold shadow-[0_0_50px_rgba(218,165,32,0.3)] rounded-[3rem] overflow-hidden">
                 <img 
-                  src={tapestryDesire} 
+                  src={tapestryDesire.url} 
                   alt="La Dame à la Licorne - Mon seul désir" 
                   className="w-full h-full object-cover"
                 />
