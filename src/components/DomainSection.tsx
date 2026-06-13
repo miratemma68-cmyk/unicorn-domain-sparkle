@@ -114,7 +114,7 @@ export const DomainSection = () => {
         </div>
 
         {/* Laurence notre éleveuse */}
-        <div id="laurence" className="tapestry-border bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12 mt-12">
+        <div id="laurence" className="tapestry-border bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12 mt-12 scroll-mt-32">
           <h3 className="text-3xl font-display text-gold medieval-glow text-center mb-8">
             {t('domain.laurenceTitle')}
           </h3>
