@@ -22,6 +22,7 @@ export const Navigation = () => {
 
   const navItems = [
     { label: t('nav.domain'), href: "#domaine" },
+    { label: t('nav.breeder'), href: "#laurence" },
     { label: t('nav.cats'), href: "#licornes" },
     { label: t('nav.education'), href: "#education" },
     { label: t('nav.adoption'), href: "#adoption" },
