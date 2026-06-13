@@ -57,6 +57,7 @@ const translations = {
     },
     nav: {
       domain: "Le Domaine",
+      breeder: "Notre Éleveuse",
       cats: "Nos Licornes",
       availableCats: "Nos chatons\ndisponibles",
       education: "Éducation",
@@ -262,6 +263,7 @@ const translations = {
     },
     nav: {
       domain: "The Domain",
+      breeder: "Our Breeder",
       cats: "Our Unicorns",
       availableCats: "Our available\nkittens",
       education: "Education",
@@ -467,6 +469,7 @@ const translations = {
     },
     nav: {
       domain: "El Dominio",
+      breeder: "Nuestra Criadora",
       cats: "Nuestros Unicornios",
       availableCats: "Nuestros gatitos\ndisponibles",
       education: "Educación",
