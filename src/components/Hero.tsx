@@ -1,4 +1,4 @@
-import tapestryDesire from "@/assets/tapestry-desire.png";
+import tapestryDesire from "@/assets/licorne-miroir-hero.jpg.asset.json";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
