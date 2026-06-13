@@ -211,16 +211,16 @@ const handler = async (req: Request): Promise<Response> => {
               </h1>
             </div>
             <div class="content">
-              <p>${t.greeting} <span class="highlight">${name}</span>,</p>
+              <p>${t.greeting} <span class="highlight">${escapeHtml(name)}</span>,</p>
               
               <p>${t.received}</p>
               
               <p>${t.reply}</p>
               
               <p>${t.yourMessage}<br>
-              <em>"${message.substring(0, 200)}${message.length > 200 ? "..." : ""}"</em></p>
+              <em>"${escapeHtml(message.substring(0, 200))}${message.length > 200 ? "..." : ""}"</em></p>
               
-              ${phone || country ? `<p>${t.contact}${phone ? ` ${phone} ${language === 'es' ? 'o' : language === 'en' ? 'or' : 'ou'}` : ""} ${t.at} ${email}${country ? ` (${country})` : ''}.</p>` : ""}
+              ${phone || country ? `<p>${t.contact}${phone ? ` ${escapeHtml(phone)} ${language === 'es' ? 'o' : language === 'en' ? 'or' : 'ou'}` : ""} ${t.at} ${escapeHtml(email)}${country ? ` (${escapeHtml(country)})` : ''}.</p>` : ""}
               
               <p>${t.soonFrom}<br>
               <strong>${t.team}</strong></p>
@@ -247,13 +247,13 @@ const handler = async (req: Request): Promise<Response> => {
       const adminHtml = `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2>Nouveau message de contact</h2>
-          <p><strong>Nom :</strong> ${name}</p>
-          <p><strong>Email :</strong> ${email}</p>
-          ${phone ? `<p><strong>Téléphone :</strong> ${phone}</p>` : ""}
-          ${country ? `<p><strong>Pays :</strong> ${country}</p>` : ""}
-          <p><strong>Langue :</strong> ${language}</p>
+          <p><strong>Nom :</strong> ${escapeHtml(name)}</p>
+          <p><strong>Email :</strong> ${escapeHtml(email)}</p>
+          ${phone ? `<p><strong>Téléphone :</strong> ${escapeHtml(phone)}</p>` : ""}
+          ${country ? `<p><strong>Pays :</strong> ${escapeHtml(country)}</p>` : ""}
+          <p><strong>Langue :</strong> ${escapeHtml(language)}</p>
           <p><strong>Message :</strong></p>
-          <p style="white-space: pre-line; background:#f5f5f5; padding:12px; border-radius:8px;">${message}</p>
+          <p style="white-space: pre-line; background:#f5f5f5; padding:12px; border-radius:8px;">${escapeHtml(message)}</p>
         </div>
       `;
       const adminResponse = await resend.emails.send({
