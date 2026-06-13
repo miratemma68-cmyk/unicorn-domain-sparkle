@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import tapestryTouch from "@/assets/tapestry-touch.jpg";
+import ragdollOrigins from "@/assets/ragdoll-origins.jpg";
 import laurenceProfile from "@/assets/laurence-profile.jpg";
 import { supabase } from "@/integrations/supabase/client";
 import { User, Image as ImageIcon } from "lucide-react";
@@ -109,6 +110,31 @@ export const DomainSection = () => {
                 alt="La Dame à la Licorne - Le Toucher" 
                 className="w-full rounded-[3rem] tapestry-border shadow-2xl"
               />
+            </div>
+          </div>
+        </div>
+
+        {/* Ragdoll, origines */}
+        <div id="ragdoll-origines" className="tapestry-border bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12 mt-12 scroll-mt-32">
+          <h3 className="text-3xl font-display text-gold medieval-glow text-center mb-8">
+            {t('domain.ragdollOriginsTitle')}
+          </h3>
+
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="relative rounded-[3rem] overflow-hidden tapestry-border">
+              <img
+                src={ragdollOrigins}
+                alt="Ragdoll - Origines de la race"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            <div className="space-y-6 text-ivory/90">
+              <p className="text-lg leading-relaxed">{t('domain.ragdollOriginsP1')}</p>
+              <p className="text-lg leading-relaxed">{t('domain.ragdollOriginsP2')}</p>
+              <p className="text-lg leading-relaxed">{t('domain.ragdollOriginsP3')}</p>
+              <p className="text-lg leading-relaxed">{t('domain.ragdollOriginsP4')}</p>
+              <p className="text-lg leading-relaxed">{t('domain.ragdollOriginsP5')}</p>
             </div>
           </div>
         </div>
