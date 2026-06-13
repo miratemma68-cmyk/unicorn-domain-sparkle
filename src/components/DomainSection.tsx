@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import licorneMiroir from "@/assets/domaine-ragdolls.jpg.asset.json";
-import ragdollOrigins from "@/assets/ragdoll-origins.jpg";
+import ragdollOrigins from "@/assets/ragdoll-origins-blue-eyes.jpg.asset.json";
 import laurenceProfile from "@/assets/laurence-atardecer.jpg.asset.json";
 import { supabase } from "@/integrations/supabase/client";
 import { User, Image as ImageIcon } from "lucide-react";
@@ -123,7 +123,7 @@ export const DomainSection = () => {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="relative rounded-[3rem] overflow-hidden tapestry-border">
                 <img
-                  src={ragdollOrigins}
+                  src={ragdollOrigins.url}
                   alt="Ragdoll - Origines de la race"
                   className="w-full h-full object-cover"
                 />
