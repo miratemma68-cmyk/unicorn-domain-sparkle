@@ -115,35 +115,37 @@ export const DomainSection = () => {
         </div>
 
         {/* Ragdoll, origines */}
-        <div id="ragdoll-origines" className="tapestry-border bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12 mt-12 scroll-mt-32">
-          <h3 className="text-3xl font-display text-gold medieval-glow text-center mb-8">
+        <div id="ragdoll-origines" className="mt-16 scroll-mt-32">
+          <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-12">
             {t('domain.ragdollOriginsTitle')}
-          </h3>
+          </h2>
+          <div className="tapestry-border bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="relative rounded-[3rem] overflow-hidden tapestry-border">
+                <img
+                  src={ragdollOrigins}
+                  alt="Ragdoll - Origines de la race"
+                  className="w-full h-full object-cover"
+                />
+              </div>
 
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="relative rounded-[3rem] overflow-hidden tapestry-border">
-              <img
-                src={ragdollOrigins}
-                alt="Ragdoll - Origines de la race"
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            <div className="space-y-6 text-ivory/90">
-              <p className="text-lg leading-relaxed">{t('domain.ragdollOriginsP1')}</p>
-              <p className="text-lg leading-relaxed">{t('domain.ragdollOriginsP2')}</p>
-              <p className="text-lg leading-relaxed">{t('domain.ragdollOriginsP3')}</p>
-              <p className="text-lg leading-relaxed">{t('domain.ragdollOriginsP4')}</p>
-              <p className="text-lg leading-relaxed">{t('domain.ragdollOriginsP5')}</p>
+              <div className="space-y-6 text-ivory/90">
+                <p className="text-lg leading-relaxed">{t('domain.ragdollOriginsP1')}</p>
+                <p className="text-lg leading-relaxed">{t('domain.ragdollOriginsP2')}</p>
+                <p className="text-lg leading-relaxed">{t('domain.ragdollOriginsP3')}</p>
+                <p className="text-lg leading-relaxed">{t('domain.ragdollOriginsP4')}</p>
+                <p className="text-lg leading-relaxed">{t('domain.ragdollOriginsP5')}</p>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Laurence notre éleveuse */}
-        <div id="laurence" className="tapestry-border bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12 mt-12 scroll-mt-32">
-          <h3 className="text-3xl font-display text-gold medieval-glow text-center mb-8">
+        <div id="laurence" className="mt-16 scroll-mt-32">
+          <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-12">
             {t('domain.laurenceTitle')}
-          </h3>
+          </h2>
+          <div className="tapestry-border bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12">
           
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-6 text-ivory/90">
@@ -187,6 +189,7 @@ export const DomainSection = () => {
                 className="w-full h-full object-cover"
               />
             </div>
+          </div>
           </div>
         </div>
 
