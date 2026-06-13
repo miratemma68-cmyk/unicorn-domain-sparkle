@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import domaineLicornes from "@/assets/domaine-licornes.png.asset.json";
+import tapestryTouch from "@/assets/tapestry-touch.jpg";
 import ragdollOrigins from "@/assets/ragdoll-origins.jpg";
 import laurenceProfile from "@/assets/laurence-profile.jpg";
 import { supabase } from "@/integrations/supabase/client";
@@ -49,7 +49,7 @@ export const DomainSection = () => {
       <div className="absolute inset-0 opacity-5">
         <div 
           style={{
-            backgroundImage: `url(${domaineLicornes.url})`,
+            backgroundImage: `url(${tapestryTouch})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             filter: 'blur(2px)'
@@ -106,7 +106,7 @@ export const DomainSection = () => {
             
             <div className="relative">
               <img
-                src={domaineLicornes.url}
+                src={tapestryTouch}
                 alt="Le Domaine des Licornes Seal"
                 className="w-full rounded-[3rem] tapestry-border shadow-2xl"
               />
