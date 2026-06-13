@@ -17,6 +17,15 @@ const corsHeaders = {
 const RATE_LIMIT_WINDOW = 60 * 60 * 1000; // 1 hour in milliseconds
 const MAX_REQUESTS_PER_WINDOW = 5; // 5 submissions per hour per IP
 
+// Escape HTML to prevent injection in email bodies
+const escapeHtml = (s: string): string =>
+  String(s ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+
 interface ContactEmailRequest {
   name: string;
   email: string;
@@ -40,18 +49,16 @@ const handler = async (req: Request): Promise<Response> => {
     
     console.log("Contact form submission from IP:", clientIP);
     
-    // Check rate limit
-    const rateLimitKey = `rate_limit_${clientIP}`;
+    // Check rate limit by IP address
     const { data: rateLimitData } = await supabase
       .from('contact_inquiries')
       .select('created_at')
       .gte('created_at', new Date(Date.now() - RATE_LIMIT_WINDOW).toISOString())
-      .eq('email', clientIP) // We'll use a separate tracking mechanism
-      .limit(MAX_REQUESTS_PER_WINDOW);
-    
-    // Simple rate limiting: count recent submissions from this IP
+      .eq('ip_address', clientIP)
+      .limit(MAX_REQUESTS_PER_WINDOW + 1);
+
     const recentSubmissions = rateLimitData?.length || 0;
-    
+
     if (recentSubmissions >= MAX_REQUESTS_PER_WINDOW) {
       console.warn(`Rate limit exceeded for IP: ${clientIP}`);
       return new Response(
@@ -195,16 +202,16 @@ const handler = async (req: Request): Promise<Response> => {
               </h1>
             </div>
             <div class="content">
-              <p>${t.greeting} <span class="highlight">${name}</span>,</p>
+              <p>${t.greeting} <span class="highlight">${escapeHtml(name)}</span>,</p>
               
               <p>${t.received}</p>
               
               <p>${t.reply}</p>
               
               <p>${t.yourMessage}<br>
-              <em>"${message.substring(0, 200)}${message.length > 200 ? "..." : ""}"</em></p>
+              <em>"${escapeHtml(message.substring(0, 200))}${message.length > 200 ? "..." : ""}"</em></p>
               
-              ${phone || country ? `<p>${t.contact}${phone ? ` ${phone} ${language === 'es' ? 'o' : language === 'en' ? 'or' : 'ou'}` : ""} ${t.at} ${email}${country ? ` (${country})` : ''}.</p>` : ""}
+              ${phone || country ? `<p>${t.contact}${phone ? ` ${escapeHtml(phone)} ${language === 'es' ? 'o' : language === 'en' ? 'or' : 'ou'}` : ""} ${t.at} ${escapeHtml(email)}${country ? ` (${escapeHtml(country)})` : ''}.</p>` : ""}
               
               <p>${t.soonFrom}<br>
               <strong>${t.team}</strong></p>
@@ -231,13 +238,13 @@ const handler = async (req: Request): Promise<Response> => {
       const adminHtml = `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2>Nouveau message de contact</h2>
-          <p><strong>Nom :</strong> ${name}</p>
-          <p><strong>Email :</strong> ${email}</p>
-          ${phone ? `<p><strong>Téléphone :</strong> ${phone}</p>` : ""}
-          ${country ? `<p><strong>Pays :</strong> ${country}</p>` : ""}
-          <p><strong>Langue :</strong> ${language}</p>
+          <p><strong>Nom :</strong> ${escapeHtml(name)}</p>
+          <p><strong>Email :</strong> ${escapeHtml(email)}</p>
+          ${phone ? `<p><strong>Téléphone :</strong> ${escapeHtml(phone)}</p>` : ""}
+          ${country ? `<p><strong>Pays :</strong> ${escapeHtml(country)}</p>` : ""}
+          <p><strong>Langue :</strong> ${escapeHtml(language)}</p>
           <p><strong>Message :</strong></p>
-          <p style="white-space: pre-line; background:#f5f5f5; padding:12px; border-radius:8px;">${message}</p>
+          <p style="white-space: pre-line; background:#f5f5f5; padding:12px; border-radius:8px;">${escapeHtml(message)}</p>
         </div>
       `;
       const adminResponse = await resend.emails.send({
@@ -251,6 +258,21 @@ const handler = async (req: Request): Promise<Response> => {
     } catch (adminErr: any) {
       console.error("Failed to send admin notification:", adminErr.message);
     }
+
+    // Record inquiry with IP for accurate rate limiting
+    try {
+      await supabase.from('contact_inquiries').insert({
+        name,
+        email,
+        phone: phone || null,
+        country: country || null,
+        message,
+        ip_address: clientIP,
+      });
+    } catch (insertErr: any) {
+      console.error("Failed to record inquiry:", insertErr.message);
+    }
+
 
     return new Response(
       JSON.stringify({ success: true, messageId: emailResponse.data?.id }),

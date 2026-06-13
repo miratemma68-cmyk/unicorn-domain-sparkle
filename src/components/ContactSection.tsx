@@ -42,22 +42,7 @@ export const ContactSection = () => {
     // Use validated and sanitized data
     const validatedData = validationResult.data;
     
-    // Insert into database
-    const { error } = await supabase
-      .from('contact_inquiries')
-      .insert([{
-        name: validatedData.name,
-        email: validatedData.email,
-        phone: validatedData.phone || null,
-        country: validatedData.country || null,
-        message: validatedData.message
-      }]);
-    
-    if (error) {
-      toast.error(t('contact.error'));
-      console.error('Error submitting inquiry:', error);
-      return;
-    }
+    // Inquiry is recorded server-side by the edge function (with IP for rate limiting)
     
     // Send confirmation email
     try {
