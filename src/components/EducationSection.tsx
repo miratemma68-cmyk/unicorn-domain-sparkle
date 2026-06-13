@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import tapestrySmell from "@/assets/tapestry-smell.jpg";
+import tapestrySmell from "@/assets/education-kittens-sunset.jpg.asset.json";
 import { supabase } from "@/integrations/supabase/client";
 import { GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
