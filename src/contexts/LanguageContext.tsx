@@ -57,6 +57,7 @@ const translations = {
     },
     nav: {
       domain: "Le Domaine",
+      ragdollOrigins: "Ragdoll, origines",
       breeder: "Notre Éleveuse",
       cats: "Nos Licornes",
       availableCats: "Nos chatons\ndisponibles",
@@ -269,6 +270,7 @@ const translations = {
     },
     nav: {
       domain: "The Domain",
+      ragdollOrigins: "Ragdoll, origins",
       breeder: "Our Breeder",
       cats: "Our Unicorns",
       availableCats: "Our available\nkittens",
@@ -481,6 +483,7 @@ const translations = {
     },
     nav: {
       domain: "El Dominio",
+      ragdollOrigins: "Ragdoll, orígenes",
       breeder: "Nuestra Criadora",
       cats: "Nuestros Unicornios",
       availableCats: "Nuestros gatitos\ndisponibles",
