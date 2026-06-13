@@ -17,6 +17,15 @@ const corsHeaders = {
 const RATE_LIMIT_WINDOW = 60 * 60 * 1000; // 1 hour in milliseconds
 const MAX_REQUESTS_PER_WINDOW = 5; // 5 submissions per hour per IP
 
+// Escape HTML to prevent injection in email bodies
+const escapeHtml = (s: string): string =>
+  String(s ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+
 interface ContactEmailRequest {
   name: string;
   email: string;
@@ -40,19 +49,26 @@ const handler = async (req: Request): Promise<Response> => {
     
     console.log("Contact form submission from IP:", clientIP);
     
-    // Check rate limit
-    const rateLimitKey = `rate_limit_${clientIP}`;
+    // Check rate limit by IP address
     const { data: rateLimitData } = await supabase
       .from('contact_inquiries')
       .select('created_at')
       .gte('created_at', new Date(Date.now() - RATE_LIMIT_WINDOW).toISOString())
-      .eq('email', clientIP) // We'll use a separate tracking mechanism
-      .limit(MAX_REQUESTS_PER_WINDOW);
-    
-    // Simple rate limiting: count recent submissions from this IP
+      .eq('ip_address', clientIP)
+      .limit(MAX_REQUESTS_PER_WINDOW + 1);
+
     const recentSubmissions = rateLimitData?.length || 0;
-    
+
     if (recentSubmissions >= MAX_REQUESTS_PER_WINDOW) {
+      console.warn(`Rate limit exceeded for IP: ${clientIP}`);
+      return new Response(
+        JSON.stringify({ error: "Too many requests. Please try again later." }),
+        {
+          status: 429,
+          headers: { "Content-Type": "application/json", ...corsHeaders },
+        }
+      );
+    }
       console.warn(`Rate limit exceeded for IP: ${clientIP}`);
       return new Response(
         JSON.stringify({ error: "Too many requests. Please try again later." }),
