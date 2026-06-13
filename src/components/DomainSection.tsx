@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import domaineLicornes from "@/assets/domaine-licornes.png.asset.json";
+import tapestryTouch from "@/assets/tapestry-touch.jpg";
 import ragdollOrigins from "@/assets/ragdoll-origins.jpg";
 import laurenceProfile from "@/assets/laurence-profile.jpg";
 import { supabase } from "@/integrations/supabase/client";
