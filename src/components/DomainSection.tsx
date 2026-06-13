@@ -49,7 +49,7 @@ export const DomainSection = () => {
       <div className="absolute inset-0 opacity-5">
         <div 
           style={{
-            backgroundImage: `url(${domaineLicornes.url})`,
+            backgroundImage: `url(${tapestryTouch})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             filter: 'blur(2px)'
@@ -106,7 +106,7 @@ export const DomainSection = () => {
             
             <div className="relative">
               <img
-                src={domaineLicornes.url}
+                src={tapestryTouch}
                 alt="Le Domaine des Licornes Seal"
                 className="w-full rounded-[3rem] tapestry-border shadow-2xl"
               />
