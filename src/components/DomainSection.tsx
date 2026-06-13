@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import licorneMiroir from "@/assets/domaine-ragdolls.jpg.asset.json";
-import ragdollOrigins from "@/assets/ragdoll-origins.jpg";
+import ragdollOrigins from "@/assets/ragdoll-origins-blue-eyes.jpg.asset.json";
 import laurenceProfile from "@/assets/laurence-atardecer.jpg.asset.json";
 import { supabase } from "@/integrations/supabase/client";
 import { User, Image as ImageIcon } from "lucide-react";
