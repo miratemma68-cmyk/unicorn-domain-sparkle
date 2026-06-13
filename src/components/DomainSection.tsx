@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import licorneMiroir from "@/assets/licorne-miroir.jpg.asset.json";
 import ragdollOrigins from "@/assets/ragdoll-origins.jpg";
-import laurenceProfile from "@/assets/laurence-profile.jpg";
+import laurenceProfile from "@/assets/laurence-atardecer.jpg.asset.json";
 import { supabase } from "@/integrations/supabase/client";
 import { User, Image as ImageIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -184,7 +184,7 @@ export const DomainSection = () => {
             
             <div className="relative rounded-[3rem] overflow-hidden tapestry-border">
               <img 
-                src={laurenceProfile} 
+                src={laurenceProfile.url} 
                 alt="Laurence, éleveuse du Domaine des Licornes" 
                 className="w-full h-full object-cover"
               />
