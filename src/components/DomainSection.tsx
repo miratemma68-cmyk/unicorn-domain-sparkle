@@ -123,7 +123,7 @@ export const DomainSection = () => {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="relative rounded-[3rem] overflow-hidden tapestry-border">
                 <img
-                  src={ragdollOrigins}
+                  src={ragdollOrigins.url}
                   alt="Ragdoll - Origines de la race"
                   className="w-full h-full object-cover"
                 />
