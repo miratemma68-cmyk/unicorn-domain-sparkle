@@ -31,7 +31,7 @@ export const Hero = () => {
 
           {/* Right side - Content */}
           <div className="relative z-10 text-center lg:text-left order-1 lg:order-2 space-y-8">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-display text-gold medieval-glow tracking-wide">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-display text-gold medieval-glow tracking-wide whitespace-pre-line">
               {t('hero.title')}
             </h1>
             

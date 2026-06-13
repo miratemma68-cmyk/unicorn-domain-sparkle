@@ -68,7 +68,7 @@ const translations = {
       clientSpace: "Espace Client"
     },
     hero: {
-      title: "Le Domaine des Licornes Seal",
+      title: "Chatterie Ragdoll:\u00a0\nLe Domaine des Licornes Seal",
       subtitle: "Élevage Premium de chats Ragdolls",
       tagline: "Où l'élégance médiévale rencontre la grâce féline",
      discoverCats: "Découvrez Nos Licornes",
@@ -273,7 +273,7 @@ const translations = {
       clientSpace: "Client Area"
     },
     hero: {
-      title: "Le Domaine des Licornes Seal",
+      title: "Chatterie Ragdoll:\u00a0\nLe Domaine des Licornes Seal",
       subtitle: "Premium Ragdoll Breeding",
       tagline: "Where medieval elegance meets feline grace",
      discoverCats: "Discover Our Unicorns",
@@ -478,7 +478,7 @@ const translations = {
       clientSpace: "Área Cliente"
     },
     hero: {
-      title: "Le Domaine des Licornes Seal",
+      title: "Chatterie Ragdoll:\u00a0\nLe Domaine des Licornes Seal",
       subtitle: "Criador Premium de gatos Ragdolls",
       tagline: "Donde la elegancia medieval se encuentra con la gracia felina",
      discoverCats: "Descubre Nuestros Unicornios",
