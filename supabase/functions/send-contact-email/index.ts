@@ -268,6 +268,21 @@ const handler = async (req: Request): Promise<Response> => {
       console.error("Failed to send admin notification:", adminErr.message);
     }
 
+    // Record inquiry with IP for accurate rate limiting
+    try {
+      await supabase.from('contact_inquiries').insert({
+        name,
+        email,
+        phone: phone || null,
+        country: country || null,
+        message,
+        ip_address: clientIP,
+      });
+    } catch (insertErr: any) {
+      console.error("Failed to record inquiry:", insertErr.message);
+    }
+
+
     return new Response(
       JSON.stringify({ success: true, messageId: emailResponse.data?.id }),
       {
