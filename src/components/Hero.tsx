@@ -1,5 +1,4 @@
-import tapestryDesire from "@/assets/licorne-miroir-hero.jpg.asset.json";
-import frameHero from "@/assets/frame/frame-hero.png.asset.json";
+import heroFramed from "@/assets/hero-framed.jpg.asset.json";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -12,23 +11,14 @@ export const Hero = () => {
       <div className="container mx-auto px-4 py-20">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           
-          {/* Left side - Image */}
+          {/* Left side - Framed image (frame baked into the photo) */}
           <div className="relative order-2 lg:order-1 py-8">
-            <div className="relative aspect-[3/4] max-w-md mx-auto">
-              {/* Decorative frame background */}
-              <div 
-                className="absolute inset-0 rounded-[2.5rem] bg-cover bg-center"
-                style={{ backgroundImage: `url(${frameHero.url})` }}
+            <div className="relative max-w-md mx-auto">
+              <img 
+                src={heroFramed.url} 
+                alt="La Dame à la Licorne - Mon seul désir" 
+                className="w-full h-auto"
               />
-              
-              {/* Main image inset within frame */}
-              <div className="absolute inset-[6%] rounded-[2rem] overflow-hidden">
-                <img 
-                  src={tapestryDesire.url} 
-                  alt="La Dame à la Licorne - Mon seul désir" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
             </div>
           </div>
 
