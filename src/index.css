@@ -91,37 +91,6 @@ All colors MUST be HSL.
     --sidebar-border: 40 60% 45%;
     --sidebar-ring: 40 85% 55%;
   }
-
-
-  .dark {
-    --background: 0 0% 8%;
-    --foreground: 36 60% 92%;
-    --card: 0 5% 12%;
-    --card-foreground: 36 60% 92%;
-    --popover: 0 5% 10%;
-    --popover-foreground: 36 60% 92%;
-    --primary: 0 65% 35%;
-    --primary-foreground: 36 60% 95%;
-    --secondary: 40 85% 55%;
-    --secondary-foreground: 0 5% 10%;
-    --muted: 150 25% 25%;
-    --muted-foreground: 36 40% 75%;
-    --accent: 40 35% 85%;
-    --accent-foreground: 0 5% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 36 60% 95%;
-    --border: 40 20% 30%;
-    --input: 0 5% 15%;
-    --ring: 40 85% 55%;
-    --sidebar-background: 0 5% 10%;
-    --sidebar-foreground: 36 60% 92%;
-    --sidebar-primary: 0 65% 35%;
-    --sidebar-primary-foreground: 36 60% 95%;
-    --sidebar-accent: 0 5% 15%;
-    --sidebar-accent-foreground: 36 60% 92%;
-    --sidebar-border: 40 20% 30%;
-    --sidebar-ring: 40 85% 55%;
-  }
 }
 
 @layer base {
