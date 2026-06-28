@@ -144,7 +144,7 @@ All colors MUST be HSL.
   }
 
   .ragdoll-origins-frame {
-    padding: clamp(6.25rem, 11vw, 8.75rem) clamp(5.25rem, 9vw, 7.5rem) clamp(7rem, 12vw, 9.5rem) clamp(7.5rem, 13vw, 10rem) !important;
+    padding: clamp(7.5rem, 13vw, 10rem) clamp(5rem, 8vw, 7rem) clamp(8rem, 14vw, 10.75rem) clamp(9.25rem, 16vw, 12rem) !important;
   }
 
   .ragdoll-origins-frame p {
@@ -154,7 +154,7 @@ All colors MUST be HSL.
 
   @media (max-width: 767px) {
     .ragdoll-origins-frame {
-      padding: 6.25rem 3rem 7rem 4rem !important;
+      padding: 7.25rem 2.75rem 8rem 4.75rem !important;
     }
   }
 
