@@ -129,44 +129,18 @@ All colors MUST be HSL.
     border-color: hsl(var(--gold));
   }
 
+  /* Master frame applied site-wide: dark navy + gold filigree with unicorn flourish */
   .tapestry-border {
     position: relative;
-    border: 1.5px solid hsl(var(--gold));
-    outline: 1px solid hsl(var(--gold) / 0.55);
-    outline-offset: 5px;
-    box-shadow:
-      0 0 30px hsl(var(--gold) / 0.25),
-      inset 0 0 40px hsl(220 75% 6% / 0.55);
-  }
-
-  /* Skip ornaments on raw <img> tags (pseudo-elements don't render on replaced elements anyway) */
-  .tapestry-border::before,
-  .tapestry-border::after {
-    content: "";
-    position: absolute;
-    pointer-events: none;
+    background-image: url('/__l5e/assets-v1/b350eb8f-8edb-47a8-a2cc-62e716e21801/frame-master.png');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
-    z-index: 2;
-  }
-
-  .tapestry-border::before {
-    top: 6px;
-    left: 6px;
-    width: clamp(40px, 9%, 90px);
-    height: clamp(40px, 9%, 90px);
-    background-image: url('./assets/frame/corner.svg');
-    opacity: 0.9;
-  }
-
-  .tapestry-border::after {
-    bottom: 6px;
-    right: 6px;
-    width: clamp(50px, 12%, 120px);
-    height: clamp(50px, 12%, 120px);
-    background-image: url('./assets/frame/unicorn.svg');
-    opacity: 0.95;
+    background-size: 100% 100%;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 30px hsl(var(--gold) / 0.25);
+    padding: clamp(2rem, 6%, 5rem) !important;
+    border-radius: 0 !important;
   }
 
   /* Oval gold frame for photos — same gold styling, no unicorn ornament */
