@@ -116,7 +116,7 @@ export const DomainSection = () => {
               <img
                 src={licorneMiroir.url}
                 alt="Le Domaine des Licornes Seal"
-                className="w-full h-auto max-h-[40vh] object-contain"
+                className="w-full h-auto max-h-[65vh] object-contain"
               />
             </div>
           </div>
