@@ -158,6 +158,23 @@ All colors MUST be HSL.
     }
   }
 
+  .laurence-frame {
+    padding: clamp(7rem, 13vw, 10rem) clamp(5rem, 8vw, 7rem) clamp(7.5rem, 14vw, 10.5rem) clamp(8.5rem, 16vw, 12rem) !important;
+  }
+
+  .laurence-frame p,
+  .laurence-frame li,
+  .laurence-frame ul {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  @media (max-width: 767px) {
+    .laurence-frame {
+      padding: 7rem 2.5rem 7.75rem 4.5rem !important;
+    }
+  }
+
   /* Oval gold frame for photos — same gold styling, no unicorn ornament */
   .tapestry-oval {
     position: relative;
