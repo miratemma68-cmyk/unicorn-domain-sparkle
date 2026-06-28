@@ -107,7 +107,7 @@ export const CatsSection = () => {
             <Link key={cat.name} to={`/cat/${cat.slug}`} className="block h-full">
               <div className="h-full tapestry-border breeding-cat-frame bg-card/80 backdrop-blur-sm group transition-transform duration-300 hover:scale-105 overflow-hidden">
                 <CardContent className="p-0 h-full flex flex-col">
-                  <div className="relative overflow-hidden flex-shrink-0 rounded-t-[2rem] mt-4">
+                  <div className="relative overflow-hidden flex-shrink-0 rounded-t-[2rem]">
                     <img
                       src={cat.image}
                       alt={cat.name}
