@@ -130,9 +130,45 @@ All colors MUST be HSL.
   }
 
   .tapestry-border {
-    border: 2px solid hsl(var(--gold));
-    box-shadow: 0 0 30px hsl(var(--gold) / 0.3), inset 0 0 20px hsl(var(--crimson) / 0.4);
+    position: relative;
+    border: 1.5px solid hsl(var(--gold));
+    outline: 1px solid hsl(var(--gold) / 0.55);
+    outline-offset: 5px;
+    box-shadow:
+      0 0 30px hsl(var(--gold) / 0.25),
+      inset 0 0 40px hsl(220 75% 6% / 0.55);
   }
+
+  /* Skip ornaments on raw <img> tags (pseudo-elements don't render on replaced elements anyway) */
+  .tapestry-border::before,
+  .tapestry-border::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    z-index: 2;
+  }
+
+  .tapestry-border::before {
+    top: 6px;
+    left: 6px;
+    width: clamp(40px, 9%, 90px);
+    height: clamp(40px, 9%, 90px);
+    background-image: url('./assets/frame/corner.svg');
+    opacity: 0.9;
+  }
+
+  .tapestry-border::after {
+    bottom: 6px;
+    right: 6px;
+    width: clamp(50px, 12%, 120px);
+    height: clamp(50px, 12%, 120px);
+    background-image: url('./assets/frame/unicorn.svg');
+    opacity: 0.95;
+  }
+
 
   .medieval-glow {
     text-shadow: 0 0 20px hsl(var(--gold) / 0.5);

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="#d4a84c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- main scroll -->
+  <path d="M10 60 C10 30 30 10 60 10"/>
+  <path d="M18 70 C18 38 38 18 70 18"/>
+  <!-- inner curls top-left -->
+  <path d="M30 30 C40 25 55 28 60 40 C63 50 55 58 45 55 C38 53 36 46 40 42"/>
+  <path d="M28 55 C20 60 18 72 26 78 C32 82 40 78 42 70"/>
+  <!-- vertical flourish down -->
+  <path d="M22 75 C28 95 24 115 16 130"/>
+  <path d="M22 75 C30 90 40 95 55 92"/>
+  <path d="M16 130 C22 138 30 138 36 130 C40 124 38 116 32 114"/>
+  <!-- horizontal flourish right -->
+  <path d="M75 22 C95 28 115 24 130 16"/>
+  <path d="M75 22 C90 30 95 40 92 55"/>
+  <path d="M130 16 C138 22 138 30 130 36 C124 40 116 38 114 32"/>
+  <!-- leaves -->
+  <path d="M60 40 C68 36 78 38 82 46 C84 52 80 58 74 56"/>
+  <path d="M40 60 C36 68 38 78 46 82 C52 84 58 80 56 74"/>
+  <!-- small dot accents -->
+  <g fill="#d4a84c" stroke="none">
+    <circle cx="20" cy="20" r="1.5"/>
+    <circle cx="95" cy="60" r="1.2"/>
+    <circle cx="60" cy="95" r="1.2"/>
+    <circle cx="110" cy="20" r="1"/>
+    <circle cx="20" cy="110" r="1"/>
+  </g>
+</svg>
