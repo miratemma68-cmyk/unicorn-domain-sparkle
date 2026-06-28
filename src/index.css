@@ -131,42 +131,19 @@ All colors MUST be HSL.
 
   .tapestry-border {
     position: relative;
-    border: 1.5px solid hsl(var(--gold));
-    outline: 1px solid hsl(var(--gold) / 0.55);
-    outline-offset: 5px;
-    box-shadow:
-      0 0 30px hsl(var(--gold) / 0.25),
-      inset 0 0 40px hsl(220 75% 6% / 0.55);
   }
 
-  /* Skip ornaments on raw <img> tags (pseudo-elements don't render on replaced elements anyway) */
-  .tapestry-border::before,
-  .tapestry-border::after {
+  /* Outer ornamental frame (gold arabesques + bottom-right unicorn) */
+  .tapestry-border::before {
     content: "";
     position: absolute;
+    inset: -2.5%;
     pointer-events: none;
+    background-image: url('/__l5e/assets-v1/671560fd-73f1-4487-b4a9-7ddd6a80afb6/frame-domain.png');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size: 100% 100%;
     z-index: 2;
-  }
-
-  .tapestry-border::before {
-    top: 6px;
-    left: 6px;
-    width: clamp(40px, 9%, 90px);
-    height: clamp(40px, 9%, 90px);
-    background-image: url('./assets/frame/corner.svg');
-    opacity: 0.9;
-  }
-
-  .tapestry-border::after {
-    bottom: 6px;
-    right: 6px;
-    width: clamp(50px, 12%, 120px);
-    height: clamp(50px, 12%, 120px);
-    background-image: url('./assets/frame/unicorn.svg');
-    opacity: 0.95;
   }
 
   /* Oval gold frame for photos — same gold styling, no unicorn ornament */
