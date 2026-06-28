@@ -136,7 +136,7 @@ export const CatsSection = () => {
           <h3 className="text-3xl font-display text-gold medieval-glow text-center mb-8">
             {t('cats.externalBreeders')}
           </h3>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 items-stretch">
             <Link to="/cat/sir-auguste" className="block h-full">
               <div className="h-full tapestry-border breeding-cat-frame bg-card/80 backdrop-blur-sm group transition-transform duration-300 hover:scale-105 overflow-hidden">
                 <div className="p-0 h-full flex flex-col">
