@@ -137,24 +137,26 @@ export const CatsSection = () => {
             {t('cats.externalBreeders')}
           </h3>
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Link to="/cat/sir-auguste" className="block">
-              <Card className="bg-card/80 backdrop-blur-sm border-2 border-gold/30 hover:border-gold transition-all duration-300 overflow-hidden group rounded-[3rem] hover:shadow-[0_0_40px_rgba(218,165,32,0.4)] hover:scale-105">
-                <CardContent className="p-0">
-                  <div className="relative overflow-hidden">
+            <Link to="/cat/sir-auguste" className="block h-full">
+              <div className="h-full tapestry-border breeding-cat-frame bg-card/80 backdrop-blur-sm group transition-transform duration-300 hover:scale-105 overflow-hidden">
+                <div className="p-0 h-full flex flex-col">
+                  <div className="relative overflow-hidden flex-shrink-0 rounded-t-[2rem]">
                     <img
                       src={sirAuguste.url}
                       alt="Sir Auguste de la Fleur de Vigne"
-                      className="w-full h-80 object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                      className="w-full h-56 object-cover object-center transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/50 to-transparent opacity-60" />
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-2xl font-display text-gold mb-2">Sir Auguste de la Fleur de Vigne</h3>
-                    <p className="text-ivory/80 italic">Reproducteur externe</p>
-                    <p className="text-gold/70 text-sm mt-3 italic">{t('cats.viewProfile')} →</p>
+                  <div className="p-5 flex flex-col flex-grow justify-between min-h-0">
+                    <div>
+                      <h3 className="text-xl font-display text-gold mb-1 whitespace-pre-line leading-tight">Sir Auguste de la Fleur de Vigne</h3>
+                      <p className="text-ivory/80 text-sm italic">Reproducteur externe</p>
+                    </div>
+                    <p className="text-gold/70 text-sm mt-2 italic">{t('cats.viewProfile')} →</p>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             </Link>
           </div>
         </div>
