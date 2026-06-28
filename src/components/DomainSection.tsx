@@ -66,7 +66,7 @@ export const DomainSection = () => {
 
         {/* Introduction Section */}
         <div
-          className="relative bg-transparent bg-no-repeat px-[9%] py-[8%] md:px-[8%] md:py-[7%]"
+          className="relative bg-transparent bg-no-repeat px-[12%] py-[11%] md:px-[11%] md:py-[10%]"
           style={{
             backgroundImage: `url(${marcoDomaine.url})`,
             backgroundSize: '100% 100%',
