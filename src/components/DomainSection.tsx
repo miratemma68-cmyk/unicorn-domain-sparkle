@@ -137,7 +137,7 @@ export const DomainSection = () => {
                 <p className="text-lg leading-relaxed">{t('domain.ragdollOriginsP5')}</p>
               </div>
 
-              <div className="relative tapestry-oval mx-auto w-full max-w-[170px] md:max-w-[190px] md:-ml-8 md:mt-20">
+              <div className="relative tapestry-oval mx-auto w-full max-w-[170px] md:max-w-[190px] md:-ml-8 md:mt-56">
                 <img
                   src={ragdollOrigins.url}
                   alt="Ragdoll - Origines de la race"
