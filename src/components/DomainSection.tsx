@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import licorneMiroir from "@/assets/domain-framed.png.asset.json";
+import marcoDomaine from "@/assets/frame/marco-domaine.png.asset.json";
 import ragdollOrigins from "@/assets/ragdoll-origins-blue-eyes.jpg.asset.json";
 import laurenceProfile from "@/assets/laurence-atardecer.jpg.asset.json";
 import { supabase } from "@/integrations/supabase/client";
