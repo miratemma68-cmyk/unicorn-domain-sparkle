@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="#d4a84c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+  <!-- stars -->
+  <g fill="#e6c068" stroke="none">
+    <circle cx="40" cy="60" r="1.2"/>
+    <circle cx="55" cy="40" r="0.9"/>
+    <circle cx="75" cy="55" r="1"/>
+    <circle cx="30" cy="95" r="0.9"/>
+    <path d="M50 75 l1.5 4 4 1.5 -4 1.5 -1.5 4 -1.5 -4 -4 -1.5 4 -1.5z"/>
+  </g>
+  <!-- horn -->
+  <path d="M118 38 L132 95"/>
+  <path d="M120 50 L130 55 M122 62 L132 67 M124 74 L134 79 M126 86 L134 90"/>
+  <!-- head outline (facing right-up) -->
+  <path d="M132 95 C150 105 165 125 162 150 C158 175 140 188 115 188 C95 188 80 178 75 160 C72 148 78 138 88 132 C100 125 108 118 112 108 C115 100 122 95 132 95 Z"/>
+  <!-- jaw -->
+  <path d="M105 175 C95 180 88 175 85 168"/>
+  <!-- ear -->
+  <path d="M140 100 C148 90 152 92 154 102"/>
+  <!-- eye -->
+  <circle cx="135" cy="135" r="2.2" fill="#d4a84c"/>
+  <!-- nostril -->
+  <circle cx="148" cy="170" r="1.5" fill="#d4a84c"/>
+  <!-- mane flowing -->
+  <path d="M118 100 C100 95 85 105 75 122 C65 138 55 150 42 158"/>
+  <path d="M115 110 C95 110 75 122 60 140 C50 152 38 162 25 168"/>
+  <path d="M112 122 C90 125 70 140 55 160 C45 172 32 180 20 184"/>
+  <path d="M110 138 C88 142 70 158 58 175"/>
+  <!-- mane curls -->
+  <path d="M42 158 c -6 4 -10 10 -8 16 c 2 6 10 6 14 0"/>
+  <path d="M25 168 c -6 6 -8 14 -2 18 c 6 4 12 -2 12 -8"/>
+  <!-- sparkle -->
+  <g fill="#e6c068" stroke="none">
+    <path d="M165 110 l1.5 4 4 1.5 -4 1.5 -1.5 4 -1.5 -4 -4 -1.5 4 -1.5z"/>
+    <circle cx="175" cy="140" r="1"/>
+    <circle cx="180" cy="160" r="0.9"/>
+  </g>
+</svg>
