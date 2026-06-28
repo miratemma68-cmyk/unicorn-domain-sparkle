@@ -121,7 +121,7 @@ export const DomainSection = () => {
           </h2>
           <div className="tapestry-border bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12">
             <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="relative rounded-[3rem] overflow-hidden tapestry-border">
+              <div className="relative tapestry-oval aspect-square">
                 <img
                   src={ragdollOrigins.url}
                   alt="Ragdoll - Origines de la race"
@@ -182,7 +182,7 @@ export const DomainSection = () => {
               </p>
             </div>
             
-            <div className="relative rounded-[3rem] overflow-hidden tapestry-border">
+            <div className="relative tapestry-oval aspect-square">
               <img 
                 src={laurenceProfile.url} 
                 alt="Laurence, éleveuse du Domaine des Licornes" 
