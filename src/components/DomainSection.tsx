@@ -128,7 +128,7 @@ export const DomainSection = () => {
             {t('domain.ragdollOriginsTitle')}
           </h2>
           <div className="tapestry-border ragdoll-origins-frame bg-card/80 backdrop-blur-sm rounded-[3rem]">
-            <div className="grid md:grid-cols-[minmax(0,2.4fr)_minmax(140px,0.8fr)] gap-6 lg:gap-8 items-center">
+            <div className="grid md:grid-cols-[minmax(0,2.4fr)_minmax(140px,0.8fr)] gap-6 lg:gap-8 items-start">
               <div className="space-y-6 text-ivory/90 min-w-0">
                 <p className="text-lg leading-relaxed">{t('domain.ragdollOriginsP1')}</p>
                 <p className="text-lg leading-relaxed">{t('domain.ragdollOriginsP2')}</p>
