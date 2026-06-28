@@ -70,7 +70,7 @@ export const DomainSection = () => {
           style={{
             backgroundImage: `url(${frameMaster.url})`,
             backgroundSize: '100% 100%',
-            padding: 'clamp(5rem, 14%, 9rem) clamp(5rem, 13%, 8rem) clamp(5rem, 16%, 10rem)',
+            padding: 'clamp(7rem, 18%, 11rem) clamp(7rem, 16%, 10rem) clamp(6rem, 18%, 11rem)',
           }}
         >
           <div className="grid md:grid-cols-2 gap-8 items-start">
