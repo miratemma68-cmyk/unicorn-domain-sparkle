@@ -173,8 +173,8 @@ export default function CatDetail() {
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {/* Profile Image */}
-          <div className="tapestry-border">
-            <div className="aspect-square overflow-hidden">
+          <div className="relative">
+            <div className="aspect-square overflow-hidden rounded-lg border-4 border-gold shadow-[0_0_50px_rgba(218,165,32,0.3)]">
               <img
                 src={cat.profile_image_url}
                 alt={cat.name}
