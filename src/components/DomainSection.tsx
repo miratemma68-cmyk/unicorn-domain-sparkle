@@ -66,10 +66,11 @@ export const DomainSection = () => {
 
         {/* Introduction Section */}
         <div
-          className="relative bg-transparent p-[7%] md:p-[6%] bg-no-repeat bg-center"
+          className="relative bg-transparent bg-no-repeat bg-center"
           style={{
             backgroundImage: `url(${marcoDomaine.url})`,
             backgroundSize: '100% 100%',
+            padding: 'clamp(2rem, 6%, 5rem)',
           }}
         >
           <div className="grid md:grid-cols-2 gap-8 items-center">
