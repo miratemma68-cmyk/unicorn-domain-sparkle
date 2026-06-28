@@ -70,10 +70,10 @@ export const DomainSection = () => {
           style={{
             backgroundImage: `url(${frameMaster.url})`,
             backgroundSize: '100% 100%',
-            padding: 'clamp(3rem, 10%, 7rem) clamp(3rem, 10%, 7rem) clamp(4rem, 14%, 9rem)',
+            padding: 'clamp(5rem, 14%, 9rem) clamp(5rem, 13%, 8rem) clamp(5rem, 16%, 10rem)',
           }}
         >
-          <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div className="grid md:grid-cols-2 gap-8 items-start">
             <div className="space-y-6 text-ivory/90">
               <p className="text-lg leading-relaxed">
                 {t('domain.intro1')}
@@ -112,11 +112,11 @@ export const DomainSection = () => {
 
             </div>
             
-            <div className="relative flex items-center justify-center">
+            <div className="relative flex items-start justify-center -mt-8 md:-mt-16">
               <img
                 src={licorneMiroir.url}
                 alt="Le Domaine des Licornes Seal"
-                className="w-full h-auto max-h-[60vh] object-contain"
+                className="w-full h-auto max-h-[50vh] object-contain"
               />
             </div>
           </div>
