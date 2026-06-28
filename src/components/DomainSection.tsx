@@ -182,7 +182,7 @@ export const DomainSection = () => {
               </p>
             </div>
             
-            <div className="relative rounded-[3rem] overflow-hidden tapestry-border">
+            <div className="relative tapestry-oval aspect-square">
               <img 
                 src={laurenceProfile.url} 
                 alt="Laurence, éleveuse du Domaine des Licornes" 
