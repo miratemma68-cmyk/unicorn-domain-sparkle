@@ -143,6 +143,21 @@ All colors MUST be HSL.
     border-radius: 0 !important;
   }
 
+  .ragdoll-origins-frame {
+    padding: clamp(4.5rem, 9vw, 7rem) clamp(4.75rem, 10vw, 8rem) clamp(5.25rem, 10vw, 8rem) !important;
+  }
+
+  .ragdoll-origins-frame p {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  @media (max-width: 767px) {
+    .ragdoll-origins-frame {
+      padding: 5rem 3rem 5.75rem !important;
+    }
+  }
+
   /* Oval gold frame for photos — same gold styling, no unicorn ornament */
   .tapestry-oval {
     position: relative;
