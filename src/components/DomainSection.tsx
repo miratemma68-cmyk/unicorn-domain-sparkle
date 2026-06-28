@@ -128,21 +128,21 @@ export const DomainSection = () => {
             {t('domain.ragdollOriginsTitle')}
           </h2>
           <div className="tapestry-border bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12">
-            <div className="grid md:grid-cols-[1fr_2fr] gap-8 items-center">
-              <div className="relative tapestry-oval mx-auto max-w-[260px]">
-                <img
-                  src={ragdollOrigins.url}
-                  alt="Ragdoll - Origines de la race"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
+            <div className="grid md:grid-cols-[2fr_1fr] gap-8 items-center">
               <div className="space-y-6 text-ivory/90 px-2 md:px-4">
                 <p className="text-lg leading-relaxed">{t('domain.ragdollOriginsP1')}</p>
                 <p className="text-lg leading-relaxed">{t('domain.ragdollOriginsP2')}</p>
                 <p className="text-lg leading-relaxed">{t('domain.ragdollOriginsP3')}</p>
                 <p className="text-lg leading-relaxed">{t('domain.ragdollOriginsP4')}</p>
                 <p className="text-lg leading-relaxed">{t('domain.ragdollOriginsP5')}</p>
+              </div>
+
+              <div className="relative tapestry-oval mx-auto max-w-[220px]">
+                <img
+                  src={ragdollOrigins.url}
+                  alt="Ragdoll - Origines de la race"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
