@@ -127,9 +127,9 @@ export const DomainSection = () => {
           <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-12">
             {t('domain.ragdollOriginsTitle')}
           </h2>
-          <div className="tapestry-border bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12">
-            <div className="grid md:grid-cols-[2fr_1fr] gap-8 items-center">
-              <div className="space-y-6 text-ivory/90 px-2 md:px-4">
+          <div className="tapestry-border ragdoll-origins-frame bg-card/80 backdrop-blur-sm rounded-[3rem]">
+            <div className="grid md:grid-cols-[minmax(0,2.4fr)_minmax(140px,0.8fr)] gap-6 lg:gap-8 items-center">
+              <div className="space-y-6 text-ivory/90 min-w-0">
                 <p className="text-lg leading-relaxed">{t('domain.ragdollOriginsP1')}</p>
                 <p className="text-lg leading-relaxed">{t('domain.ragdollOriginsP2')}</p>
                 <p className="text-lg leading-relaxed">{t('domain.ragdollOriginsP3')}</p>
@@ -137,7 +137,7 @@ export const DomainSection = () => {
                 <p className="text-lg leading-relaxed">{t('domain.ragdollOriginsP5')}</p>
               </div>
 
-              <div className="relative tapestry-oval mx-auto max-w-[220px]">
+              <div className="relative tapestry-oval mx-auto w-full max-w-[170px] md:max-w-[190px]">
                 <img
                   src={ragdollOrigins.url}
                   alt="Ragdoll - Origines de la race"
