@@ -152,7 +152,6 @@ export const CatsSection = () => {
                     <div>
                       <h3 className="text-xl font-display text-gold mb-1 whitespace-pre-line leading-tight">Sir Auguste de la Fleur de Vigne</h3>
                       <p className="text-ivory/80 text-sm italic">Reproducteur externe</p>
-                      <p className="text-ivory/80 text-sm leading-relaxed">{t('cats.sirAugusteDesc')}</p>
                     </div>
                     <p className="text-gold/70 text-sm mt-2 italic">{t('cats.viewProfile')} →</p>
                   </div>
