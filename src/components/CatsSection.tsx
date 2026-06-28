@@ -107,11 +107,11 @@ export const CatsSection = () => {
             <Link key={cat.name} to={`/cat/${cat.slug}`} className="block h-full">
               <div className="h-full tapestry-border breeding-cat-frame bg-card/80 backdrop-blur-sm group transition-transform duration-300 hover:scale-105 overflow-hidden">
                 <CardContent className="p-0 h-full flex flex-col">
-                  <div className="relative overflow-hidden flex-shrink-0">
+                  <div className="relative overflow-hidden flex-shrink-0 rounded-t-[2rem]">
                     <img
                       src={cat.image}
                       alt={cat.name}
-                      className="w-full h-56 object-cover object-[center_30%] rounded-t-[2rem] transition-transform duration-500 group-hover:scale-110"
+                      className="w-full h-56 object-cover object-[center_30%] transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/50 to-transparent opacity-60" />
                   </div>
