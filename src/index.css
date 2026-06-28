@@ -169,6 +169,35 @@ All colors MUST be HSL.
     opacity: 0.95;
   }
 
+  /* Oval gold frame for photos — same gold styling, no unicorn ornament */
+  .tapestry-oval {
+    position: relative;
+    border-radius: 50% / 50%;
+    border: 1.5px solid hsl(var(--gold));
+    outline: 1px solid hsl(var(--gold) / 0.55);
+    outline-offset: 5px;
+    box-shadow:
+      0 0 30px hsl(var(--gold) / 0.25),
+      inset 0 0 40px hsl(220 75% 6% / 0.55);
+    overflow: hidden;
+  }
+
+  .tapestry-oval::before {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    top: 6px;
+    left: 6px;
+    width: clamp(40px, 9%, 90px);
+    height: clamp(40px, 9%, 90px);
+    background-image: url('./assets/frame/corner.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.9;
+    z-index: 2;
+  }
+
 
   .medieval-glow {
     text-shadow: 0 0 20px hsl(var(--gold) / 0.5);
