@@ -111,7 +111,7 @@ export const CatsSection = () => {
                     <img
                       src={cat.image}
                       alt={cat.name}
-                      className="w-full h-56 object-cover object-[center_30%] transition-transform duration-500 group-hover:scale-110"
+                      className="w-full h-56 object-cover object-[center_30%] rounded-t-[2rem] transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/50 to-transparent opacity-60" />
                   </div>
