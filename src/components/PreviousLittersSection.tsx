@@ -52,21 +52,23 @@ export const PreviousLittersSection = () => {
               {galleryMedia.map((item) => (
                 <div
                   key={item.id}
-                  className="aspect-square rounded-[2rem] overflow-hidden tapestry-border bg-midnight/30 group hover:scale-105 transition-transform duration-300"
+                  className="aspect-square overflow-hidden tapestry-border bg-midnight/30 group hover:scale-105 transition-transform duration-300"
                 >
-                  {item.media_type === 'video' ? (
-                    <video
-                      src={item.file_url}
-                      className="w-full h-full object-cover"
-                      controls
-                    />
-                  ) : (
-                    <img
-                      src={item.file_url}
-                      alt={getTranslatedCaption(item) || "Photo"}
-                      className="w-full h-full object-cover"
-                    />
-                  )}
+                  <div className="w-full h-full rounded-[1.5rem] overflow-hidden">
+                    {item.media_type === 'video' ? (
+                      <video
+                        src={item.file_url}
+                        className="w-full h-full object-cover"
+                        controls
+                      />
+                    ) : (
+                      <img
+                        src={item.file_url}
+                        alt={getTranslatedCaption(item) || "Photo"}
+                        className="w-full h-full object-cover"
+                      />
+                    )}
+                  </div>
                 </div>
               ))}
             </div>
@@ -75,9 +77,11 @@ export const PreviousLittersSection = () => {
               {[1, 2, 3, 4, 5, 6].map((item) => (
                 <div
                   key={item}
-                  className="aspect-square rounded-[2rem] overflow-hidden tapestry-border bg-midnight/30 flex items-center justify-center group hover:scale-105 transition-transform duration-300"
+                  className="aspect-square overflow-hidden tapestry-border bg-midnight/30 flex items-center justify-center group hover:scale-105 transition-transform duration-300"
                 >
-                  <span className="text-gold/30 text-4xl group-hover:text-gold/50 transition-colors">✦</span>
+                  <div className="w-full h-full rounded-[1.5rem] overflow-hidden flex items-center justify-center">
+                    <span className="text-gold/30 text-4xl group-hover:text-gold/50 transition-colors">✦</span>
+                  </div>
                 </div>
               ))}
             </div>
