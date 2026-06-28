@@ -105,23 +105,25 @@ export const CatsSection = () => {
         <div className="grid md:grid-cols-2 gap-8 mb-16 items-stretch">
           {cats.map((cat) => (
             <Link key={cat.name} to={`/cat/${cat.slug}`} className="block h-full">
-              <div className="h-full tapestry-border bg-card/80 backdrop-blur-sm group transition-transform duration-300 hover:scale-105 overflow-hidden">
-                <CardContent className="p-0">
-                  <div className="relative overflow-hidden">
+              <div className="h-full tapestry-border breeding-cat-frame bg-card/80 backdrop-blur-sm group transition-transform duration-300 hover:scale-105 overflow-hidden">
+                <CardContent className="p-0 h-full flex flex-col">
+                  <div className="relative overflow-hidden flex-shrink-0">
                     <img
                       src={cat.image}
                       alt={cat.name}
-                      className="w-full h-80 object-cover object-[center_30%] transition-transform duration-500 group-hover:scale-110"
+                      className="w-full h-56 object-cover object-[center_30%] transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/50 to-transparent opacity-60" />
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-2xl font-display text-gold mb-2 whitespace-pre-line">{cat.name}</h3>
-                    {cat.color && (
-                      <p className="text-gold/80 text-sm mb-2">Color: {cat.color}</p>
-                    )}
-                    <p className="text-ivory/80">{cat.description}</p>
-                    <p className="text-gold/70 text-sm mt-3 italic">{t('cats.viewProfile')} →</p>
+                  <div className="p-5 flex flex-col flex-grow justify-between min-h-0">
+                    <div>
+                      <h3 className="text-xl font-display text-gold mb-1 whitespace-pre-line leading-tight">{cat.name}</h3>
+                      {cat.color && (
+                        <p className="text-gold/80 text-sm mb-1">Color: {cat.color}</p>
+                      )}
+                      <p className="text-ivory/80 text-sm leading-relaxed">{cat.description}</p>
+                    </div>
+                    <p className="text-gold/70 text-sm mt-2 italic">{t('cats.viewProfile')} →</p>
                   </div>
                 </CardContent>
               </div>

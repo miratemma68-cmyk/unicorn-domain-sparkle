@@ -143,6 +143,11 @@ All colors MUST be HSL.
     border-radius: 0 !important;
   }
 
+  /* Frame variant for smaller breeding-cat cards — larger padding to keep content away from ornate corners */
+  .breeding-cat-frame {
+    padding: clamp(3.25rem, 9%, 6.5rem) clamp(2.5rem, 7%, 5rem) !important;
+  }
+
   .ragdoll-origins-frame {
     padding: clamp(7.5rem, 13vw, 10rem) clamp(5rem, 8vw, 7rem) clamp(8rem, 14vw, 10.75rem) clamp(9.25rem, 16vw, 12rem) !important;
   }
