@@ -22,7 +22,7 @@ export const Hero = () => {
               />
               
               {/* Main image inset within frame */}
-              <div className="absolute inset-[6%] rounded-[2rem] overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.5)]">
+              <div className="absolute inset-[6%] rounded-[2rem] overflow-hidden">
                 <img 
                   src={tapestryDesire.url} 
                   alt="La Dame à la Licorne - Mon seul désir" 
