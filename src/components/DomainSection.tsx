@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import licorneMiroir from "@/assets/domaine-ragdolls-jardin.jpg.asset.json";
+import licorneMiroir from "@/assets/domain-framed.png.asset.json";
 import ragdollOrigins from "@/assets/ragdoll-origins-blue-eyes.jpg.asset.json";
 import laurenceProfile from "@/assets/laurence-atardecer.jpg.asset.json";
 import { supabase } from "@/integrations/supabase/client";
@@ -108,7 +108,7 @@ export const DomainSection = () => {
               <img
                 src={licorneMiroir.url}
                 alt="Le Domaine des Licornes Seal"
-                className="w-full rounded-[3rem] tapestry-border shadow-2xl"
+                className="w-full h-auto"
               />
             </div>
           </div>
