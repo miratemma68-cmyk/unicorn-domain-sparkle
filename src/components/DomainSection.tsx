@@ -70,7 +70,7 @@ export const DomainSection = () => {
           style={{
             backgroundImage: `url(${frameMaster.url})`,
             backgroundSize: '100% 100%',
-            padding: 'clamp(2rem, 6%, 5rem)',
+            padding: 'clamp(3rem, 10%, 7rem) clamp(3rem, 10%, 7rem) clamp(4rem, 14%, 9rem)',
           }}
         >
           <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -112,11 +112,11 @@ export const DomainSection = () => {
 
             </div>
             
-            <div className="relative">
+            <div className="relative flex items-center justify-center">
               <img
                 src={licorneMiroir.url}
                 alt="Le Domaine des Licornes Seal"
-                className="w-full h-auto"
+                className="w-full h-auto max-h-[60vh] object-contain"
               />
             </div>
           </div>
