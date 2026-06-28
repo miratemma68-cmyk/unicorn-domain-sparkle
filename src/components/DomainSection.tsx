@@ -68,7 +68,7 @@ export const DomainSection = () => {
         <div
           className="relative bg-transparent bg-no-repeat bg-center"
           style={{
-            backgroundImage: `url(${marcoDomaine.url})`,
+            backgroundImage: `url(${frameMaster.url})`,
             backgroundSize: '100% 100%',
             padding: 'clamp(2rem, 6%, 5rem)',
           }}
