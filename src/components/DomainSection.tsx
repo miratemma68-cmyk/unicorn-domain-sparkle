@@ -66,13 +66,13 @@ export const DomainSection = () => {
 
         {/* Introduction Section */}
         <div
-          className="relative bg-transparent bg-no-repeat px-[9%] py-[8%] md:px-[8%] md:py-[7%]"
+          className="relative bg-transparent p-[7%] md:p-[6%] bg-no-repeat bg-center"
           style={{
             backgroundImage: `url(${marcoDomaine.url})`,
             backgroundSize: '100% 100%',
           }}
         >
-          <div className="grid md:grid-cols-2 gap-8 items-start">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-6 text-ivory/90">
               <p className="text-lg leading-relaxed">
                 {t('domain.intro1')}
@@ -111,14 +111,13 @@ export const DomainSection = () => {
 
             </div>
             
-            <div className="relative pb-[22%] pr-[8%]">
+            <div className="relative">
               <img
                 src={licorneMiroir.url}
                 alt="Le Domaine des Licornes Seal"
-                className="w-full max-w-sm mx-auto h-auto"
+                className="w-full h-auto"
               />
             </div>
-
           </div>
         </div>
 
