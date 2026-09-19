@@ -1,4 +1,4 @@
-import heroFramed from "@/assets/hero-licorne-framed-clean.png.asset.json";
+import heroFramed from "@/assets/hero-licorne-framed-clean-v2.png.asset.json";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
