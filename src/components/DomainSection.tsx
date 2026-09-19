@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import licorneMiroir from "@/assets/domain-framed.png.asset.json";
-import frameMaster from "@/assets/frame/frame-master.png.asset.json";
+import frameDomainClean from "@/assets/frame/frame-domain-clean.png";
 import ragdollOrigins from "@/assets/ragdoll-origins-blue-eyes.jpg.asset.json";
 import laurenceProfile from "@/assets/laurence-atardecer.jpg.asset.json";
 import { supabase } from "@/integrations/supabase/client";
@@ -68,7 +68,7 @@ export const DomainSection = () => {
         <div
           className="relative bg-transparent bg-no-repeat bg-center"
           style={{
-            backgroundImage: `url(${frameMaster.url})`,
+            backgroundImage: `url(${frameDomainClean})`,
             backgroundSize: '100% 100%',
             padding: 'clamp(7rem, 18%, 11rem) clamp(7rem, 16%, 10rem) clamp(6rem, 18%, 11rem)',
           }}
