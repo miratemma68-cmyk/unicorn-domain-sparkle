@@ -127,7 +127,10 @@ export const DomainSection = () => {
           <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-12">
             {t('domain.ragdollOriginsTitle')}
           </h2>
-          <div className="tapestry-border ragdoll-origins-frame bg-card/80 backdrop-blur-sm rounded-[3rem]">
+          <div
+            className="tapestry-border ragdoll-origins-frame bg-card/80 backdrop-blur-sm rounded-[3rem]"
+            style={{ backgroundImage: `url(${frameDomainClean})` }}
+          >
             <div className="grid md:grid-cols-[minmax(0,2.4fr)_minmax(140px,0.8fr)] gap-6 lg:gap-8 items-start">
               <div className="space-y-6 text-ivory/90 min-w-0">
                 <p className="text-lg leading-relaxed">{t('domain.ragdollOriginsP1')}</p>
@@ -153,7 +156,10 @@ export const DomainSection = () => {
           <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-12">
             {t('domain.laurenceTitle')}
           </h2>
-          <div className="tapestry-border laurence-frame bg-card/80 backdrop-blur-sm rounded-[3rem]">
+          <div
+            className="tapestry-border laurence-frame bg-card/80 backdrop-blur-sm rounded-[3rem]"
+            style={{ backgroundImage: `url(${frameDomainClean})` }}
+          >
             <div className="grid md:grid-cols-[minmax(0,2.4fr)_minmax(140px,0.8fr)] gap-6 lg:gap-8 items-start">
               <div className="space-y-5 text-ivory/90 min-w-0">
                 <p className="text-lg leading-relaxed">
