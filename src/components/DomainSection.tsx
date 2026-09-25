@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import licorneMiroir from "@/assets/domain-framed.png.asset.json";
+import licorneMiroir from "@/assets/domain-framed-v2.png";
 import frameDomainClean from "@/assets/frame/frame-domain-clean.png";
 import ragdollOrigins from "@/assets/ragdoll-origins-blue-eyes.jpg.asset.json";
 import laurenceProfile from "@/assets/laurence-atardecer.jpg.asset.json";
