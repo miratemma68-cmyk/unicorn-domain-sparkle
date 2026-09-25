@@ -46,14 +46,14 @@ export const Navigation = () => {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-ivory/80 hover:text-gold transition-colors duration-300 font-sans text-sm"
+                className="text-ivory/80 hover:text-gold transition-colors duration-300 font-sans text-base font-semibold"
               >
                 {item.label}
               </a>
             ))}
             <a
               href="#chatons"
-              className="bg-gold text-midnight hover:bg-gold/90 transition-colors duration-300 font-sans text-xs font-semibold px-4 py-2 rounded-full whitespace-pre-line leading-tight text-center shadow-[0_0_15px_rgba(212,175,55,0.4)]"
+              className="bg-gold text-midnight hover:bg-gold/90 transition-colors duration-300 font-sans text-base font-semibold px-4 py-2 rounded-full whitespace-pre-line leading-tight text-center shadow-[0_0_15px_rgba(212,175,55,0.4)]"
             >
               {t('nav.availableCats')}
             </a>
