@@ -60,7 +60,7 @@ export const DomainSection = () => {
       </div>
       
       <div className="container mx-auto max-w-6xl relative z-10">
-        <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-12">
+        <h2 className="text-4xl md:text-5xl font-sans italic font-light text-gold medieval-glow text-center mb-12">
           {t('domain.title')}
         </h2>
 
@@ -124,7 +124,7 @@ export const DomainSection = () => {
 
         {/* Ragdoll, origines */}
         <div id="ragdoll-origines" className="mt-16 scroll-mt-32">
-          <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-sans italic font-light text-gold medieval-glow text-center mb-12">
             {t('domain.ragdollOriginsTitle')}
           </h2>
           <div
@@ -153,7 +153,7 @@ export const DomainSection = () => {
 
         {/* Laurence notre éleveuse */}
         <div id="laurence" className="mt-16 scroll-mt-32">
-          <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-sans italic font-light text-gold medieval-glow text-center mb-12">
             {t('domain.laurenceTitle')}
           </h2>
           <div
