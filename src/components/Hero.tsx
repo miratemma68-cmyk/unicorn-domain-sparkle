@@ -23,25 +23,25 @@ export const Hero = () => {
           </div>
 
           {/* Right side - Content */}
-          <div className="relative z-10 text-center md:text-left order-2 space-y-6">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display text-gold medieval-glow tracking-wide whitespace-pre-line">
+          <div className="relative z-10 text-center md:text-left order-2 space-y-4">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-display text-gold medieval-glow tracking-wide whitespace-pre-line">
               {t('hero.title')}
             </h1>
             
             <div className="space-y-1">
-              <p className="text-xl md:text-2xl text-ivory/90 font-light">
+              <p className="text-lg md:text-xl text-ivory/90 font-light">
                 {t('hero.subtitle')}
               </p>
-              <p className="text-sm md:text-base text-ivory/70 tracking-wide">
+              <p className="text-xs md:text-sm text-ivory/70 tracking-wide">
                 N° SIRET = 3947902320034
               </p>
             </div>
             
-            <p className="text-base md:text-lg text-ivory/70 max-w-xl lg:mx-0 mx-auto italic font-light">
+            <p className="text-sm md:text-base text-ivory/70 max-w-xl lg:mx-0 mx-auto italic font-light">
               "{t('hero.tagline')}"
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start items-center pt-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center pt-2">
               <button
                 onClick={() => document.getElementById('licornes')?.scrollIntoView({ behavior: 'smooth' })}
                 className="ornate-btn-navy group inline-flex items-center gap-3 rounded-full px-10 py-4 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_35px_rgba(218,165,32,0.55)]"
