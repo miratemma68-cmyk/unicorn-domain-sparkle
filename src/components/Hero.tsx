@@ -9,11 +9,11 @@ export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-midnight">
       <div className="container mx-auto px-4 py-20">
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div className="grid md:grid-cols-[2fr_3fr] gap-8 md:gap-12 items-center">
           
           {/* Left side - Framed image (frame baked into the photo) */}
           <div className="relative order-1 py-8">
-            <div className="relative max-w-md mx-auto md:ml-auto md:mr-0 lg:mr-4">
+            <div className="relative max-w-sm mx-auto md:ml-auto md:mr-0 lg:mr-6">
               <img 
                 src={heroFramed.url} 
                 alt="La Dame à la Licorne - Mon seul désir" 
@@ -23,8 +23,8 @@ export const Hero = () => {
           </div>
 
           {/* Right side - Content */}
-          <div className="relative z-10 text-center md:text-left order-2 space-y-8">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-display text-gold medieval-glow tracking-wide whitespace-pre-line">
+          <div className="relative z-10 text-center md:text-left order-2 space-y-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display text-gold medieval-glow tracking-wide whitespace-pre-line">
               {t('hero.title')}
             </h1>
             
