@@ -46,7 +46,7 @@ export const Navigation = () => {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-ivory/80 hover:text-gold transition-colors duration-300 font-sans text-base font-semibold"
+                className="text-ivory/80 hover:text-gold transition-colors duration-300 font-sans italic font-light text-lg"
               >
                 {item.label}
               </a>
