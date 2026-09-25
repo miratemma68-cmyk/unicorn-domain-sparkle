@@ -108,12 +108,12 @@ export const Hero = () => {
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                     fill="white"
-                    className="w-7 h-7"
+                    className="w-6 h-6"
                   >
                     <path d="M13.5 21v-7.5h2.5l.5-3h-3V8.6c0-.9.3-1.5 1.6-1.5H17V4.4c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.1V10.5H8v3h2.5V21h3z" />
                   </svg>
                 </a>
-                <span className="text-ivory/80 text-sm font-light">Facebook</span>
+                <span className="text-ivory/80 text-xs font-light">Facebook</span>
               </div>
             </div>
           </div>
