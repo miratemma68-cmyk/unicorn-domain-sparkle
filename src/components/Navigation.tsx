@@ -75,14 +75,15 @@ export const Navigation = () => {
               <LanguageSwitcher />
               {user ? (
                 <>
-                  <Button
+                  <button
                     onClick={() => navigate('/dashboard')}
-                    variant="outline"
-                    className="border-gold text-gold hover:bg-gold/10 rounded-full"
+                    className="ornate-btn-navy inline-flex items-center gap-2 rounded-full px-5 py-2.5 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(218,165,32,0.5)]"
                   >
-                    <User className="mr-2 h-4 w-4" />
-                    {t('nav.dashboard')}
-                  </Button>
+                    <User className="w-4 h-4 text-gold" />
+                    <span className="font-display text-xl text-gold pt-0.5 whitespace-nowrap">
+                      {t('nav.dashboard')}
+                    </span>
+                  </button>
                   {isAdmin && (
                     <Button
                       onClick={() => navigate('/admin')}
@@ -94,13 +95,15 @@ export const Navigation = () => {
                   )}
                 </>
               ) : (
-                <Button
+                <button
                   onClick={() => navigate('/auth')}
-                  className="bg-crimson hover:bg-crimson-dark text-ivory border border-gold rounded-full"
+                  className="ornate-btn-navy inline-flex items-center gap-2 rounded-full px-5 py-2.5 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(218,165,32,0.5)]"
                 >
-                  <User className="mr-2 h-4 w-4" />
-                  {t('nav.clientSpace')}
-                </Button>
+                  <User className="w-4 h-4 text-gold" />
+                  <span className="font-display text-xl text-gold pt-0.5 whitespace-nowrap">
+                    {t('nav.clientSpace')}
+                  </span>
+                </button>
               )}
             </div>
           </div>
