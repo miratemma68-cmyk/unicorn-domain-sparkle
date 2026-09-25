@@ -80,7 +80,7 @@ const translations = {
     domain: {
       title: "Le Domaine",
       intro1: "Bienvenue dans notre élevage familial, où chaque Ragdoll est élevé avec amour, respect et selon les plus hauts standards éthiques.",
-      intro2: "Inspirés par la noblesse des licornes des tapisseries médiévales, nous avons créé un havre de paix où nos chats s'épanouissent dans un environnement privilégié, entourés d'attention et de soins constants.",
+      intro2: "Inspirés par la noblesse des licornes des tapisseries médiévales, nous avons créé un havre de paix où nos chats s'épanouissent entourés d'attention et de soins constants.",
       healthTesting: "Toutes nos chattes et les reproducteurs en saillies externes sont testés PKD FELV FIV HCM.",
       ragdollOriginsTitle: "Ragdoll, origines",
       ragdollOriginsP1: "Le Ragdoll est une race de chat originaire des États-Unis, plus précisément de Californie, dans les années 1960. Cette race a été créée par une éleveuse nommée Ann Baker, qui a croisé une chatte blanche à poils longs, nommée Josephine, avec plusieurs autres races, notamment le Birman, le Persan et le Siamois. L'objectif d'Ann Baker était de développer un chat au caractère docile et affectueux, ainsi qu'à l'apparence séduisante.",
@@ -92,7 +92,7 @@ const translations = {
       value1: "Éthique et bien-être animal au cœur de nos pratiques",
       value2: "Élevage familial dans un cadre exceptionnel",
       value3: "Pré-éducation soignée de chaque chaton",
-      value4: "Accompagnement personnalisé des adoptants",
+      value4: "Accompagnement personnalisé des adoptants avant et après l'adoption",
       discoverLaurence: "Découvrir Laurence",
       viewGallery: "Voir la Galerie",
       laurenceTitle: "Laurence, notre éleveuse",
