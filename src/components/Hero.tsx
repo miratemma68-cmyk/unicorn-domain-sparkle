@@ -64,15 +64,15 @@ export const Hero = () => {
             </div>
 
 
-            <div className="flex items-center justify-center gap-6 pt-2">
-              <span className="text-ivory/80 font-light italic">{t('hero.followUs')}</span>
+            <div className="flex items-center justify-center gap-5 pt-1">
+              <span className="text-ivory/80 text-sm font-light italic">{t('hero.followUs')}</span>
               <div className="flex flex-col items-center gap-1">
                 <a
                   href="https://www.instagram.com/chatterie.licornes?igsh=MWJtM2l4cDhicTU2aA=="
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
-                  className="inline-flex items-center justify-center w-14 h-14 rounded-2xl transition-all duration-300 hover:scale-110 hover:shadow-[0_0_25px_rgba(225,48,108,0.6)]"
+                  className="inline-flex items-center justify-center w-11 h-11 rounded-2xl transition-all duration-300 hover:scale-110 hover:shadow-[0_0_25px_rgba(225,48,108,0.6)]"
                   style={{
                     background:
                       "radial-gradient(circle at 30% 110%, #ffdd55 0%, #ff543e 25%, #c837ab 50%, #285AEB 100%)",
@@ -86,14 +86,14 @@ export const Hero = () => {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="w-7 h-7"
+                    className="w-6 h-6"
                   >
                     <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
                   </svg>
                 </a>
-                <span className="text-ivory/80 text-sm font-light">Instagram</span>
+                <span className="text-ivory/80 text-xs font-light">Instagram</span>
               </div>
               <div className="flex flex-col items-center gap-1">
                 <a
@@ -101,7 +101,7 @@ export const Hero = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
-                  className="inline-flex items-center justify-center w-14 h-14 rounded-2xl transition-all duration-300 hover:scale-110 hover:shadow-[0_0_25px_rgba(24,119,242,0.6)]"
+                  className="inline-flex items-center justify-center w-11 h-11 rounded-2xl transition-all duration-300 hover:scale-110 hover:shadow-[0_0_25px_rgba(24,119,242,0.6)]"
                   style={{ background: "#1877F2" }}
                 >
                   <svg
