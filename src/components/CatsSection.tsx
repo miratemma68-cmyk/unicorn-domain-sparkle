@@ -94,7 +94,7 @@ export const CatsSection = () => {
       </div>
       
       <div className="container mx-auto max-w-7xl relative z-10">
-        <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-4">
+        <h2 className="text-4xl md:text-5xl font-sans italic font-light text-gold medieval-glow text-center mb-4">
           {t('cats.title')}
         </h2>
         <p className="text-center text-ivory/80 text-lg mb-12 italic font-light">
@@ -133,7 +133,7 @@ export const CatsSection = () => {
 
         {/* External Breeders */}
         <div className="mb-16">
-          <h3 className="text-3xl font-display text-gold medieval-glow text-center mb-8">
+          <h3 className="text-3xl font-sans italic font-light text-gold medieval-glow text-center mb-8">
             {t('cats.externalBreeders')}
           </h3>
           <div className="grid md:grid-cols-2 gap-8 items-stretch">
@@ -164,7 +164,7 @@ export const CatsSection = () => {
         {/* Kittens Section */}
         <div id="chatons" className="scroll-mt-32 pt-8">
 
-          <h3 className="text-3xl font-display text-gold medieval-glow text-center mb-8">
+          <h3 className="text-3xl font-sans italic font-light text-gold medieval-glow text-center mb-8">
             {t('cats.kittens')}
           </h3>
 

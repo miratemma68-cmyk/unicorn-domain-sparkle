@@ -43,7 +43,7 @@ export const PreviousLittersSection = () => {
     <section id="galerie-domaine" className="py-20 px-4 relative">
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="tapestry-border bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12">
-          <h3 className="text-3xl font-display text-gold medieval-glow text-center mb-8">
+          <h3 className="text-3xl font-sans italic font-light text-gold medieval-glow text-center mb-8">
             {t('domain.previousLittersTitle')}
           </h3>
 

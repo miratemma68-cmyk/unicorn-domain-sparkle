@@ -78,7 +78,7 @@ export const ContactSection = () => {
         
         
         <div className="tapestry-border bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12">
-          <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-4">
+          <h2 className="text-4xl md:text-5xl font-sans italic font-light text-gold medieval-glow text-center mb-4">
             {t('contact.title')}
           </h2>
           <p className="text-center text-ivory/80 mb-8">
