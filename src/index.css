@@ -130,6 +130,11 @@ All colors MUST be HSL.
   .text-ivory {
     color: hsl(var(--ivory));
   }
+
+  .text-midnight {
+    color: hsl(var(--midnight));
+  }
+
   
   .bg-crimson {
     background-color: hsl(var(--crimson));
@@ -227,4 +232,65 @@ All colors MUST be HSL.
   .medieval-glow {
     text-shadow: 0 0 20px hsl(var(--gold) / 0.5);
   }
+
+  /* Ornate pill buttons inspired by the gold filigree banners:
+     navy version (dark action) and pearl version (light secondary). */
+  .ornate-btn-navy,
+  .ornate-btn-pearl {
+    position: relative;
+    cursor: pointer;
+    line-height: 1;
+  }
+
+  .ornate-btn-navy {
+    background:
+      radial-gradient(120% 170% at 50% -30%, hsl(220 45% 26%) 0%, hsl(222 60% 14%) 55%, hsl(222 65% 9%) 100%);
+    border: 1.5px solid hsl(var(--gold) / 0.9);
+    outline: 1px solid hsl(var(--gold) / 0.35);
+    outline-offset: -7px;
+    box-shadow:
+      0 0 22px hsl(var(--gold) / 0.25),
+      inset 0 2px 12px hsl(220 80% 3% / 0.7);
+  }
+
+  .ornate-btn-pearl {
+    background: linear-gradient(180deg, hsl(42 35% 97%) 0%, hsl(40 28% 90%) 55%, hsl(40 22% 81%) 100%);
+    border: 1.5px solid hsl(var(--gold) / 0.9);
+    outline: 1px solid hsl(var(--gold) / 0.4);
+    outline-offset: -7px;
+    box-shadow:
+      0 0 22px hsl(var(--gold) / 0.2),
+      inset 0 2px 8px hsl(40 40% 100% / 0.8);
+  }
+
+  /* Small gold filigree ornaments at both ends of the pill */
+  .ornate-btn-navy::before,
+  .ornate-btn-navy::after,
+  .ornate-btn-pearl::before,
+  .ornate-btn-pearl::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 24px;
+    height: 24px;
+    background-image: url('./assets/frame/corner.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    opacity: 0.85;
+    pointer-events: none;
+  }
+
+  .ornate-btn-navy::before,
+  .ornate-btn-pearl::before {
+    left: 7px;
+    transform: translateY(-50%) scaleX(-1);
+  }
+
+  .ornate-btn-navy::after,
+  .ornate-btn-pearl::after {
+    right: 7px;
+    transform: translateY(-50%);
+  }
 }
+
