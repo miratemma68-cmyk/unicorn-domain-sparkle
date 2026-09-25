@@ -60,7 +60,7 @@ const translations = {
       ragdollOrigins: "Ragdoll, origines",
       breeder: "Notre Éleveuse",
       cats: "Nos Licornes",
-      availableCats: "Nos chattons\ndisponibles",
+      availableCats: "Nos chatons\ndisponibles",
       education: "Éducation",
       adoption: "Adoption",
       faq: "FAQ",
