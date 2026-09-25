@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import boutonChatons from "@/assets/bouton-chatons.png";
 
 export const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -53,9 +54,22 @@ export const Navigation = () => {
             ))}
             <a
               href="#chatons"
-              className="bg-gold text-midnight hover:bg-gold/90 transition-colors duration-300 font-sans text-base font-semibold px-4 py-2 rounded-full whitespace-pre-line leading-tight text-center shadow-[0_0_15px_rgba(212,175,55,0.4)]"
+              className="relative inline-block shrink-0 transition-transform duration-300 hover:scale-105"
             >
-              {t('nav.availableCats')}
+              <img
+                src={boutonChatons}
+                alt=""
+                width={1536}
+                height={512}
+                loading="lazy"
+                className="w-48 h-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
+              />
+              <span
+                className="absolute inset-0 flex items-center justify-center pl-5 whitespace-nowrap font-display text-2xl text-ivory leading-none"
+                style={{ textShadow: "0 1px 5px rgba(10, 20, 60, 0.8)" }}
+              >
+                {t('nav.availableCats')}
+              </span>
             </a>
             <div className="flex gap-2 ml-4 items-center">
               <LanguageSwitcher />
