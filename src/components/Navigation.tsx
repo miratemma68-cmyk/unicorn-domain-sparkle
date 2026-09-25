@@ -59,8 +59,8 @@ export const Navigation = () => {
               <img
                 src={boutonChatons}
                 alt=""
-                width={1152}
-                height={576}
+                width={1088}
+                height={608}
                 loading="lazy"
                 className="w-52 h-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
               />
