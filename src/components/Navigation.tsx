@@ -65,8 +65,8 @@ export const Navigation = () => {
                 className="w-52 h-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
               />
               <span
-                className="absolute inset-y-0 left-0 flex items-center justify-center pl-12 whitespace-pre-line font-display text-2xl text-ivory leading-[0.9] text-center"
-                style={{ textShadow: "0 1px 5px rgba(10, 20, 60, 0.8)" }}
+                className="absolute inset-y-0 left-0 flex items-center justify-center pl-16 whitespace-pre-line font-display text-2xl text-gold leading-[0.9] text-center"
+                style={{ textShadow: "0 1px 6px rgba(10, 20, 60, 0.9)" }}
               >
                 {t('nav.availableCats')}
               </span>
