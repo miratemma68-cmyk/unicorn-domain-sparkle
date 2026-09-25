@@ -28,9 +28,14 @@ export const Hero = () => {
               {t('hero.title')}
             </h1>
             
-            <p className="text-xl md:text-2xl text-ivory/90 font-light">
-              {t('hero.subtitle')}
-            </p>
+            <div className="space-y-1">
+              <p className="text-xl md:text-2xl text-ivory/90 font-light">
+                {t('hero.subtitle')}
+              </p>
+              <p className="text-sm md:text-base text-ivory/70 tracking-wide">
+                N° SIRET = 3947902320034
+              </p>
+            </div>
             
             <p className="text-base md:text-lg text-ivory/70 max-w-xl lg:mx-0 mx-auto italic font-light">
               "{t('hero.tagline')}"
