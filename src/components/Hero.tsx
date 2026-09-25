@@ -1,7 +1,7 @@
 import heroFramed from "@/assets/hero-licorne-framed-clean-v2.png.asset.json";
-import { Button } from "@/components/ui/button";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, PawPrint } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+
 
 export const Hero = () => {
   const { t } = useLanguage();
@@ -41,24 +41,28 @@ export const Hero = () => {
               "{t('hero.tagline')}"
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-              <Button 
-                size="lg" 
-                className="bg-crimson hover:bg-crimson-dark text-ivory border-2 border-gold transition-all duration-300 hover:shadow-[0_0_30px_rgba(218,165,32,0.5)] rounded-full hover:scale-105"
+            <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start items-center pt-4">
+              <button
                 onClick={() => document.getElementById('licornes')?.scrollIntoView({ behavior: 'smooth' })}
+                className="ornate-btn-navy group inline-flex items-center gap-3 rounded-full px-10 py-4 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_35px_rgba(218,165,32,0.55)]"
               >
-                {t('hero.discoverCats')}
-              </Button>
-              
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="border-2 border-gold text-gold hover:bg-gold/10 hover:text-gold-light transition-all duration-300 rounded-full hover:scale-105"
+                <PawPrint className="w-6 h-6 text-gold transition-transform duration-300 group-hover:scale-110" />
+                <span className="font-display text-3xl text-gold pt-1 whitespace-nowrap">
+                  {t('hero.discoverCats')}
+                </span>
+              </button>
+
+              <button
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="ornate-btn-pearl group inline-flex items-center gap-3 rounded-full px-10 py-4 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_35px_rgba(218,165,32,0.45)]"
               >
-                {t('hero.contactUs')}
-              </Button>
+                <PawPrint className="w-6 h-6 text-midnight/80 transition-transform duration-300 group-hover:scale-110" />
+                <span className="font-display text-3xl text-midnight pt-1 whitespace-nowrap">
+                  {t('hero.contactUs')}
+                </span>
+              </button>
             </div>
+
 
             <div className="flex items-center justify-center gap-6 pt-2">
               <span className="text-ivory/80 font-light italic">{t('hero.followUs')}</span>
