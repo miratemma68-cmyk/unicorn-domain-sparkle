@@ -44,20 +44,20 @@ export const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center pt-2">
               <button
                 onClick={() => document.getElementById('licornes')?.scrollIntoView({ behavior: 'smooth' })}
-                className="ornate-btn-navy group inline-flex items-center gap-3 rounded-full px-10 py-4 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_35px_rgba(218,165,32,0.55)]"
+                className="ornate-btn-navy group inline-flex items-center gap-2 rounded-full px-7 py-3 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_35px_rgba(218,165,32,0.55)]"
               >
-                <PawPrint className="w-6 h-6 text-gold transition-transform duration-300 group-hover:scale-110" />
-                <span className="font-display text-3xl text-gold pt-1 whitespace-nowrap">
+                <PawPrint className="w-5 h-5 text-gold transition-transform duration-300 group-hover:scale-110" />
+                <span className="font-display text-2xl text-gold pt-1 whitespace-nowrap">
                   {t('hero.discoverCats')}
                 </span>
               </button>
 
               <button
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="ornate-btn-pearl group inline-flex items-center gap-3 rounded-full px-10 py-4 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_35px_rgba(218,165,32,0.45)]"
+                className="ornate-btn-pearl group inline-flex items-center gap-2 rounded-full px-7 py-3 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_35px_rgba(218,165,32,0.45)]"
               >
-                <PawPrint className="w-6 h-6 text-midnight/80 transition-transform duration-300 group-hover:scale-110" />
-                <span className="font-display text-3xl text-midnight pt-1 whitespace-nowrap">
+                <PawPrint className="w-5 h-5 text-midnight/80 transition-transform duration-300 group-hover:scale-110" />
+                <span className="font-display text-2xl text-midnight pt-1 whitespace-nowrap">
                   {t('hero.contactUs')}
                 </span>
               </button>
