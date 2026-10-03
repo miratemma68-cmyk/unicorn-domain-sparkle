@@ -15,10 +15,12 @@ interface DomainMedia {
 
 export const PreviousLittersSection = () => {
   const [galleryMedia, setGalleryMedia] = useState<DomainMedia[]>([]);
+  const [pastKittens, setPastKittens] = useState<Array<{ id: string; name: string; image: string }>>([]);
   const { t, language } = useLanguage();
 
   useEffect(() => {
     loadGalleryMedia();
+    loadPastKittens();
   }, []);
 
   const loadGalleryMedia = async () => {
