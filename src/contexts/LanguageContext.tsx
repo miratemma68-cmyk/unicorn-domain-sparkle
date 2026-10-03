@@ -134,7 +134,7 @@ const translations = {
     },
     adoption: {
       title: "Adoption",
-      intro: "Adopter un Ragdoll du Domaine des Licornes, c'est accueillir un compagnon d'exception dans votre vie.\nNous vous accompagnons à chaque étape de ce merveilleux voyage.",
+      intro: "Adopter un Ragdoll du Domaine des Licornes, c'est accueillir un compagnon d'exception dans votre vie. \nNous vous accompagnons à chaque étape de ce merveilleux voyage.",
       step1Title: "Premier Contact",
       step1Desc: "Remplissez notre formulaire\npour exprimer votre intérêt",
       step2Title: "Rencontre",
