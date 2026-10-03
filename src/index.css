@@ -170,6 +170,18 @@ All colors MUST be HSL.
     padding: clamp(3rem, 7%, 4.5rem) clamp(3.25rem, 7.5%, 5rem) clamp(4.5rem, 10%, 6.5rem) clamp(3.25rem, 7.5%, 5rem) !important;
   }
 
+  /* Simple double-gold frame for detail pages, aligned with the site's ornate frames */
+  .detail-frame {
+    position: relative;
+    background: linear-gradient(155deg, hsl(222 45% 14%) 0%, hsl(var(--midnight)) 70%);
+    border: 2px solid hsl(var(--gold) / 0.85);
+    outline: 1px solid hsl(var(--gold) / 0.45);
+    outline-offset: 5px;
+    border-radius: 0.75rem;
+    box-shadow: 0 0 24px hsl(var(--gold) / 0.22);
+  }
+
+
 
   /* Frame variant for smaller breeding-cat cards — larger padding to keep content away from ornate corners */
   .breeding-cat-frame {

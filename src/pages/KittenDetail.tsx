@@ -237,26 +237,28 @@ export default function KittenDetail() {
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {/* Profile Image */}
           <div className="relative">
-            <div className="aspect-square overflow-hidden rounded-lg border-4 border-gold shadow-[0_0_50px_rgba(218,165,32,0.3)]">
-              {profilePhoto ? (
-                <img
-                  src={profilePhoto.file_url}
-                  alt={kitten.name}
-                  className="w-full h-full object-cover"
-                />
-              ) : (
-                <div className="w-full h-full flex items-center justify-center bg-midnight/50">
-                  <p className="text-gold/50 font-serif">{t('kittenDetail.noPhoto')}</p>
-                </div>
-              )}
+            <div className="detail-frame p-2">
+              <div className="aspect-square overflow-hidden rounded-[0.75rem]">
+                {profilePhoto ? (
+                  <img
+                    src={profilePhoto.file_url}
+                    alt={kitten.name}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center bg-midnight/50">
+                    <p className="text-gold/50 font-serif">{t('kittenDetail.noPhoto')}</p>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
 
           {/* Info Cards */}
           <div className="space-y-6">
-            <Card className="bg-card/80 backdrop-blur-sm border-2 border-gold/30">
+            <Card className="detail-frame border-0 bg-transparent backdrop-blur-sm">
               <CardHeader>
-                <CardTitle className="text-3xl font-serif text-gold medieval-glow">
+                <CardTitle className="text-5xl font-display text-gold medieval-glow">
                   {kitten.name}
                 </CardTitle>
               </CardHeader>
