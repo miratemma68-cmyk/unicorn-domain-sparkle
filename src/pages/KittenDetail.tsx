@@ -267,6 +267,9 @@ export default function KittenDetail() {
 
         {/* Galerie */}
         <section className="mb-12">
+          <h2 className="text-3xl font-display font-normal text-gold medieval-glow text-center mb-6">
+            {t('kittenDetail.gallery')}
+          </h2>
           {media.length > 0 ? (
             <Card className="bg-card/80 backdrop-blur-sm border-2 border-gold/30">
               <CardContent className="pt-6">
