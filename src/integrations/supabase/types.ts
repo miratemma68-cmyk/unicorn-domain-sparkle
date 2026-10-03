@@ -471,6 +471,7 @@ export type Database = {
           current_weight: number | null
           gender: string | null
           id: string
+          is_past_litter: boolean
           microchip_number: string | null
           name: string
           registration_number: string | null
@@ -484,6 +485,7 @@ export type Database = {
           current_weight?: number | null
           gender?: string | null
           id?: string
+          is_past_litter?: boolean
           microchip_number?: string | null
           name: string
           registration_number?: string | null
@@ -497,6 +499,7 @@ export type Database = {
           current_weight?: number | null
           gender?: string | null
           id?: string
+          is_past_litter?: boolean
           microchip_number?: string | null
           name?: string
           registration_number?: string | null
