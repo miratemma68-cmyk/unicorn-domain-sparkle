@@ -85,7 +85,7 @@ export const PreviousLittersSection = () => {
                           />
                         </div>
                       )}
-                      <div className="p-6">
+                      <div className="p-6 pb-12">
                         <h3 className="text-[1.875rem] font-display text-gold mb-2">{kitten.name}</h3>
                         <p className="text-gold/70 text-[1.09rem] mt-3 italic">{t('cats.viewProfile')} →</p>
                       </div>
