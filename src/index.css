@@ -162,6 +162,10 @@ All colors MUST be HSL.
     border-radius: 0 !important;
   }
 
+  .litter-frame {
+    background-image: url('./assets/frame/frame-master-sm-clean.png');
+  }
+
   .litter-card-frame {
     padding: clamp(3rem, 7%, 4.5rem) clamp(3.25rem, 7.5%, 5rem) clamp(4.5rem, 10%, 6.5rem) clamp(3.25rem, 7.5%, 5rem) !important;
   }
