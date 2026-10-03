@@ -127,7 +127,7 @@ const translations = {
       method3: "Apprentissage de la propreté et des bonnes habitudes",
       method4: "Suivi vétérinaire rigoureux et vaccinations complètes",
       method5: "Documentation détaillée de leur évolution",
-      conclusion: "Chaque chaton est traité comme une petite licorne précieuse, recevant toute l'attention nécessaire pour devenir un compagnon équilibré.",
+      conclusion: "Chaque chaton est traité comme une petite licorne précieuse, \nrecevant toute l'attention nécessaire pour devenir un compagnon équilibré.",
       viewMethod: "Notre méthode en images",
       methodImagesTitle: "Notre méthode en images",
       methodEmpty: "Photos et vidéos à venir..."
