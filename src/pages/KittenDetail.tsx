@@ -3,8 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { ArrowLeft, Calendar, Palette, Weight, Activity, TrendingUp, Stethoscope } from 'lucide-react';
+import { ArrowLeft, Calendar, Palette, Weight } from 'lucide-react';
 import { Footer } from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useAuth } from '@/hooks/useAuth';
@@ -29,28 +28,6 @@ interface KittenMedia {
   created_at: string;
 }
 
-interface KittenMilestone {
-  id: string;
-  milestone_type: string;
-  milestone_date: string;
-  description: string | null;
-}
-
-interface KittenUpdate {
-  id: string;
-  update_date: string;
-  weight: number | null;
-  notes: string | null;
-}
-
-interface KittenVetVisit {
-  id: string;
-  visit_date: string;
-  visit_type: string | null;
-  vet_name: string | null;
-  notes: string | null;
-  next_visit_date: string | null;
-}
 
 export default function KittenDetail() {
   const { id } = useParams<{ id: string }>();
