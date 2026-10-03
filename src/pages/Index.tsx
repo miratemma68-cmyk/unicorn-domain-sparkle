@@ -7,6 +7,7 @@ import { CatsSection } from "@/components/CatsSection";
 import { PreviousLittersSection } from "@/components/PreviousLittersSection";
 import { EducationSection } from "@/components/EducationSection";
 import { AdoptionSection } from "@/components/AdoptionSection";
+import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { FAQSection } from "@/components/FAQSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
