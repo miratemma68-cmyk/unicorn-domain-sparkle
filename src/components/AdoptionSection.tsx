@@ -62,7 +62,7 @@ export const AdoptionSection = () => {
 
         {/* Main Section */}
         <div className="tapestry-border litter-frame bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12">
-          <div className="space-y-8 text-ivory/90 pt-12 md:pt-16">
+          <div className="space-y-8 text-ivory/90 pt-12 md:pt-16 pb-2">
             <p className="text-lg leading-relaxed text-center max-w-3xl mx-auto">
               {t('adoption.intro')}
             </p>
