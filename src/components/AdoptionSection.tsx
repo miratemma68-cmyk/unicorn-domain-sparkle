@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import tapestryHearing from "@/assets/tapestry-hearing.jpg";
 import { supabase } from "@/integrations/supabase/client";
 import { Heart, MessageCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 interface TestimonialMedia {
@@ -95,21 +94,19 @@ export const AdoptionSection = () => {
             
             {/* Navigation Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
-              <Button 
-                asChild
-                className="bg-crimson hover:bg-crimson-dark text-ivory border-2 border-gold"
+              <a
+                href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }}
+                className="ornate-btn-navy group inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(218,165,32,0.5)]"
               >
-                <a
-                  href="#contact"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }}
-                >
-                  <Heart className="w-4 h-4" />
+                <Heart className="w-4 h-4 text-gold transition-transform duration-300 group-hover:scale-110" />
+                <span className="font-display text-xl text-gold pt-0.5 whitespace-nowrap">
                   {t('adoption.startAdoption')}
-                </a>
-              </Button>
+                </span>
+              </a>
             </div>
 
             <div className="bg-crimson/20 border border-gold/30 rounded-[2rem] px-6 py-5 md:px-8 mt-8 mb-8 max-w-2xl mx-auto w-full">
