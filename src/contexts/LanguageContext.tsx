@@ -149,7 +149,7 @@ const translations = {
       benefit5: "Guide d'éducation détaillé",
       benefit6: "Suivi post-adoption à vie",
       startAdoption: "Commencez votre adoption",
-      clientTestimonials: "Nos clients racontent"
+      clientTestimonials: "Nos clients partagent leur expérience"
     },
     contact: {
       title: "Contact",
@@ -435,7 +435,7 @@ const translations = {
       benefit5: "Detailed education guide",
       benefit6: "Lifetime post-adoption follow-up",
       startAdoption: "Start your adoption",
-      clientTestimonials: "Our clients tell"
+      clientTestimonials: "Our clients share their experience"
     },
     contact: {
       title: "Contact",
@@ -649,7 +649,7 @@ const translations = {
       benefit5: "Guía de educación detallada",
       benefit6: "Seguimiento post-adopción de por vida",
       startAdoption: "Comienza tu adopción",
-      clientTestimonials: "Nuestros clientes cuentan"
+      clientTestimonials: "Nuestros clientes comparten su experiencia"
     },
     contact: {
       title: "Contacto",
