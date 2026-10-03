@@ -35,9 +35,6 @@ export default function KittenDetail() {
   const { user } = useAuth();
   const [kitten, setKitten] = useState<Kitten | null>(null);
   const [media, setMedia] = useState<KittenMedia[]>([]);
-  const [milestones, setMilestones] = useState<KittenMilestone[]>([]);
-  const [updates, setUpdates] = useState<KittenUpdate[]>([]);
-  const [vetVisits, setVetVisits] = useState<KittenVetVisit[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -110,36 +107,6 @@ export default function KittenDetail() {
 
       if (mediaError) throw mediaError;
       setMedia(mediaData || []);
-
-      // Load milestones
-      const { data: milestonesData, error: milestonesError } = await supabase
-        .from('kitten_milestones')
-        .select('*')
-        .eq('kitten_id', kittenData.id)
-        .order('milestone_date', { ascending: false });
-
-      if (milestonesError) throw milestonesError;
-      setMilestones(milestonesData || []);
-
-      // Load updates
-      const { data: updatesData, error: updatesError } = await supabase
-        .from('kitten_updates')
-        .select('*')
-        .eq('kitten_id', kittenData.id)
-        .order('update_date', { ascending: false });
-
-      if (updatesError) throw updatesError;
-      setUpdates(updatesData || []);
-
-      // Load vet visits
-      const { data: vetVisitsData, error: vetVisitsError } = await supabase
-        .from('kitten_vet_visits')
-        .select('*')
-        .eq('kitten_id', kittenData.id)
-        .order('visit_date', { ascending: false });
-
-      if (vetVisitsError) throw vetVisitsError;
-      setVetVisits(vetVisitsData || []);
     } catch (error) {
       console.error('Error loading kitten details:', error);
       setKitten(null);
