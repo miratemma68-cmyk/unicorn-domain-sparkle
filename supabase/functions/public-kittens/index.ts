@@ -166,6 +166,8 @@ serve(async (req: Request): Promise<Response> => {
       throw assignmentsError;
     }
 
+    const assignedIds = new Set((assignments || []).map((a) => a.kitten_id as string));
+
     // Keep only kittens matching the requested section
     const availableKittens: PublicKitten[] = (kittens || [])
       .filter((kitten) => !assignedIds.has(kitten.id))
