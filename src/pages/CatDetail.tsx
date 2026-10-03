@@ -186,7 +186,7 @@ export default function CatDetail() {
           {/* Information */}
           <div className="space-y-6">
             <div>
-              <h1 className="text-5xl font-serif text-gold medieval-glow mb-2 whitespace-pre-line">
+              <h1 className="text-5xl font-display text-gold medieval-glow mb-2 whitespace-pre-line">
                 {displayName}
               </h1>
               <p className="text-2xl text-ivory/80 font-light">
@@ -277,7 +277,7 @@ export default function CatDetail() {
         {/* Gallery */}
         {gallery.length > 0 && (
           <div className="mb-12">
-            <h2 className="text-3xl font-serif text-gold mb-6 text-center">{t('catDetail.gallery')}</h2>
+            <h2 className="text-3xl font-display text-gold mb-6 text-center">{t('catDetail.gallery')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {gallery.map((item) => (
                 <div
