@@ -258,7 +258,7 @@ export default function KittenDetail() {
           <div className="space-y-6">
             <Card className="detail-frame border-0 bg-transparent backdrop-blur-sm">
               <CardHeader>
-                <CardTitle className="text-5xl font-display text-gold medieval-glow">
+                <CardTitle className="text-5xl font-display font-normal text-gold medieval-glow">
                   {kitten.name}
                 </CardTitle>
               </CardHeader>
