@@ -37,6 +37,25 @@ export const PreviousLittersSection = () => {
     }
   };
 
+  const loadPastKittens = async () => {
+    try {
+      const { data, error } = await supabase.functions.invoke('public-kittens', {
+        body: { past: true },
+      });
+      if (error) throw error;
+      const kittensData = (data as any)?.kittens ?? [];
+      setPastKittens(
+        (kittensData as Array<{ id: string; name: string; image: string | null }>).map((kitten) => ({
+          id: kitten.id,
+          name: kitten.name,
+          image: kitten.image || '',
+        }))
+      );
+    } catch (error) {
+      console.error('Error loading past litter kittens:', error);
+    }
+  };
+
   const getTranslatedCaption = (item: DomainMedia) => {
     if (language === 'en' && item.caption_en) return item.caption_en;
     if (language === 'es' && item.caption_es) return item.caption_es;
