@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
+import { Mail } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
@@ -152,13 +152,13 @@ export const ContactSection = () => {
               />
             </div>
             
-            <Button 
+            <button
               type="submit"
-              size="lg"
-              className="w-full bg-crimson hover:bg-crimson-dark text-ivory border-2 border-gold transition-all duration-300 hover:shadow-[0_0_30px_rgba(218,165,32,0.5)] rounded-full hover:scale-105"
+              className="ornate-btn-navy group inline-flex w-full items-center justify-center gap-2 rounded-full px-7 py-3 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(218,165,32,0.5)]"
             >
-              {t('contact.send')}
-            </Button>
+              <Mail className="w-5 h-5 text-gold transition-transform duration-300 group-hover:scale-110" />
+              <span className="font-display text-3xl text-gold pt-1">{t('contact.send')}</span>
+            </button>
           </form>
         </div>
       </div>
