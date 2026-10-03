@@ -166,10 +166,10 @@ serve(async (req: Request): Promise<Response> => {
       throw assignmentsError;
     }
 
-    const assignedIds = new Set((assignments || []).map((a) => a.kitten_id as string));
-
-    // Keep only kittens that are NOT assigned to any client
-    const availableKittens: PublicKitten[] = (kittens || []).filter((kitten) => !assignedIds.has(kitten.id));
+    // Keep only kittens matching the requested section
+    const availableKittens: PublicKitten[] = (kittens || [])
+      .filter((kitten) => !assignedIds.has(kitten.id))
+      .filter((kitten) => (wantPastLitter ? (kitten as any).is_past_litter : !(kitten as any).is_past_litter));
 
     console.log('public-kittens: available kittens:', availableKittens);
 
