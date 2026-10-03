@@ -77,7 +77,7 @@ export const PreviousLittersSection = () => {
                   <Card className="tapestry-border litter-card-frame bg-midnight/30 hover:shadow-[0_0_40px_rgba(218,165,32,0.4)] transition-all duration-300 overflow-hidden group hover:scale-105">
                     <CardContent className="p-0">
                       {kitten.image && (
-                        <div className="w-full h-80 rounded-[1.5rem] overflow-hidden">
+                        <div className="w-full h-72 rounded-[1.5rem] overflow-hidden">
                           <img
                             src={kitten.image}
                             alt={kitten.name}
@@ -85,9 +85,9 @@ export const PreviousLittersSection = () => {
                           />
                         </div>
                       )}
-                      <div className="p-6 pb-12">
-                        <h3 className="text-[1.875rem] font-display text-gold mb-2">{kitten.name}</h3>
-                        <p className="text-gold/70 text-[1.09rem] mt-3 italic">{t('cats.viewProfile')} →</p>
+                      <div className="pt-6 pb-2 px-2">
+                        <h3 className="text-[1.56rem] font-display text-gold mb-2">{kitten.name}</h3>
+                        <p className="text-gold/70 text-[1.09rem] mt-2 italic">{t('cats.viewProfile')} →</p>
                       </div>
                     </CardContent>
                   </Card>
