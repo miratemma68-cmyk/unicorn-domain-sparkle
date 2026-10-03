@@ -141,13 +141,14 @@ serve(async (req: Request): Promise<Response> => {
       );
     }
 
-    // No id provided: return list of available kittens (existing behaviour)
-    console.log('public-kittens: loading available kittens');
+    // No id provided: return list of kittens for the requested section
+    const wantPastLitter = body?.past === true;
+    console.log('public-kittens: loading', wantPastLitter ? 'past-litter' : 'available', 'kittens');
 
     // Load all kittens (service role bypasses RLS, so we must filter carefully)
     const { data: kittens, error: kittensError } = await supabase
       .from('kittens')
-      .select('id, name')
+      .select('id, name, is_past_litter')
       .order('created_at', { ascending: true });
 
     if (kittensError) {
@@ -167,8 +168,10 @@ serve(async (req: Request): Promise<Response> => {
 
     const assignedIds = new Set((assignments || []).map((a) => a.kitten_id as string));
 
-    // Keep only kittens that are NOT assigned to any client
-    const availableKittens: PublicKitten[] = (kittens || []).filter((kitten) => !assignedIds.has(kitten.id));
+    // Keep only kittens matching the requested section
+    const availableKittens: PublicKitten[] = (kittens || [])
+      .filter((kitten) => !assignedIds.has(kitten.id))
+      .filter((kitten) => (wantPastLitter ? (kitten as any).is_past_litter : !(kitten as any).is_past_litter));
 
     console.log('public-kittens: available kittens:', availableKittens);
 
