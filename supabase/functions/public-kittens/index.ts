@@ -141,13 +141,14 @@ serve(async (req: Request): Promise<Response> => {
       );
     }
 
-    // No id provided: return list of available kittens (existing behaviour)
-    console.log('public-kittens: loading available kittens');
+    // No id provided: return list of kittens for the requested section
+    const wantPastLitter = body?.past === true;
+    console.log('public-kittens: loading', wantPastLitter ? 'past-litter' : 'available', 'kittens');
 
     // Load all kittens (service role bypasses RLS, so we must filter carefully)
     const { data: kittens, error: kittensError } = await supabase
       .from('kittens')
-      .select('id, name')
+      .select('id, name, is_past_litter')
       .order('created_at', { ascending: true });
 
     if (kittensError) {
