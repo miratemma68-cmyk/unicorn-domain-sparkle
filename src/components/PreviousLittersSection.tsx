@@ -74,17 +74,15 @@ export const PreviousLittersSection = () => {
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               {pastKittens.map((kitten) => (
                 <Link key={kitten.id} to={`/kitten/${kitten.id}`} className="block">
-                  <Card className="bg-card/80 backdrop-blur-sm border-2 border-gold/30 hover:border-gold transition-all duration-300 overflow-hidden group rounded-[3rem] hover:shadow-[0_0_40px_rgba(218,165,32,0.4)] hover:scale-105">
+                  <Card className="tapestry-border bg-midnight/30 hover:shadow-[0_0_40px_rgba(218,165,32,0.4)] transition-all duration-300 overflow-hidden group hover:scale-105">
                     <CardContent className="p-0">
                       {kitten.image && (
-                        <div className="h-80 tapestry-border bg-midnight/30">
-                          <div className="w-full h-full rounded-[1.5rem] overflow-hidden">
-                            <img
-                              src={kitten.image}
-                              alt={kitten.name}
-                              className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
-                            />
-                          </div>
+                        <div className="w-full h-80 rounded-[1.5rem] overflow-hidden">
+                          <img
+                            src={kitten.image}
+                            alt={kitten.name}
+                            className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                          />
                         </div>
                       )}
                       <div className="p-6">
