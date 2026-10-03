@@ -182,7 +182,7 @@ All colors MUST be HSL.
 
   /* Contact form frame: same clearance as FAQ so inputs never touch the ornaments */
   .contact-frame {
-    padding: clamp(4.5rem, 12%, 7.5rem) clamp(4.25rem, 11%, 6.5rem) clamp(6.5rem, 16%, 10rem) clamp(4.25rem, 11%, 6.5rem) !important;
+    padding: clamp(4.5rem, 12%, 7.5rem) clamp(5.5rem, 16%, 8.5rem) clamp(7.5rem, 19%, 11.5rem) clamp(5.5rem, 16%, 8.5rem) !important;
   }
 
   /* Simple double-gold frame for detail pages, aligned with the site's ornate frames */
