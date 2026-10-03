@@ -67,8 +67,36 @@ export const PreviousLittersSection = () => {
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="bg-card/40 backdrop-blur-sm rounded-[3rem] p-8 md:p-12">
           <h3 className="text-3xl font-display text-gold medieval-glow text-center mb-8">
-            {t('domain.previousLittersTitle')}
+          {t('domain.previousLittersTitle')}
           </h3>
+
+          {pastKittens.length > 0 && (
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
+              {pastKittens.map((kitten) => (
+                <Link key={kitten.id} to={`/kitten/${kitten.id}`} className="block">
+                  <Card className="bg-card/80 backdrop-blur-sm border-2 border-gold/30 hover:border-gold transition-all duration-300 overflow-hidden group rounded-[3rem] hover:shadow-[0_0_40px_rgba(218,165,32,0.4)] hover:scale-105">
+                    <CardContent className="p-0">
+                      {kitten.image && (
+                        <div className="relative overflow-hidden">
+                          <img
+                            src={kitten.image}
+                            alt={kitten.name}
+                            className="w-full h-80 object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/50 to-transparent opacity-60" />
+                        </div>
+                      )}
+                      <div className="p-6">
+                        <h3 className="text-[1.875rem] font-display text-gold mb-2">{kitten.name}</h3>
+                        <p className="text-gold/70 text-[1.09rem] mt-3 italic">{t('cats.viewProfile')} →</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+          )}
+
 
           {galleryMedia.length > 0 ? (
             <div className="grid md:grid-cols-3 gap-6">
