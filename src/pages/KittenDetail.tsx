@@ -265,195 +265,45 @@ export default function KittenDetail() {
 
 
 
-        {/* Tabs for Gallery, Milestones, Updates, and Vet Visits */}
-        <Tabs defaultValue="gallery" className="mb-12">
-          <TabsList className="grid w-full grid-cols-4 bg-midnight/50 border border-gold/30">
-            <TabsTrigger value="gallery" className="data-[state=active]:bg-gold/20 data-[state=active]:text-gold">
-              <Calendar className="w-4 h-4 mr-2" />
-              {t('kittenDetail.gallery')}
-            </TabsTrigger>
-            <TabsTrigger value="milestones" className="data-[state=active]:bg-gold/20 data-[state=active]:text-gold">
-              <Activity className="w-4 h-4 mr-2" />
-              Milestones
-            </TabsTrigger>
-            <TabsTrigger value="updates" className="data-[state=active]:bg-gold/20 data-[state=active]:text-gold">
-              <TrendingUp className="w-4 h-4 mr-2" />
-              Updates
-            </TabsTrigger>
-            <TabsTrigger value="vet" className="data-[state=active]:bg-gold/20 data-[state=active]:text-gold">
-              <Stethoscope className="w-4 h-4 mr-2" />
-              Visites Vétérinaires
-            </TabsTrigger>
-          </TabsList>
-
-          {/* Gallery Tab */}
-          <TabsContent value="gallery">
-            {media.length > 0 ? (
-              <Card className="bg-card/80 backdrop-blur-sm border-2 border-gold/30">
-                <CardContent className="pt-6">
-                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                    {media.map((item) => (
-                      <div key={item.id} className="group relative aspect-square overflow-hidden rounded-lg border-2 border-gold/20 hover:border-gold transition-all">
-                        {item.media_type === 'photo' ? (
-                          <img
-                            src={item.file_url}
-                            alt={getTranslatedCaption(item) || kitten.name}
-                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                          />
-                        ) : (
-                          <video
-                            src={item.file_url}
-                            controls
-                            className="w-full h-full object-cover"
-                          />
-                        )}
-                        {(item.caption || item.caption_en || item.caption_es) && (
-                          <div className="absolute bottom-0 left-0 right-0 bg-midnight/80 p-2 text-xs text-ivory/80">
-                            {getTranslatedCaption(item)}
-                          </div>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ) : (
-              <Card className="bg-card/80 backdrop-blur-sm border-2 border-gold/30">
-                <CardContent className="py-12 text-center">
-                  <p className="text-ivory/60">{t('kittenDetail.noPhotos')}</p>
-                </CardContent>
-              </Card>
-            )}
-          </TabsContent>
-
-          {/* Milestones Tab */}
-          <TabsContent value="milestones">
+        {/* Galerie */}
+        <section className="mb-12">
+          {media.length > 0 ? (
             <Card className="bg-card/80 backdrop-blur-sm border-2 border-gold/30">
               <CardContent className="pt-6">
-                {milestones.length > 0 ? (
-                  <div className="space-y-4">
-                    {milestones.map((milestone) => (
-                      <div key={milestone.id} className="p-4 bg-midnight/30 rounded-[2rem] border border-gold/20">
-                        <div className="flex items-start gap-4">
-                          <Activity className="w-5 h-5 text-gold flex-shrink-0 mt-1" />
-                          <div className="flex-1">
-                            <div className="flex justify-between items-start mb-2">
-                              <h4 className="font-semibold text-gold">{milestone.milestone_type}</h4>
-                              <span className="text-sm text-ivory/60">
-                                {new Date(milestone.milestone_date).toLocaleDateString('fr-FR', {
-                                  day: 'numeric',
-                                  month: 'long',
-                                  year: 'numeric'
-                                })}
-                              </span>
-                            </div>
-                            {milestone.description && (
-                              <p className="text-ivory/80 text-sm">{milestone.description}</p>
-                            )}
-                          </div>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                  {media.map((item) => (
+                    <div key={item.id} className="group relative aspect-square overflow-hidden rounded-lg border-2 border-gold/20 hover:border-gold transition-all">
+                      {item.media_type === 'photo' ? (
+                        <img
+                          src={item.file_url}
+                          alt={getTranslatedCaption(item) || kitten.name}
+                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                        />
+                      ) : (
+                        <video
+                          src={item.file_url}
+                          controls
+                          className="w-full h-full object-cover"
+                        />
+                      )}
+                      {(item.caption || item.caption_en || item.caption_es) && (
+                        <div className="absolute bottom-0 left-0 right-0 bg-midnight/80 p-2 text-xs text-ivory/80">
+                          {getTranslatedCaption(item)}
                         </div>
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  <p className="text-ivory/60 text-center py-12">Aucun milestone enregistré</p>
-                )}
+                      )}
+                    </div>
+                  ))}
+                </div>
               </CardContent>
             </Card>
-          </TabsContent>
-
-          {/* Updates Tab */}
-          <TabsContent value="updates">
+          ) : (
             <Card className="bg-card/80 backdrop-blur-sm border-2 border-gold/30">
-              <CardContent className="pt-6">
-                {updates.length > 0 ? (
-                  <div className="space-y-4">
-                    {updates.map((update) => (
-                      <div key={update.id} className="p-4 bg-midnight/30 rounded-[2rem] border border-gold/20">
-                        <div className="flex items-start gap-4">
-                          <TrendingUp className="w-5 h-5 text-gold flex-shrink-0 mt-1" />
-                          <div className="flex-1">
-                            <div className="flex justify-between items-start mb-2">
-                              <div>
-                                {update.weight && (
-                                  <p className="font-semibold text-gold">Poids: {update.weight} g</p>
-                                )}
-                              </div>
-                              <span className="text-sm text-ivory/60">
-                                {new Date(update.update_date).toLocaleDateString('fr-FR', {
-                                  day: 'numeric',
-                                  month: 'long',
-                                  year: 'numeric'
-                                })}
-                              </span>
-                            </div>
-                            {update.notes && (
-                              <p className="text-ivory/80 text-sm">{update.notes}</p>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  <p className="text-ivory/60 text-center py-12">Aucune mise à jour enregistrée</p>
-                )}
+              <CardContent className="py-12 text-center">
+                <p className="text-ivory/60">{t('kittenDetail.noPhotos')}</p>
               </CardContent>
             </Card>
-          </TabsContent>
-
-          {/* Vet Visits Tab */}
-          <TabsContent value="vet">
-            <Card className="bg-card/80 backdrop-blur-sm border-2 border-gold/30">
-              <CardContent className="pt-6">
-                {vetVisits.length > 0 ? (
-                  <div className="space-y-4">
-                    {vetVisits.map((visit) => (
-                      <div key={visit.id} className="p-4 bg-midnight/30 rounded-[2rem] border border-gold/20">
-                        <div className="flex items-start gap-4">
-                          <Stethoscope className="w-5 h-5 text-gold flex-shrink-0 mt-1" />
-                          <div className="flex-1">
-                            <div className="flex justify-between items-start mb-2">
-                              <div>
-                                {visit.visit_type && (
-                                  <h4 className="font-semibold text-gold">{visit.visit_type}</h4>
-                                )}
-                                {visit.vet_name && (
-                                  <p className="text-sm text-ivory/70">Vétérinaire: {visit.vet_name}</p>
-                                )}
-                              </div>
-                              <span className="text-sm text-ivory/60">
-                                {new Date(visit.visit_date).toLocaleDateString('fr-FR', {
-                                  day: 'numeric',
-                                  month: 'long',
-                                  year: 'numeric'
-                                })}
-                              </span>
-                            </div>
-                            {visit.notes && (
-                              <p className="text-ivory/80 text-sm mb-2">{visit.notes}</p>
-                            )}
-                            {visit.next_visit_date && (
-                              <p className="text-sm text-gold/80">
-                                Prochaine visite: {new Date(visit.next_visit_date).toLocaleDateString('fr-FR', {
-                                  day: 'numeric',
-                                  month: 'long',
-                                  year: 'numeric'
-                                })}
-                              </p>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  <p className="text-ivory/60 text-center py-12">Aucune visite vétérinaire enregistrée</p>
-                )}
-              </CardContent>
-            </Card>
-          </TabsContent>
-        </Tabs>
+          )}
+        </section>
       </div>
       <Footer />
     </div>
