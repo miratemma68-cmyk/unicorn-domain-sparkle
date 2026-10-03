@@ -306,7 +306,7 @@ export default function KittenDetail() {
             </Card>
 
             {kitten.breed_info && (
-              <Card className="bg-card/80 backdrop-blur-sm border-2 border-gold/30">
+              <Card className="detail-frame border-0 bg-transparent backdrop-blur-sm">
                 <CardHeader>
                   <CardTitle className="text-xl font-serif text-gold">{t('kittenDetail.about')}</CardTitle>
                 </CardHeader>
