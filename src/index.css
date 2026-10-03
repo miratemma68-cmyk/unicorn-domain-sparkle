@@ -172,7 +172,7 @@ All colors MUST be HSL.
 
   /* Education photo: extra inset so the photo never touches the gold ornaments */
   .education-photo-frame {
-    padding: clamp(3.75rem, 9%, 5.5rem) clamp(4rem, 10%, 6rem) clamp(5.25rem, 12%, 7.5rem) clamp(4rem, 10%, 6rem) !important;
+    padding: clamp(4.25rem, 10.75%, 6.5rem) clamp(4rem, 10%, 6rem) clamp(4.25rem, 10.75%, 6.5rem) clamp(4rem, 10%, 6rem) !important;
   }
 
   /* Simple double-gold frame for detail pages, aligned with the site's ornate frames */
