@@ -77,18 +77,18 @@ export const AdoptionSection = () => {
               </div>
               
               <div className="text-center space-y-3">
-                <div className="w-20 h-20 mx-auto bg-crimson rounded-full flex items-center justify-center border-2 border-gold shadow-lg hover:scale-110 transition-transform">
-                  <span className="text-3xl text-gold font-display">2</span>
+                <div className="w-32 h-32 mx-auto bg-crimson rounded-full flex items-center justify-center border-2 border-gold shadow-lg hover:scale-110 transition-transform">
+                  <span className="text-6xl text-gold font-display">2</span>
                 </div>
-                <h3 className="text-xl font-display text-gold">{t('adoption.step2Title')}</h3>
+                <h3 className="text-2xl font-display text-gold">{t('adoption.step2Title')}</h3>
                 <p>{t('adoption.step2Desc')}</p>
               </div>
               
               <div className="text-center space-y-3">
-                <div className="w-20 h-20 mx-auto bg-crimson rounded-full flex items-center justify-center border-2 border-gold shadow-lg hover:scale-110 transition-transform">
-                  <span className="text-3xl text-gold font-display">3</span>
+                <div className="w-32 h-32 mx-auto bg-crimson rounded-full flex items-center justify-center border-2 border-gold shadow-lg hover:scale-110 transition-transform">
+                  <span className="text-6xl text-gold font-display">3</span>
                 </div>
-                <h3 className="text-xl font-display text-gold">{t('adoption.step3Title')}</h3>
+                <h3 className="text-2xl font-display text-gold">{t('adoption.step3Title')}</h3>
                 <p>{t('adoption.step3Desc')}</p>
               </div>
             </div>
