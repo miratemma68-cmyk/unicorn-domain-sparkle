@@ -100,10 +100,10 @@ export const AdoptionSection = () => {
                   e.preventDefault();
                   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }}
-                className="ornate-btn-navy group inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(218,165,32,0.5)]"
+                className="ornate-btn-navy group inline-flex items-center justify-center gap-2 rounded-full px-7 py-3 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(218,165,32,0.5)]"
               >
-                <Heart className="w-4 h-4 text-gold transition-transform duration-300 group-hover:scale-110" />
-                <span className="font-display text-xl text-gold pt-0.5 whitespace-nowrap">
+                <Heart className="w-5 h-5 text-gold transition-transform duration-300 group-hover:scale-110" />
+                <span className="font-display text-3xl text-gold pt-1 whitespace-nowrap">
                   {t('adoption.startAdoption')}
                 </span>
               </a>
