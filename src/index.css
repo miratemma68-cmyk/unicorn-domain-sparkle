@@ -151,7 +151,7 @@ All colors MUST be HSL.
   /* Master frame applied site-wide: dark navy + gold filigree with unicorn flourish */
   .tapestry-border {
     position: relative;
-    background-image: url('/__l5e/assets-v1/b350eb8f-8edb-47a8-a2cc-62e716e21801/frame-master.png');
+    background-image: url('./assets/frame/frame-master-sm.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
