@@ -41,7 +41,7 @@ export default function Admin() {
     <div className="min-h-screen bg-gradient-to-br from-midnight via-forest to-midnight">
       <header className="border-b border-gold/20 bg-card/50 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-2xl md:text-3xl font-serif text-gold medieval-glow">
+          <h1 className="text-2xl md:text-3xl font-display text-gold medieval-glow">
             {t('admin.title')}
           </h1>
           <Button
