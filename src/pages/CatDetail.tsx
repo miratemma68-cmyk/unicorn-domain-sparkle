@@ -196,7 +196,7 @@ export default function CatDetail() {
 
             <Card className="bg-card/50 backdrop-blur-sm border-gold/30">
               <CardHeader>
-                <CardTitle className="text-gold flex items-center gap-2">
+                <CardTitle className="text-gold font-normal flex items-center gap-2">
                   <Calendar className="h-5 w-5" />
                   {t('catDetail.information')}
                 </CardTitle>
@@ -235,7 +235,7 @@ export default function CatDetail() {
             {(cat.personality || cat.personality_en || cat.personality_es) && (
               <Card className="bg-card/50 backdrop-blur-sm border-gold/30">
                 <CardHeader>
-                  <CardTitle className="text-gold flex items-center gap-2">
+                  <CardTitle className="text-gold font-normal flex items-center gap-2">
                     <Heart className="h-5 w-5" />
                     {t('catDetail.personality')}
                   </CardTitle>
@@ -255,7 +255,7 @@ export default function CatDetail() {
             {(cat.pedigree || cat.pedigree_en || cat.pedigree_es) && (
               <Card className="bg-card/50 backdrop-blur-sm border-gold/30">
                 <CardHeader>
-                  <CardTitle className="text-gold flex items-center gap-2">
+                  <CardTitle className="text-gold font-normal flex items-center gap-2">
                     <Award className="h-5 w-5" />
                     {t('catDetail.pedigree')}
                   </CardTitle>
