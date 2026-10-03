@@ -77,7 +77,7 @@ export const ContactSection = () => {
       <div className="container mx-auto max-w-2xl relative z-10">
         
         
-        <div className="tapestry-border bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12">
+        <div className="tapestry-border litter-frame contact-frame bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12">
           <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-4">
             {t('contact.title')}
           </h2>
@@ -87,7 +87,7 @@ export const ContactSection = () => {
           
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-gold mb-2 font-display">
+              <label htmlFor="name" className="block text-gold mb-2 font-display text-[1.4rem]">
                 {t('contact.name')} *
               </label>
               <Input
@@ -100,7 +100,7 @@ export const ContactSection = () => {
             </div>
             
             <div>
-              <label htmlFor="email" className="block text-gold mb-2 font-display">
+              <label htmlFor="email" className="block text-gold mb-2 font-display text-[1.4rem]">
                 {t('contact.email')} *
               </label>
               <Input
@@ -114,7 +114,7 @@ export const ContactSection = () => {
             </div>
             
             <div>
-              <label htmlFor="phone" className="block text-gold mb-2 font-display">
+              <label htmlFor="phone" className="block text-gold mb-2 font-display text-[1.4rem]">
                 {t('contact.phone')}
               </label>
               <Input
@@ -127,7 +127,7 @@ export const ContactSection = () => {
             </div>
             
             <div>
-              <label htmlFor="country" className="block text-gold mb-2 font-display">
+              <label htmlFor="country" className="block text-gold mb-2 font-display text-[1.4rem]">
                 {t('contact.country')}
               </label>
               <Input
@@ -139,7 +139,7 @@ export const ContactSection = () => {
             </div>
             
             <div>
-              <label htmlFor="message" className="block text-gold mb-2 font-display">
+              <label htmlFor="message" className="block text-gold mb-2 font-display text-[1.4rem]">
                 {t('contact.message')} *
               </label>
               <Textarea
