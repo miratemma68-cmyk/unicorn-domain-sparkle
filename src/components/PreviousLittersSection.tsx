@@ -77,13 +77,14 @@ export const PreviousLittersSection = () => {
                   <Card className="bg-card/80 backdrop-blur-sm border-2 border-gold/30 hover:border-gold transition-all duration-300 overflow-hidden group rounded-[3rem] hover:shadow-[0_0_40px_rgba(218,165,32,0.4)] hover:scale-105">
                     <CardContent className="p-0">
                       {kitten.image && (
-                        <div className="relative overflow-hidden">
-                          <img
-                            src={kitten.image}
-                            alt={kitten.name}
-                            className="w-full h-80 object-cover object-center transition-transform duration-500 group-hover:scale-110"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/50 to-transparent opacity-60" />
+                        <div className="h-80 tapestry-border bg-midnight/30">
+                          <div className="w-full h-full rounded-[1.5rem] overflow-hidden">
+                            <img
+                              src={kitten.image}
+                              alt={kitten.name}
+                              className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                            />
+                          </div>
                         </div>
                       )}
                       <div className="p-6">
