@@ -68,7 +68,7 @@ export const Hero = () => {
               <span className="text-ivory/80 text-sm font-light italic">{t('hero.followUs')}</span>
               <div className="flex flex-col items-center gap-1">
                 <a
-                  href="https://www.instagram.com/chatterie.licornes?igsh=MWJtM2l4cDhicTU2aA=="
+                  href="https://www.instagram.com/chatterie.licornes/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
