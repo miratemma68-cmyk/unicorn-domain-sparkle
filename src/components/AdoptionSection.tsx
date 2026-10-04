@@ -72,7 +72,7 @@ export const AdoptionSection = () => {
                   <span className="text-6xl text-gold font-display">1</span>
                 </div>
                 <h3 className="text-2xl font-display text-gold">{t('adoption.step1Title')}</h3>
-                <p>{t('adoption.step1Desc')}</p>
+                <p className="whitespace-pre-line">{t('adoption.step1Desc')}</p>
               </div>
               
               <div className="text-center space-y-3">
@@ -80,7 +80,7 @@ export const AdoptionSection = () => {
                   <span className="text-6xl text-gold font-display">2</span>
                 </div>
                 <h3 className="text-2xl font-display text-gold">{t('adoption.step2Title')}</h3>
-                <p>{t('adoption.step2Desc')}</p>
+                <p className="whitespace-pre-line">{t('adoption.step2Desc')}</p>
               </div>
               
               <div className="text-center space-y-3">
@@ -88,7 +88,7 @@ export const AdoptionSection = () => {
                   <span className="text-6xl text-gold font-display">3</span>
                 </div>
                 <h3 className="text-2xl font-display text-gold">{t('adoption.step3Title')}</h3>
-                <p>{t('adoption.step3Desc')}</p>
+                <p className="whitespace-pre-line">{t('adoption.step3Desc')}</p>
               </div>
             </div>
             
