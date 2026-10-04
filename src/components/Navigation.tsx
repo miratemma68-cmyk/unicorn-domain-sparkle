@@ -79,16 +79,18 @@ export const Navigation = () => {
     }`}>
       <div className="container mx-auto px-4 py-4">
         {/* Desktop : liens, bouton chatons, puis langue + espace client à droite */}
-        <div className="hidden lg:flex items-center justify-end gap-4">
-          {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="text-ivory/80 hover:text-gold transition-colors duration-300 font-sans italic font-light text-base whitespace-nowrap"
-            >
-              {item.label}
-            </a>
-          ))}
+        <div className="hidden lg:flex items-center gap-4">
+          <div className="flex-1 flex items-center justify-center gap-4 min-w-0">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="text-ivory/80 hover:text-gold transition-colors duration-300 font-sans italic font-light text-base whitespace-nowrap"
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
           <a
             href="#chatons"
             className="relative inline-block shrink-0 transition-transform duration-300 hover:scale-105"
