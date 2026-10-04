@@ -24,7 +24,7 @@ export const SalesConditionsSection = () => {
             {t('sales.intro')}
           </p>
 
-          <div className="grid md:grid-cols-2 gap-x-10 gap-y-6 mt-10 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-x-10 gap-y-6 mt-10 max-w-4xl mx-auto px-4 md:px-8">
             {items.map((item) => (
               <div key={item.title} className="flex items-start gap-3 text-ivory/90">
                 <span className="text-gold text-2xl leading-none mt-0.5">✦</span>
