@@ -204,8 +204,16 @@ All colors MUST be HSL.
 
 
   /* Frame variant for smaller breeding-cat cards — larger padding to keep content away from ornate corners */
+  /* 9-slice frame: corners (and the unicorn) keep their proportions whatever the card height */
   .breeding-cat-frame {
-    padding: clamp(13rem, 32%, 18rem) clamp(3.5rem, 10%, 7rem) clamp(5.5rem, 14%, 9rem) clamp(3.5rem, 10%, 7rem) !important;
+    background-image: none !important;
+    border-style: solid;
+    border-width: 0;
+    border-image-source: url('./assets/frame/frame-master-sm.png');
+    border-image-slice: 330 fill;
+    border-image-width: 165px;
+    border-image-repeat: stretch;
+    padding: 4.25rem 4rem 8.5rem 4rem !important;
   }
 
   .ragdoll-origins-frame {
