@@ -35,7 +35,6 @@ export const Navigation = () => {
 
   const authButtons = (
     <>
-      <LanguageSwitcher />
       {user ? (
         <>
           <button
@@ -68,6 +67,7 @@ export const Navigation = () => {
           </span>
         </button>
       )}
+      <LanguageSwitcher />
     </>
   );
 
