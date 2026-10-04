@@ -87,12 +87,8 @@ export default function Admin() {
               {t('admin.testimonials')}
             </TabsTrigger>
             <TabsTrigger value="management">
-              <Image className="mr-2 h-4 w-4" />
+               <Image className="mr-2 h-4 w-4" />
               {t('admin.management')}
-            </TabsTrigger>
-            <TabsTrigger value="faq">
-              <HelpCircle className="mr-2 h-4 w-4" />
-              FAQ
             </TabsTrigger>
           </TabsList>
 
@@ -127,10 +123,6 @@ export default function Admin() {
 
           <TabsContent value="kitten-data" className="space-y-6">
             <KittenDataManager />
-          </TabsContent>
-
-          <TabsContent value="faq" className="space-y-6">
-            <FAQManager />
           </TabsContent>
 
         </Tabs>
