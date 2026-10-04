@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import domainPhoto from "@/assets/domain-photo.png.asset.json";
 import frameDomainClean from "@/assets/frame/frame-domain-clean.png";
 import ragdollOrigins from "@/assets/ragdoll-origins-chaton.jpg.asset.json";
-import ragdollOriginsSecond from "@/assets/ragdoll-origins-chaton-3.jpg.asset.json";
+import ragdollOriginsSecond from "@/assets/ragdoll-origins-chaton-2.jpg.asset.json";
 import laurenceProfile from "@/assets/laurence-atardecer.jpg.asset.json";
 import { supabase } from "@/integrations/supabase/client";
 import { User, Image as ImageIcon } from "lucide-react";
