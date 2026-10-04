@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import alohaAdult from "@/assets/aloha-adult.jpg";
 import utahAdult from "@/assets/utah-adult.jpg";
 import kittens from "@/assets/kittens.jpg";
-import sirAuguste from "@/assets/sir-auguste.jpg.asset.json";
+import sirAuguste from "@/assets/sir-auguste-section.jpg.asset.json";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
