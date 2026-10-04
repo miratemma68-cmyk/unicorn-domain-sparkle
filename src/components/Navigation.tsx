@@ -77,12 +77,12 @@ export const Navigation = () => {
             )}
           </div>
           
-          <div className="hidden md:flex gap-5 items-center">
+          <div className="hidden md:flex gap-3 xl:gap-6 items-center">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="text-ivory/80 hover:text-gold transition-colors duration-300 font-sans italic font-light text-lg"
+                className="text-ivory/80 hover:text-gold transition-colors duration-300 font-sans italic font-light text-base whitespace-nowrap"
               >
                 {item.label}
               </a>
