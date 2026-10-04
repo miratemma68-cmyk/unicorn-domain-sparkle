@@ -257,7 +257,7 @@ const translations = {
     footer: {
       title: "Le Domaine des Licornes Seal",
       subtitle: "Élevage familial Premium de chats Ragdolls",
-      loof: "LOOF - Le domaine des licornes seal",
+      loof: "LOOF - Le Domaine des Licornes Seal",
       siret: "N° SIRET = 3947902320034",
       navigation: "Navigation",
       contact: "Contact",
@@ -473,7 +473,7 @@ const translations = {
     footer: {
       title: "Le Domaine des Licornes Seal",
       subtitle: "Premium family-run Ragdoll cattery",
-      loof: "LOOF - Le domaine des licornes seal",
+      loof: "LOOF - Le Domaine des Licornes Seal",
       siret: "N° SIRET = 3947902320034",
       navigation: "Navigation",
       contact: "Contact",
@@ -690,7 +690,7 @@ const translations = {
     footer: {
       title: "Le Domaine des Licornes Seal",
       subtitle: "Criador familiar Premium de gatos Ragdolls",
-      loof: "LOOF - Le domaine des licornes seal",
+      loof: "LOOF - Le Domaine des Licornes Seal",
       siret: "N° SIRET = 3947902320034",
       navigation: "Navegación",
       contact: "Contacto",
