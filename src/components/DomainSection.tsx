@@ -145,7 +145,7 @@ export const DomainSection = () => {
                   <img
                     src={ragdollOriginsSecond.url}
                     alt="Chaton Ragdoll - Origines de la race"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                 </div>
               </div>
