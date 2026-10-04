@@ -106,3 +106,9 @@ export const Navigation = () => {
                 {t('nav.availableCats')}
               </span>
             </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
+};
