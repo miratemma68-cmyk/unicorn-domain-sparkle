@@ -125,8 +125,8 @@ export const Navigation = () => {
           </button>
         </div>
         {mobileOpen && (
-          <div className="md:hidden flex flex-col gap-3 mt-4 pb-4 border-t border-gold/20">
-            <div className="flex gap-2 items-center pt-3">
+          <div className="md:hidden flex flex-col gap-3 mt-4 pb-4 border-t border-gold/20 max-h-[calc(100vh-5rem)] overflow-y-auto overflow-x-hidden">
+            <div className="flex flex-wrap gap-2 items-center pt-3 min-w-0">
               {authButtons}
             </div>
             {navItems.map((item) => (

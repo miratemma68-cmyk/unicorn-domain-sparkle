@@ -66,7 +66,7 @@ export const PreviousLittersSection = () => {
     <section id="galerie-domaine" className="py-20 px-4 relative">
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="bg-card/40 backdrop-blur-sm rounded-[3rem] p-8 md:p-12">
-          <h3 className="text-3xl font-display text-gold medieval-glow text-center mb-8">
+          <h3 className="text-2xl sm:text-3xl font-display text-gold medieval-glow text-center mb-8 break-words">
           {t('domain.previousLittersTitle')}
           </h3>
 
@@ -86,7 +86,7 @@ export const PreviousLittersSection = () => {
                         </div>
                       )}
                       <div className="pt-6 pb-2 px-2">
-                        <h3 className="text-[1.56rem] font-display text-gold mb-2">{kitten.name}</h3>
+                        <h3 className="text-xl sm:text-[1.35rem] lg:text-[1.56rem] font-display text-gold mb-2 break-words">{kitten.name}</h3>
                         <p className="text-gold/70 text-[1.09rem] mt-2 italic">{t('cats.viewProfile')} →</p>
                       </div>
                     </CardContent>

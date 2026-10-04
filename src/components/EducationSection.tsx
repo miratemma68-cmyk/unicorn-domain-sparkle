@@ -45,7 +45,7 @@ export const EducationSection = () => {
   return (
     <section id="education" className="py-20 px-4 relative">
       <div className="container mx-auto max-w-6xl relative z-10">
-        <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-12">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-gold medieval-glow text-center mb-12 break-words">
           {t('education.title')}
         </h2>
 

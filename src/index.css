@@ -235,6 +235,10 @@ All colors MUST be HSL.
     padding: clamp(7rem, 13vw, 10rem) clamp(5rem, 8vw, 7rem) clamp(7.5rem, 14vw, 10.5rem) clamp(8.5rem, 16vw, 12rem) !important;
   }
 
+  .domain-main-frame {
+    padding: clamp(7rem, 18%, 11rem) clamp(7rem, 16%, 10rem) clamp(6rem, 18%, 11rem);
+  }
+
   .laurence-frame p,
   .laurence-frame li,
   .laurence-frame ul {
@@ -340,6 +344,51 @@ All colors MUST be HSL.
   .ornate-btn-pearl::after {
     right: 7px;
     transform: translateY(-50%);
+  }
+
+  @media (max-width: 1023px) {
+    .tapestry-border {
+      overflow-wrap: anywhere;
+    }
+
+    .domain-main-frame {
+      padding: 6.5rem 4.5rem 7rem;
+    }
+
+    .faq-frame {
+      padding: 5.5rem 4rem 7rem !important;
+      aspect-ratio: auto;
+    }
+
+    .contact-frame {
+      padding: 6.5rem 4.25rem 8rem !important;
+    }
+
+    .breeding-cat-frame {
+      padding: 4rem 3.5rem 6rem !important;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .domain-main-frame {
+      padding: 6rem 3.25rem 6.5rem;
+    }
+
+    .faq-frame {
+      padding: 5.25rem 2.75rem 6.5rem !important;
+    }
+
+    .contact-frame {
+      padding: 6rem 3rem 7rem !important;
+    }
+
+    .breeding-cat-frame {
+      padding: 3.75rem 2.75rem 5.5rem !important;
+    }
+
+    .litter-card-frame {
+      padding: 3.5rem 2.75rem 5rem !important;
+    }
   }
 }
 

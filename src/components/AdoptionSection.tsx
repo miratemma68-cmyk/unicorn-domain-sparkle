@@ -44,7 +44,7 @@ export const AdoptionSection = () => {
     <section id="adoption" className="py-20 px-4 relative">
       
       <div className="container mx-auto max-w-6xl relative z-10">
-        <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-12">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-gold medieval-glow text-center mb-12 break-words">
           {t('adoption.title')}
         </h2>
 
@@ -89,10 +89,10 @@ export const AdoptionSection = () => {
                   e.preventDefault();
                   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }}
-                className="ornate-btn-navy group inline-flex items-center justify-center gap-2 rounded-full px-7 py-3 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(218,165,32,0.5)]"
+                className="ornate-btn-navy group inline-flex max-w-full items-center justify-center gap-2 rounded-full px-6 sm:px-7 py-3 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(218,165,32,0.5)]"
               >
                 <Heart className="w-5 h-5 text-gold transition-transform duration-300 group-hover:scale-110" />
-                <span className="font-display text-3xl text-gold pt-1 whitespace-nowrap">
+                <span className="font-display text-xl sm:text-2xl lg:text-3xl text-gold pt-1 text-center leading-tight">
                   {t('adoption.startAdoption')}
                 </span>
               </a>

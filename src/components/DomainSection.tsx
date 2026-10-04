@@ -54,11 +54,10 @@ export const DomainSection = () => {
 
         {/* Introduction Section */}
         <div
-          className="relative bg-transparent bg-no-repeat bg-center"
+          className="domain-main-frame relative bg-transparent bg-no-repeat bg-center"
           style={{
             backgroundImage: `url(${frameDomainClean})`,
             backgroundSize: '100% 100%',
-            padding: 'clamp(7rem, 18%, 11rem) clamp(7rem, 16%, 10rem) clamp(6rem, 18%, 11rem)',
           }}
         >
           <div className="grid md:grid-cols-2 gap-8 items-start">
@@ -112,7 +111,7 @@ export const DomainSection = () => {
 
         {/* Ragdoll, origines */}
         <div id="ragdoll-origines" className="mt-16 scroll-mt-44">
-          <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-12">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-gold medieval-glow text-center mb-12 break-words">
             {t('domain.ragdollOriginsTitle')}
           </h2>
           <div
@@ -141,7 +140,7 @@ export const DomainSection = () => {
 
         {/* Laurence notre éleveuse */}
         <div id="laurence" className="mt-16 scroll-mt-44">
-          <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-12">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-gold medieval-glow text-center mb-12 break-words">
             {t('domain.laurenceTitle')}
           </h2>
           <div

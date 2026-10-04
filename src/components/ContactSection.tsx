@@ -78,7 +78,7 @@ export const ContactSection = () => {
         
         
         <div className="tapestry-border litter-frame contact-frame bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12">
-          <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-gold medieval-glow text-center mb-4 break-words">
             {t('contact.title')}
           </h2>
           <p className="text-center text-ivory/80 mb-8">
@@ -157,7 +157,7 @@ export const ContactSection = () => {
               className="ornate-btn-navy group inline-flex w-full items-center justify-center gap-2 rounded-full px-7 py-3 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(218,165,32,0.5)]"
             >
               <Mail className="w-5 h-5 text-gold transition-transform duration-300 group-hover:scale-110" />
-              <span className="font-display text-3xl text-gold pt-1">{t('contact.send')}</span>
+              <span className="font-display text-2xl lg:text-3xl text-gold pt-1 break-words">{t('contact.send')}</span>
             </button>
           </form>
         </div>

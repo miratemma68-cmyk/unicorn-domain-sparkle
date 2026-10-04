@@ -57,7 +57,7 @@ export const FAQSection = () => {
         
         
         <div className="tapestry-border litter-frame faq-frame bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12">
-          <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-8">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-gold medieval-glow text-center mb-8 break-words">
             {t('faq.title')}
           </h2>
           
@@ -71,12 +71,12 @@ export const FAQSection = () => {
                 <AccordionItem 
                   key={faq.id} 
                   value={faq.id}
-                  className="border border-gold/30 rounded-[2rem] px-6 bg-card/40 backdrop-blur-sm"
+                  className="border border-gold/30 rounded-[2rem] px-3 sm:px-5 lg:px-6 bg-card/40 backdrop-blur-sm min-w-0"
                 >
-                  <AccordionTrigger className="text-left text-gold hover:text-gold-light font-display text-[2.25rem]">
+                  <AccordionTrigger className="text-left text-gold hover:text-gold-light font-display text-xl sm:text-2xl lg:text-[2.25rem] break-words min-w-0">
                     {getTranslatedText(faq.question, faq.question_en, faq.question_es)}
                   </AccordionTrigger>
-                  <AccordionContent className="text-[2rem] text-ivory/80 leading-relaxed">
+                  <AccordionContent className="text-lg sm:text-xl lg:text-[2rem] text-ivory/80 leading-relaxed break-words">
                     {getTranslatedText(faq.answer, faq.answer_en, faq.answer_es)}
                   </AccordionContent>
                 </AccordionItem>
