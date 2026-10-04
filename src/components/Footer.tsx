@@ -11,7 +11,8 @@ export const Footer = () => {
             <h3 className="text-2xl font-serif text-gold mb-4">{t('footer.title')}</h3>
             <p className="text-ivory/70">
               {t('footer.subtitle')}<br />
-              {t('footer.loof')}
+              {t('footer.loof')}<br />
+              {t('footer.siret')}
             </p>
           </div>
           
