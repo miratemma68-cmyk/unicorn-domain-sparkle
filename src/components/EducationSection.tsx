@@ -53,14 +53,12 @@ export const EducationSection = () => {
         <div className="tapestry-border litter-frame bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="relative order-2 md:order-1">
-              <div className="tapestry-border litter-frame education-photo-frame">
-                <div className="rounded-[3rem] overflow-hidden">
-                  <img 
-                    src={kittensFlowers.url} 
-                    alt="Chatons Ragdoll jouant parmi les fleurs au coucher du soleil" 
-                    className="w-full block shadow-2xl"
-                  />
-                </div>
+              <div className="tapestry-oval mx-auto aspect-[3/4] max-w-sm">
+                <img 
+                  src={kittensFlowers.url} 
+                  alt="Chatons Ragdoll jouant parmi les fleurs au coucher du soleil" 
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
               </div>
             </div>
             
