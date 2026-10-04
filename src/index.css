@@ -213,7 +213,7 @@ All colors MUST be HSL.
     border-image-slice: 330 fill;
     border-image-width: 165px;
     border-image-repeat: stretch;
-    padding: 4.25rem 4rem 8.5rem 4rem !important;
+    padding: 4.5rem 4rem 7rem 4rem !important;
   }
 
   .ragdoll-origins-frame {
