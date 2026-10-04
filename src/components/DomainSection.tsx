@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import domainPhoto from "@/assets/domain-photo.png.asset.json";
 import frameDomainClean from "@/assets/frame/frame-domain-clean.png";
 import ragdollOrigins from "@/assets/ragdoll-origins-chaton.jpg.asset.json";
+import ragdollOriginsSecond from "@/assets/ragdoll-origins-chaton-2.jpg.asset.json";
 import laurenceProfile from "@/assets/laurence-atardecer.jpg.asset.json";
 import { supabase } from "@/integrations/supabase/client";
 import { User, Image as ImageIcon } from "lucide-react";
@@ -132,12 +133,21 @@ export const DomainSection = () => {
                 <p className="text-lg leading-relaxed">{t('domain.ragdollOriginsP5')}</p>
               </div>
 
-              <div className="relative tapestry-oval mx-auto w-full max-w-[170px] md:max-w-[190px] md:-ml-8 md:mt-24">
-                <img
-                  src={ragdollOrigins.url}
-                  alt="Ragdoll - Origines de la race"
-                  className="w-full h-full object-cover"
-                />
+              <div className="flex flex-col items-center gap-8 md:-ml-8 md:mt-24">
+                <div className="relative tapestry-oval w-full max-w-[170px] md:max-w-[190px]">
+                  <img
+                    src={ragdollOrigins.url}
+                    alt="Ragdoll - Origines de la race"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="relative tapestry-oval w-full max-w-[170px] md:max-w-[190px]">
+                  <img
+                    src={ragdollOriginsSecond.url}
+                    alt="Chaton Ragdoll - Origines de la race"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>
