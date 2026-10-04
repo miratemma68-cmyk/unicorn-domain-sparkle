@@ -111,8 +111,9 @@ export const Navigation = () => {
               {t('nav.availableCats')}
             </span>
           </a>
-          <div className="flex gap-2 items-center shrink-0">
+          <div className="flex gap-1 items-center shrink-0">
             {authButtons}
+          </div>
           </div>
         </div>
 
