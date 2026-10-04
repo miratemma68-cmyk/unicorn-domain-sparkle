@@ -6,7 +6,7 @@ export const Footer = () => {
   return (
     <footer className="border-t border-gold/30 bg-midnight/80 backdrop-blur-sm py-12 px-4">
       <div className="container mx-auto max-w-6xl">
-        <div className="grid md:grid-cols-3 gap-8 text-center md:text-left">
+        <div className="grid lg:grid-cols-3 gap-8 text-center lg:text-left">
           <div>
             <h3 className="text-2xl font-serif text-gold mb-4">{t('footer.title')}</h3>
             <p className="text-ivory/70">
