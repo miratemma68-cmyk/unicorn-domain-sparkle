@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import licorneMiroir from "@/assets/domain-framed-v6.png";
 import domainPhoto from "@/assets/domain-photo.png.asset.json";
 import frameDomainClean from "@/assets/frame/frame-domain-clean.png";
 import ragdollOrigins from "@/assets/ragdoll-origins-blue-eyes.jpg.asset.json";
@@ -48,18 +47,6 @@ export const DomainSection = () => {
 
   return (
     <section id="domaine" className="py-20 px-4 relative">
-      <div className="absolute inset-0 opacity-5">
-        <div 
-          style={{
-            backgroundImage: `url(${licorneMiroir})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            filter: 'blur(2px)'
-          }}
-          className="w-full h-full"
-        />
-      </div>
-      
       <div className="container mx-auto max-w-6xl relative z-10">
         <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-12">
           {t('domain.title')}
