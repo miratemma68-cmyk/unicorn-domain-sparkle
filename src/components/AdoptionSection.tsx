@@ -42,7 +42,44 @@ export const AdoptionSection = () => {
 
   return (
     <section id="adoption" className="py-20 px-4 relative">
+      
+      <div className="container mx-auto max-w-6xl relative z-10">
+        <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-12">
+          {t('adoption.title')}
+        </h2>
 
+        {/* Main Section */}
+        <div className="tapestry-border litter-frame bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12">
+          <div className="space-y-8 text-ivory/90 pt-12 md:pt-16 pb-6 md:pb-12">
+            <p className="text-lg leading-relaxed text-center max-w-3xl mx-auto">
+              {t('adoption.intro')}
+            </p>
+            
+            <div className="grid md:grid-cols-3 gap-6 mt-12">
+              <div className="text-center space-y-3">
+                <div className="w-32 h-32 mx-auto bg-crimson rounded-full flex items-center justify-center border-2 border-gold shadow-lg hover:scale-110 transition-transform">
+                  <span className="text-6xl text-gold font-display">1</span>
+                </div>
+                <h3 className="text-2xl font-display text-gold">{t('adoption.step1Title')}</h3>
+                <p className="whitespace-pre-line">{t('adoption.step1Desc')}</p>
+              </div>
+              
+              <div className="text-center space-y-3">
+                <div className="w-32 h-32 mx-auto bg-crimson rounded-full flex items-center justify-center border-2 border-gold shadow-lg hover:scale-110 transition-transform">
+                  <span className="text-6xl text-gold font-display">2</span>
+                </div>
+                <h3 className="text-2xl font-display text-gold">{t('adoption.step2Title')}</h3>
+                <p className="whitespace-pre-line">{t('adoption.step2Desc')}</p>
+              </div>
+              
+              <div className="text-center space-y-3">
+                <div className="w-32 h-32 mx-auto bg-crimson rounded-full flex items-center justify-center border-2 border-gold shadow-lg hover:scale-110 transition-transform">
+                  <span className="text-6xl text-gold font-display">3</span>
+                </div>
+                <h3 className="text-2xl font-display text-gold">{t('adoption.step3Title')}</h3>
+                <p className="whitespace-pre-line">{t('adoption.step3Desc')}</p>
+              </div>
+            </div>
             
             {/* Navigation Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
