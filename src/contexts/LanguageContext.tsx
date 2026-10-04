@@ -151,6 +151,7 @@ const translations = {
       benefit5: "Guide d'éducation détaillé",
       benefit6: "Suivi post-adoption à vie",
       startAdoption: "Commencez votre adoption",
+      salesTerms: "Conditions de vente",
       clientTestimonials: "Nos clients partagent leur expérience"
     },
     contact: {
@@ -440,6 +441,7 @@ const translations = {
       benefit5: "Detailed education guide",
       benefit6: "Lifetime post-adoption follow-up",
       startAdoption: "Start your adoption",
+      salesTerms: "Terms of sale",
       clientTestimonials: "Our clients share their experience"
     },
     contact: {
@@ -657,6 +659,7 @@ const translations = {
       benefit5: "Guía de educación detallada",
       benefit6: "Seguimiento post-adopción de por vida",
       startAdoption: "Comienza tu adopción",
+      salesTerms: "Condiciones de venta",
       clientTestimonials: "Nuestros clientes comparten su experiencia"
     },
     contact: {
