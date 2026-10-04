@@ -91,6 +91,7 @@ export const Navigation = () => {
               </a>
             ))}
           </div>
+          <div className="flex items-center gap-2 shrink-0">
           <a
             href="#chatons"
             className="relative inline-block shrink-0 transition-transform duration-300 hover:scale-105"
