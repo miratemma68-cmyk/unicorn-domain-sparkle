@@ -82,7 +82,7 @@ export const CatsSection = () => {
   return (
     <section id="licornes" className="py-20 px-4 relative">
       <div className="container mx-auto max-w-7xl relative z-10">
-        <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-4">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-gold medieval-glow text-center mb-4 break-words">
           {t('cats.title')}
         </h2>
         <p className="text-center text-ivory/80 text-lg mb-12 italic font-light">
@@ -105,11 +105,11 @@ export const CatsSection = () => {
                   </div>
                   <div className="p-5 flex flex-col flex-grow justify-between min-h-0">
                     <div>
-                      <h3 className="text-[1.56rem] font-display text-gold mb-1 whitespace-pre-line leading-tight">{cat.name}</h3>
+                      <h3 className="text-xl sm:text-[1.35rem] lg:text-[1.56rem] font-display text-gold mb-1 whitespace-pre-line leading-tight break-words">{cat.name}</h3>
                       {cat.color && (
                         <p className="text-gold/80 text-[1.09rem] mb-1">Color: {cat.color}</p>
                       )}
-                      <p className="text-ivory/80 text-[1.09rem] leading-relaxed">{cat.description}</p>
+                      <p className="text-ivory/80 text-base lg:text-[1.09rem] leading-relaxed break-words">{cat.description}</p>
                     </div>
                     <p className="text-gold/70 text-[1.09rem] mt-2 italic">{t('cats.viewProfile')} →</p>
                   </div>
@@ -138,7 +138,7 @@ export const CatsSection = () => {
                   </div>
                   <div className="p-5 flex flex-col flex-grow justify-between min-h-0">
                     <div>
-                      <h3 className="text-[1.56rem] font-display text-gold mb-1 whitespace-pre-line leading-tight">Sir Auguste de la Fleur de Vigne</h3>
+                      <h3 className="text-xl sm:text-[1.35rem] lg:text-[1.56rem] font-display text-gold mb-1 whitespace-pre-line leading-tight break-words">Sir Auguste de la Fleur de Vigne</h3>
                       <p className="text-ivory/80 text-[1.09rem] italic">Reproducteur externe</p>
                     </div>
                     <p className="text-gold/70 text-[1.09rem] mt-2 italic">{t('cats.viewProfile')} →</p>
@@ -188,9 +188,9 @@ export const CatsSection = () => {
         ) : (
           <Card className="bg-card/80 backdrop-blur-sm border-2 border-gold/30 rounded-[3rem]">
             <CardContent className="p-8 text-center">
-              <p className="text-lg md:text-xl text-ivory/80">
+              <p className="text-base sm:text-lg lg:text-xl text-ivory/80 break-words">
                 {t('cats.noKittens').split('**').map((part, i) => (
-                  <span key={i} className={i % 2 === 1 ? 'text-2xl md:text-3xl font-bold text-gold' : undefined}>
+                  <span key={i} className={i % 2 === 1 ? 'text-xl sm:text-2xl lg:text-3xl font-bold text-gold' : undefined}>
                     {part}
                   </span>
                 ))}

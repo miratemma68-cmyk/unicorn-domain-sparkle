@@ -24,7 +24,7 @@ export const Hero = () => {
 
           {/* Right side - Content */}
           <div className="relative z-10 text-center md:text-left order-2 space-y-4">
-            <h1 className="text-4xl md:text-5xl lg:text-[4.25rem] leading-[1.05] font-display text-gold medieval-glow tracking-wide whitespace-pre-line">
+            <h1 className="text-3xl sm:text-4xl md:text-[2.65rem] lg:text-[4.25rem] leading-[1.05] font-display text-gold medieval-glow tracking-wide whitespace-pre-line break-words">
               {t('hero.title')}
             </h1>
             
@@ -44,20 +44,20 @@ export const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center pt-2">
               <button
                 onClick={() => document.getElementById('licornes')?.scrollIntoView({ behavior: 'smooth' })}
-                className="ornate-btn-navy group inline-flex items-center gap-2 rounded-full px-7 py-3 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_35px_rgba(218,165,32,0.55)]"
+                className="ornate-btn-navy group inline-flex max-w-full items-center justify-center gap-2 rounded-full px-6 sm:px-7 py-3 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_35px_rgba(218,165,32,0.55)]"
               >
                 <PawPrint className="w-5 h-5 text-gold transition-transform duration-300 group-hover:scale-110" />
-                <span className="font-display text-2xl text-gold pt-1 whitespace-nowrap">
+                <span className="font-display text-xl sm:text-2xl text-gold pt-1 text-center leading-tight">
                   {t('hero.discoverCats')}
                 </span>
               </button>
 
               <button
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="ornate-btn-pearl group inline-flex items-center gap-2 rounded-full px-7 py-3 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_35px_rgba(218,165,32,0.45)]"
+                className="ornate-btn-pearl group inline-flex max-w-full items-center justify-center gap-2 rounded-full px-6 sm:px-7 py-3 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_35px_rgba(218,165,32,0.45)]"
               >
                 <PawPrint className="w-5 h-5 text-midnight/80 transition-transform duration-300 group-hover:scale-110" />
-                <span className="font-display text-2xl text-midnight pt-1 whitespace-nowrap">
+                <span className="font-display text-xl sm:text-2xl text-midnight pt-1 text-center leading-tight">
                   {t('hero.contactUs')}
                 </span>
               </button>
