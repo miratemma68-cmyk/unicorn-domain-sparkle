@@ -256,8 +256,9 @@ const translations = {
     },
     footer: {
       title: "Le Domaine des Licornes Seal",
-      subtitle: "Élevage familial premium de Ragdolls",
+      subtitle: "Élevage familial Premium de chats Ragdolls",
       loof: "LOOF - Le domaine des licornes seal",
+      siret: "N° SIRET = 3947902320034",
       navigation: "Navigation",
       contact: "Contact",
       email: "Email: Laurence.Pouyaud@orange.fr",
@@ -471,8 +472,9 @@ const translations = {
     },
     footer: {
       title: "Le Domaine des Licornes Seal",
-      subtitle: "Premium Ragdoll Cattery",
+      subtitle: "Premium family-run Ragdoll cattery",
       loof: "LOOF - Le domaine des licornes seal",
+      siret: "N° SIRET = 3947902320034",
       navigation: "Navigation",
       contact: "Contact",
       email: "Email: Laurence.Pouyaud@orange.fr",
@@ -687,8 +689,9 @@ const translations = {
     },
     footer: {
       title: "Le Domaine des Licornes Seal",
-      subtitle: "Criador Premium de gatos Ragdolls",
+      subtitle: "Criador familiar Premium de gatos Ragdolls",
       loof: "LOOF - Le domaine des licornes seal",
+      siret: "N° SIRET = 3947902320034",
       navigation: "Navegación",
       contact: "Contacto",
       email: "Email: Laurence.Pouyaud@orange.fr",
