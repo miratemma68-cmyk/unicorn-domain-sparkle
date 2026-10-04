@@ -78,9 +78,9 @@ export const Navigation = () => {
         : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-4 py-4">
-        {/* Desktop : liens, bouton chatons, puis langue + espace client à droite */}
-        <div className="hidden lg:flex items-center gap-4">
-          <div className="flex-1 flex items-center justify-center gap-4 min-w-0">
+        {/* Desktop : liens, bouton chatons, puis langue + espace client centrés ensemble */}
+        <div className="hidden lg:flex items-center justify-center gap-4 flex-wrap min-w-0">
+          <div className="flex items-center gap-4 min-w-0">
             {navItems.map((item) => (
               <a
                 key={item.href}
@@ -110,7 +110,7 @@ export const Navigation = () => {
               {t('nav.availableCats')}
             </span>
           </a>
-          <div className="flex gap-2 items-center shrink-0 ml-2">
+          <div className="flex gap-2 items-center shrink-0">
             {authButtons}
           </div>
         </div>
