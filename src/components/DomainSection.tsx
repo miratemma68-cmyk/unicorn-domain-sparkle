@@ -112,11 +112,11 @@ export const DomainSection = () => {
 
             </div>
             
-            <div className="relative flex items-center justify-center h-full">
+            <div className="relative tapestry-oval mx-auto -translate-y-6 md:-translate-y-10">
               <img
                 src={licorneMiroir}
                 alt="Le Domaine des Licornes Seal"
-                className="w-full h-auto max-h-[65vh] object-contain -translate-y-6 md:-translate-y-10"
+                className="w-full h-auto object-contain"
               />
             </div>
           </div>
