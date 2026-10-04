@@ -52,8 +52,8 @@ export const EducationSection = () => {
         {/* Introduction Section */}
         <div className="tapestry-border litter-frame bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12">
           <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="relative order-2 md:order-1">
-              <div className="tapestry-oval mx-auto aspect-[3/4] max-w-sm">
+            <div className="relative order-2 md:order-1 flex items-center justify-center py-6 md:py-10">
+              <div className="tapestry-oval mx-auto aspect-[2/3] w-full max-w-[17rem] md:max-w-xs">
                 <img 
                   src={kittensFlowers.url} 
                   alt="Chatons Ragdoll jouant parmi les fleurs au coucher du soleil" 
