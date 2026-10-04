@@ -12,7 +12,8 @@ export const Footer = () => {
             <p className="text-ivory/70">
               {t('footer.subtitle')}<br />
               {t('footer.loof')}<br />
-              {t('footer.siret')}
+              {t('footer.siret')}<br />
+              ACACED
             </p>
           </div>
           
