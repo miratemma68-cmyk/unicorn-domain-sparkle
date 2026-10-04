@@ -80,7 +80,7 @@ export const Navigation = () => {
     }`}>
       <div className="container mx-auto px-4 py-4">
         {/* Desktop : liens, bouton chatons, puis langue + espace client à droite */}
-        <div className="hidden xl:flex items-center justify-end gap-5">
+        <div className="hidden lg:flex items-center justify-end gap-4">
           {navItems.map((item) => (
             <a
               key={item.href}
@@ -115,7 +115,7 @@ export const Navigation = () => {
         </div>
 
         {/* Mobile */}
-        <div className="xl:hidden flex items-center justify-end">
+        <div className="lg:hidden flex items-center justify-end">
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="text-gold p-2"
@@ -125,7 +125,7 @@ export const Navigation = () => {
           </button>
         </div>
         {mobileOpen && (
-          <div className="xl:hidden flex flex-col gap-3 mt-4 pb-4 border-t border-gold/20 max-h-[calc(100vh-5rem)] overflow-y-auto overflow-x-hidden">
+          <div className="lg:hidden flex flex-col gap-3 mt-4 pb-4 border-t border-gold/20 max-h-[calc(100vh-5rem)] overflow-y-auto overflow-x-hidden">
             <div className="flex flex-wrap gap-2 items-center pt-3 min-w-0">
               {authButtons}
             </div>
