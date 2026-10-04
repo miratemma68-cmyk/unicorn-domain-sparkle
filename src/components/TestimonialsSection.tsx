@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import tapestryTouch from "@/assets/tapestry-touch.jpg";
 import { supabase } from "@/integrations/supabase/client";
 import { useLanguage } from "@/contexts/LanguageContext";
 

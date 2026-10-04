@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import tapestryHearing from "@/assets/tapestry-hearing.jpg";
 import { supabase } from "@/integrations/supabase/client";
 import { Heart, MessageCircle } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";

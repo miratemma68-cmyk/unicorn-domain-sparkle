@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import alohaAdult from "@/assets/aloha-adult.jpg";
 import utahAdult from "@/assets/utah-adult.jpg";
 import kittens from "@/assets/kittens.jpg";
-import tapestryTaste from "@/assets/tapestry-taste.jpg";
 import sirAuguste from "@/assets/sir-auguste.jpg.asset.json";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
