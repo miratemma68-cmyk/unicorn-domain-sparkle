@@ -260,7 +260,7 @@ const translations = {
       loof: "LOOF - Le domaine des licornes seal",
       navigation: "Navigation",
       contact: "Contact",
-      email: "Email: contact@domainedeslicornes.com",
+      email: "Email: Laurence.Pouyaud@orange.fr",
       social: "Suivez-nous sur les réseaux sociaux",
       copyright: "Tous droits réservés.",
       tagline: "Où l'élégance médiévale rencontre la grâce féline"
@@ -475,7 +475,7 @@ const translations = {
       loof: "LOOF - Le domaine des licornes seal",
       navigation: "Navigation",
       contact: "Contact",
-      email: "Email: contact@domainedeslicornes.com",
+      email: "Email: Laurence.Pouyaud@orange.fr",
       social: "Follow us on social media",
       copyright: "All rights reserved.",
       tagline: "Where medieval elegance meets feline grace"
@@ -691,7 +691,7 @@ const translations = {
       loof: "LOOF - Le domaine des licornes seal",
       navigation: "Navegación",
       contact: "Contacto",
-      email: "Email: contact@domainedeslicornes.com",
+      email: "Email: Laurence.Pouyaud@orange.fr",
       social: "Síguenos en las redes sociales",
       copyright: "Todos los derechos reservados.",
       tagline: "Donde la elegancia medieval se encuentra con la gracia felina"
