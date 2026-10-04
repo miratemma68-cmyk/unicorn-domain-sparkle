@@ -73,6 +73,11 @@ export const DomainSection = () => {
               <p className="text-lg leading-relaxed">
                 {t('domain.healthTesting')}
               </p>
+
+              <p className="text-lg leading-relaxed">
+                {t('domain.vetControl')}
+              </p>
+
               
               
               <div className="space-y-4 mt-8">
