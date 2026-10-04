@@ -41,14 +41,48 @@ export const Navigation = () => {
     }`}>
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <div></div>
+          <div className="flex gap-2 items-center shrink-0">
+            <LanguageSwitcher />
+            {user ? (
+              <>
+                <button
+                  onClick={() => navigate('/dashboard')}
+                  className="ornate-btn-navy inline-flex items-center gap-2 rounded-full px-5 py-2.5 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(218,165,32,0.5)]"
+                >
+                  <User className="w-4 h-4 text-gold" />
+                  <span className="font-display text-xl text-gold pt-0.5 whitespace-nowrap">
+                    {t('nav.dashboard')}
+                  </span>
+                </button>
+                {isAdmin && (
+                  <Button
+                    onClick={() => navigate('/admin')}
+                    className="bg-crimson hover:bg-crimson-dark text-ivory border border-gold rounded-full"
+                  >
+                    <Shield className="mr-2 h-4 w-4" />
+                    {t('nav.administration')}
+                  </Button>
+                )}
+              </>
+            ) : (
+              <button
+                onClick={() => navigate('/auth')}
+                className="ornate-btn-navy inline-flex items-center gap-2.5 rounded-full px-6 py-3 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(218,165,32,0.5)]"
+              >
+                <User className="w-5 h-5 text-gold" />
+                <span className="font-display text-2xl text-gold pt-0.5 whitespace-nowrap">
+                  {t('nav.clientSpace')}
+                </span>
+              </button>
+            )}
+          </div>
           
-          <div className="hidden md:flex gap-8 items-center">
+          <div className="hidden md:flex gap-3 xl:gap-6 items-center">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="text-ivory/80 hover:text-gold transition-colors duration-300 font-sans italic font-light text-lg"
+                className="text-ivory/80 hover:text-gold transition-colors duration-300 font-sans italic font-light text-base whitespace-nowrap"
               >
                 {item.label}
               </a>
@@ -72,41 +106,6 @@ export const Navigation = () => {
                 {t('nav.availableCats')}
               </span>
             </a>
-            <div className="flex gap-2 ml-4 items-center">
-              <LanguageSwitcher />
-              {user ? (
-                <>
-                  <button
-                    onClick={() => navigate('/dashboard')}
-                    className="ornate-btn-navy inline-flex items-center gap-2 rounded-full px-5 py-2.5 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(218,165,32,0.5)]"
-                  >
-                    <User className="w-4 h-4 text-gold" />
-                    <span className="font-display text-xl text-gold pt-0.5 whitespace-nowrap">
-                      {t('nav.dashboard')}
-                    </span>
-                  </button>
-                  {isAdmin && (
-                    <Button
-                      onClick={() => navigate('/admin')}
-                      className="bg-crimson hover:bg-crimson-dark text-ivory border border-gold rounded-full"
-                    >
-                      <Shield className="mr-2 h-4 w-4" />
-                      {t('nav.administration')}
-                    </Button>
-                  )}
-                </>
-              ) : (
-                <button
-                  onClick={() => navigate('/auth')}
-                  className="ornate-btn-navy inline-flex items-center gap-2.5 rounded-full px-6 py-3 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(218,165,32,0.5)]"
-                >
-                  <User className="w-5 h-5 text-gold" />
-                  <span className="font-display text-2xl text-gold pt-0.5 whitespace-nowrap">
-                    {t('nav.clientSpace')}
-                  </span>
-                </button>
-              )}
-            </div>
           </div>
         </div>
       </div>
