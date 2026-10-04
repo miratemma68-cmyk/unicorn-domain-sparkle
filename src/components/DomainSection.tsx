@@ -61,7 +61,7 @@ export const DomainSection = () => {
             backgroundSize: '100% 100%',
           }}
         >
-          <div className="grid md:grid-cols-2 gap-8 items-start">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-6 text-ivory/90">
               <p className="text-lg leading-relaxed">
                 {t('domain.intro1')}
@@ -105,7 +105,7 @@ export const DomainSection = () => {
 
             </div>
             
-            <div className="relative tapestry-oval mx-auto -translate-y-6 md:-translate-y-10">
+            <div className="relative tapestry-oval mx-auto">
               <img
                 src={domainPhoto.url}
                 alt="Le Domaine des Licornes Seal"
