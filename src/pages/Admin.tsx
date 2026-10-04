@@ -4,7 +4,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { ArrowLeft, Upload, Image, Cat, Languages, HelpCircle } from 'lucide-react';
+import { ArrowLeft, Upload, Image, Cat, Languages } from 'lucide-react';
 import { MediaUpload } from '@/components/admin/MediaUpload';
 import { MediaGallery } from '@/components/admin/MediaGallery';
 import { BreedingCatMediaManager } from '@/components/admin/BreedingCatMediaManager';
@@ -14,7 +14,6 @@ import { EducationMediaManager } from '@/components/admin/EducationMediaManager'
 import { TestimonialsMediaManager } from '@/components/admin/TestimonialsMediaManager';
 import { ClientKittenManager } from '@/components/admin/ClientKittenManager';
 import { KittenDataManager } from '@/components/admin/KittenDataManager';
-import { FAQManager } from '@/components/admin/FAQManager';
 
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -87,12 +86,8 @@ export default function Admin() {
               {t('admin.testimonials')}
             </TabsTrigger>
             <TabsTrigger value="management">
-              <Image className="mr-2 h-4 w-4" />
+               <Image className="mr-2 h-4 w-4" />
               {t('admin.management')}
-            </TabsTrigger>
-            <TabsTrigger value="faq">
-              <HelpCircle className="mr-2 h-4 w-4" />
-              FAQ
             </TabsTrigger>
           </TabsList>
 
@@ -127,10 +122,6 @@ export default function Admin() {
 
           <TabsContent value="kitten-data" className="space-y-6">
             <KittenDataManager />
-          </TabsContent>
-
-          <TabsContent value="faq" className="space-y-6">
-            <FAQManager />
           </TabsContent>
 
         </Tabs>
