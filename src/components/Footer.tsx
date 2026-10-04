@@ -19,9 +19,14 @@ export const Footer = () => {
             <h3 className="text-xl font-serif text-gold mb-4">{t('footer.navigation')}</h3>
             <ul className="space-y-2 text-ivory/70">
               <li><a href="#domaine" className="hover:text-gold transition-colors">{t('nav.domain')}</a></li>
+              <li><a href="#ragdoll-origines" className="hover:text-gold transition-colors">{t('nav.ragdollOrigins')}</a></li>
+              <li><a href="#laurence" className="hover:text-gold transition-colors">{t('nav.breeder')}</a></li>
               <li><a href="#licornes" className="hover:text-gold transition-colors">{t('nav.cats')}</a></li>
+              <li><a href="#chatons" className="hover:text-gold transition-colors">{t('nav.availableCats')}</a></li>
               <li><a href="#education" className="hover:text-gold transition-colors">{t('nav.education')}</a></li>
               <li><a href="#adoption" className="hover:text-gold transition-colors">{t('nav.adoption')}</a></li>
+              <li><a href="#temoignages" className="hover:text-gold transition-colors">{t('nav.testimonials')}</a></li>
+              <li><a href="#contact" className="hover:text-gold transition-colors">{t('nav.contact')}</a></li>
             </ul>
           </div>
           
