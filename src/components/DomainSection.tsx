@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import domainPhoto from "@/assets/domain-photo.png.asset.json";
+import domainPhoto from "@/assets/domaine-chatons.jpg.asset.json";
 import frameDomainClean from "@/assets/frame/frame-domain-clean.png";
 import ragdollOrigins from "@/assets/ragdoll-origins-chaton.jpg.asset.json";
 import ragdollOriginsSecond from "@/assets/ragdoll-origins-chaton-2.jpg.asset.json";
