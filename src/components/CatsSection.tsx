@@ -81,7 +81,69 @@ export const CatsSection = () => {
 
   return (
     <section id="licornes" className="py-20 px-4 relative">
+      <div className="container mx-auto max-w-7xl relative z-10">
+        <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-4">
+          {t('cats.title')}
+        </h2>
+        <p className="text-center text-ivory/80 text-lg mb-12 italic font-light">
+          {t('cats.breeding')}
+        </p>
+        
+        {/* Breeding Cats */}
+        <div className="grid md:grid-cols-2 gap-8 mb-16 items-stretch">
+          {cats.map((cat) => (
+            <Link key={cat.name} to={`/cat/${cat.slug}`} className="block h-full">
+              <div className="h-full tapestry-border breeding-cat-frame bg-card/80 backdrop-blur-sm group transition-transform duration-300 hover:scale-105 overflow-hidden">
+                <CardContent className="p-0 h-full flex flex-col">
+                  <div className="relative overflow-hidden flex-shrink-0 rounded-t-[2rem] flex items-center justify-center bg-midnight/40">
+                    <img
+                      src={cat.image}
+                      alt={cat.name}
+                      className="max-h-[28rem] w-auto max-w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/50 to-transparent opacity-60 pointer-events-none" />
+                  </div>
+                  <div className="p-5 flex flex-col flex-grow justify-between min-h-0">
+                    <div>
+                      <h3 className="text-[1.56rem] font-display text-gold mb-1 whitespace-pre-line leading-tight">{cat.name}</h3>
+                      {cat.color && (
+                        <p className="text-gold/80 text-[1.09rem] mb-1">Color: {cat.color}</p>
+                      )}
+                      <p className="text-ivory/80 text-[1.09rem] leading-relaxed">{cat.description}</p>
+                    </div>
+                    <p className="text-gold/70 text-[1.09rem] mt-2 italic">{t('cats.viewProfile')} →</p>
+                  </div>
+                </CardContent>
+              </div>
+            </Link>
+          ))}
+        </div>
 
+        {/* External Breeders */}
+        <div className="mb-16">
+          <h3 className="text-3xl font-display text-gold medieval-glow text-center mb-8">
+            {t('cats.externalBreeders')}
+          </h3>
+          <div className="grid md:grid-cols-2 gap-8 items-stretch">
+            <Link to="/cat/sir-auguste" className="block h-full">
+              <div className="h-full tapestry-border breeding-cat-frame bg-card/80 backdrop-blur-sm group transition-transform duration-300 hover:scale-105 overflow-hidden">
+                <div className="p-0 h-full flex flex-col">
+                  <div className="relative overflow-hidden flex-shrink-0 rounded-t-[2rem] flex items-center justify-center bg-midnight/40">
+                    <img
+                      src={sirAuguste.url}
+                      alt="Sir Auguste de la Fleur de Vigne"
+                      className="max-h-[28rem] w-auto max-w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/50 to-transparent opacity-60 pointer-events-none" />
+                  </div>
+                  <div className="p-5 flex flex-col flex-grow justify-between min-h-0">
+                    <div>
+                      <h3 className="text-[1.56rem] font-display text-gold mb-1 whitespace-pre-line leading-tight">Sir Auguste de la Fleur de Vigne</h3>
+                      <p className="text-ivory/80 text-[1.09rem] italic">Reproducteur externe</p>
+                    </div>
+                    <p className="text-gold/70 text-[1.09rem] mt-2 italic">{t('cats.viewProfile')} →</p>
+                  </div>
+                </div>
               </div>
             </Link>
           </div>
