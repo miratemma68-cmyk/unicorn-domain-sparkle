@@ -113,7 +113,7 @@ const translations = {
       externalBreeders: "Nos Reproducteurs Externes",
       kittens: "Nos Chatons Disponibles",
       available: "Disponibles",
-      noKittens: "Aucun chaton disponible pour le moment",
+      noKittens: "Prochaine portée de Aloha de la Rosée de Perle d'O et Sir Auguste de la Fleur de vigne le **15 octobre 2026**",
       viewProfile: "Voir le profil",
       alohaDesc: "Notre magnifique Ragdoll, douce et élégante comme une licorne",
       utahDesc: "Une princesse parmi les Ragdolls, noble et majestueuse"
@@ -326,7 +326,7 @@ const translations = {
       externalBreeders: "Our External Breeders",
       kittens: "Our Available Kittens",
       available: "Available",
-      noKittens: "No kittens available at the moment",
+      noKittens: "Next litter from Aloha de la Rosée de Perle d'O and Sir Auguste de la Fleur de vigne on **October 15, 2026**",
       viewProfile: "View profile",
       alohaDesc: "Our magnificent Ragdoll, gentle and elegant like a unicorn",
       utahDesc: "A princess among Ragdolls, noble and majestic"
@@ -539,7 +539,7 @@ const translations = {
       externalBreeders: "Nuestros Reproductores Externos",
       kittens: "Nuestros Gatitos Disponibles",
       available: "Disponibles",
-      noKittens: "No hay gatitos disponibles en este momento",
+      noKittens: "Próxima camada de Aloha de la Rosée de Perle d'O y Sir Auguste de la Fleur de vigne el **15 de octubre de 2026**",
       viewProfile: "Ver perfil",
       alohaDesc: "Nuestra magnífica Ragdoll, dulce y elegante como un unicornio",
       utahDesc: "Una princesa entre los Ragdolls, noble y majestuosa"
