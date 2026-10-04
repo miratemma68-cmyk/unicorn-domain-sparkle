@@ -30,7 +30,6 @@ export const Navigation = () => {
     { label: t('nav.education'), href: "#education" },
     { label: t('nav.adoption'), href: "#adoption" },
     { label: t('nav.testimonials'), href: "#temoignages" },
-    { label: t('nav.salesConditions'), href: "#conditions-vente" },
     { label: t('nav.contact'), href: "#contact" },
   ];
 

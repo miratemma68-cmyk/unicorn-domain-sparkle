@@ -64,7 +64,6 @@ const translations = {
       education: "Éducation",
       adoption: "Adoption",
       testimonials: "Témoignages",
-      salesConditions: "Conditions de vente",
       faq: "FAQ",
       contact: "Contact",
       dashboard: "Dashboard",
@@ -153,22 +152,6 @@ const translations = {
       benefit6: "Suivi post-adoption à vie",
       startAdoption: "Commencez votre adoption",
       clientTestimonials: "Nos clients partagent leur expérience"
-    },
-    sales: {
-      title: "Conditions de vente",
-      intro: "Avant toute adoption, merci de prendre connaissance de nos conditions de vente. Elles sont précisées et confirmées dans le contrat d'adoption signé avec chaque famille.",
-      c1Title: "Réservation",
-      c1Desc: "Toute réservation est confirmée par un acompte à la signature du contrat de réservation\u00a0; cet acompte est déductible du prix total.",
-      c2Title: "Prix et paiement",
-      c2Desc: "Le prix du chaton est fixé d'un commun accord et précisé dans le contrat. Le solde est réglé à la remise du chaton.",
-      c3Title: "Contrat d'adoption",
-      c3Desc: "Un contrat de vente précise l'identité du chaton, son pedigree LOOF, le mode de paiement ainsi que les engagements de chaque partie.",
-      c4Title: "Santé et garanties",
-      c4Desc: "Chaque chaton est remis vacciné, vermifugé, identifié par puce électronique, accompagné de son carnet de santé, et bénéficie des garanties légales prévues par la réglementation.",
-      c5Title: "Âge de départ",
-      c5Desc: "Les chatons rejoignent leur famille à partir de 12 semaines, jamais avant, pour une socialisation optimale.",
-      c6Title: "Bien-être avant tout",
-      c6Desc: "L'adoptant s'engage à offrir un cadre de vie adapté et à ne jamais abandonner le chaton\u00a0; en cas de difficulté, il nous contacte en priorité."
     },
     contact: {
       title: "Contact",
@@ -297,7 +280,6 @@ const translations = {
       education: "Education",
       adoption: "Adoption",
       testimonials: "Testimonials",
-      salesConditions: "Sales Terms",
       faq: "FAQ",
       contact: "Contact",
       dashboard: "Dashboard",
@@ -460,22 +442,6 @@ const translations = {
       startAdoption: "Start your adoption",
       clientTestimonials: "Our clients share their experience"
     },
-    sales: {
-      title: "Sales Terms",
-      intro: "Before any adoption, please read our terms of sale. They are detailed and confirmed in the adoption contract signed with each family.",
-      c1Title: "Reservation",
-      c1Desc: "Every reservation is confirmed by a deposit at the signing of the reservation contract; this deposit is deducted from the total price.",
-      c2Title: "Price and payment",
-      c2Desc: "The kitten's price is agreed upon together and stated in the contract. The balance is paid when the kitten is handed over.",
-      c3Title: "Adoption contract",
-      c3Desc: "A sales contract specifies the kitten's identity, its LOOF pedigree, the payment method and the commitments of each party.",
-      c4Title: "Health and guarantees",
-      c4Desc: "Each kitten is delivered vaccinated, dewormed, microchipped, with its health record, and benefits from the legal guarantees provided by regulations.",
-      c5Title: "Age when leaving",
-      c5Desc: "Kittens join their new family from 12 weeks of age, never before, to ensure optimal socialization.",
-      c6Title: "Well-being first",
-      c6Desc: "The adopter commits to providing a suitable living environment and never abandoning the kitten; in case of difficulty, they contact us first."
-    },
     contact: {
       title: "Contact",
       intro: "Do you have questions or would like to meet our unicorns? We are here to support you in your adoption project.",
@@ -530,7 +496,6 @@ const translations = {
       education: "Educación",
       adoption: "Adopción",
       testimonials: "Testimonios",
-      salesConditions: "Condiciones de venta",
       faq: "FAQ",
       contact: "Contacto",
       dashboard: "Panel",
@@ -693,22 +658,6 @@ const translations = {
       benefit6: "Seguimiento post-adopción de por vida",
       startAdoption: "Comienza tu adopción",
       clientTestimonials: "Nuestros clientes comparten su experiencia"
-    },
-    sales: {
-      title: "Condiciones de venta",
-      intro: "Antes de cualquier adopción, le recomendamos conocer nuestras condiciones de venta. Se detallan y confirman en el contrato de adopción firmado con cada familia.",
-      c1Title: "Reserva",
-      c1Desc: "Toda reserva se confirma con un depósito al firmar el contrato de reserva; este depósito se descuenta del precio total.",
-      c2Title: "Precio y pago",
-      c2Desc: "El precio del gatito se acuerda de mutuo acuerdo y se indica en el contrato. El saldo se paga al entregar el gatito.",
-      c3Title: "Contrato de adopción",
-      c3Desc: "Un contrato de venta especifica la identidad del gatito, su pedigrí LOOF, la forma de pago y los compromisos de cada parte.",
-      c4Title: "Salud y garantías",
-      c4Desc: "Cada gatito se entrega vacunado, desparasitado, con microchip y su cartilla sanitaria, y goza de las garantías legales previstas por la normativa.",
-      c5Title: "Edad de salida",
-      c5Desc: "Los gatitos se unen a su nueva familia a partir de las 12 semanas, nunca antes, para una socialización óptima.",
-      c6Title: "El bienestar ante todo",
-      c6Desc: "El adoptante se compromete a ofrecer un entorno de vida adecuado y a no abandonar jamás al gatito; ante cualquier dificultad, se pone en contacto con nosotros primero."
     },
     contact: {
       title: "Contacto",
