@@ -57,10 +57,11 @@ export const TestimonialsSection = () => {
       </div>
 
       <div className="container mx-auto max-w-6xl relative z-10">
-        <div className="tapestry-border litter-frame faq-frame bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12">
+        <div className="tapestry-border litter-frame faq-frame bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12 max-w-4xl mx-auto aspect-[4/3] flex flex-col items-center justify-center">
           <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-8">
             {t('adoption.clientTestimonials')}
           </h2>
+
 
           {loading ? null : media.length > 0 && (
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
