@@ -8,7 +8,7 @@ export const Footer = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="grid lg:grid-cols-3 gap-8 text-center lg:text-left">
           <div>
-            <h3 className="text-2xl font-serif text-gold mb-4">{t('footer.title')}</h3>
+            <h3 className="text-2xl font-serif italic text-gold mb-4">{t('footer.title')}</h3>
             <p className="text-ivory/70">
               {t('footer.subtitle')}<br />
               {t('footer.loof')}<br />
@@ -18,7 +18,7 @@ export const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-xl font-serif text-gold mb-4">{t('footer.navigation')}</h3>
+            <h3 className="text-xl font-serif italic text-gold mb-4">{t('footer.navigation')}</h3>
             <ul className="space-y-2 text-ivory/70">
               <li><a href="#domaine" className="hover:text-gold transition-colors">{t('nav.domain')}</a></li>
               <li><a href="#ragdoll-origines" className="hover:text-gold transition-colors">{t('nav.ragdollOrigins')}</a></li>
@@ -33,7 +33,7 @@ export const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-xl font-serif text-gold mb-4">{t('footer.contact')}</h3>
+            <h3 className="text-xl font-serif italic text-gold mb-4">{t('footer.contact')}</h3>
             <ul className="space-y-2 text-ivory/70">
               <li>{t('footer.email')}</li>
               <li>{t('footer.social')}</li>
