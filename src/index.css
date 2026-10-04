@@ -120,6 +120,11 @@ All colors MUST be HSL.
     font: inherit;
     letter-spacing: 0;
   }
+
+  section[id],
+  div[id] {
+    scroll-margin-top: 6rem;
+  }
 }
 
 @layer utilities {
