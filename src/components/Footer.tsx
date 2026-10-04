@@ -13,7 +13,7 @@ export const Footer = () => {
               {t('footer.subtitle')}<br />
               {t('footer.loof')}<br />
               {t('footer.siret')}<br />
-              ACACED
+              ACACED n°2023/97a0-0b28 délivré par le ministère de l'agriculture le 22/08/2023
             </p>
           </div>
           
