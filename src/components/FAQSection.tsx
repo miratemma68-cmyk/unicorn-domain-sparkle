@@ -52,49 +52,7 @@ export const FAQSection = () => {
 
   return (
     <section id="faq" className="py-20 px-4 relative">
-      <div className="absolute inset-0 opacity-5">
-        <div 
-          style={{
-            backgroundImage: `url(${tapestrySight})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-          className="w-full h-full"
-        />
-      </div>
-      
-      <div className="container mx-auto max-w-4xl relative z-10">
-        
-        
-        <div className="tapestry-border litter-frame faq-frame bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12">
-          <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-8">
-            {t('faq.title')}
-          </h2>
-          
-          {loading ? (
-            <div className="text-center py-8 text-gold">Chargement...</div>
-          ) : faqs.length === 0 ? (
-            <div className="text-center py-8 text-gold">Aucune question disponible</div>
-          ) : (
-            <Accordion type="single" collapsible className="space-y-4">
-              {faqs.map((faq) => (
-                <AccordionItem 
-                  key={faq.id} 
-                  value={faq.id}
-                  className="border border-gold/30 rounded-[2rem] px-6 bg-card/40 backdrop-blur-sm"
-                >
-                  <AccordionTrigger className="text-left text-gold hover:text-gold-light font-display text-[2.25rem]">
-                    {getTranslatedText(faq.question, faq.question_en, faq.question_es)}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-[2rem] text-ivory/80 leading-relaxed">
-                    {getTranslatedText(faq.answer, faq.answer_en, faq.answer_es)}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          )}
-        </div>
-      </div>
+
     </section>
   );
 };
