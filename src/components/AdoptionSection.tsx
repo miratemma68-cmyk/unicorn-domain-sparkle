@@ -119,8 +119,8 @@ export const AdoptionSection = () => {
                 rel="noopener noreferrer"
                 className="ornate-btn-pearl group inline-flex max-w-full items-center justify-center gap-2 rounded-full px-6 sm:px-7 py-3 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(218,165,32,0.5)]"
               >
-                <FileText className="w-5 h-5 text-gold transition-transform duration-300 group-hover:scale-110" />
-                <span className="font-display text-xl sm:text-2xl lg:text-3xl text-gold pt-1 text-center leading-tight">
+                <FileText className="w-5 h-5 text-midnight/80 transition-transform duration-300 group-hover:scale-110" />
+                <span className="font-display text-xl sm:text-2xl lg:text-3xl text-midnight/80 pt-1 text-center leading-tight">
                   {t('adoption.salesTerms')}
                 </span>
               </a>
