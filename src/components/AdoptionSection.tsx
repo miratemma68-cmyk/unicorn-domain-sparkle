@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import tapestryHearing from "@/assets/tapestry-hearing.jpg";
 import { supabase } from "@/integrations/supabase/client";
 import { Heart, MessageCircle } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -43,16 +42,6 @@ export const AdoptionSection = () => {
 
   return (
     <section id="adoption" className="py-20 px-4 relative">
-      <div className="absolute inset-0 opacity-5">
-        <div 
-          style={{
-            backgroundImage: `url(${tapestryHearing})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-          className="w-full h-full"
-        />
-      </div>
       
       <div className="container mx-auto max-w-6xl relative z-10">
         <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-12">

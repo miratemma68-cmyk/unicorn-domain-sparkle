@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import tapestryTouch from "@/assets/tapestry-touch.jpg";
 import { supabase } from "@/integrations/supabase/client";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -45,16 +44,6 @@ export const TestimonialsSection = () => {
 
   return (
     <section id="temoignages" className="py-20 px-4 relative">
-      <div className="absolute inset-0 opacity-5">
-        <div
-          style={{
-            backgroundImage: `url(${tapestryTouch})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-          className="w-full h-full"
-        />
-      </div>
 
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="tapestry-border litter-frame faq-frame bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12 max-w-4xl mx-auto aspect-[4/3] flex flex-col items-center justify-center">

@@ -5,7 +5,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import tapestrySight from "@/assets/tapestry-sight.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -53,16 +52,6 @@ export const FAQSection = () => {
 
   return (
     <section id="faq" className="py-20 px-4 relative">
-      <div className="absolute inset-0 opacity-5">
-        <div 
-          style={{
-            backgroundImage: `url(${tapestrySight})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-          className="w-full h-full"
-        />
-      </div>
       
       <div className="container mx-auto max-w-4xl relative z-10">
         
