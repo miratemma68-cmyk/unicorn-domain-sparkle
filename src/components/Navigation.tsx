@@ -35,7 +35,6 @@ export const Navigation = () => {
 
   const authButtons = (
     <>
-      <LanguageSwitcher />
       {user ? (
         <>
           <button
@@ -68,6 +67,7 @@ export const Navigation = () => {
           </span>
         </button>
       )}
+      <LanguageSwitcher />
     </>
   );
 
@@ -91,6 +91,7 @@ export const Navigation = () => {
               </a>
             ))}
           </div>
+          <div className="flex items-center gap-2 shrink-0">
           <a
             href="#chatons"
             className="relative inline-block shrink-0 transition-transform duration-300 hover:scale-105"
@@ -110,8 +111,9 @@ export const Navigation = () => {
               {t('nav.availableCats')}
             </span>
           </a>
-          <div className="flex gap-2 items-center shrink-0">
+          <div className="flex gap-1 items-center shrink-0">
             {authButtons}
+          </div>
           </div>
         </div>
 
