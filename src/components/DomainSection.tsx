@@ -124,7 +124,7 @@ export const DomainSection = () => {
         </div>
 
         {/* Ragdoll, origines */}
-        <div id="ragdoll-origines" className="mt-16 scroll-mt-32">
+        <div id="ragdoll-origines" className="mt-16 scroll-mt-44">
           <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-12">
             {t('domain.ragdollOriginsTitle')}
           </h2>
@@ -153,7 +153,7 @@ export const DomainSection = () => {
         </div>
 
         {/* Laurence notre éleveuse */}
-        <div id="laurence" className="mt-16 scroll-mt-32">
+        <div id="laurence" className="mt-16 scroll-mt-44">
           <h2 className="text-4xl md:text-5xl font-display text-gold medieval-glow text-center mb-12">
             {t('domain.laurenceTitle')}
           </h2>
