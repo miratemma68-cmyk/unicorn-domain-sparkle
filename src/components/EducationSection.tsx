@@ -62,7 +62,7 @@ export const EducationSection = () => {
               </div>
             </div>
             
-            <div className="space-y-6 text-ivory/90 order-1 md:order-2 md:px-10 lg:px-14">
+            <div className="space-y-6 text-ivory/90 order-1 md:order-2 md:pl-4 md:pr-16 lg:pr-24">
 
 
               <p className="text-lg leading-relaxed">
