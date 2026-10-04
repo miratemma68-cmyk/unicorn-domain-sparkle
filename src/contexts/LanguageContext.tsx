@@ -141,7 +141,7 @@ const translations = {
       step2Title: "Rencontre",
       step2Desc: "Visitez notre élevage et faites \nconnaissance avec nos licornes",
       step3Title: "Adoption",
-      step3Desc: "Accueillez votre compagnon \navec un suivi personnalisé",
+      step3Desc: "Accueillez votre compagnon\navec un suivi personnalisé",
       whatYouGet: "Ce que vous recevez",
       benefit1: "Certificat de santé complet",
       benefit2: "Carnet de vaccination à jour",
