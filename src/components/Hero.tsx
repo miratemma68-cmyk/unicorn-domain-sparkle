@@ -1,5 +1,5 @@
 import heroFramed from "@/assets/hero-licorne-framed-clean-v2.png.asset.json";
-import { ChevronDown, PawPrint } from "lucide-react";
+import { ChevronDown, PawPrint, Mail } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 
@@ -56,7 +56,7 @@ export const Hero = () => {
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 className="ornate-btn-pearl group inline-flex max-w-full items-center justify-center gap-2 rounded-full px-6 sm:px-7 py-3 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_35px_rgba(218,165,32,0.45)]"
               >
-                <PawPrint className="w-5 h-5 text-midnight/80 transition-transform duration-300 group-hover:scale-110" />
+                <Mail className="w-5 h-5 text-midnight/80 transition-transform duration-300 group-hover:scale-110" />
                 <span className="font-display text-xl sm:text-2xl text-midnight pt-1 text-center leading-tight">
                   {t('hero.contactUs')}
                 </span>
