@@ -12,7 +12,7 @@ All colors MUST be HSL.
     --background: 220 65% 8%;
     --foreground: 40 50% 92%;
 
-    --card: 220 55% 14%;
+    --card: 220 65% 8%;
     --card-foreground: 40 50% 92%;
 
     --popover: 220 60% 10%;
@@ -65,7 +65,7 @@ All colors MUST be HSL.
   .dark {
     --background: 220 65% 8%;
     --foreground: 40 50% 92%;
-    --card: 220 55% 14%;
+    --card: 220 65% 8%;
     --card-foreground: 40 50% 92%;
     --popover: 220 60% 10%;
     --popover-foreground: 40 50% 92%;
