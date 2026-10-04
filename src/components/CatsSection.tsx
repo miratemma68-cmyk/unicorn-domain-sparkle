@@ -107,13 +107,13 @@ export const CatsSection = () => {
             <Link key={cat.name} to={`/cat/${cat.slug}`} className="block h-full">
               <div className="h-full tapestry-border breeding-cat-frame bg-card/80 backdrop-blur-sm group transition-transform duration-300 hover:scale-105 overflow-hidden">
                 <CardContent className="p-0 h-full flex flex-col">
-                  <div className="relative overflow-hidden flex-shrink-0 rounded-t-[2rem]">
+                  <div className="relative overflow-hidden flex-shrink-0 rounded-t-[2rem] flex items-center justify-center bg-midnight/40">
                     <img
                       src={cat.image}
                       alt={cat.name}
-                      className="w-full h-56 object-cover object-[center_30%] transition-transform duration-500 group-hover:scale-110"
+                      className="max-h-[28rem] w-auto max-w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/50 to-transparent opacity-60" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/50 to-transparent opacity-60 pointer-events-none" />
                   </div>
                   <div className="p-5 flex flex-col flex-grow justify-between min-h-0">
                     <div>
@@ -140,13 +140,13 @@ export const CatsSection = () => {
             <Link to="/cat/sir-auguste" className="block h-full">
               <div className="h-full tapestry-border breeding-cat-frame bg-card/80 backdrop-blur-sm group transition-transform duration-300 hover:scale-105 overflow-hidden">
                 <div className="p-0 h-full flex flex-col">
-                  <div className="relative overflow-hidden flex-shrink-0 rounded-t-[2rem]">
+                  <div className="relative overflow-hidden flex-shrink-0 rounded-t-[2rem] flex items-center justify-center bg-midnight/40">
                     <img
                       src={sirAuguste.url}
                       alt="Sir Auguste de la Fleur de Vigne"
-                      className="w-full h-56 object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                      className="max-h-[28rem] w-auto max-w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/50 to-transparent opacity-60" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/50 to-transparent opacity-60 pointer-events-none" />
                   </div>
                   <div className="p-5 flex flex-col flex-grow justify-between min-h-0">
                     <div>
@@ -180,13 +180,13 @@ export const CatsSection = () => {
               <Link key={kitten.id} to={`/kitten/${kitten.id}`} className="block">
                 <Card className="bg-card/80 backdrop-blur-sm border-2 border-gold/30 hover:border-gold transition-all duration-300 overflow-hidden group rounded-[3rem] hover:shadow-[0_0_40px_rgba(218,165,32,0.4)] hover:scale-105">
                   <CardContent className="p-0">
-                    <div className="relative overflow-hidden">
+                    <div className="relative overflow-hidden flex items-center justify-center bg-midnight/40">
                       <img 
                         src={kitten.image} 
                         alt={kitten.name}
-                        className="w-full h-80 object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                        className="max-h-[32rem] w-auto max-w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/50 to-transparent opacity-60" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/50 to-transparent opacity-60 pointer-events-none" />
                     </div>
                     <div className="p-6">
                       <h3 className="text-[1.875rem] font-display text-gold mb-2">{kitten.name}</h3>
