@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import licorneMiroir from "@/assets/domain-framed-v6.png";
+import domainPhoto from "@/assets/domain-photo.png.asset.json";
 import frameDomainClean from "@/assets/frame/frame-domain-clean.png";
 import ragdollOrigins from "@/assets/ragdoll-origins-blue-eyes.jpg.asset.json";
 import laurenceProfile from "@/assets/laurence-atardecer.jpg.asset.json";
@@ -114,9 +115,9 @@ export const DomainSection = () => {
             
             <div className="relative tapestry-oval mx-auto -translate-y-6 md:-translate-y-10">
               <img
-                src={licorneMiroir}
+                src={domainPhoto.url}
                 alt="Le Domaine des Licornes Seal"
-                className="w-full h-auto object-contain"
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
