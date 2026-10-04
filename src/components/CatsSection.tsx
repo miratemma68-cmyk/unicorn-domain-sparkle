@@ -200,9 +200,9 @@ export const CatsSection = () => {
         ) : (
           <Card className="bg-card/80 backdrop-blur-sm border-2 border-gold/30 rounded-[3rem]">
             <CardContent className="p-8 text-center">
-              <p className="text-ivory/80">
+              <p className="text-lg md:text-xl text-ivory/80">
                 {t('cats.noKittens').split('**').map((part, i) => (
-                  <span key={i} className={i % 2 === 1 ? 'font-bold text-gold' : undefined}>
+                  <span key={i} className={i % 2 === 1 ? 'text-2xl md:text-3xl font-bold text-gold' : undefined}>
                     {part}
                   </span>
                 ))}
