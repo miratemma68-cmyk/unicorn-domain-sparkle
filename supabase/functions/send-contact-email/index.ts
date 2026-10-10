@@ -231,6 +231,9 @@ const handler = async (req: Request): Promise<Response> => {
       html: emailHtml,
     });
 
+    if (emailResponse.error) {
+      console.error("Resend rejected confirmation email:", JSON.stringify(emailResponse.error));
+    }
     console.log("Email sent successfully to:", email, "MessageID:", emailResponse.data?.id);
 
     // Send notification to admin
@@ -254,6 +257,9 @@ const handler = async (req: Request): Promise<Response> => {
         subject: `Nouveau contact : ${name}`,
         html: adminHtml,
       });
+      if (adminResponse.error) {
+        console.error("Resend rejected admin notification:", JSON.stringify(adminResponse.error));
+      }
       console.log("Admin notification sent, MessageID:", adminResponse.data?.id);
     } catch (adminErr: any) {
       console.error("Failed to send admin notification:", adminErr.message);
