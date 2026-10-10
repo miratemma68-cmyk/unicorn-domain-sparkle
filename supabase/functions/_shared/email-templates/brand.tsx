@@ -34,11 +34,17 @@ export const content = { padding: '30px 25px' }
 
 const header = {
   backgroundColor: '#0B1B3F',
-  color: '#D4AF37',
   padding: '30px 20px',
   textAlign: 'center' as const,
+}
+
+const headerTitle = {
+  color: '#D4AF37',
   fontSize: '24px',
   fontStyle: 'italic',
+  fontWeight: 'bold' as const,
+  display: 'inline-block',
+  verticalAlign: 'middle',
   margin: 0,
 }
 
@@ -46,9 +52,10 @@ const headerImg = {
   border: '3px solid #D4AF37',
   borderRadius: '12px',
   verticalAlign: 'middle',
-  marginRight: '10px',
+  marginRight: '12px',
   backgroundColor: '#ffffff',
   padding: '4px',
+  display: 'inline-block',
 }
 
 export const h2 = {
