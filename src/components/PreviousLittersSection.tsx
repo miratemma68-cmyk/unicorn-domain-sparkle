@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { supabase } from "@/integrations/supabase/client";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -73,25 +72,22 @@ export const PreviousLittersSection = () => {
           {pastKittens.length > 0 && (
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               {pastKittens.map((kitten) => (
-                <Link key={kitten.id} to={`/kitten/${kitten.id}`} className="block">
-                  <Card className="tapestry-border litter-frame litter-card-frame bg-midnight/30 hover:shadow-[0_0_40px_rgba(218,165,32,0.4)] transition-all duration-300 overflow-hidden group hover:scale-105">
-                    <CardContent className="p-0">
-                      {kitten.image && (
-                        <div className="w-full h-72 rounded-[1.5rem] overflow-hidden">
-                          <img
-                            src={kitten.image}
-                            alt={kitten.name}
-                            className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
-                          />
-                        </div>
-                      )}
-                      <div className="pt-6 pb-2 px-2">
-                        <h3 className="text-xl sm:text-[1.35rem] lg:text-[1.56rem] font-display text-gold mb-2 break-words">{kitten.name}</h3>
-                        <p className="text-gold/70 text-[1.09rem] mt-2 italic">{t('cats.viewProfile')} →</p>
+                <Card key={kitten.id} className="tapestry-border litter-frame litter-card-frame bg-midnight/30 hover:shadow-[0_0_40px_rgba(218,165,32,0.4)] transition-all duration-300 overflow-hidden group hover:scale-105">
+                  <CardContent className="p-0">
+                    {kitten.image && (
+                      <div className="w-full h-72 rounded-[1.5rem] overflow-hidden">
+                        <img
+                          src={kitten.image}
+                          alt={kitten.name}
+                          className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                        />
                       </div>
-                    </CardContent>
-                  </Card>
-                </Link>
+                    )}
+                    <div className="pt-6 pb-2 px-2">
+                      <h3 className="text-xl sm:text-[1.35rem] lg:text-[1.56rem] font-display text-gold mb-2 break-words">{kitten.name}</h3>
+                    </div>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           )}
