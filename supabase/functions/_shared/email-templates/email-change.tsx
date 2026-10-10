@@ -13,6 +13,18 @@ import {
   Preview,
   Text,
 } from 'npm:@react-email/components@0.0.22'
+import {
+  BrandFooter,
+  BrandHeader,
+  button,
+  container,
+  content,
+  footer,
+  h2,
+  link,
+  main,
+  text,
+} from './brand.tsx'
 
 interface EmailChangeEmailProps {
   siteName: string
@@ -39,28 +51,32 @@ export const EmailChangeEmail = ({
     <Preview>Confirm your email change for {siteName}</Preview>
     <Body style={main}>
       <Container style={container}>
-        <Heading style={h1}>Confirm your email change</Heading>
-        <Text style={text}>
-          You requested to change your email address for {siteName} from{' '}
-          <Link href={`mailto:${oldEmail}`} style={link}>
-            {oldEmail}
-          </Link>{' '}
-          to{' '}
-          <Link href={`mailto:${newEmail}`} style={link}>
-            {newEmail}
-          </Link>
-          .
-        </Text>
-        <Text style={text}>
-          Click the button below to confirm this change:
-        </Text>
-        <Button className="dm-btn" style={button} href={confirmationUrl}>
-          Confirm Email Change
-        </Button>
-        <Text style={footer}>
-          If you didn't request this change, please secure your account
-          immediately.
-        </Text>
+        <BrandHeader title={siteName} />
+        <Container style={content}>
+          <Heading style={h2}>Confirm your email change</Heading>
+          <Text style={text}>
+            You requested to change your email address for {siteName} from{' '}
+            <Link href={`mailto:${oldEmail}`} style={link}>
+              {oldEmail}
+            </Link>{' '}
+            to{' '}
+            <Link href={`mailto:${newEmail}`} style={link}>
+              {newEmail}
+            </Link>
+            .
+          </Text>
+          <Text style={text}>
+            Click the button below to confirm this change:
+          </Text>
+          <Button className="dm-btn" style={button} href={confirmationUrl}>
+            Confirm Email Change
+          </Button>
+          <Text style={footer}>
+            If you didn't request this change, please secure your account
+            immediately.
+          </Text>
+        </Container>
+        <BrandFooter />
       </Container>
     </Body>
   </Html>
@@ -68,31 +84,6 @@ export const EmailChangeEmail = ({
 
 export default EmailChangeEmail
 
-const main = { backgroundColor: '#ffffff', fontFamily: 'Arial, sans-serif' }
-const container = { padding: '20px 25px' }
-const h1 = {
-  fontSize: '22px',
-  fontWeight: 'bold' as const,
-  color: '#0B1B3F',
-  margin: '0 0 20px',
-}
-const text = {
-  fontSize: '14px',
-  color: '#55575d',
-  lineHeight: '1.5',
-  margin: '0 0 25px',
-}
-const link = { color: '#B8912F', textDecoration: 'underline' }
-const button = {
-  backgroundColor: '#0B1B3F',
-  color: '#ffffff',
-  fontSize: '14px',
-  border: '1px solid #D4AF37',
-  borderRadius: '8px',
-  padding: '12px 20px',
-  textDecoration: 'none',
-}
-const footer = { fontSize: '12px', color: '#999999', margin: '30px 0 0' }
 // Rendered as a text child, which React may HTML-escape: keep this CSS free of >, &, and quotes.
 const darkModeCss = `
   @media (prefers-color-scheme: dark) {
