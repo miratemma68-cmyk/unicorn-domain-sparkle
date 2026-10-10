@@ -24,7 +24,7 @@ export const Hero = () => {
 
           {/* Right side - Content */}
           <div className="relative z-10 text-center md:text-left order-2 space-y-4">
-            <h1 className="text-3xl sm:text-4xl md:text-[2.65rem] lg:text-[4.25rem] leading-[1.32] font-display text-gold medieval-glow tracking-wide whitespace-pre-line break-words">
+            <h1 className="text-3xl leading-[1.32] sm:text-4xl sm:leading-[1.32] md:text-[2.65rem] md:leading-[1.32] lg:text-[4.25rem] lg:leading-[1.32] font-display text-gold medieval-glow tracking-wide whitespace-pre-line break-words">
               {t('hero.title')}
             </h1>
             
