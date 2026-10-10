@@ -15,7 +15,7 @@ const corsHeaders = {
 }
 
 // Configuration
-const SITE_NAME = "Unicorn Domain Website"
+const SITE_NAME = "Le Domaine des Licornes Seal"
 const SENDER_DOMAIN = "notify.ledomainedeslicornesseal.com"
 const ROOT_DOMAIN = "ledomainedeslicornesseal.com"
 const FROM_DOMAIN = "ledomainedeslicornesseal.com"

@@ -17,7 +17,7 @@ export const BrandHeader = ({ title }: { title: string }) => (
 )
 
 export const BrandFooter = () => (
-  <Text style={footerBar}>Élevage de Ragdolls • Le Domaine des Licornes</Text>
+  <Text style={footerBar}>Élevage de Ragdolls • Le Domaine des Licornes Seal</Text>
 )
 
 export const main = { backgroundColor: '#ffffff', fontFamily: 'Georgia, serif' }

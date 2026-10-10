@@ -136,7 +136,7 @@ const translations = {
     },
     adoption: {
       title: "Adoption",
-      intro: "Adopter un Ragdoll du Domaine des Licornes, c'est accueillir un compagnon d'exception dans votre vie. \nNous vous accompagnons à chaque étape de ce merveilleux voyage.",
+      intro: "Adopter un Ragdoll du Domaine des Licornes Seal, c'est accueillir un compagnon d'exception dans votre vie. \nNous vous accompagnons à chaque étape de ce merveilleux voyage.",
       step1Title: "Premier Contact",
       step1Desc: "Remplissez notre formulaire\npour exprimer votre intérêt",
       step2Title: "Rencontre",
@@ -426,7 +426,7 @@ const translations = {
     },
     adoption: {
       title: "Adoption",
-      intro: "Adopting a Ragdoll from Le Domaine des Licornes means welcoming an exceptional companion into your life. We accompany you at every step of this wonderful journey.",
+      intro: "Adopting a Ragdoll from Le Domaine des Licornes Seal means welcoming an exceptional companion into your life. We accompany you at every step of this wonderful journey.",
       step1Title: "First Contact",
       step1Desc: "Fill out our form to express your interest",
       step2Title: "Meeting",
@@ -644,7 +644,7 @@ const translations = {
     },
     adoption: {
       title: "Adopción",
-      intro: "Adoptar un Ragdoll de Le Domaine des Licornes significa dar la bienvenida a un compañero excepcional en tu vida. Te acompañamos en cada paso de este maravilloso viaje.",
+      intro: "Adoptar un Ragdoll de Le Domaine des Licornes Seal significa dar la bienvenida a un compañero excepcional en tu vida. Te acompañamos en cada paso de este maravilloso viaje.",
       step1Title: "Primer Contacto",
       step1Desc: "Completa nuestro formulario para expresar tu interés",
       step2Title: "Reunión",
