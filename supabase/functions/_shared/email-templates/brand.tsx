@@ -1,7 +1,7 @@
 /// <reference types="npm:@types/react@18.3.1" />
 
 import * as React from 'npm:react@18.3.1'
-import { Container, Heading, Img, Text } from 'npm:@react-email/components@0.0.22'
+import { Img, Section, Text } from 'npm:@react-email/components@0.0.22'
 
 // Shared brand design for all auth emails — matches the site and the
 // "Conditions de vente" PDF: navy night blue, gold frame, tapestry header.
@@ -10,10 +10,10 @@ export const TAPESTRY_URL =
   'https://sayvcchuqjrdpjluhhvn.supabase.co/storage/v1/object/public/domain-gallery/1763650988576_Dame_Licorne-Mon_seul_d_sir-Zoom.jpg'
 
 export const BrandHeader = ({ title }: { title: string }) => (
-  <Heading style={header}>
+  <Section style={header}>
     <Img src={TAPESTRY_URL} alt="Licorne" width="56" height="56" style={headerImg} />
-    {title}
-  </Heading>
+    <Text style={headerTitle}>{title}</Text>
+  </Section>
 )
 
 export const BrandFooter = () => (
