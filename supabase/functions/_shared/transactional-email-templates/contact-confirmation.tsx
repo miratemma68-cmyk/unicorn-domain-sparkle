@@ -22,7 +22,7 @@ interface Props {
 
 const translations = {
   fr: {
-    subject: 'Confirmation de votre message - Le Domaine des Licornes',
+    subject: 'Confirmation de votre message - Le Domaine des Licornes Seal',
     preview: 'Nous avons bien reçu votre message',
     greeting: 'Bonjour',
     received: 'Nous avons bien reçu votre message et nous vous en remercions.',
@@ -32,11 +32,11 @@ const translations = {
     at: "à l'adresse",
     or: 'ou',
     soonFrom: 'À très bientôt,',
-    team: "L'équipe du Domaine des Licornes",
-    footer: 'Élevage de Ragdolls • Le Domaine des Licornes',
+    team: "L'équipe du Domaine des Licornes Seal",
+    footer: 'Élevage de Ragdolls • Le Domaine des Licornes Seal',
   },
   en: {
-    subject: 'Message confirmation - Le Domaine des Licornes',
+    subject: 'Message confirmation - Le Domaine des Licornes Seal',
     preview: 'We have received your message',
     greeting: 'Hello',
     received: 'We have received your message and thank you for it.',
@@ -46,11 +46,11 @@ const translations = {
     at: 'at',
     or: 'or',
     soonFrom: 'See you soon,',
-    team: 'The Team at Le Domaine des Licornes',
-    footer: 'Ragdoll Breeding • Le Domaine des Licornes',
+    team: 'The Team at Le Domaine des Licornes Seal',
+    footer: 'Ragdoll Breeding • Le Domaine des Licornes Seal',
   },
   es: {
-    subject: 'Confirmación de tu mensaje - Le Domaine des Licornes',
+    subject: 'Confirmación de tu mensaje - Le Domaine des Licornes Seal',
     preview: 'Hemos recibido tu mensaje',
     greeting: 'Hola',
     received: 'Hemos recibido tu mensaje y te lo agradecemos.',
@@ -60,8 +60,8 @@ const translations = {
     at: 'en',
     or: 'o',
     soonFrom: 'Hasta pronto,',
-    team: 'El equipo de Le Domaine des Licornes',
-    footer: 'Criador de Ragdolls • Le Domaine des Licornes',
+    team: 'El equipo de Le Domaine des Licornes Seal',
+    footer: 'Criador de Ragdolls • Le Domaine des Licornes Seal',
   },
 }
 
@@ -90,7 +90,7 @@ const ContactConfirmationEmail = ({
               height="56"
               style={headerImg}
             />
-            Le Domaine des Licornes
+            Le Domaine des Licornes Seal
           </Heading>
           <Container style={content}>
             <Text style={text}>

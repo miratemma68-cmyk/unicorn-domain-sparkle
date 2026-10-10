@@ -196,7 +196,7 @@ export const DomainSection = () => {
               <div className="relative tapestry-oval mx-auto w-full max-w-[170px] md:max-w-[190px] md:mt-10">
                 <img
                   src={laurenceProfile.url}
-                  alt="Laurence, éleveuse du Domaine des Licornes"
+                  alt="Laurence, éleveuse du Domaine des Licornes Seal"
                   className="w-full h-full object-cover"
                 />
               </div>

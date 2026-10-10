@@ -120,7 +120,7 @@ export default function Dashboard() {
               href="/" 
               className="text-xl md:text-2xl font-display text-gold/70 hover:text-gold transition-colors"
             >
-              Domaine des Licornes
+              Le Domaine des Licornes Seal
             </a>
             <span className="text-gold/30">|</span>
             <h1 className="text-xl md:text-2xl font-display text-gold medieval-glow">
