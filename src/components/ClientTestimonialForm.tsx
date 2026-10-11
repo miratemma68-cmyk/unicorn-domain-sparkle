@@ -91,7 +91,7 @@ export function ClientTestimonialForm({ userId }: { userId: string }) {
             </div>
             <div className="px-3 pt-2">
             <Button type="submit" disabled={busy} className="w-full bg-crimson hover:bg-crimson-dark text-ivory border-2 border-gold rounded-full">
-              {busy ? '…' : t('testimonialForm.submit')}
+              {busy ? l.sending : l.send}
             </Button>
             </div>
           </form>
