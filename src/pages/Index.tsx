@@ -10,7 +10,7 @@ import { AdoptionSection } from "@/components/AdoptionSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
-import { jumpToSection } from "@/lib/sectionScroll";
+import { jumpToSectionAndSettle } from "@/lib/sectionScroll";
 
 const Index = () => {
   const location = useLocation();
@@ -22,7 +22,7 @@ const Index = () => {
       const element = document.getElementById(elementId);
       if (element) {
         setTimeout(() => {
-          jumpToSection(elementId);
+          jumpToSectionAndSettle(elementId);
         }, 100);
       }
     }
