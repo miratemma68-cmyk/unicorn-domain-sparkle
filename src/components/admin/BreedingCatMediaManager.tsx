@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -29,6 +29,8 @@ export const BreedingCatMediaManager = () => {
   const [gallery, setGallery] = useState<GalleryItem[]>([]);
   const [uploading, setUploading] = useState(false);
   const [loading, setLoading] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [selectedFileNames, setSelectedFileNames] = useState<string[]>([]);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -86,6 +88,7 @@ export const BreedingCatMediaManager = () => {
     const files = event.target.files;
     if (!files || files.length === 0 || !selectedCatId) return;
 
+    setSelectedFileNames(Array.from(files).map(f => f.name));
     setUploading(true);
 
     for (let i = 0; i < files.length; i++) {
@@ -135,6 +138,8 @@ export const BreedingCatMediaManager = () => {
     }
 
     setUploading(false);
+    setSelectedFileNames([]);
+    if (fileInputRef.current) fileInputRef.current.value = '';
     await loadGallery();
     toast({
       title: "Succès",
@@ -274,16 +279,32 @@ export const BreedingCatMediaManager = () => {
             <Label htmlFor="file-upload" className="text-ivory">
               Uploader des photos ou vidéos
             </Label>
-            <div className="flex items-center gap-2">
-              <Input
-                id="file-upload"
-                type="file"
-                accept="image/*,video/*"
-                multiple
-                onChange={handleFileUpload}
+            <input
+              ref={fileInputRef}
+              id="file-upload"
+              type="file"
+              accept="image/*,video/*"
+              multiple
+              onChange={handleFileUpload}
+              disabled={uploading || !selectedCatId}
+              className="sr-only"
+            />
+            <div className="flex flex-wrap items-center gap-2">
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => fileInputRef.current?.click()}
                 disabled={uploading || !selectedCatId}
-                className="bg-midnight/50 border-gold/30 text-ivory"
-              />
+                className="rounded-full border-gold/50 bg-pearl/95 text-navy hover:bg-pearl hover:border-gold"
+              >
+                {uploading ? <Loader2 className="mr-2 h-4 w-4 animate-spin text-navy" /> : <Upload className="mr-2 h-4 w-4 text-navy" />}
+                Choisir des fichiers
+              </Button>
+              {selectedFileNames.length > 0 && (
+                <span className="text-sm text-ivory/80 break-all min-w-0">
+                  {selectedFileNames.join(', ')}
+                </span>
+              )}
               {uploading && <Loader2 className="h-5 w-5 animate-spin text-gold" />}
             </div>
             <p className="text-xs text-ivory/60 mt-1">
