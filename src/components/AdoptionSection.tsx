@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Heart, MessageCircle, FileText } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { jumpToSection } from "@/lib/sectionScroll";
 
 interface TestimonialMedia {
   id: string;

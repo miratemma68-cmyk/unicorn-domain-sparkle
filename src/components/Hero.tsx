@@ -1,6 +1,7 @@
 import heroFramed from "@/assets/hero-licorne-framed-clean-v2.png.asset.json";
 import { ChevronDown, PawPrint, Mail } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { jumpToSection } from "@/lib/sectionScroll";
 
 
 export const Hero = () => {

@@ -10,6 +10,7 @@ import { AdoptionSection } from "@/components/AdoptionSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
+import { jumpToSection } from "@/lib/sectionScroll";
 
 const Index = () => {
   const location = useLocation();
