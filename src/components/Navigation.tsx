@@ -69,7 +69,7 @@ export const Navigation = () => {
           <div className="flex items-center gap-2 shrink-0">
           <a
             href="#chatons"
-            className="ornate-btn-navy halo-gold inline-flex items-center gap-2.5 rounded-full px-6 py-3 transition-all duration-300 hover:scale-105 hover:brightness-110"
+            className="ornate-btn-navy ornate-btn-royal halo-gold inline-flex items-center gap-2.5 rounded-full px-6 py-3 transition-all duration-300 hover:scale-105 hover:brightness-110"
           >
             <PawPrint className="w-5 h-5 text-gold shrink-0" />
             <span className="font-display text-2xl text-gold pt-0.5 whitespace-pre-line leading-[0.95] text-center">
@@ -110,7 +110,7 @@ export const Navigation = () => {
             <a
               href="#chatons"
               onClick={() => setMobileOpen(false)}
-              className="ornate-btn-navy halo-gold inline-flex items-center gap-2.5 self-start rounded-full px-5 py-3 transition-all duration-300 hover:scale-105 hover:brightness-110"
+              className="ornate-btn-navy ornate-btn-royal halo-gold inline-flex items-center gap-2.5 self-start rounded-full px-5 py-3 transition-all duration-300 hover:scale-105 hover:brightness-110"
             >
               <PawPrint className="w-5 h-5 text-gold shrink-0" />
               <span className="font-display text-xl text-gold pt-0.5 whitespace-pre-line leading-[0.95] text-center">
