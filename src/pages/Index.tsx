@@ -21,7 +21,7 @@ const Index = () => {
       const element = document.getElementById(elementId);
       if (element) {
         setTimeout(() => {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          element.scrollIntoView({ behavior: 'auto', block: 'start' });
         }, 100);
       }
     }

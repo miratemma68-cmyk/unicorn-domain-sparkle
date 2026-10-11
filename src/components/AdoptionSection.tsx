@@ -128,7 +128,7 @@ export const AdoptionSection = () => {
                 href="#contact"
                 onClick={(e) => {
                   e.preventDefault();
-                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'auto', block: 'start' });
                 }}
                 className="ornate-btn-navy group inline-flex max-w-full items-center justify-center gap-2 rounded-full px-6 sm:px-7 py-3 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(218,165,32,0.5)]"
               >

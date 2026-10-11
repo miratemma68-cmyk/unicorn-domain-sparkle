@@ -43,7 +43,7 @@ export const Hero = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center pt-2">
               <button
-                onClick={() => document.getElementById('licornes')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => document.getElementById('licornes')?.scrollIntoView({ behavior: 'auto' })}
                 className="ornate-btn-navy group inline-flex max-w-full items-center justify-center gap-2 rounded-full px-6 sm:px-7 py-3 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_35px_rgba(218,165,32,0.55)]"
               >
                 <PawPrint className="w-5 h-5 text-gold transition-transform duration-300 group-hover:scale-110" />
@@ -53,7 +53,7 @@ export const Hero = () => {
               </button>
 
               <button
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'auto' })}
                 className="ornate-btn-pearl group inline-flex max-w-full items-center justify-center gap-2 rounded-full px-6 sm:px-7 py-3 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_35px_rgba(218,165,32,0.45)]"
               >
                 <Mail className="w-5 h-5 text-midnight/80 transition-transform duration-300 group-hover:scale-110" />
