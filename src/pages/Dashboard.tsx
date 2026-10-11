@@ -184,7 +184,7 @@ export default function Dashboard() {
                 kittens.map((kitten) => (
                   <Card
                     key={kitten.id}
-                    className="tapestry-border bg-card/80 backdrop-blur-sm hover:shadow-lg transition-shadow cursor-pointer"
+                    className="tapestry-border litter-frame bg-card/80 backdrop-blur-sm hover:shadow-lg transition-shadow cursor-pointer"
                     onClick={() => navigate(`/kitten/${kitten.id}`)}
                   >
                     <CardHeader>
