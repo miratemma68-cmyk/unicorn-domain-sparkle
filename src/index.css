@@ -195,6 +195,13 @@ All colors MUST be HSL.
     padding: clamp(3.5rem, 9.5%, 6rem) !important;
   }
 
+  /* The list of submitted testimonials grows with every entry, so it needs more
+     room on all sides to keep the corner ornaments clear of the text */
+  .testimonial-frame.testimonial-list {
+    padding: calc(clamp(3.5rem, 9.5%, 6rem) + 2.5rem) !important;
+  }
+
+
 
   /* Simple double-gold frame for detail pages, aligned with the site's ornate frames */
   .detail-frame {
