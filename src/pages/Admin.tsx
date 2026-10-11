@@ -14,6 +14,7 @@ import { EducationMediaManager } from '@/components/admin/EducationMediaManager'
 import { TestimonialsMediaManager } from '@/components/admin/TestimonialsMediaManager';
 import { ClientKittenManager } from '@/components/admin/ClientKittenManager';
 import { KittenDataManager } from '@/components/admin/KittenDataManager';
+import { ClientTestimonialsManager } from '@/components/admin/ClientTestimonialsManager';
 import { CreateClientAccount } from '@/components/admin/CreateClientAccount';
 
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -114,6 +115,7 @@ export default function Admin() {
           </TabsContent>
 
           <TabsContent value="testimonials" className="space-y-6">
+            <ClientTestimonialsManager />
             <TestimonialsMediaManager />
           </TabsContent>
 
