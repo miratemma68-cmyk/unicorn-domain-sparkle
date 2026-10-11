@@ -190,6 +190,12 @@ All colors MUST be HSL.
     padding: clamp(7rem, 21.5%, 11rem) clamp(6rem, 18.5%, 9.5rem) clamp(9rem, 22%, 12.5rem) clamp(6rem, 18.5%, 9.5rem) !important;
   }
 
+  /* Testimonial cards: extra clearance so fields, labels and text stay inside the ornaments */
+  .testimonial-frame {
+    padding: clamp(3.5rem, 9.5%, 6rem) !important;
+  }
+
+
   /* Simple double-gold frame for detail pages, aligned with the site's ornate frames */
   .detail-frame {
     position: relative;
