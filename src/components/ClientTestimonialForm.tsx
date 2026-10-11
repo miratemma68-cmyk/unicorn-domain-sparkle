@@ -6,13 +6,13 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from 'sonner';
-import { MessageSquareHeart } from 'lucide-react';
+import { MessageSquareHeart, Camera, X } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const L = {
-  fr: { title: 'Mon témoignage', desc: 'Partagez votre expérience. Après validation par l\'éleveuse, il sera publié dans « Nos clients partagent leur expérience ».', name: 'Votre prénom', msg: 'Votre témoignage', photo: 'Une photo de votre chat (facultatif)', send: 'Envoyer mon témoignage', sending: 'Envoi…', ok: 'Merci ! Votre témoignage sera publié après validation.', err: 'Erreur lors de l\'envoi', mine: 'Mes témoignages', pending: 'En attente de validation', approved: 'Publié', rejected: 'Non publié', invalid: 'Prénom requis et témoignage de 10 à 2000 caractères.', big: 'Photo trop lourde (10 Mo max).' },
-  en: { title: 'My testimonial', desc: 'Share your experience. Once approved by the breeder, it will be published in "Our clients share their experience".', name: 'Your first name', msg: 'Your testimonial', photo: 'A photo of your cat (optional)', send: 'Send my testimonial', sending: 'Sending…', ok: 'Thank you! Your testimonial will be published after approval.', err: 'Error while sending', mine: 'My testimonials', pending: 'Awaiting approval', approved: 'Published', rejected: 'Not published', invalid: 'First name required and testimonial of 10 to 2000 characters.', big: 'Photo too large (10 MB max).' },
-  es: { title: 'Mi testimonio', desc: 'Comparte tu experiencia. Tras la validación de la criadora, se publicará en « Nuestros clientes comparten su experiencia ».', name: 'Tu nombre', msg: 'Tu testimonio', photo: 'Una foto de tu gato (opcional)', send: 'Enviar mi testimonio', sending: 'Enviando…', ok: '¡Gracias! Tu testimonio se publicará tras su validación.', err: 'Error al enviar', mine: 'Mis testimonios', pending: 'Pendiente de validación', approved: 'Publicado', rejected: 'No publicado', invalid: 'Nombre obligatorio y testimonio de 10 a 2000 caracteres.', big: 'Foto demasiado pesada (máx. 10 MB).' },
+  fr: { title: 'Mon témoignage', desc: 'Partagez votre expérience. Après validation par l\'éleveuse, il sera publié dans « Nos clients partagent leur expérience ».', name: 'Votre prénom', msg: 'Votre témoignage', photo: 'Une photo de votre chat (facultatif)', photoBtn: 'Choisir une photo', photoChange: 'Changer la photo', removePhoto: 'Retirer', send: 'Envoyer mon témoignage', sending: 'Envoi…', ok: 'Merci ! Votre témoignage sera publié après validation.', err: 'Erreur lors de l\'envoi', mine: 'Mes témoignages', pending: 'En attente de validation', approved: 'Publié', rejected: 'Non publié', invalid: 'Prénom requis et témoignage de 10 à 2000 caractères.', big: 'Photo trop lourde (10 Mo max).' },
+  en: { title: 'My testimonial', desc: 'Share your experience. Once approved by the breeder, it will be published in "Our clients share their experience".', name: 'Your first name', msg: 'Your testimonial', photo: 'A photo of your cat (optional)', photoBtn: 'Choose a photo', photoChange: 'Change photo', removePhoto: 'Remove', send: 'Send my testimonial', sending: 'Sending…', ok: 'Thank you! Your testimonial will be published after approval.', err: 'Error while sending', mine: 'My testimonials', pending: 'Awaiting approval', approved: 'Published', rejected: 'Not published', invalid: 'First name required and testimonial of 10 to 2000 characters.', big: 'Photo too large (10 MB max).' },
+  es: { title: 'Mi testimonio', desc: 'Comparte tu experiencia. Tras la validación de la criadora, se publicará en « Nuestros clientes comparten su experiencia ».', name: 'Tu nombre', msg: 'Tu testimonio', photo: 'Una foto de tu gato (opcional)', photoBtn: 'Elegir una foto', photoChange: 'Cambiar la foto', removePhoto: 'Quitar', send: 'Enviar mi testimonio', sending: 'Enviando…', ok: '¡Gracias! Tu testimonio se publicará tras su validación.', err: 'Error al enviar', mine: 'Mis testimonios', pending: 'Pendiente de validación', approved: 'Publicado', rejected: 'No publicado', invalid: 'Nombre obligatorio y testimonio de 10 a 2000 caracteres.', big: 'Foto demasiado pesada (máx. 10 MB).' },
 };
 
 const schema = z.object({
@@ -87,7 +87,37 @@ export function ClientTestimonialForm({ userId }: { userId: string }) {
             </div>
             <div>
               <label className="text-sm font-medium text-ivory/90">{l.photo}</label>
-              <Input id="testimonial-photo" type="file" accept="image/*" onChange={(e) => setFile(e.target.files?.[0] || null)} className="rounded-full border-gold/30 mt-1" />
+              <div className="mt-1 flex flex-wrap items-center gap-2">
+                <input
+                  id="testimonial-photo"
+                  type="file"
+                  accept="image/*"
+                  onChange={(e) => setFile(e.target.files?.[0] || null)}
+                  className="sr-only"
+                />
+                <Button
+                  type="button"
+                  variant="outline"
+                  onClick={() => document.getElementById('testimonial-photo')?.click()}
+                  className="rounded-full border-gold/50 bg-pearl/95 text-navy hover:bg-pearl hover:border-gold"
+                >
+                  <Camera className="h-4 w-4 mr-2 text-navy" />
+                  {file ? l.photoChange : l.photoBtn}
+                </Button>
+                {file && (
+                  <>
+                    <span className="text-ivory/85 text-sm truncate max-w-[12rem] break-all">{file.name}</span>
+                    <button
+                      type="button"
+                      onClick={() => { setFile(null); const el = document.getElementById('testimonial-photo') as HTMLInputElement | null; if (el) el.value = ''; }}
+                      className="inline-flex items-center text-gold/90 hover:text-gold text-sm"
+                      aria-label={l.removePhoto}
+                    >
+                      <X className="h-4 w-4 mr-1" />{l.removePhoto}
+                    </button>
+                  </>
+                )}
+              </div>
             </div>
             <div className="px-3 pt-2">
             <Button type="submit" disabled={busy} className="w-full bg-crimson hover:bg-crimson-dark text-ivory border-2 border-gold rounded-full">
