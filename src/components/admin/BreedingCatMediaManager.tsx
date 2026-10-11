@@ -279,16 +279,31 @@ export const BreedingCatMediaManager = () => {
             <Label htmlFor="file-upload" className="text-ivory">
               Uploader des photos ou vidéos
             </Label>
-            <div className="flex items-center gap-2">
-              <Input
-                id="file-upload"
-                type="file"
-                accept="image/*,video/*"
-                multiple
-                onChange={handleFileUpload}
+            <input
+              ref={fileInputRef}
+              id="file-upload"
+              type="file"
+              accept="image/*,video/*"
+              multiple
+              onChange={handleFileUpload}
+              disabled={uploading || !selectedCatId}
+              className="sr-only"
+            />
+            <div className="flex flex-wrap items-center gap-2">
+              <Button
+                type="button"
+                onClick={() => fileInputRef.current?.click()}
                 disabled={uploading || !selectedCatId}
-                className="bg-midnight/50 border-gold/30 text-ivory"
-              />
+                className="ornate-btn-pearl"
+              >
+                {uploading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Upload className="mr-2 h-4 w-4" />}
+                Choisir des fichiers
+              </Button>
+              {selectedFileNames.length > 0 && (
+                <span className="text-sm text-ivory/80 break-all min-w-0">
+                  {selectedFileNames.join(', ')}
+                </span>
+              )}
               {uploading && <Loader2 className="h-5 w-5 animate-spin text-gold" />}
             </div>
             <p className="text-xs text-ivory/60 mt-1">
