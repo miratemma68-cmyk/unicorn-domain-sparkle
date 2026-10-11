@@ -75,7 +75,7 @@ export default function Admin() {
 
       <main className="container mx-auto px-4 py-8">
         <Tabs defaultValue="reproducteurs" className="w-full">
-          <TabsList className="mb-6 flex-wrap">
+          <TabsList className="mb-6 flex flex-wrap h-auto gap-1 justify-start">
             <TabsTrigger value="reproducteurs">
               <Cat className="mr-2 h-4 w-4" />
               {t('admin.breedingCats')}
