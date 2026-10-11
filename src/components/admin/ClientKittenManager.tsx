@@ -74,7 +74,8 @@ export const ClientKittenManager = () => {
       if (kittensError) throw kittensError;
       setKittens(kittensData || []);
 
-      // Load existing assignments
+      // Load existing assignments (profiles are merged client-side:
+      // client_kittens references auth.users, not profiles, so no FK join)
       const { data: assignmentsData, error: assignmentsError } = await supabase
         .from("client_kittens")
         .select(`
@@ -83,14 +84,18 @@ export const ClientKittenManager = () => {
           kitten_id,
           adoption_date,
           created_at,
-          profiles!client_kittens_client_id_fkey (id, email, full_name),
           kittens!client_kittens_kitten_id_fkey (id, name)
         `)
         .order("created_at", { ascending: false });
 
       if (assignmentsError) throw assignmentsError;
-      console.log("Assignments loaded:", assignmentsData);
-      setAssignments(assignmentsData as unknown as ClientKitten[] || []);
+
+      const profileById = new Map((clientsData || []).map((p) => [p.id, p]));
+      const merged = (assignmentsData || []).map((a: any) => ({
+        ...a,
+        profiles: profileById.get(a.client_id) || { id: a.client_id, email: "", full_name: null },
+      }));
+      setAssignments(merged as ClientKitten[]);
     } catch (error) {
       console.error("Error loading data:", error);
       toast.error("Erreur lors du chargement des données");
