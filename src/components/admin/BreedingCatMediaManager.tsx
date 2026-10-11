@@ -138,6 +138,8 @@ export const BreedingCatMediaManager = () => {
     }
 
     setUploading(false);
+    setSelectedFileNames([]);
+    if (fileInputRef.current) fileInputRef.current.value = '';
     await loadGallery();
     toast({
       title: "Succès",
