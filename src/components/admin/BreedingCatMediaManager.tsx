@@ -246,7 +246,7 @@ export const BreedingCatMediaManager = () => {
 
   return (
     <div className="space-y-6">
-      <Card className="tapestry-border bg-card/80 backdrop-blur-sm">
+      <Card className="bg-card/50 backdrop-blur-sm border-gold/30">
         <CardHeader>
           <CardTitle className="admin-title text-4xl">Gestion des médias des reproducteurs</CardTitle>
           <CardDescription className="text-ivory/80">
@@ -294,7 +294,7 @@ export const BreedingCatMediaManager = () => {
       </Card>
 
       {selectedCat && (
-        <Card className="tapestry-border bg-card/80 backdrop-blur-sm">
+        <Card className="bg-card/50 backdrop-blur-sm border-gold/30">
           <CardHeader>
             <CardTitle className="admin-title text-4xl">
               Galerie de {selectedCat.name}

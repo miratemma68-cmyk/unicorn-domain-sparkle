@@ -194,7 +194,7 @@ export function MediaGallery() {
 
   return (
     <>
-      <Card className="tapestry-border bg-card/80 backdrop-blur-sm">
+      <Card className="bg-card/50 backdrop-blur-sm border-gold/30">
         <CardHeader>
           <CardTitle className="admin-title text-4xl flex items-center">
             <ImageIcon className="mr-2 h-5 w-5" />
