@@ -190,6 +190,19 @@ All colors MUST be HSL.
     padding: clamp(7rem, 21.5%, 11rem) clamp(6rem, 18.5%, 9.5rem) clamp(9rem, 22%, 12.5rem) clamp(6rem, 18.5%, 9.5rem) !important;
   }
 
+  /* Testimonial cards: extra clearance so fields, labels and text stay inside the ornaments */
+  .testimonial-frame {
+    padding: clamp(3.5rem, 9.5%, 6rem) !important;
+  }
+
+  /* The list of submitted testimonials grows with every entry, so it needs more
+     room on all sides to keep the corner ornaments clear of the text */
+  .testimonial-frame.testimonial-list {
+    padding: calc(clamp(3.5rem, 9.5%, 6rem) + 2.5rem) !important;
+  }
+
+
+
   /* Simple double-gold frame for detail pages, aligned with the site's ornate frames */
   .detail-frame {
     position: relative;
@@ -363,6 +376,17 @@ All colors MUST be HSL.
     .contact-frame {
       padding: 6.5rem 4.25rem 8rem !important;
     }
+
+    .testimonial-frame {
+      padding: 3.25rem 3.25rem 3.75rem !important;
+    }
+
+    .testimonial-frame.testimonial-list {
+      padding: 4rem 3.75rem 4.5rem !important;
+    }
+
+
+
 
     .breeding-cat-frame {
       padding: 4rem 3.5rem 6rem !important;

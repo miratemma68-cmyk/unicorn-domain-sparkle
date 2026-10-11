@@ -70,7 +70,7 @@ export function ClientTestimonialForm({ userId }: { userId: string }) {
 
   return (
     <div className="max-w-2xl mx-auto space-y-6">
-      <Card className="tapestry-border litter-frame bg-card/80 backdrop-blur-sm">
+      <Card className="tapestry-border litter-frame testimonial-frame bg-card/80 backdrop-blur-sm">
         <CardHeader>
           <CardTitle className="text-gold font-serif flex items-center"><MessageSquareHeart className="mr-2 h-5 w-5" />{l.title}</CardTitle>
           <CardDescription className="text-ivory/80">{l.desc}</CardDescription>
@@ -97,7 +97,7 @@ export function ClientTestimonialForm({ userId }: { userId: string }) {
       </Card>
 
       {mine.length > 0 && (
-        <Card className="tapestry-border litter-frame bg-card/80 backdrop-blur-sm">
+        <Card className="tapestry-border litter-frame testimonial-frame testimonial-list bg-card/80 backdrop-blur-sm">
           <CardHeader><CardTitle className="text-gold font-serif">{l.mine}</CardTitle></CardHeader>
           <CardContent className="space-y-4">
             {mine.map((r) => (
