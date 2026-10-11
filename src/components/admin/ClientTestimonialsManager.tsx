@@ -36,7 +36,7 @@ export function ClientTestimonialsManager() {
 
   return (
     <div className="p-6 bg-card/80 backdrop-blur-sm rounded-[3rem] border-2 border-gold/30">
-      <h3 className="text-2xl font-display text-gold mb-6">Témoignages des adoptants</h3>
+      <h3 className="text-4xl mb-6">Témoignages des adoptants</h3>
       {rows.length === 0 ? (
         <p className="text-ivory/70">Aucun témoignage reçu pour le moment.</p>
       ) : (

@@ -105,7 +105,7 @@ export const BreedingCatTranslationManager = () => {
   return (
     <Card className="bg-card/50 backdrop-blur-sm border-gold/30">
       <CardHeader>
-        <CardTitle className="flex items-center gap-2 text-gold">
+        <CardTitle className="admin-title text-4xl flex items-center gap-2">
           <Languages className="h-5 w-5" />
           Traductions des Reproducteurs
         </CardTitle>
