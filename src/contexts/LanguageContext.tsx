@@ -229,6 +229,8 @@ const translations = {
     admin: {
       title: "Administration",
       back: "Retour",
+      backToSite: "Retour au site",
+      signOut: "Déconnexion",
       breedingCats: "Reproducteurs",
       translations: "Traductions",
       kittenData: "Données Chatons",
@@ -398,6 +400,8 @@ const translations = {
     admin: {
       title: "Administration",
       back: "Back",
+      backToSite: "Back to site",
+      signOut: "Sign out",
       breedingCats: "Breeding Cats",
       translations: "Translations",
       kittenData: "Kittens Data",
@@ -615,6 +619,8 @@ const translations = {
     admin: {
       title: "Administración",
       back: "Volver",
+      backToSite: "Volver al sitio",
+      signOut: "Cerrar sesión",
       breedingCats: "Reproductores",
       translations: "Traducciones",
       kittenData: "Datos Gatitos",

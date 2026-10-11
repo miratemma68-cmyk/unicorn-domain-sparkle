@@ -27,10 +27,14 @@ export default function Dashboard() {
   const [loadingKittens, setLoadingKittens] = useState(true);
 
   useEffect(() => {
-    if (!isLoading && !user) {
+    if (isLoading) return;
+    if (!user) {
       navigate('/auth');
+    } else if (isAdmin) {
+      // Admins go straight to the administration panel
+      navigate('/admin', { replace: true });
     }
-  }, [user, isLoading, navigate]);
+  }, [user, isAdmin, isLoading, navigate]);
 
   useEffect(() => {
     if (user) {
@@ -105,6 +109,14 @@ export default function Dashboard() {
   };
 
   if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-midnight via-forest to-midnight">
+        <p className="text-gold text-xl font-serif">{t('dashboard.loading')}</p>
+      </div>
+    );
+  }
+
+  if (isAdmin) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-midnight via-forest to-midnight">
         <p className="text-gold text-xl font-serif">{t('dashboard.loading')}</p>

@@ -4,7 +4,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { ArrowLeft, Upload, Image, Cat, Languages } from 'lucide-react';
+import { ArrowLeft, LogOut, Upload, Image, Cat, Languages } from 'lucide-react';
 import { MediaUpload } from '@/components/admin/MediaUpload';
 import { MediaGallery } from '@/components/admin/MediaGallery';
 import { BreedingCatMediaManager } from '@/components/admin/BreedingCatMediaManager';
@@ -18,10 +18,11 @@ import { ClientTestimonialsManager } from '@/components/admin/ClientTestimonials
 import { CreateClientAccount } from '@/components/admin/CreateClientAccount';
 
 import { useLanguage } from '@/contexts/LanguageContext';
+import { toast } from 'sonner';
 
 export default function Admin() {
   const navigate = useNavigate();
-  const { user, isLoading, isAdmin } = useAuth();
+  const { user, isLoading, isAdmin, signOut } = useAuth();
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -29,6 +30,12 @@ export default function Admin() {
       navigate('/dashboard');
     }
   }, [user, isAdmin, isLoading, navigate]);
+
+  const handleSignOut = async () => {
+    await signOut();
+    toast.success(t('dashboard.signOutSuccess'));
+    navigate('/');
+  };
 
   if (isLoading) {
     return (
@@ -45,14 +52,24 @@ export default function Admin() {
           <h1 className="text-2xl md:text-3xl font-display text-gold medieval-glow">
             {t('admin.title')}
           </h1>
-          <Button
-            onClick={() => navigate('/dashboard')}
-            variant="outline"
-            className="border-gold text-gold hover:bg-gold/10"
-          >
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            {t('admin.back')}
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button
+              onClick={() => navigate('/')}
+              variant="outline"
+              className="border-gold text-gold hover:bg-gold/10"
+            >
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              {t('admin.backToSite')}
+            </Button>
+            <Button
+              onClick={handleSignOut}
+              variant="outline"
+              className="border-gold text-gold hover:bg-gold/10"
+            >
+              <LogOut className="mr-2 h-4 w-4" />
+              {t('admin.signOut')}
+            </Button>
+          </div>
         </div>
       </header>
 
