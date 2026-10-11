@@ -125,7 +125,7 @@ export const Hero = () => {
         <button
           type="button"
           aria-label="Défiler vers le bas"
-          onClick={() => document.getElementById('licornes')?.scrollIntoView({ behavior: 'smooth' })}
+          onClick={() => document.getElementById('domaine')?.scrollIntoView({ behavior: 'smooth' })}
           className="block p-2 cursor-pointer"
         >
           <ChevronDown className="w-8 h-8 text-gold" />
