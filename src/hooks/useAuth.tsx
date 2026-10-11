@@ -102,7 +102,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       value={{
         user,
         session,
-        isLoading,
+        isLoading: isLoading || isRoleLoading,
         isAdmin,
         signIn,
         signUp,
