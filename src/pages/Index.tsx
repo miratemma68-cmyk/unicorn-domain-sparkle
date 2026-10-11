@@ -21,7 +21,7 @@ const Index = () => {
       const element = document.getElementById(elementId);
       if (element) {
         setTimeout(() => {
-          element.scrollIntoView({ behavior: 'auto', block: 'start' });
+          jumpToSection(elementId);
         }, 100);
       }
     }
