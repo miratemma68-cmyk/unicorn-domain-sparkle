@@ -18,6 +18,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [session, setSession] = useState<Session | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [isRoleLoading, setIsRoleLoading] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
@@ -26,25 +27,30 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       (event, session) => {
         setSession(session);
         setUser(session?.user ?? null);
-        
+
         // Check admin role when session changes
         if (session?.user) {
-          setTimeout(() => {
-            checkAdminRole(session.user.id);
+          setIsRoleLoading(true);
+          setTimeout(async () => {
+            await checkAdminRole(session.user.id);
+            setIsRoleLoading(false);
           }, 0);
         } else {
           setIsAdmin(false);
+          setIsRoleLoading(false);
         }
       }
     );
 
     // Check for existing session
-    supabase.auth.getSession().then(({ data: { session } }) => {
+    supabase.auth.getSession().then(async ({ data: { session } }) => {
       setSession(session);
       setUser(session?.user ?? null);
-      
+
       if (session?.user) {
-        checkAdminRole(session.user.id);
+        setIsRoleLoading(true);
+        await checkAdminRole(session.user.id);
+        setIsRoleLoading(false);
       }
       setIsLoading(false);
     });
