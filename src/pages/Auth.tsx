@@ -94,11 +94,6 @@ export default function Auth() {
         </CardHeader>
         <CardContent>
           <Tabs defaultValue="login" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 mb-6">
-              <TabsTrigger value="login">Connexion</TabsTrigger>
-              <TabsTrigger value="signup">Inscription</TabsTrigger>
-            </TabsList>
-
             <TabsContent value="login">
               <form onSubmit={handleLogin} className="space-y-4">
                 <div>
@@ -143,81 +138,9 @@ export default function Auth() {
               </form>
             </TabsContent>
 
-            <TabsContent value="signup">
-              <form onSubmit={handleSignup} className="space-y-4">
-                <div>
-                  <Label htmlFor="signup-name" className="text-gold font-serif">
-                    Nom complet
-                  </Label>
-                  <Input
-                    id="signup-name"
-                    type="text"
-                    required
-                    value={signupData.fullName}
-                    onChange={(e) =>
-                      setSignupData({ ...signupData, fullName: e.target.value })
-                    }
-                    className="bg-input border-gold/30 text-foreground focus:border-gold mt-1"
-                  />
-                </div>
-
-                <div>
-                  <Label htmlFor="signup-email" className="text-gold font-serif">
-                    Email
-                  </Label>
-                  <Input
-                    id="signup-email"
-                    type="email"
-                    required
-                    value={signupData.email}
-                    onChange={(e) =>
-                      setSignupData({ ...signupData, email: e.target.value })
-                    }
-                    className="bg-input border-gold/30 text-foreground focus:border-gold mt-1"
-                  />
-                </div>
-
-                <div>
-                  <Label htmlFor="signup-password" className="text-gold font-serif">
-                    Mot de passe
-                  </Label>
-                  <Input
-                    id="signup-password"
-                    type="password"
-                    required
-                    value={signupData.password}
-                    onChange={(e) =>
-                      setSignupData({ ...signupData, password: e.target.value })
-                    }
-                    className="bg-input border-gold/30 text-foreground focus:border-gold mt-1"
-                  />
-                </div>
-
-                <div>
-                  <Label htmlFor="signup-confirm" className="text-gold font-serif">
-                    Confirmer le mot de passe
-                  </Label>
-                  <Input
-                    id="signup-confirm"
-                    type="password"
-                    required
-                    value={signupData.confirmPassword}
-                    onChange={(e) =>
-                      setSignupData({ ...signupData, confirmPassword: e.target.value })
-                    }
-                    className="bg-input border-gold/30 text-foreground focus:border-gold mt-1"
-                  />
-                </div>
-
-                <Button
-                  type="submit"
-                  disabled={isLoading}
-                  className="w-full bg-crimson hover:bg-crimson-dark text-ivory border-2 border-gold"
-                >
-                  {isLoading ? "Création..." : "Créer un compte"}
-                </Button>
-              </form>
-            </TabsContent>
+            <p className="mt-4 text-center text-sm text-ivory/70">
+              L'accès est réservé aux adoptants : vos identifiants vous sont remis par l'éleveuse lors de l'adoption.
+            </p>
           </Tabs>
 
           <div className="mt-6 text-center">
