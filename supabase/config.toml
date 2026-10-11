@@ -5,6 +5,8 @@ project_id = "sayvcchuqjrdpjluhhvn"
     verify_jwt = false
   [functions.send-contact-email]
     verify_jwt = false
+  [functions.testimonial-notification]
+    verify_jwt = true
   [functions.send-newsletter]
     verify_jwt = true
   [functions.preview-transactional-email]
