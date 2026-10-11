@@ -1,6 +1,15 @@
 import { useState, useEffect } from "react";
 import { User, Menu, X } from "lucide-react";
-...
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "@/hooks/useAuth";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import boutonChatons from "@/assets/bouton-chatons.png";
+
+export const Navigation = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const navigate = useNavigate();
   const { user } = useAuth();
   const { t } = useLanguage();
 
