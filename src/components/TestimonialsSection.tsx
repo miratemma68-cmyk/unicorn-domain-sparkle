@@ -15,9 +15,13 @@ export const TestimonialsSection = () => {
   const { t, language } = useLanguage();
   const [media, setMedia] = useState<TestimonialMedia[]>([]);
   const [loading, setLoading] = useState(true);
+  const [quotes, setQuotes] = useState<{ id: string; author_name: string; message: string; photo_url: string | null }[]>([]);
 
   useEffect(() => {
     loadMedia();
+    supabase.from('client_testimonials').select('id, author_name, message, photo_url')
+      .eq('status', 'approved').order('created_at', { ascending: false })
+      .then(({ data }) => setQuotes(data || []));
   }, []);
 
   const loadMedia = async () => {
@@ -46,11 +50,25 @@ export const TestimonialsSection = () => {
     <section id="temoignages" className="py-20 px-4 relative">
 
       <div className="container mx-auto max-w-6xl relative z-10">
-        <div className="tapestry-border litter-frame faq-frame bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12 max-w-4xl mx-auto aspect-[4/3] flex flex-col items-center justify-center">
+        <div className="tapestry-border litter-frame faq-frame bg-card/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-12 max-w-4xl mx-auto min-h-[28rem] flex flex-col items-center justify-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-gold medieval-glow text-center mb-8 break-words">
             {t('adoption.clientTestimonials')}
           </h2>
 
+
+          {quotes.length > 0 && (
+            <div className="grid gap-4 md:grid-cols-2 w-full mb-8">
+              {quotes.map((q) => (
+                <figure key={q.id} className="rounded-[1.5rem] border-2 border-gold/20 bg-midnight/60 p-5 flex gap-4">
+                  {q.photo_url && <img src={q.photo_url} alt={q.author_name} loading="lazy" className="w-20 h-20 rounded-full object-cover border-2 border-gold/40 shrink-0" />}
+                  <div className="min-w-0">
+                    <blockquote className="text-ivory/90 italic text-sm whitespace-pre-line break-words">« {q.message} »</blockquote>
+                    <figcaption className="text-gold font-display mt-2">— {q.author_name}</figcaption>
+                  </div>
+                </figure>
+              ))}
+            </div>
+          )}
 
           {loading ? null : media.length > 0 && (
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">

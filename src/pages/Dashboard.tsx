@@ -5,7 +5,8 @@ import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { LogOut, User, Cat } from 'lucide-react';
+import { LogOut, User, Cat, MessageSquareHeart } from 'lucide-react';
+import { ClientTestimonialForm } from '@/components/ClientTestimonialForm';
 import { toast } from 'sonner';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -21,7 +22,7 @@ interface Kitten {
 export default function Dashboard() {
   const navigate = useNavigate();
   const { user, isLoading, isAdmin, signOut } = useAuth();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [kittens, setKittens] = useState<Kitten[]>([]);
   const [loadingKittens, setLoadingKittens] = useState(true);
 
@@ -160,7 +161,19 @@ export default function Dashboard() {
               <User className="mr-2 h-4 w-4" />
               {t('dashboard.myProfile')}
             </TabsTrigger>
+            {!isAdmin && (
+              <TabsTrigger value="testimonial">
+                <MessageSquareHeart className="mr-2 h-4 w-4" />
+                {({ fr: 'Témoigner', en: 'Testimonial', es: 'Testimonio' } as Record<string,string>)[language] || 'Témoigner'}
+              </TabsTrigger>
+            )}
           </TabsList>
+
+          {!isAdmin && user && (
+            <TabsContent value="testimonial">
+              <ClientTestimonialForm userId={user.id} />
+            </TabsContent>
+          )}
 
           <TabsContent value="kittens">
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

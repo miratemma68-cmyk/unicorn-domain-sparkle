@@ -147,6 +147,39 @@ export type Database = {
           },
         ]
       }
+      client_testimonials: {
+        Row: {
+          author_name: string
+          client_id: string
+          created_at: string
+          id: string
+          message: string
+          photo_path: string | null
+          photo_url: string | null
+          status: string
+        }
+        Insert: {
+          author_name: string
+          client_id: string
+          created_at?: string
+          id?: string
+          message: string
+          photo_path?: string | null
+          photo_url?: string | null
+          status?: string
+        }
+        Update: {
+          author_name?: string
+          client_id?: string
+          created_at?: string
+          id?: string
+          message?: string
+          photo_path?: string | null
+          photo_url?: string | null
+          status?: string
+        }
+        Relationships: []
+      }
       contact_inquiries: {
         Row: {
           country: string | null
