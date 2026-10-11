@@ -54,10 +54,15 @@ export function ClientTestimonialForm({ userId }: { userId: string }) {
         if (error) throw error;
         photo_url = supabase.storage.from('testimonials-media').getPublicUrl(photo_path).data.publicUrl;
       }
-      const { error } = await supabase.from('client_testimonials').insert({
+      const { data: inserted, error } = await supabase.from('client_testimonials').insert({
         client_id: userId, author_name: parsed.data.author_name, message: parsed.data.message, photo_url, photo_path,
-      });
+      }).select('id').single();
       if (error) throw error;
+      // Notify the breeder by email (best-effort; never blocks the submission)
+      if (inserted?.id) {
+        supabase.functions.invoke('testimonial-notification', { body: { testimonial_id: inserted.id } })
+          .catch((e) => console.error('testimonial-notification failed:', e));
+      }
       toast.success(l.ok);
       setName(''); setMessage(''); setFile(null);
       (document.getElementById('testimonial-photo') as HTMLInputElement | null)?.value && ((document.getElementById('testimonial-photo') as HTMLInputElement).value = '');
