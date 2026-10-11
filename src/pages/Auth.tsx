@@ -83,7 +83,7 @@ export default function Auth() {
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4 py-12 bg-gradient-to-br from-midnight via-forest to-midnight">
-      <Card className="w-full max-w-md tapestry-border bg-card/90 backdrop-blur-sm">
+      <Card className="w-full max-w-md tapestry-border litter-frame bg-card/90 backdrop-blur-sm">
         <CardHeader className="text-center">
           <CardTitle className="text-3xl font-serif text-gold medieval-glow">
             Espace Client
