@@ -89,9 +89,11 @@ export function ClientTestimonialForm({ userId }: { userId: string }) {
               <label className="text-sm font-medium text-ivory/90">{l.photo}</label>
               <Input id="testimonial-photo" type="file" accept="image/*" onChange={(e) => setFile(e.target.files?.[0] || null)} className="rounded-full border-gold/30 mt-1" />
             </div>
+            <div className="px-3 pt-2">
             <Button type="submit" disabled={busy} className="w-full bg-crimson hover:bg-crimson-dark text-ivory border-2 border-gold rounded-full">
-              {busy ? l.sending : l.send}
+              {busy ? '…' : t('testimonialForm.submit')}
             </Button>
+            </div>
           </form>
         </CardContent>
       </Card>
