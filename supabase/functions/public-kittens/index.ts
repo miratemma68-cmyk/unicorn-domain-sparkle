@@ -168,9 +168,11 @@ serve(async (req: Request): Promise<Response> => {
 
     const assignedIds = new Set((assignments || []).map((a) => a.kitten_id as string));
 
-    // Keep only kittens matching the requested section
+    // Keep only kittens matching the requested section.
+    // Past-litter kittens stay visible even once adopted; only the
+    // "available" section hides kittens assigned to a client.
     const availableKittens: PublicKitten[] = (kittens || [])
-      .filter((kitten) => !assignedIds.has(kitten.id))
+      .filter((kitten) => (wantPastLitter ? true : !assignedIds.has(kitten.id)))
       .filter((kitten) => (wantPastLitter ? (kitten as any).is_past_litter : !(kitten as any).is_past_litter));
 
     console.log('public-kittens: available kittens:', availableKittens);
