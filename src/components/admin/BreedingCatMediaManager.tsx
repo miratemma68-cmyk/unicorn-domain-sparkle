@@ -29,6 +29,8 @@ export const BreedingCatMediaManager = () => {
   const [gallery, setGallery] = useState<GalleryItem[]>([]);
   const [uploading, setUploading] = useState(false);
   const [loading, setLoading] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [selectedFileNames, setSelectedFileNames] = useState<string[]>([]);
   const { toast } = useToast();
 
   useEffect(() => {
