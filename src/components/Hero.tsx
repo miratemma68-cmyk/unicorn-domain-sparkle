@@ -122,7 +122,14 @@ export const Hero = () => {
       
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <ChevronDown className="w-8 h-8 text-gold" />
+        <button
+          type="button"
+          aria-label="Défiler vers le bas"
+          onClick={() => document.getElementById('licornes')?.scrollIntoView({ behavior: 'smooth' })}
+          className="block p-2 cursor-pointer"
+        >
+          <ChevronDown className="w-8 h-8 text-gold" />
+        </button>
       </div>
     </section>
   );
