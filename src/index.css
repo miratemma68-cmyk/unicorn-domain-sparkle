@@ -192,7 +192,7 @@ All colors MUST be HSL.
 
   /* Testimonial cards: extra clearance so fields, labels and text stay inside the ornaments */
   .testimonial-frame {
-    padding: clamp(3.5rem, 9.5%, 6rem) !important;
+    padding: clamp(4.25rem, 11%, 6.75rem) clamp(4rem, 10.5%, 6.25rem) clamp(5rem, 13%, 7.5rem) clamp(4rem, 10.5%, 6.25rem) !important;
   }
 
   /* The list of submitted testimonials grows with every entry, so it needs more
@@ -378,7 +378,7 @@ All colors MUST be HSL.
     }
 
     .testimonial-frame {
-      padding: 3.25rem 3.25rem 3.75rem !important;
+      padding: 3.75rem 3.5rem 4.75rem !important;
     }
 
     .testimonial-frame.testimonial-list {
