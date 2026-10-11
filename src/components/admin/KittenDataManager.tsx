@@ -380,7 +380,7 @@ export function KittenDataManager() {
         <TabsContent value="info" className="space-y-6 mt-6">
           <Card>
             <CardHeader>
-              <CardTitle>{editingId ? 'Modifier un chaton' : 'Ajouter un nouveau chaton'}</CardTitle>
+              <CardTitle className="text-[1.875rem]">{editingId ? 'Modifier un chaton' : 'Ajouter un nouveau chaton'}</CardTitle>
               <CardDescription>
                 {editingId ? 'Modifiez les informations du chaton' : 'Remplissez les informations du chaton (seul le nom est obligatoire)'}
               </CardDescription>
@@ -497,7 +497,7 @@ export function KittenDataManager() {
 
           <Card>
             <CardHeader>
-              <CardTitle>Chatons enregistrés ({kittens.length})</CardTitle>
+              <CardTitle className="text-[1.875rem]">Chatons enregistrés ({kittens.length})</CardTitle>
               <CardDescription>Liste de tous les chatons dans la base de données</CardDescription>
             </CardHeader>
             <CardContent>
