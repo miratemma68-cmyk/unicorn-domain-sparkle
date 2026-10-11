@@ -167,6 +167,29 @@ All colors MUST be HSL.
     border-radius: 0 !important;
   }
 
+  /* Administration: clean frames (no unicorn), calligraphic titles, content kept inside the gold */
+  .admin-area .tapestry-border {
+    background-image: url('./assets/frame/frame-master-sm-clean.png');
+    padding: clamp(3.5rem, 8%, 5.5rem) clamp(3.25rem, 7.5%, 5rem) clamp(4rem, 9%, 6rem) !important;
+  }
+  .admin-area .tapestry-border > * { padding-left: 0; padding-right: 0; }
+  .admin-area h1, .admin-area h2, .admin-area h3,
+  .admin-area .admin-title {
+    font-family: 'Cormorant', serif;
+    font-style: italic;
+    font-weight: 600;
+    color: hsl(var(--gold));
+    letter-spacing: 0.01em;
+    overflow-wrap: anywhere;
+  }
+  .admin-area * { min-width: 0; }
+  .admin-area p, .admin-area label, .admin-area span { overflow-wrap: anywhere; }
+  @media (max-width: 767px) {
+    .admin-area .tapestry-border {
+      padding: 3.25rem 2.25rem 3.75rem !important;
+    }
+  }
+
   .litter-frame {
     background-image: url('./assets/frame/frame-master-sm-clean.png');
   }

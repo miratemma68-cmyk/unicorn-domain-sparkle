@@ -141,7 +141,7 @@ export function MediaUpload() {
   return (
     <Card className="tapestry-border bg-card/80 backdrop-blur-sm">
       <CardHeader>
-        <CardTitle className="text-gold font-serif flex items-center">
+        <CardTitle className="admin-title text-3xl flex items-center">
           <Upload className="mr-2 h-5 w-5" />
           Uploader des médias
         </CardTitle>

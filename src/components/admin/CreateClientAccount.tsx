@@ -24,7 +24,7 @@ export function CreateClientAccount() {
 
   return (
     <Card className="p-6 bg-card/80 backdrop-blur-sm rounded-[3rem] border-2 border-gold/30">
-      <h3 className="text-2xl font-display text-gold mb-6">Créer un compte adoptant</h3>
+      <h3 className="text-3xl mb-6">Créer un compte adoptant</h3>
 
       <p className="text-ivory/60 italic -mt-4 mb-6">
         L'inscription publique est fermée : seuls les adoptants pour qui vous créez un compte peuvent se connecter.
