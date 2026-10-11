@@ -10,7 +10,7 @@ export const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const navigate = useNavigate();
-  const { user } = useAuth();
+  const { user, isAdmin } = useAuth();
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -35,7 +35,7 @@ export const Navigation = () => {
   const authButtons = (
     <>
       <button
-        onClick={() => navigate(user ? '/dashboard' : '/auth')}
+        onClick={() => navigate(user ? (isAdmin ? '/admin' : '/dashboard') : '/auth')}
         className="ornate-btn-navy inline-flex items-center gap-2.5 rounded-full px-6 py-3 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(218,165,32,0.5)]"
       >
         <User className="w-5 h-5 text-gold" />
