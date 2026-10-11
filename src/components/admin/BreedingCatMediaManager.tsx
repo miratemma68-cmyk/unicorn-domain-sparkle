@@ -88,6 +88,7 @@ export const BreedingCatMediaManager = () => {
     const files = event.target.files;
     if (!files || files.length === 0 || !selectedCatId) return;
 
+    setSelectedFileNames(Array.from(files).map(f => f.name));
     setUploading(true);
 
     for (let i = 0; i < files.length; i++) {
