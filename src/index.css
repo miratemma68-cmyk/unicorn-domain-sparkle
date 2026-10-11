@@ -323,6 +323,39 @@ All colors MUST be HSL.
     text-shadow: 0 0 20px hsl(var(--gold) / 0.5);
   }
 
+  /* Halo doré pulsant autour d'un bouton : même nu que le liseré des cadres. */
+  .halo-gold {
+    animation: halo-gold-pulse 3.6s ease-in-out infinite;
+  }
+
+  @keyframes halo-gold-pulse {
+    0%,
+    100% {
+      box-shadow:
+        0 0 14px hsl(var(--gold) / 0.45),
+        0 0 34px hsl(var(--gold) / 0.3),
+        0 0 68px hsl(var(--gold) / 0.18),
+        inset 0 2px 12px hsl(220 80% 3% / 0.7);
+    }
+    50% {
+      box-shadow:
+        0 0 20px hsl(var(--gold) / 0.6),
+        0 0 46px hsl(var(--gold) / 0.42),
+        0 0 90px hsl(var(--gold) / 0.26),
+        inset 0 2px 12px hsl(220 80% 3% / 0.7);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .halo-gold {
+      animation: none;
+      box-shadow:
+        0 0 16px hsl(var(--gold) / 0.5),
+        0 0 40px hsl(var(--gold) / 0.32),
+        inset 0 2px 12px hsl(220 80% 3% / 0.7);
+    }
+  }
+
   /* Ornate pill buttons inspired by the gold filigree banners:
      navy version (dark action) and pearl version (light secondary). */
   .ornate-btn-navy,
