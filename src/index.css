@@ -198,7 +198,7 @@ All colors MUST be HSL.
   /* The list of submitted testimonials grows with every entry, so it needs more
      room on all sides to keep the corner ornaments clear of the text */
   .testimonial-frame.testimonial-list {
-    padding: calc(clamp(3.5rem, 9.5%, 6rem) + 2.5rem) !important;
+    padding: clamp(4.25rem, 11%, 6.75rem) clamp(4rem, 10.5%, 6.25rem) clamp(5rem, 13%, 7.5rem) clamp(4rem, 10.5%, 6.25rem) !important;
   }
 
 
