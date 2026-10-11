@@ -160,7 +160,7 @@ export const ClientKittenManager = () => {
   return (
     <div className="space-y-6">
       <Card className="p-6 bg-card/80 backdrop-blur-sm rounded-[3rem] border-2 border-gold/30">
-        <h3 className="text-3xl mb-6">
+        <h3 className="text-4xl mb-6">
           Nouvelle Association Client-Chaton
         </h3>
 
@@ -220,7 +220,7 @@ export const ClientKittenManager = () => {
       </Card>
 
       <Card className="p-6 bg-card/80 backdrop-blur-sm rounded-[3rem] border-2 border-gold/30">
-        <h3 className="text-3xl mb-6">
+        <h3 className="text-4xl mb-6">
           Associations Existantes
         </h3>
 

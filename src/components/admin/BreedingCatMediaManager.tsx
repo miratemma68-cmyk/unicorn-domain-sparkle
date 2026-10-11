@@ -248,7 +248,7 @@ export const BreedingCatMediaManager = () => {
     <div className="space-y-6">
       <Card className="tapestry-border bg-card/80 backdrop-blur-sm">
         <CardHeader>
-          <CardTitle className="admin-title text-3xl">Gestion des médias des reproducteurs</CardTitle>
+          <CardTitle className="admin-title text-4xl">Gestion des médias des reproducteurs</CardTitle>
           <CardDescription className="text-ivory/80">
             Uploader et gérer les photos et vidéos d'Aloha et Utah
           </CardDescription>
@@ -296,7 +296,7 @@ export const BreedingCatMediaManager = () => {
       {selectedCat && (
         <Card className="tapestry-border bg-card/80 backdrop-blur-sm">
           <CardHeader>
-            <CardTitle className="admin-title text-3xl">
+            <CardTitle className="admin-title text-4xl">
               Galerie de {selectedCat.name}
             </CardTitle>
             <CardDescription className="text-ivory/80">
