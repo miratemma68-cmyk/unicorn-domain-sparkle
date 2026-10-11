@@ -70,20 +70,10 @@ export const Navigation = () => {
           <div className="flex items-center gap-2 shrink-0">
           <a
             href="#chatons"
-            className="relative inline-block shrink-0 transition-transform duration-300 hover:scale-105"
+            className="ornate-btn-navy halo-gold inline-flex items-center gap-2.5 rounded-full px-6 py-3 transition-all duration-300 hover:scale-105 hover:brightness-110"
           >
-            <img
-              src={boutonChatons}
-              alt=""
-              width={1088}
-              height={608}
-              loading="lazy"
-              className="w-52 h-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
-            />
-            <span
-              className="absolute inset-y-0 left-0 flex items-center justify-center pl-16 whitespace-pre-line font-display text-2xl text-gold leading-[0.9] text-center"
-              style={{ textShadow: "0 1px 6px rgba(10, 20, 60, 0.9)" }}
-            >
+            <PawPrint className="w-5 h-5 text-gold shrink-0" />
+            <span className="font-display text-2xl text-gold pt-0.5 whitespace-pre-line leading-[0.95] text-center">
               {t('nav.availableCats')}
             </span>
           </a>
@@ -118,12 +108,15 @@ export const Navigation = () => {
                 {item.label}
               </a>
             ))}
-            <a href="#chatons" onClick={() => setMobileOpen(false)}>
-              <img
-                src={boutonChatons}
-                alt=""
-                className="w-52 h-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
-              />
+            <a
+              href="#chatons"
+              onClick={() => setMobileOpen(false)}
+              className="ornate-btn-navy halo-gold inline-flex items-center gap-2.5 self-start rounded-full px-5 py-3 transition-all duration-300 hover:scale-105 hover:brightness-110"
+            >
+              <PawPrint className="w-5 h-5 text-gold shrink-0" />
+              <span className="font-display text-xl text-gold pt-0.5 whitespace-pre-line leading-[0.95] text-center">
+                {t('nav.availableCats')}
+              </span>
             </a>
           </div>
         )}
