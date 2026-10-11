@@ -143,7 +143,7 @@ export const BreedingCatTranslationManager = () => {
           <>
             {/* Personality Translations */}
             <div className="space-y-4">
-              <h3 className="text-lg font-display text-gold">Caractère / Personnalité</h3>
+              <h3 className="admin-title text-3xl">Caractère / Personnalité</h3>
               <Tabs defaultValue="fr" className="w-full">
                 <TabsList className="grid w-full grid-cols-3">
                   <TabsTrigger value="fr">🇫🇷 Français</TabsTrigger>
@@ -179,7 +179,7 @@ export const BreedingCatTranslationManager = () => {
 
             {/* Pedigree Translations */}
             <div className="space-y-4">
-              <h3 className="text-lg font-display text-gold">Pedigree</h3>
+              <h3 className="admin-title text-3xl">Pedigree</h3>
               <Tabs defaultValue="fr" className="w-full">
                 <TabsList className="grid w-full grid-cols-3">
                   <TabsTrigger value="fr">🇫🇷 Français</TabsTrigger>
