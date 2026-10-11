@@ -76,6 +76,14 @@ export default function Admin() {
       <main className="container mx-auto px-4 py-8">
         <Tabs defaultValue="reproducteurs" className="w-full">
           <TabsList className="mb-6 flex flex-wrap h-auto gap-1 justify-start">
+            <TabsTrigger value="management" className="text-[0.9625rem]">
+               <Image className="mr-2 h-4 w-4" />
+              {t('admin.management')}
+            </TabsTrigger>
+            <TabsTrigger value="testimonials" className="text-[0.9625rem]">
+              <Image className="mr-2 h-4 w-4" />
+              {t('admin.testimonials')}
+            </TabsTrigger>
             <TabsTrigger value="reproducteurs">
               <Cat className="mr-2 h-4 w-4" />
               {t('admin.breedingCats')}
@@ -99,14 +107,6 @@ export default function Admin() {
             <TabsTrigger value="education">
               <Image className="mr-2 h-4 w-4" />
               {t('admin.education')}
-            </TabsTrigger>
-            <TabsTrigger value="testimonials">
-              <Image className="mr-2 h-4 w-4" />
-              {t('admin.testimonials')}
-            </TabsTrigger>
-            <TabsTrigger value="management">
-               <Image className="mr-2 h-4 w-4" />
-              {t('admin.management')}
             </TabsTrigger>
           </TabsList>
 
