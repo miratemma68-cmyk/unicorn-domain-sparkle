@@ -292,11 +292,12 @@ export const BreedingCatMediaManager = () => {
             <div className="flex flex-wrap items-center gap-2">
               <Button
                 type="button"
+                variant="outline"
                 onClick={() => fileInputRef.current?.click()}
                 disabled={uploading || !selectedCatId}
-                className="ornate-btn-pearl"
+                className="rounded-full border-gold/50 bg-pearl/95 text-navy hover:bg-pearl hover:border-gold"
               >
-                {uploading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Upload className="mr-2 h-4 w-4" />}
+                {uploading ? <Loader2 className="mr-2 h-4 w-4 animate-spin text-navy" /> : <Upload className="mr-2 h-4 w-4 text-navy" />}
                 Choisir des fichiers
               </Button>
               {selectedFileNames.length > 0 && (
