@@ -84,7 +84,7 @@ export const PreviousLittersSection = () => {
                       </div>
                     )}
                     <div className="pt-6 pb-2 px-2">
-                      <h3 className="text-xl sm:text-[1.35rem] lg:text-[1.56rem] font-display text-gold mb-2 break-words">{kitten.name}</h3>
+                      <h3 className="text-[1.875rem] sm:text-[2.025rem] lg:text-[2.34rem] font-display text-gold mb-2 break-words">{kitten.name}</h3>
                     </div>
                   </CardContent>
                 </Card>
