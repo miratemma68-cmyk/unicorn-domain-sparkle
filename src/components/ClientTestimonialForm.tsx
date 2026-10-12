@@ -78,20 +78,20 @@ export function ClientTestimonialForm({ userId }: { userId: string }) {
       <Card className="tapestry-border litter-frame testimonial-frame bg-card/80 backdrop-blur-sm">
         <CardHeader>
           <CardTitle className="text-gold font-serif flex items-center"><MessageSquareHeart className="mr-2 h-5 w-5" />{l.title}</CardTitle>
-          <CardDescription className="text-ivory/80">{l.desc}</CardDescription>
+          <CardDescription className="text-ivory/80 text-[0.9625rem]">{l.desc}</CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={submit} className="space-y-4">
             <div>
-              <label className="text-sm font-medium text-ivory/90">{l.name}</label>
-              <Input value={name} onChange={(e) => setName(e.target.value)} maxLength={80} className="rounded-full border-gold/30 mt-1" />
+              <label className="text-[0.9625rem] font-medium text-ivory/90">{l.name}</label>
+              <Input value={name} onChange={(e) => setName(e.target.value)} maxLength={80} className="rounded-full border-gold/30 mt-1 text-[1.1rem] md:text-[0.9625rem]" />
             </div>
             <div>
-              <label className="text-sm font-medium text-ivory/90">{l.msg}</label>
-              <Textarea value={message} onChange={(e) => setMessage(e.target.value)} maxLength={2000} rows={6} className="rounded-2xl border-gold/30 mt-1" />
+              <label className="text-[0.9625rem] font-medium text-ivory/90">{l.msg}</label>
+              <Textarea value={message} onChange={(e) => setMessage(e.target.value)} maxLength={2000} rows={6} className="rounded-2xl border-gold/30 mt-1 text-[0.9625rem]" />
             </div>
             <div>
-              <label className="text-sm font-medium text-ivory/90">{l.photo}</label>
+              <label className="text-[0.9625rem] font-medium text-ivory/90">{l.photo}</label>
               <div className="mt-1 flex flex-wrap items-center gap-2">
                 <input
                   id="testimonial-photo"
@@ -111,7 +111,7 @@ export function ClientTestimonialForm({ userId }: { userId: string }) {
                 </Button>
                 {file && (
                   <>
-                    <span className="text-ivory/85 text-sm truncate max-w-[12rem] break-all">{file.name}</span>
+                    <span className="text-ivory/85 text-[0.9625rem] truncate max-w-[12rem] break-all">{file.name}</span>
                     <button
                       type="button"
                       onClick={() => { setFile(null); const el = document.getElementById('testimonial-photo') as HTMLInputElement | null; if (el) el.value = ''; }}
@@ -141,7 +141,7 @@ export function ClientTestimonialForm({ userId }: { userId: string }) {
               <div key={r.id} className="border-b border-gold/20 pb-3 flex gap-3">
                 {r.photo_url && <img src={r.photo_url} alt="" className="w-16 h-16 rounded-xl object-cover border border-gold/30" />}
                 <div className="flex-1 min-w-0">
-                  <p className="text-ivory/90 text-sm whitespace-pre-line break-words">{r.message}</p>
+                  <p className="text-ivory/90 text-[0.9625rem] whitespace-pre-line break-words">{r.message}</p>
                   <p className="text-gold/80 text-xs mt-1">{l[r.status as 'pending' | 'approved' | 'rejected']}</p>
                 </div>
               </div>
