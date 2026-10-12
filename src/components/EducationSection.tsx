@@ -95,7 +95,7 @@ export const EducationSection = () => {
                 </ul>
               </div>
               
-              <p className="text-lg leading-relaxed italic text-gold">
+              <p className="text-[1.2375rem] leading-relaxed italic text-gold">
                 {t('education.conclusion')}
               </p>
 
