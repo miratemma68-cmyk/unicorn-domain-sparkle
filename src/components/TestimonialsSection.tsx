@@ -62,8 +62,8 @@ export const TestimonialsSection = () => {
                 <figure key={q.id} className="rounded-[1.5rem] border-2 border-gold/20 bg-midnight/60 p-5 flex gap-4">
                   {q.photo_url && <img src={q.photo_url} alt={q.author_name} loading="lazy" className="w-20 h-20 rounded-full object-cover border-2 border-gold/40 shrink-0" />}
                   <div className="min-w-0">
-                    <blockquote className="text-ivory/90 italic text-sm whitespace-pre-line break-words">« {q.message} »</blockquote>
-                    <figcaption className="text-gold font-display mt-2">— {q.author_name}</figcaption>
+                    <blockquote className="text-ivory/90 italic text-[1.3125rem] whitespace-pre-line break-words">« {q.message} »</blockquote>
+                    <figcaption className="text-gold font-display mt-2 text-[1.5rem]">— {q.author_name}</figcaption>
                   </div>
                 </figure>
               ))}
