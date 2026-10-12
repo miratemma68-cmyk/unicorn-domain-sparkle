@@ -185,6 +185,27 @@ All colors MUST be HSL.
   }
   .admin-area * { min-width: 0; }
   .admin-area p, .admin-area label, .admin-area span { overflow-wrap: anywhere; }
+
+  /* Administration: white body text enlarged by 10 % (buttons and form fields untouched) */
+  .admin-area [class*="text-ivory"].text-xs:not(button):not(input):not(textarea),
+  .admin-area [class*="text-muted-foreground"].text-xs:not(button):not(input):not(textarea),
+  .admin-area [class*="text-foreground"].text-xs:not(button):not(input):not(textarea) {
+    font-size: 0.825rem; /* 13.2px, was 12px */
+  }
+  .admin-area [class*="text-ivory"].text-sm:not(button):not(input):not(textarea),
+  .admin-area [class*="text-muted-foreground"].text-sm:not(button):not(input):not(textarea),
+  .admin-area [class*="text-foreground"].text-sm:not(button):not(input):not(textarea) {
+    font-size: 0.9625rem; /* 15.4px, was 14px */
+  }
+  .admin-area [class*="text-ivory"].text-base:not(button):not(input):not(textarea),
+  .admin-area [class*="text-muted-foreground"].text-base:not(button):not(input):not(textarea) {
+    font-size: 1.1rem; /* 17.6px, was 16px */
+  }
+  .admin-area :is(p, span, div, label, td, strong, em)[class*="text-ivory"]:not(button):not(input):not(textarea),
+  .admin-area :is(p, span, div, label, td, strong, em)[class*="text-muted-foreground"]:not(button):not(input):not(textarea) {
+    font-size: 1.1rem; /* 17.6px, was the inherited 16px */
+  }
+
   @media (max-width: 767px) {
     .admin-area .tapestry-border {
       padding: 3.25rem 2.25rem 3.75rem !important;
