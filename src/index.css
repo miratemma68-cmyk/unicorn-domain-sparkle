@@ -205,6 +205,11 @@ All colors MUST be HSL.
   .admin-area :is(p, span, div, label, td, strong, em)[class*="text-muted-foreground"]:not(button):not(input):not(textarea) {
     font-size: 1.1rem; /* 17.6px, was the inherited 16px */
   }
+  .admin-area td,
+  .admin-area th {
+    font-size: 0.9625rem; /* 15.4px, was 14px in the kittens table */
+  }
+
 
   @media (max-width: 767px) {
     .admin-area .tapestry-border {
