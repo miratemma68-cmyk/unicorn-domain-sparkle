@@ -83,8 +83,8 @@ export const AdoptionSection = () => {
             </div>
             
             <div className="bg-crimson/20 border border-gold/30 rounded-[2rem] px-6 py-5 md:px-8 mt-8 mb-8 max-w-3xl mx-auto w-full">
-              <h3 className="text-[1.875rem] md:text-[2.25rem] font-display text-gold mb-3 text-center">{t('adoption.whatYouGet')}</h3>
-              <ul className="grid md:grid-cols-2 gap-2.5 text-[1.425rem] md:text-[1.5rem]">
+              <h3 className="text-[1.5rem] md:text-[1.8rem] font-display text-gold mb-3 text-center">{t('adoption.whatYouGet')}</h3>
+              <ul className="grid md:grid-cols-2 gap-2.5 text-[1.14rem] md:text-[1.2rem]">
                 <li className="flex items-start justify-center gap-2">
                   <span className="text-gold">✦</span>
                   <span>{t('adoption.benefit1')}</span>
