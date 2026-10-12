@@ -138,10 +138,10 @@ export const CatsSection = () => {
                   </div>
                   <div className="p-5 flex flex-col flex-grow justify-between min-h-0">
                     <div>
-                      <h3 className="text-xl sm:text-[1.35rem] lg:text-[1.56rem] font-display text-gold mb-1 whitespace-pre-line leading-tight break-words">Sir Auguste de la Fleur de Vigne</h3>
-                      <p className="text-ivory/80 text-[1.09rem] italic">Reproducteur externe</p>
+                      <h3 className="text-[1.875rem] sm:text-[2.025rem] lg:text-[2.34rem] font-display text-gold mb-1 whitespace-pre-line leading-tight break-words">Sir Auguste de la Fleur de Vigne</h3>
+                      <p className="text-ivory/80 text-[1.5rem] lg:text-[1.635rem] italic break-words">Reproducteur externe</p>
                     </div>
-                    <p className="text-gold/70 text-[1.09rem] mt-2 italic">{t('cats.viewProfile')} →</p>
+                    <p className="text-gold/70 text-[1.635rem] mt-2 italic">{t('cats.viewProfile')} →</p>
                   </div>
                 </div>
               </div>
