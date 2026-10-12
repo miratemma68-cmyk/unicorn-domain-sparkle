@@ -62,7 +62,7 @@ export const DomainSection = () => {
           }}
         >
           <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="space-y-6 text-ivory/90">
+            <div className="min-w-0 break-words space-y-6 text-ivory/90">
               <p className="text-lg leading-relaxed">
                 {t('domain.intro1')}
               </p>
