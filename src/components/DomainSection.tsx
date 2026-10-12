@@ -82,8 +82,8 @@ export const DomainSection = () => {
               
               
               <div className="space-y-4 mt-8">
-                <h3 className="text-2xl font-display text-gold">{t('domain.values')}</h3>
-                <ul className="space-y-3">
+                <h3 className="text-[2.25rem] leading-tight font-display text-gold">{t('domain.values')}</h3>
+                <ul className="space-y-3 text-[1.6875rem] leading-relaxed">
                   <li className="flex items-start gap-3">
                     <span className="text-gold text-2xl">✦</span>
                     <span>{t('domain.value1')}</span>
