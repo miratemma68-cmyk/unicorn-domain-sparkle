@@ -85,7 +85,7 @@ export const CatsSection = () => {
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-gold medieval-glow text-center mb-4 break-words">
           {t('cats.title')}
         </h2>
-        <p className="text-center text-ivory/80 text-lg mb-12 italic font-light">
+        <p className="text-center text-ivory/80 text-[1.6875rem] mb-12 italic font-light">
           {t('cats.breeding')}
         </p>
         
