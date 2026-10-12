@@ -210,7 +210,9 @@ export default function Dashboard() {
                   <Card
                     key={kitten.id}
                     className="tapestry-border litter-frame bg-card/80 backdrop-blur-sm hover:shadow-lg transition-shadow cursor-pointer"
-                    onClick={() => navigate(`/kitten/${kitten.id}`)}
+                    onClick={() =>
+                      navigate(`/kitten/${kitten.id}`, { state: { from: 'my-unicorns' } })
+                    }
                   >
                     <CardHeader>
                       <CardTitle className="text-gold font-serif flex items-center">
