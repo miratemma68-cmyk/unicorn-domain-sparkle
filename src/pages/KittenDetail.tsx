@@ -157,11 +157,20 @@ export default function KittenDetail() {
       <div className="min-h-screen flex items-center justify-center bg-midnight">
         <div className="text-center">
           <p className="text-gold text-xl font-serif mb-4">{t('kittenDetail.notFound')}</p>
-          <Link to="/#chatons">
-            <Button className="bg-crimson hover:bg-crimson-dark text-ivory border border-gold rounded-full">
-              {t('kittenDetail.backToKittens')}
+          {fromMyUnicorns ? (
+            <Button
+              onClick={() => navigate('/dashboard')}
+              className="bg-crimson hover:bg-crimson-dark text-ivory border border-gold rounded-full"
+            >
+              {t('kittenDetail.backToMyUnicorns')}
             </Button>
-          </Link>
+          ) : (
+            <Link to="/#chatons">
+              <Button className="bg-crimson hover:bg-crimson-dark text-ivory border border-gold rounded-full">
+                {t('kittenDetail.backToKittens')}
+              </Button>
+            </Link>
+          )}
         </div>
       </div>
     );
