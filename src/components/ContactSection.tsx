@@ -95,7 +95,7 @@ export const ContactSection = () => {
                 required
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="bg-input border-gold/30 text-foreground focus:border-gold rounded-full"
+                className="bg-input border-gold/30 text-foreground focus:border-gold rounded-full text-[1.1rem] md:text-[0.9625rem]"
               />
             </div>
             
@@ -109,7 +109,7 @@ export const ContactSection = () => {
                 required
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="bg-input border-gold/30 text-foreground focus:border-gold rounded-full"
+                className="bg-input border-gold/30 text-foreground focus:border-gold rounded-full text-[1.1rem] md:text-[0.9625rem]"
               />
             </div>
             
@@ -122,7 +122,7 @@ export const ContactSection = () => {
                 type="tel"
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                className="bg-input border-gold/30 text-foreground focus:border-gold rounded-full"
+                className="bg-input border-gold/30 text-foreground focus:border-gold rounded-full text-[1.1rem] md:text-[0.9625rem]"
               />
             </div>
             
@@ -134,7 +134,7 @@ export const ContactSection = () => {
                 id="country"
                 value={formData.country}
                 onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-                className="bg-input border-gold/30 text-foreground focus:border-gold rounded-full"
+                className="bg-input border-gold/30 text-foreground focus:border-gold rounded-full text-[1.1rem] md:text-[0.9625rem]"
               />
             </div>
             
@@ -148,7 +148,7 @@ export const ContactSection = () => {
                 rows={6}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="bg-input border-gold/30 text-foreground focus:border-gold resize-none rounded-[2rem]"
+                className="bg-input border-gold/30 text-foreground focus:border-gold resize-none rounded-[2rem] text-[0.9625rem]"
               />
             </div>
             
