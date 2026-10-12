@@ -70,7 +70,7 @@ export const EducationSection = () => {
               </p>
               
               <div className="space-y-4">
-                <h3 className="text-2xl font-display text-gold">{t('education.method')}</h3>
+                <h3 className="text-[2.25rem] leading-tight font-display text-gold">{t('education.method')}</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <span className="text-gold text-2xl">✦</span>
