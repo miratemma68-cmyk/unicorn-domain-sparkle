@@ -121,7 +121,7 @@ export const CatsSection = () => {
 
         {/* External Breeders */}
         <div className="mb-16">
-          <h3 className="text-3xl font-display text-gold medieval-glow text-center mb-8">
+          <h3 className="text-3xl md:text-4xl lg:text-5xl font-display text-gold medieval-glow text-center mb-8 break-words">
             {t('cats.externalBreeders')}
           </h3>
           <div className="grid md:grid-cols-2 gap-8 items-stretch">
