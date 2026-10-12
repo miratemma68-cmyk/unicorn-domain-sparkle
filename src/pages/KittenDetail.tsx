@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useLocation, useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -33,6 +33,10 @@ export default function KittenDetail() {
   const { id } = useParams<{ id: string }>();
   const { language, t } = useLanguage();
   const { user } = useAuth();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const fromMyUnicorns =
+    (location.state as { from?: string } | null)?.from === 'my-unicorns';
   const [kitten, setKitten] = useState<Kitten | null>(null);
   const [media, setMedia] = useState<KittenMedia[]>([]);
   const [loading, setLoading] = useState(true);
@@ -168,15 +172,26 @@ export default function KittenDetail() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-midnight via-forest to-midnight">
       <div className="container mx-auto px-4 py-8">
-        <Link to="/#chatons">
+        {fromMyUnicorns ? (
           <Button
             variant="outline"
+            onClick={() => navigate('/dashboard')}
             className="mb-8 border-gold text-gold hover:bg-gold/10 rounded-full"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
-            {t('kittenDetail.backToKittens')}
+            {t('kittenDetail.backToMyUnicorns')}
           </Button>
-        </Link>
+        ) : (
+          <Link to="/#chatons">
+            <Button
+              variant="outline"
+              className="mb-8 border-gold text-gold hover:bg-gold/10 rounded-full"
+            >
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              {t('kittenDetail.backToKittens')}
+            </Button>
+          </Link>
+        )}
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {/* Profile Image */}
