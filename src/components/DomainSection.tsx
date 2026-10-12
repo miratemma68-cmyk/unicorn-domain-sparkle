@@ -188,7 +188,7 @@ export const DomainSection = () => {
                     <span>{t('domain.laurenceCred4')}</span>
                   </li>
                 </ul>
-                <p className="text-lg leading-relaxed italic text-gold/80">
+                <p className="text-[1.2375rem] leading-relaxed italic text-gold/80">
                   "{t('domain.laurenceQuote')}"
                 </p>
               </div>
