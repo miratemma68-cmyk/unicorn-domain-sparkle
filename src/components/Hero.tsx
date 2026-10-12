@@ -94,7 +94,7 @@ export const Hero = () => {
                     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
                   </svg>
                 </a>
-                <span className="text-ivory/80 text-xs font-light">Instagram</span>
+                <span className="text-ivory/80 text-[0.9rem] font-light">Instagram</span>
               </div>
               <div className="flex flex-col items-center gap-1">
                 <a
@@ -114,7 +114,7 @@ export const Hero = () => {
                     <path d="M13.5 21v-7.5h2.5l.5-3h-3V8.6c0-.9.3-1.5 1.6-1.5H17V4.4c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.1V10.5H8v3h2.5V21h3z" />
                   </svg>
                 </a>
-                <span className="text-ivory/80 text-xs font-light">Facebook</span>
+                <span className="text-ivory/80 text-[0.9rem] font-light">Facebook</span>
               </div>
             </div>
           </div>
