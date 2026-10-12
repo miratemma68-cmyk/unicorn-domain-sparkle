@@ -62,7 +62,7 @@ export const DomainSection = () => {
           }}
         >
           <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="space-y-6 text-ivory/90">
+            <div className="min-w-0 break-words space-y-6 text-ivory/90">
               <p className="text-lg leading-relaxed">
                 {t('domain.intro1')}
               </p>
@@ -82,7 +82,7 @@ export const DomainSection = () => {
               
               
               <div className="space-y-4 mt-8">
-                <h3 className="text-2xl font-display text-gold">{t('domain.values')}</h3>
+                <h3 className="text-[2.25rem] leading-tight font-display text-gold">{t('domain.values')}</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <span className="text-gold text-2xl">✦</span>
