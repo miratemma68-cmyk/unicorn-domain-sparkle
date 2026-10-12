@@ -38,7 +38,7 @@ export const Navigation = () => {
         className="ornate-btn-navy inline-flex items-center gap-2.5 rounded-full px-6 py-3 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(218,165,32,0.5)]"
       >
         <User className="w-5 h-5 text-gold" />
-        <span className="font-display text-2xl text-gold pt-0.5 whitespace-nowrap">
+        <span className="font-display text-[1.65rem] text-gold pt-0.5 whitespace-nowrap">
           {t('nav.clientSpace')}
         </span>
       </button>
@@ -60,7 +60,7 @@ export const Navigation = () => {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-ivory/80 hover:text-gold transition-colors duration-300 font-sans italic font-light text-base whitespace-nowrap"
+                className="text-ivory/80 hover:text-gold transition-colors duration-300 font-sans italic font-light text-[1.1rem] whitespace-nowrap"
               >
                 {item.label}
               </a>
@@ -72,7 +72,7 @@ export const Navigation = () => {
             className="ornate-btn-navy ornate-btn-royal halo-gold inline-flex items-center gap-2.5 rounded-full px-6 py-3 transition-all duration-300 hover:scale-105 hover:brightness-110"
           >
             <PawPrint className="w-5 h-5 text-gold shrink-0" />
-            <span className="font-display text-2xl text-gold pt-0.5 whitespace-pre-line leading-[0.95] text-center">
+            <span className="font-display text-[1.65rem] text-gold pt-0.5 whitespace-pre-line leading-[0.95] text-center">
               {t('nav.availableCats')}
             </span>
           </a>
@@ -102,7 +102,7 @@ export const Navigation = () => {
                 key={item.href}
                 href={item.href}
                 onClick={() => setMobileOpen(false)}
-                className="text-ivory/90 hover:text-gold transition-colors duration-300 font-sans italic font-light text-lg"
+                className="text-ivory/90 hover:text-gold transition-colors duration-300 font-sans italic font-light text-[1.2375rem]"
               >
                 {item.label}
               </a>
@@ -113,7 +113,7 @@ export const Navigation = () => {
               className="ornate-btn-navy ornate-btn-royal halo-gold inline-flex items-center gap-2.5 self-start rounded-full px-5 py-3 transition-all duration-300 hover:scale-105 hover:brightness-110"
             >
               <PawPrint className="w-5 h-5 text-gold shrink-0" />
-              <span className="font-display text-xl text-gold pt-0.5 whitespace-pre-line leading-[0.95] text-center">
+              <span className="font-display text-[1.375rem] text-gold pt-0.5 whitespace-pre-line leading-[0.95] text-center">
                 {t('nav.availableCats')}
               </span>
             </a>
