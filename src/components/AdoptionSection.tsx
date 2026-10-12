@@ -61,7 +61,7 @@ export const AdoptionSection = () => {
                 <div className="w-32 h-32 mx-auto bg-crimson rounded-full flex items-center justify-center border-2 border-gold shadow-lg hover:scale-110 transition-transform">
                   <span className="text-6xl text-gold font-display">1</span>
                 </div>
-                <h3 className="text-2xl font-display text-gold">{t('adoption.step1Title')}</h3>
+                <h3 className="text-[2.25rem] font-display text-gold">{t('adoption.step1Title')}</h3>
                 <p className="whitespace-pre-line">{t('adoption.step1Desc')}</p>
               </div>
               
@@ -69,7 +69,7 @@ export const AdoptionSection = () => {
                 <div className="w-32 h-32 mx-auto bg-crimson rounded-full flex items-center justify-center border-2 border-gold shadow-lg hover:scale-110 transition-transform">
                   <span className="text-6xl text-gold font-display">2</span>
                 </div>
-                <h3 className="text-2xl font-display text-gold">{t('adoption.step2Title')}</h3>
+                <h3 className="text-[2.25rem] font-display text-gold">{t('adoption.step2Title')}</h3>
                 <p className="whitespace-pre-line">{t('adoption.step2Desc')}</p>
               </div>
               
@@ -77,14 +77,14 @@ export const AdoptionSection = () => {
                 <div className="w-32 h-32 mx-auto bg-crimson rounded-full flex items-center justify-center border-2 border-gold shadow-lg hover:scale-110 transition-transform">
                   <span className="text-6xl text-gold font-display">3</span>
                 </div>
-                <h3 className="text-2xl font-display text-gold">{t('adoption.step3Title')}</h3>
+                <h3 className="text-[2.25rem] font-display text-gold">{t('adoption.step3Title')}</h3>
                 <p className="whitespace-pre-line">{t('adoption.step3Desc')}</p>
               </div>
             </div>
             
             <div className="bg-crimson/20 border border-gold/30 rounded-[2rem] px-6 py-5 md:px-8 mt-8 mb-8 max-w-2xl mx-auto w-full">
-              <h3 className="text-xl md:text-2xl font-display text-gold mb-3 text-center">{t('adoption.whatYouGet')}</h3>
-              <ul className="grid md:grid-cols-2 gap-2.5 text-[0.95rem] md:text-base">
+              <h3 className="text-[1.875rem] md:text-[2.25rem] font-display text-gold mb-3 text-center">{t('adoption.whatYouGet')}</h3>
+              <ul className="grid md:grid-cols-2 gap-2.5 text-[1.425rem] md:text-[1.5rem]">
                 <li className="flex items-start justify-center gap-2">
                   <span className="text-gold">✦</span>
                   <span>{t('adoption.benefit1')}</span>
